@@ -2,6 +2,7 @@ from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.restful import reqparse,abort,Api,Resource
 
+
 app = Flask(__name__)
 api = Api(app)
 app.config["MONGODB_SETTINGS"] = {"DB": "my_tumble_log"}
@@ -63,12 +64,26 @@ class TodoList(Resource):
         todo_id = 'todo%d' % (len(TODOS) + 1)
         TODOS[todo_id] = {'task': args['task']}
         return TODOS[todo_id], 201
+# PostList
+#   shows a list of all post, and lets you POST to add new tasks
+from flask import jsonify
+class PostList(Resource):
+    def get(self):
+#        posts = Post.objects.all()
+        results = {'body':'posts[1].body'}
+        return results
+
+    def post(self):
+        args = parser.parse_args()
+        post_id = 'post%d' % (len(TODOS) + 1)
+        return 'post success.', 201
 
 ##
 ## Actually setup the Api resource routing here
 ##
-api.add_resource(TodoList, '/todos')
-api.add_resource(Todo, '/todos/<string:todo_id>')
+api.add_resource(TodoList, '/api/v1/todos')
+api.add_resource(Todo, '/api/v1/todos/<string:todo_id>')
+api.add_resource(PostList, '/api/v1/posts')
 
 if __name__ == '__main__':
     app.run()

@@ -24,6 +24,15 @@ class Post(db.DynamicDocument):
         'indexes': ['-created_at', 'slug'],
         'ordering': ['-created_at']
     }
+    
+    def to_json(self):
+        return {
+            'created_at': self.created_at,
+            'title': title,
+            'slug': self.slug,
+            'comments': self.comments,
+        }
+
 
 class BlogPost(Post):
     body = db.StringField(required=True)
