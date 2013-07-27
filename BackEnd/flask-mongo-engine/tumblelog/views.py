@@ -1,6 +1,7 @@
-from flask.ext.mongoengine.wtf import model_form
 from flask import Blueprint, request, redirect, render_template, url_for
 from flask.views import MethodView
+
+from flask.ext.mongoengine.wtf import model_form
 from tumblelog.models import Post, Comment
 
 posts = Blueprint('posts', __name__, template_folder='templates')
@@ -44,7 +45,6 @@ class DetailView(MethodView):
             post.save()
 
             return redirect(url_for('posts.detail', slug=slug))
-
         return render_template('posts/detail.html', **context)
 
 
