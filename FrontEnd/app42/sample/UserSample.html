@@ -9,12 +9,20 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
         <script type="text/javascript" src="../jqueryAlert.js"></script>
-        <script>
+        <script type="text/javascript">
 		App42.initialize("c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6","75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2");
-		
+		function getUsername()
+		{
+			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+			var text = "";
+			var length = 10;
+    		for( var i=0; i < length; i++ )
+        		text += possible.charAt(Math.floor(Math.random() * possible.length));
+			return text;
+		}
         function createUser(){
                 var user  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "p@ssword!";
                 var email = userName+"@gmail.com";
                 var result ;
@@ -34,7 +42,7 @@
 			function getUser(){
                
                 var user1  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var email = userName+"@gmail.com";
 				var result ;
@@ -60,7 +68,7 @@
             }
 			function getUserByEmailId(){
                 var user1  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var email = userName+"@gmail.com";
 				var result ;
@@ -86,7 +94,7 @@
             }
 			function changeUserPassword(){
                 var user1  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var newPws = "***********";
                 var email = userName+"@gmail.com";
@@ -115,7 +123,7 @@
 			function deleteUser(){
                
                 var user1  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var email = userName+"@gmail.com";
                 var result ;
@@ -141,7 +149,7 @@
             }
 			function authenticate(){
                 var user1  = new App42User();
-                var userName = "shashank"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var email = userName+"@gmail.com";
                 var result ;
@@ -183,7 +191,7 @@
 			
 			function resetUserPassword(){
                 var user1  = new App42User();
-                var userName = "Nick"+new Date();
+                var userName = getUsername();
                 var pws = "*********";
                 var email = "Nick@shephertz.co.in";
                 var result ;
