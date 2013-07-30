@@ -6,14 +6,22 @@
         <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
 		 <link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../App42-all-1.1.1.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
         <script type="text/javascript" src="../jqueryAlert.js"></script>
         <script>
-		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
-		
+		App42.initialize("c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6","75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2");
+			function getRandomName()
+			{
+				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var text = "";
+				var length = 10;
+	    		for( var i=0; i < length; i++ )
+	        		text += possible.charAt(Math.floor(Math.random() * possible.length));
+				return text;
+			}
             function uploadFile() {
 				var upload  = new App42Upload();
-                var name = "name"+ new Date() ;
+                var name = "file_"+ getRandomName() ;
                 var filePath = document.getElementById("filePath");
                 var fileType = "IMAGE";
                 var description = "description";
