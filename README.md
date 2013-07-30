@@ -12,4 +12,4 @@ A prototype of jQuery mobile, based on an open source project named "restaurant 
 Back end
 ==========
 
-Using appfog/heroku PAAS solution.
+Using App42(http://api.shephertz.com/cloudapidocs) BAAS solution.
