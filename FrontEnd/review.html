@@ -22,35 +22,49 @@
 			</div>
 
 			<div data-role="content" data-theme="c">
-				<!--Login form start-->
+				<div class="content-primary">
+						<ul data-role="listview" data-inset="true">
+							<li data-role="fieldcontain">
+								<label for="imageNameTextInput">name:</label>
+								<input type="text" name="imageNameTextInput" id="imageNameTextInput" value="Course name..."  />
+							</li>
+							<li data-role="fieldcontain">
+								<label for="imageDescTextArea">description:</label>
+								<textarea cols="40" rows="8" name="imageDescTextArea" id="imageDescTextArea">Course Description...</textarea>
+							</li>
 
-					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-						<label for="name" class="ui-input-text">Username:</label>
-						<input type="text" value="KnightZhou" id="usernameInput" name="usernameInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
-					</div>
+							<li data-role="fieldcontain">
+								<label for="imageFileInput">Image:</label>
+								<input type="file" name="imageFileInput" id="imageFileInput" value="" data-clear-btn="true" class="ui-input-text ui-body-c">
+								<button id="chooseFile" onclick="uploadImageHandler()">Upload image</button>
+							</li>
+							
+							<li data-role="fieldcontain">
+								<label for="imageFileInput">Preview:</label>
+								<img id="imagePreviewImg"/>
+							</li>
 
-					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-						<label for="name" class="ui-input-text">Password:</label>
-						<input type="password" value="p@ssword!" id="passwordInput" name="passwordInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
-					</div>
+							<li class="ui-body ui-body-b">
+								<fieldset class="ui-grid-a" onclick="reviewCancelHandler()">
+									<div class="ui-block-a" >
+										<button type="submit" data-theme="d">
+											Cancel
+										</button>
+									</div>
+									<div class="ui-block-b" onclick="reviewSubmitHandler()">
+										<button type="submit" data-theme="a" >
+											Submit
+										</button>
+									</div>
+								</fieldset>
+							</li>
 
-					<fieldset class="ui-grid-a">
-						<div class="ui-block-a" onclick="signinHandler()">
-							<button id="signinBtn" data-theme="b" type="submit" class="ui-btn-hidden" aria-disabled="false">
-								SignIn
-							</button>
-						</div>
-						<div class="ui-block-b" onclick="signupHandler()">
-							<button data-theme="b" type="reset" class="ui-btn-hidden" aria-disabled="false">
-								SignUp
-							</button>
-						</div>
+						</ul>
 
-					</fieldset>
 
-				<!-- /Login form end-->
-			</div>
-		</div>
+				</div><!--/content-primary -->
+
+			</div><!-- /content -->
 
 	</body>
 </html>

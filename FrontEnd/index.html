@@ -22,6 +22,15 @@
 			$(document).ready(function() {
 				console.log("document ready!");
 			});
+			function getRandomName()
+			{
+				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var text = "";
+				var length = 10;
+	    		for( var i=0; i < length; i++ )
+	        		text += possible.charAt(Math.floor(Math.random() * possible.length));
+				return text;
+			}
 			function signinHandler()
 			{
 				$.mobile.loading( 'show');
@@ -44,9 +53,42 @@
                     }
             	}); 
 			}
-			function signupHandler(username,password)
+			function signupHandler()
 			{
 				alert("signuphandler");
+			}
+			function reviewCancelHandler()
+			{
+				$('.ui-dialog').dialog('close');//close dialog.
+			}
+			function reviewSubmitHandler()
+			{
+				$('.ui-dialog').dialog('close');//close dialog.
+			}
+			function uploadImageHandler()
+			{
+				var upload  = new App42Upload();
+                var name = $("#imageNameTextInput").val()+"_"+getRandomName() ;
+                var filePath = document.getElementById("imageFileInput");
+                var fileType = "IMAGE";
+                var description = $("#imageDescTextArea").val();
+                var file = filePath.files[0];
+                console.log("course name,description,image:",name,description,file);
+                upload.uploadFile(name, file, fileType,description,{
+                    success: function(object) {
+                    	var uploadObj = JSON.parse(object);
+						console.log("upload image success:",uploadObj);
+						var imageFilename  = uploadObj.app42.response.upload.files.file.name;
+						var tinyImageUrl = uploadObj.app42.response.upload.files.file.tinyUrl;
+						$.mobile.loading('hide');
+						$("#imagePreviewImg").attr('src',tinyImageUrl);
+                    },
+                    error: function(error) {
+                    	console.log("upload image error:",error);
+                    	$.mobile.loading('hide');
+                    }
+                });
+                $.mobile.loading('show');
 			}
 		</script>
 	</head>
@@ -124,7 +166,7 @@
 							<a href="#" data-icon="star" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a">Favs</a>
 						</li>
 						<li>
-							<a href="#" data-icon="grid" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a">Setup</a>
+							<a href="review.html" data-rel="dialog" data-transition="flip" data-icon="grid" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-iconpos="top" data-theme="a" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a">Review</a>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
