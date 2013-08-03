@@ -8,13 +8,45 @@
 		<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
 		<link rel="apple-touch-icon" sizes="114x114" href="images/launch_icon_114.png" />
-		<link rel="stylesheet" href="jquery.mobile-1.0.1.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.2.1.css" />
 		<script src="js/jquery-1.7.1.min.js"></script>
-		<script src="js/jquery.mobile-1.0.1.min.js"></script>
+		<script src="js/jquery.mobile-1.2.1.js"></script>
+		<script type="text/javascript" src="app42/App42-all-1.5.min.js"></script>
+		<script type="text/javascript" src="app42/jqueryAlert.js"></script>
 		<script type="text/javascript">
+			//App42 API initialization here.
+			App42.initialize("c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6","75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2");
+			var appUser = new App42User();
+			var appUserObj;
 			$(document).ready(function() {
 				console.log("document ready!");
 			});
+			function signinHandler()
+			{
+				$.mobile.loading( 'show');
+				var userName = $("#usernameInput").val();
+				var password = $("#passwordInput").val();
+				appUser.authenticate(userName,password,{
+                    success: function(object) {
+						appUserObj = JSON.parse(object);
+						console.log('User has been successfully login:',appUserObj);
+						var signedUsername = appUserObj.app42.response.users.user.userName;
+						console.log("Signed username:",signedUsername);
+						$.mobile.loading('hide');
+						$('.ui-dialog').dialog('close');//close dialog.
+						$("#loginBtn").text(signedUsername);
+                    },
+                    error: function(error) {
+                       console.log("Sign in error:",error);
+                       $.mobile.loading('hide');
+                       $('.ui-dialog').dialog('close');//close dialog.
+                    }
+            	}); 
+			}
+			function signupHandler(username,password)
+			{
+				alert("signuphandler");
+			}
 		</script>
 	</head>
 	<body>
@@ -22,7 +54,7 @@
 
 			<div data-role="header">
 				<h1>一道菜</h1>
-				<a href="login.html" data-rel="dialog" data-transition="slidedown" data-icon="gear" class="ui-btn-right">LOGIN</a>
+				<a id="loginBtn" href="login.html" data-rel="dialog" data-transition="slidedown" data-icon="gear" class="ui-btn-right">LOGIN</a>
 			</div>
 
 			<div data-role="content">
