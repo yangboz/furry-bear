@@ -30,6 +30,59 @@
 			var appUserObj;
 			$(document).ready(function() {
 				console.log("document ready!");
+				var courseData = [{
+					"name" : "Le Mouffetard",
+					"description" : "${description}",
+					"rating" : "five",
+					"price" : 123,
+					"image" : "restau01_mini.jpg"
+				}, {
+					"name" : "Chocolate bar",
+					"description" : "${description}",
+					"rating" : "four",
+					"price" : 560,
+					"image" : "restau02_mini.jpg"
+				}, {
+					"name" : "Restaurant Diona",
+					"description" : "${description}",
+					"rating" : "three",
+					"price" : 789,
+					"image" : "restau03_mini.jpg"
+				}, {
+					"name" : "Tai Shan",
+					"description" : "${description}",
+					"rating" : "two",
+					"price" : 265,
+					"image" : "restau04_mini.jpg"
+				}, {
+					"name" : "Arcade",
+					"description" : "${description}",
+					"rating" : "one",
+					"price" : 110,
+					"image" : "restau05_mini.jpg"
+				}];
+				$.each(courseData, function(index, dict) {
+					//
+					$('#result-listview').append('<li>' + '<a href="restaurant.html" data-transition="slidedown" >' + '<img src="' + dict.image + '"/>' + '<h2>' + dict.name + '</h2>' + '<p>' + dict.description + '</p>' + '<span class="ui-li-count" >' + dict.price + '</span>' + '<p class="classement ' + dict.rating + '"></p>' + '</a>' + '</li>');
+
+					/*
+					 Here we are dynamically creating a new page.
+					 When a list item is clicked, this is what is actually shown.
+					 Do not forget to append this block of code
+					 to the body tag. If appended mistakenly somewhere else,
+					 the code wont work.
+					 */
+					content = '<div data-role="page" id="id_' + index + '" data-url="id_' + index + '">' + '<div data-role="header">' + '<a href="#" data-rel="back" data-icon="back">Back</a>' + '<h1>' + dict.name + '</h1>' + '</div>' + '<div data-role="content">' + '<p>' + '<div data-role="fieldcontain" class="result">' + '</div>' + '</p>' + '</div>' + '</div>';
+
+					$('body').append(content).trigger('create');
+
+					/*Tell JQM to enhance the page with the required classes.*/
+					$(index).page();
+
+				});
+				// end for each
+
+				$('#result-listview').listview('refresh');
 			});
 			function getRandomName() {
 				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -116,53 +169,9 @@
 
 				<div class="choice_list">
 					<h1>Newest</h1>
+					<!-- This is where the result of dynamically created listitems will be appended. -->
+					<ul id="result-listview" data-role="listview" data-inset="true">
 
-					<ul data-role="listview" data-inset="true" >
-						<li>
-							<a href="restaurant.html" data-transition="slidedown"> <img src="restau01_mini.jpg"/> <h2> Le Mouffetard</h2>
-							<p>
-								${description}
-							</p><span class="ui-li-count" > 345 </span>
-							<p class="classement four">
-								4 stars
-							</p></a>
-						</li>
-						<li>
-							<a href="restaurant.html" data-transition="slidedown"> <img src="restau02_mini.jpg "/> <h2> Chocolate bar </h2>
-							<p>
-								${description}
-							</p><span class="ui-li-count" > 345 </span>
-							<p class="classement four">
-								4 stars
-							</p> </a>
-						</li>
-						<li>
-							<a href="restaurant.html" data-transition="slidedown"> <img src="restau03_mini.jpg "/> <h2> Restaurant Diona</h2>
-							<p>
-								${description}
-							</p><span class="ui-li-count" > 345 </span>
-							<p class="classement one">
-								1 star
-							</p> </a>
-						</li>
-						<li>
-							<a href="restaurant.html" data-transition="slidedown"> <img src="restau04_mini.jpg "/> <h2> Tai Shan</h2>
-							<p>
-								${description}
-							</p><span class="ui-li-count" > 345 </span>
-							<p class="classement three">
-								3 stars
-							</p> </a>
-						</li>
-						<li>
-							<a href="restaurant.html" data-transition="slidedown"> <img src=" restau05_mini.jpg"/> <h2> Arcade</h2>
-							<p>
-								${description}
-							</p><span class="ui-li-count" > 345 </span>
-							<p class="classement two">
-								2 stars
-							</p> </a>
-						</li>
 					</ul>
 
 				</div>
