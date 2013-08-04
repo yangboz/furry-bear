@@ -23,44 +23,87 @@
 
 			<div data-role="content" data-theme="c">
 				<div class="content-primary">
-						<ul data-role="listview" data-inset="true">
-							<li data-role="fieldcontain">
-								<label for="imageNameTextInput">name:</label>
-								<input type="text" name="imageNameTextInput" id="imageNameTextInput" value="Course name..."  />
-							</li>
-							<li data-role="fieldcontain">
-								<label for="imageDescTextArea">description:</label>
-								<textarea cols="40" rows="8" name="imageDescTextArea" id="imageDescTextArea">Course Description...</textarea>
-							</li>
 
-							<li data-role="fieldcontain">
-								<label for="imageFileInput">Image:</label>
-								<input type="file" name="imageFileInput" id="imageFileInput" value="" data-clear-btn="true" class="ui-input-text ui-body-c">
-								<button id="chooseFile" type="submit" onclick="uploadImageHandler()">Upload image</button>
-							</li>
+					<ul data-role="listview" data-inset="true">
+						<li data-role="fieldcontain">
+							<label for="imageNameTextInput">name:</label>
+							<input type="text" name="imageNameTextInput" id="imageNameTextInput" value="Course name..."  />
+						</li>
+						<li data-role="fieldcontain">
+							<label for="imageDescTextArea">description:</label>
+							<textarea cols="40" rows="8" name="imageDescTextArea" id="imageDescTextArea">Course Description...</textarea>
+						</li>
+
+						<li data-role="fieldcontain">
+							<label for="imageFileInput">Image:</label>
+							<input type="file" name="imageFileInput" id="imageFileInput" value="" data-clear-btn="true" class="ui-input-text ui-body-c">
+							<button id="chooseFile" type="submit" onclick="uploadImageHandler()">
+								Upload image
+							</button>
+						</li>
+
+						<li data-role="fieldcontain">
+							<label for="imageFileInput">preview:</label>
+							<a href="preview.html" data-rel="dialog" data-transition="slidedown" data-icon="gear" class="ui-btn-right"> <img id="imagePreviewImg"/> </a>
+						</li>
+						
+						<li data-role="fieldcontain">
+							<label for="note_utilisateur">rating:</label>
+							<select name="note_utilisateur" id="note_utilisateur" data-native-menu="false" data-theme="c" >
+							   <option value="one" class="one"> Not good at all </option>
+							   <option value="two" class="two">Average </option>
+							   <option value="three" class="three">Pretty good </option>
+							   <option value="four" class="four"> Excellent </option>
+							   <option value="five" class="five"> Superb </option>
+							</select>
+						</li>
 							
-							<li data-role="fieldcontain">
-								<label for="imageFileInput">Preview:</label>
-								<img id="imagePreviewImg"/>
-							</li>
+						<li data-role="fieldcontain">
+							<label for="priceSlider">price:</label>
+							<input type="range" name="priceSlider" id="priceSlider" value="60" min="0" max="3000" data-highlight="true" />
+						</li>
 
-							<li class="ui-body ui-body-b">
-								<fieldset class="ui-grid-a" onclick="reviewCancelHandler()">
-									<div class="ui-block-a" >
-										<button type="submit" data-theme="d">
-											Cancel
-										</button>
-									</div>
-									<div class="ui-block-b" onclick="reviewSubmitHandler()">
-										<button type="submit" data-theme="a" >
-											Submit
-										</button>
-									</div>
-								</fieldset>
-							</li>
+						<li data-role="fieldcontain">
+							<label for="addressTextArea">address:</label>
+							<textarea cols="40" rows="8" name="addressTextArea" id="addressTextArea">Address...</textarea>
+						</li>
 
-						</ul>
+						<li data-role="fieldcontain">
+							<label for="restaurantTextInput">restaurant:</label>
+							<input type="text" name="restaurantTextInput" id="restaurantTextInput" value="Restaurant name..."  />
+						</li>
 
+						<li data-role="fieldcontain">
+							<label for="telTextInput">telphone:</label>
+							<input type="tel" name="telTextInput" id="telTextInput" value="010-00000000"  />
+						</li>
+
+						<li data-role="fieldcontain">
+							<fieldset data-role="controlgroup">
+								<legend>
+									Agree to next time:
+								</legend>
+								<input type="checkbox" name="againCheckbox" id="againCheckbox" class="custom" />
+								<label for="againCheckbox">I Agree</label>
+							</fieldset>
+						</li>
+
+						<li class="ui-body ui-body-b">
+							<fieldset class="ui-grid-a" onclick="reviewCancelHandler()">
+								<div class="ui-block-a" >
+									<button type="submit" data-theme="d">
+										Cancel
+									</button>
+								</div>
+								<div class="ui-block-b" onclick="reviewSubmitHandler()">
+									<button type="submit" data-theme="a" >
+										Submit
+									</button>
+								</div>
+							</fieldset>
+						</li>
+
+					</ul>
 
 				</div><!--/content-primary -->
 

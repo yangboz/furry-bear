@@ -24,29 +24,29 @@
 			<div data-role="content" data-theme="c">
 				<!--Login form start-->
 
-					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-						<label for="name" class="ui-input-text">Username:</label>
-						<input type="text" value="KnightZhou" id="usernameInput" name="usernameInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
+				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+					<label for="name" class="ui-input-text">Username:</label>
+					<input type="text" value="KnightZhou" id="usernameInput" name="usernameInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
+				</div>
+
+				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+					<label for="name" class="ui-input-text">Password:</label>
+					<input type="password" value="p@ssword!" id="passwordInput" name="passwordInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
+				</div>
+
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a" onclick="signinHandler()">
+						<button id="signinBtn" data-theme="b" type="submit" class="ui-btn-hidden" aria-disabled="false">
+							SignIn
+						</button>
+					</div>
+					<div class="ui-block-b" onclick="signupHandler()">
+						<button data-theme="b" type="reset" class="ui-btn-hidden" aria-disabled="false">
+							SignUp
+						</button>
 					</div>
 
-					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-						<label for="name" class="ui-input-text">Password:</label>
-						<input type="password" value="p@ssword!" id="passwordInput" name="passwordInput" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">
-					</div>
-
-					<fieldset class="ui-grid-a">
-						<div class="ui-block-a" onclick="signinHandler()">
-							<button id="signinBtn" data-theme="b" type="submit" class="ui-btn-hidden" aria-disabled="false">
-								SignIn
-							</button>
-						</div>
-						<div class="ui-block-b" onclick="signupHandler()">
-							<button data-theme="b" type="reset" class="ui-btn-hidden" aria-disabled="false">
-								SignUp
-							</button>
-						</div>
-
-					</fieldset>
+				</fieldset>
 
 				<!-- /Login form end-->
 			</div>

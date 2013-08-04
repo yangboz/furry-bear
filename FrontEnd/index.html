@@ -29,41 +29,47 @@
 			var appUser = new App42User();
 			var appUserObj;
 			$(document).ready(function() {
+				//
 				console.log("document ready!");
 				var courseData = [{
 					"name" : "Le Mouffetard",
 					"description" : "${description}",
 					"rating" : "five",
 					"price" : 123,
-					"image" : "restau01_mini.jpg"
+					"image" : "restau01_mini.jpg",
+					"address" : "address 01...",
 				}, {
 					"name" : "Chocolate bar",
 					"description" : "${description}",
 					"rating" : "four",
 					"price" : 560,
-					"image" : "restau02_mini.jpg"
+					"image" : "restau02_mini.jpg",
+					"address" : "address 02...",
 				}, {
 					"name" : "Restaurant Diona",
 					"description" : "${description}",
 					"rating" : "three",
 					"price" : 789,
-					"image" : "restau03_mini.jpg"
+					"image" : "restau03_mini.jpg",
+					"address" : "address 03...",
 				}, {
 					"name" : "Tai Shan",
 					"description" : "${description}",
 					"rating" : "two",
 					"price" : 265,
-					"image" : "restau04_mini.jpg"
+					"image" : "restau04_mini.jpg",
+					"address" : "address 04...",
 				}, {
 					"name" : "Arcade",
 					"description" : "${description}",
 					"rating" : "one",
 					"price" : 110,
-					"image" : "restau05_mini.jpg"
+					"image" : "restau05_mini.jpg",
+					"address" : "address 05...",
 				}];
 				$.each(courseData, function(index, dict) {
 					//
-					$('#result-listview').append('<li>' + '<a href="restaurant.html" data-transition="slidedown" >' + '<img src="' + dict.image + '"/>' + '<h2>' + dict.name + '</h2>' + '<p>' + dict.description + '</p>' + '<span class="ui-li-count" >' + dict.price + '</span>' + '<p class="classement ' + dict.rating + '"></p>' + '</a>' + '</li>');
+					$('#result-listview').append('<li>' + '<a href="restaurant.html" data-transition="slidedown" >' + '<img src="' + dict.image + '"/>' + '<h2>' + dict.name + '</h2>' + '<p>' + dict.address + '</p>' + '<span class="ui-li-count" >' + dict.price + '</span>' + '<p class="classement ' + dict.rating + '"></p>' + '</a>' + '</li>');
 
 					/*
 					 Here we are dynamically creating a new page.
@@ -147,6 +153,7 @@
 						var tinyImageUrl = uploadObj.app42.response.upload.files.file.tinyUrl;
 						$.mobile.loading('hide');
 						$("#imagePreviewImg").attr('src', tinyImageUrl);
+						$("#previewDialogImg").attr('src', tinyImageUrl);
 					},
 					error : function(error) {
 						console.log("upload image error:", error);
@@ -169,6 +176,10 @@
 
 				<div class="choice_list">
 					<h1>Newest</h1>
+					<div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c">
+						<input placeholder="Filter items..." data-type="search" class="ui-input-text ui-body-c">
+						<a href="#" class="ui-input-clear ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-fullsize ui-btn-icon-notext ui-input-clear-hidden" title="clear text" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="delete" data-iconpos="notext" data-theme="c" data-mini="false"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">clear text</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+					</div>
 					<!-- This is where the result of dynamically created listitems will be appended. -->
 					<ul id="result-listview" data-role="listview" data-inset="true">
 
