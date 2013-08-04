@@ -3,7 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Restaurant Picker</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport"
+		content = "width=device-width,
+		initial-scale=1,
+		minimum-scale = 1,
+		maximum-scale = 5"
+		/>
+		<link rel="apple-touch-startup-image" href="images/ajax-loader.gif" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.0.1.css" />
 		<link rel="apple-touch-icon" href="images/launch_icon_57.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="images/launch_icon_72.png" />
@@ -16,79 +25,82 @@
 		<script type="text/javascript" src="app42/jqueryAlert.js"></script>
 		<script type="text/javascript">
 			//App42 API initialization here.
-			App42.initialize("c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6","75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2");
+			App42.initialize("c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6", "75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2");
 			var appUser = new App42User();
 			var appUserObj;
 			$(document).ready(function() {
 				console.log("document ready!");
 			});
-			function getRandomName()
-			{
+			function getRandomName() {
 				var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 				var text = "";
 				var length = 10;
-	    		for( var i=0; i < length; i++ )
-	        		text += possible.charAt(Math.floor(Math.random() * possible.length));
+				for (var i = 0; i < length; i++)
+					text += possible.charAt(Math.floor(Math.random() * possible.length));
 				return text;
 			}
-			function signinHandler()
-			{
-				$.mobile.loading( 'show');
+
+			function signinHandler() {
+				$.mobile.loading('show');
 				var userName = $("#usernameInput").val();
 				var password = $("#passwordInput").val();
-				appUser.authenticate(userName,password,{
-                    success: function(object) {
+				appUser.authenticate(userName, password, {
+					success : function(object) {
 						appUserObj = JSON.parse(object);
-						console.log('User has been successfully login:',appUserObj);
+						console.log('User has been successfully login:', appUserObj);
 						var signedUsername = appUserObj.app42.response.users.user.userName;
-						console.log("Signed username:",signedUsername);
+						console.log("Signed username:", signedUsername);
 						$.mobile.loading('hide');
-						$('.ui-dialog').dialog('close');//close dialog.
+						$('.ui-dialog').dialog('close');
+						//close dialog.
 						$("#loginBtn").text(signedUsername);
-                    },
-                    error: function(error) {
-                       console.log("Sign in error:",error);
-                       $.mobile.loading('hide');
-                       $('.ui-dialog').dialog('close');//close dialog.
-                    }
-            	}); 
+					},
+					error : function(error) {
+						console.log("Sign in error:", error);
+						$.mobile.loading('hide');
+						$('.ui-dialog').dialog('close');
+						//close dialog.
+					}
+				});
 			}
-			function signupHandler()
-			{
+
+			function signupHandler() {
 				alert("signuphandler");
 			}
-			function reviewCancelHandler()
-			{
-				$('.ui-dialog').dialog('close');//close dialog.
+
+			function reviewCancelHandler() {
+				$('.ui-dialog').dialog('close');
+				//close dialog.
 			}
-			function reviewSubmitHandler()
-			{
-				$('.ui-dialog').dialog('close');//close dialog.
+
+			function reviewSubmitHandler() {
+				$('.ui-dialog').dialog('close');
+				//close dialog.
 			}
-			function uploadImageHandler()
-			{
-				var upload  = new App42Upload();
-                var name = $("#imageNameTextInput").val()+"_"+getRandomName() ;
-                var filePath = document.getElementById("imageFileInput");
-                var fileType = "IMAGE";
-                var description = $("#imageDescTextArea").val();
-                var file = filePath.files[0];
-                console.log("course name,description,image:",name,description,file);
-                upload.uploadFile(name, file, fileType,description,{
-                    success: function(object) {
-                    	var uploadObj = JSON.parse(object);
-						console.log("upload image success:",uploadObj);
-						var imageFilename  = uploadObj.app42.response.upload.files.file.name;
+
+			function uploadImageHandler() {
+				var upload = new App42Upload();
+				var name = $("#imageNameTextInput").val() + "_" + getRandomName();
+				var filePath = document.getElementById("imageFileInput");
+				var fileType = "IMAGE";
+				var description = $("#imageDescTextArea").val();
+				var file = filePath.files[0];
+				console.log("course name,description,image:", name, description, file);
+				upload.uploadFile(name, file, fileType, description, {
+					success : function(object) {
+						var uploadObj = JSON.parse(object);
+						console.log("upload image success:", uploadObj);
+						var imageFilename = uploadObj.app42.response.upload.files.file.name;
 						var tinyImageUrl = uploadObj.app42.response.upload.files.file.tinyUrl;
 						$.mobile.loading('hide');
-						$("#imagePreviewImg").attr('src',tinyImageUrl);
-                    },
-                    error: function(error) {
-                    	console.log("upload image error:",error);
-                    	$.mobile.loading('hide');
-                    }
-                });
-                $.mobile.loading('show');
+						$("#imagePreviewImg").attr('src', tinyImageUrl);
+					},
+					error : function(error) {
+						console.log("upload image error:", error);
+						$.mobile.loading('hide');
+					}
+				});
+				$.mobile.loading('show');
 			}
 		</script>
 	</head>
