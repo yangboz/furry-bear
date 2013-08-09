@@ -12,20 +12,6 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the First View Controller — an instance of FirstViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="Ka6-KM-ccG"/>
-                                    <constraint firstAttribute="height" constant="70" id="WP3-kA-6dL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20">
                                 <items/>
                             </toolbar>
@@ -34,12 +20,7 @@
                         <constraints>
                             <constraint firstItem="20" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="21X-Fc-h5m"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="82v-FK-dPD"/>
-                            <constraint firstItem="18" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9xU-8S-4zl"/>
-                            <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GbQ-Sy-14J"/>
-                            <constraint firstItem="19" firstAttribute="centerX" secondItem="18" secondAttribute="centerX" type="default" id="b0V-hJ-9Xa"/>
                             <constraint firstItem="20" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="i7B-V8-9lR"/>
-                            <constraint firstItem="18" firstAttribute="top" secondItem="17" secondAttribute="top" constant="250" id="oEv-T3-Vih"/>
-                            <constraint firstItem="19" firstAttribute="top" secondItem="17" secondAttribute="top" constant="350" id="pKg-gt-hVJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="7"/>
@@ -56,21 +37,13 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="955"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="21">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the Second View Controller — an instance of SecondViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7EH-Ke-DFJ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="39I-E8-1dg"/>
-                                    <constraint firstAttribute="width" constant="297" id="F6J-XU-KBh"/>
+                                    <constraint firstAttribute="height" constant="911" id="PvY-Kb-GMe"/>
+                                    <constraint firstAttribute="width" constant="768" id="rnK-Co-RUr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
+                            </tableView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                                 <items>
                                     <navigationItem id="24"/>
@@ -79,14 +52,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7D6-ef-UU9"/>
-                            <constraint firstItem="22" firstAttribute="top" secondItem="16" secondAttribute="top" constant="350" id="Gbp-Dd-WCJ"/>
-                            <constraint firstItem="22" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="235" id="Xcq-Zb-R4f"/>
+                            <constraint firstItem="7EH-Ke-DFJ" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="-65" id="A4t-Bt-8Lq"/>
                             <constraint firstItem="23" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="YQd-P8-ET5"/>
                             <constraint firstItem="23" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="eH6-Me-VTD"/>
+                            <constraint firstItem="7EH-Ke-DFJ" firstAttribute="top" secondItem="16" secondAttribute="top" constant="82" id="hqo-9p-Xk3"/>
                             <constraint firstItem="23" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="kTD-uS-vbp"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="250" id="mE7-QV-f5n"/>
-                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v87-JO-j7C"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="6"/>
