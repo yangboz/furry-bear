@@ -19,6 +19,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //Initialize the App42 serviceAPI instance
+//    NSString *userName = @"KnightZhou";
+//    NSString *password = @"7740321";
+//    ServiceAPI *serviceAPIObj = [[ServiceAPI alloc] init];
+//    serviceAPIObj.apiKey = @"c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6";
+//    serviceAPIObj.secretKey = @"75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2";
+//    UserService *userService = [serviceAPIObj buildUserService];
+//    
+//    User *user = [userService authenticateUser:userName password:password];
+//    NSString *jsonResponse = [user userName];
+//    NSLog(@"App42 user authenticate result:%@",jsonResponse);
+    //
     return YES;
 }
 							

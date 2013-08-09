@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6598CAD717B34B380054E127 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */; };
+		6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* ThirdViewController.m */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
 		65E11AA517B33D0600940B1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA417B33D0600940B1A /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
+		6598CAD817B48B5A0054E127 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		6598CAD917B48B5A0054E127 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E11AA017B33D0600940B1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E11AA217B33D0600940B1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +103,8 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6598CAD817B48B5A0054E127 /* ThirdViewController.h */,
+				6598CAD917B48B5A0054E127 /* ThirdViewController.m */,
 				65E11AAF17B33D0600940B1A /* AppDelegate.h */,
 				65E11AB017B33D0600940B1A /* AppDelegate.m */,
 				65E11AB817B33D0600940B1A /* MainStoryboard_iPhone.storyboard */,
@@ -206,6 +211,7 @@
 				65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */,
 				65E11AC017B33D0600940B1A /* FirstViewController.m in Sources */,
 				65E11AC717B33D0600940B1A /* SecondViewController.m in Sources */,
+				6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
