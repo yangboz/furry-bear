@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6598CAD717B34B380054E127 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */; };
 		6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* ThirdViewController.m */; };
+		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
 		65E11AA517B33D0600940B1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA417B33D0600940B1A /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 		6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		6598CAD817B48B5A0054E127 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		6598CAD917B48B5A0054E127 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E11AA017B33D0600940B1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E11AA217B33D0600940B1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,8 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65C004A817B4F61D00D3565F /* LoginViewController.h */,
+				65C004A917B4F61E00D3565F /* LoginViewController.m */,
 				6598CAD817B48B5A0054E127 /* ThirdViewController.h */,
 				6598CAD917B48B5A0054E127 /* ThirdViewController.m */,
 				65E11AAF17B33D0600940B1A /* AppDelegate.h */,
@@ -212,6 +217,7 @@
 				65E11AC017B33D0600940B1A /* FirstViewController.m in Sources */,
 				65E11AC717B33D0600940B1A /* SecondViewController.m in Sources */,
 				6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */,
+				65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

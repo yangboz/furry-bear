@@ -26,4 +26,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - PlayerDetailsViewControllerDelegate
+
+- (void)loginViewControllerDidCancel:
+(LoginViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)loginViewControllerDidSave:
+(LoginViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
