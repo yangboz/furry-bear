@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

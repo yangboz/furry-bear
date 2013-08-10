@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserModel.h"
+
 @class LoginViewController;
 
 @protocol LoginViewControllerDelegate <NSObject>
@@ -19,6 +21,10 @@
 @interface LoginViewController : UITableViewController
 
 @property (nonatomic, retain) id <LoginViewControllerDelegate> delegate;
+
+@property (retain, nonatomic) IBOutlet UITextField *usernameTextField;
+
+@property (retain, nonatomic) IBOutlet UITextField *passwordTextField;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)doneAction:(id)sender;
