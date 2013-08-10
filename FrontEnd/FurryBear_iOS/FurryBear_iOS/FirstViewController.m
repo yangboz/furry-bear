@@ -26,7 +26,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - PlayerDetailsViewControllerDelegate
+#pragma mark - LoginViewControllerDelegate
 
 - (void)loginViewControllerDidCancel:
 (LoginViewController *)controller
@@ -38,6 +38,15 @@
 (LoginViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"UserLogin"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        LoginViewController *loginViewController = [[navigationController viewControllers] objectAtIndex:0];
+        loginViewController.delegate = self;
+    }
 }
 
 @end
