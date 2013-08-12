@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThirdViewController : UIViewController
+@interface ThirdViewController : UIViewController<UIImagePickerControllerDelegate>
+{}
+
+@property(nonatomic, retain) UIImage *photo;
+@property (retain, nonatomic) IBOutlet UIButton *photoButton;
+
+- (IBAction)choosePhoto:(id)sender;
 
 @end

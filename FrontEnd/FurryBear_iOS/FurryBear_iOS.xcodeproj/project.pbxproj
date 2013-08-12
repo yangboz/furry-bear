@@ -78,6 +78,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6590950C17B8B0F40068F69B /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				65E11AC117B33D0600940B1A /* first.png */,
+				65E11AC317B33D0600940B1A /* first@2x.png */,
+				65E11AC817B33D0600940B1A /* second.png */,
+				65E11ACA17B33D0600940B1A /* second@2x.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
 		65E11A9417B33D0600940B1A = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +120,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6590950C17B8B0F40068F69B /* assets */,
 				6591054C17B681410085BEE6 /* UserModel.h */,
 				6591054D17B681410085BEE6 /* UserModel.m */,
 				65C004A817B4F61D00D3565F /* LoginViewController.h */,
@@ -121,12 +133,8 @@
 				65E11ABB17B33D0600940B1A /* MainStoryboard_iPad.storyboard */,
 				65E11ABE17B33D0600940B1A /* FirstViewController.h */,
 				65E11ABF17B33D0600940B1A /* FirstViewController.m */,
-				65E11AC117B33D0600940B1A /* first.png */,
-				65E11AC317B33D0600940B1A /* first@2x.png */,
 				65E11AC517B33D0600940B1A /* SecondViewController.h */,
 				65E11AC617B33D0600940B1A /* SecondViewController.m */,
-				65E11AC817B33D0600940B1A /* second.png */,
-				65E11ACA17B33D0600940B1A /* second@2x.png */,
 				65E11AA717B33D0600940B1A /* Supporting Files */,
 			);
 			path = FurryBear_iOS;
