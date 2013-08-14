@@ -42,10 +42,7 @@
     NSString *userName = user.userName;
     NSString *password = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,password);
-    ServiceAPI *serviceAPIObj = [[ServiceAPI alloc] init];
-    serviceAPIObj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
-    serviceAPIObj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
-    UserService *userService = [serviceAPIObj buildUserService];
+    UserService *userService = [ [App42_API_Utils getServiceAPI] buildUserService ];
 //    User *user = [userService authenticateUser:userName password:password];
     @try{
 //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];

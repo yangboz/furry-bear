@@ -179,7 +179,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="choosePhoto:" destination="xyd-9B-Aeh" eventType="touchUpInside" id="UQr-sm-eM7"/>
+                                    <action selector="choosePhoto:" destination="xyd-9B-Aeh" eventType="touchUpInside" id="HG5-1L-s8K"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws8-g6-LdU">
@@ -191,6 +191,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-Qc-kYH">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="7fp-cE-gPf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -202,13 +205,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iIO-Xm-OSP">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="is8-sB-03s">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="IZR-qq-6YL"/>
+                                    <constraint firstAttribute="width" constant="193" id="pnP-2Q-OoT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="UPLOAD">
@@ -218,30 +217,42 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="xyd-9B-Aeh" eventType="touchUpInside" id="5nn-qk-Rel"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-zc-hXK">
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="iyv-Fx-ZaY"/>
+                                    <constraint firstAttribute="height" constant="66" id="o7r-sW-tdB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iIO-Xm-OSP" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0iH-ds-69j"/>
-                            <constraint firstItem="is8-sB-03s" firstAttribute="centerX" secondItem="Kw5-gD-eJh" secondAttribute="centerX" type="default" id="712-Ym-fUX"/>
-                            <constraint firstItem="b4z-d1-4Ab" firstAttribute="top" secondItem="Kw5-gD-eJh" secondAttribute="top" constant="92" id="7ri-ua-dM1"/>
+                            <constraint firstItem="gB6-Qc-kYH" firstAttribute="top" secondItem="Ws8-g6-LdU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6Q3-gR-TNR"/>
                             <constraint firstItem="Ws8-g6-LdU" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="8Xe-XJ-ptR"/>
-                            <constraint firstItem="AMu-bV-9Jr" firstAttribute="top" secondItem="Kw5-gD-eJh" secondAttribute="top" constant="8" id="9jm-5z-QAs"/>
                             <constraint firstItem="b4z-d1-4Ab" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Bvt-c5-nlE"/>
-                            <constraint firstItem="gB6-Qc-kYH" firstAttribute="top" secondItem="Kw5-gD-eJh" secondAttribute="top" constant="45" id="HJ8-mP-j0i"/>
-                            <constraint firstItem="iIO-Xm-OSP" firstAttribute="top" secondItem="Kw5-gD-eJh" secondAttribute="top" constant="128" id="HkB-kM-nrS"/>
+                            <constraint firstItem="is8-sB-03s" firstAttribute="top" secondItem="eG0-zc-hXK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Mmh-WK-PIN"/>
                             <constraint firstAttribute="trailing" secondItem="gB6-Qc-kYH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OSX-Fm-Me6"/>
                             <constraint firstItem="Ws8-g6-LdU" firstAttribute="top" secondItem="AMu-bV-9Jr" secondAttribute="top" type="default" id="Ocd-Xt-K69"/>
-                            <constraint firstAttribute="trailing" secondItem="iIO-Xm-OSP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OnB-SV-w6b"/>
                             <constraint firstItem="gB6-Qc-kYH" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="U0g-Sj-029"/>
+                            <constraint firstItem="AMu-bV-9Jr" firstAttribute="top" secondItem="Kw5-gD-eJh" secondAttribute="top" constant="8" id="fzp-aC-NeL"/>
+                            <constraint firstItem="eG0-zc-hXK" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pBU-Ga-hAv"/>
+                            <constraint firstItem="b4z-d1-4Ab" firstAttribute="top" secondItem="gB6-Qc-kYH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rba-sv-iYe"/>
                             <constraint firstItem="is8-sB-03s" firstAttribute="top" secondItem="AMu-bV-9Jr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tBm-Ea-bb4"/>
-                            <constraint firstItem="is8-sB-03s" firstAttribute="trailing" secondItem="Ws8-g6-LdU" secondAttribute="trailing" type="default" id="vaq-TV-MS9"/>
+                            <constraint firstItem="is8-sB-03s" firstAttribute="leading" secondItem="Kw5-gD-eJh" secondAttribute="leading" constant="63" id="ulI-ZJ-z98"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="X9f-H5-pOw"/>
                     <navigationItem key="navigationItem" id="aOg-gy-eee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="fileDescTxtView" destination="eG0-zc-hXK" id="bVd-yH-MR8"/>
+                        <outlet property="filenameTxt" destination="gB6-Qc-kYH" id="F8J-U5-KTI"/>
                         <outlet property="photoButton" destination="AMu-bV-9Jr" id="226-94-0nG"/>
                     </connections>
                 </viewController>
@@ -315,11 +326,13 @@
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
         </class>
-        <class className="ThirdViewController" superclassName="UITableViewController">
+        <class className="ThirdViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdViewController.h"/>
             <relationships>
                 <relationship kind="action" name="choosePhoto:"/>
-                <relationship kind="outlet" name="photo" candidateClass="UIImageView"/>
+                <relationship kind="action" name="uploadPhoto:"/>
+                <relationship kind="outlet" name="fileDescTxtView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="filenameTxt" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="photoButton" candidateClass="UIButton"/>
             </relationships>
         </class>

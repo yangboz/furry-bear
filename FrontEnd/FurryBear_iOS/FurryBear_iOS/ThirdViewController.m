@@ -7,6 +7,7 @@
 //
 
 #import "ThirdViewController.h"
+#import "UserModel.h"
 
 @interface ThirdViewController ()
 
@@ -28,6 +29,29 @@
 }
 
 #pragma mark - IBActions
+- (IBAction)uploadPhoto:(id)sender
+{
+    NSString *userName = [[UserModel getUser] userName];
+    NSString *fileName = self.filenameTxt.text;
+//    NSString *filePath = @"Local file path";
+    NSString *fileType = IMAGE;
+    NSString *fileDescription = self.fileDescTxtView.text;
+    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];
+    //
+    NSData *imageData = UIImagePNGRepresentation(self.photo);
+    Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:fileDescription]; /* returns the Upload object. */
+//    NSMutableArray *fileList =  upload.fileListArray;
+//    for(File *file in fileList)
+//    {
+//        NSLog(@"File Name is  %@" , file.name);
+//        NSLog(@"File Type is  %@" ,  file.type);
+//        NSLog(@"File Url is  %@" , file.url);
+//        NSLog(@"File Description is %@" ,  file.description);
+//    }
+    BOOL success = [upload isResponseSuccess];
+    NSString *jsonResponse = [upload toString]; /* returns the response in JSON format. */
+NSLog(@"App42 Upload service result:%d,%@",success,jsonResponse);
+}
 
 - (IBAction)choosePhoto:(id)sender
 {
@@ -100,6 +124,8 @@
 
 - (void)dealloc {
     [_photoButton release];
+    [_filenameTxt release];
+    [_fileDescTxtView release];
     [super dealloc];
 }
 @end
