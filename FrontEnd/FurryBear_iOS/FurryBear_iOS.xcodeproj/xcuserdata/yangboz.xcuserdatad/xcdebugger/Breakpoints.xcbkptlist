@@ -32,24 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FurryBear_iOS/ThirdViewController.m"
-         timestampString = "398145990.586083"
+         timestampString = "398187674.065797"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "-uploadPhoto:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "FurryBear_iOS/ThirdViewController.m"
-         timestampString = "398146792.370869"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-uploadPhoto:"
          landmarkType = "5">
       </FileBreakpoint>
