@@ -11,8 +11,8 @@
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
 		6591054E17B681410085BEE6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591054D17B681410085BEE6 /* UserModel.m */; };
-		6598CAD717B34B380054E127 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */; };
 		6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* ThirdViewController.m */; };
+		65B2C20517BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */; };
 		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
@@ -42,9 +42,9 @@
 		6590951C17BB3D070068F69B /* UploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadModel.m; sourceTree = "<group>"; };
 		6591054C17B681410085BEE6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		6591054D17B681410085BEE6 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		6598CAD817B48B5A0054E127 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		6598CAD917B48B5A0054E127 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +80,7 @@
 				65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */,
 				65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */,
 				65E11AA517B33D0600940B1A /* CoreGraphics.framework in Frameworks */,
-				6598CAD717B34B380054E127 /* Shephertz_App42_iOS_API.framework in Frameworks */,
+				65B2C20517BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +140,7 @@
 		65E11A9F17B33D0600940B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6598CAD617B34B380054E127 /* Shephertz_App42_iOS_API.framework */,
+				65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */,
 				65E11AA017B33D0600940B1A /* UIKit.framework */,
 				65E11AA217B33D0600940B1A /* Foundation.framework */,
 				65E11AA417B33D0600940B1A /* CoreGraphics.framework */,

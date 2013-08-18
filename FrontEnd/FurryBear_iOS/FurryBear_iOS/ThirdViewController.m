@@ -34,12 +34,14 @@
     NSString *userName = [[UserModel getUser] userName];
     NSString *fileName = self.filenameTxt.text;
 //    NSString *filePath = @"Local file path";
-    NSString *fileType = IMAGE;
+    NSString *fileType = OTHER;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
-    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];
-    //
+    UploadService *uploadService = [[App42_API_Utils sharedInstance] getUploadService];
+//    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];    //
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     @try{
+//        Upload *upload = [uploadService uploadFile:fileName filePath:@"first.png" uploadFileType:fileType fileDescription:fileDescription];
+//        Upload *upload = [uploadService uploadFileForUser:fileName userName:userName filePath:@"second.png" uploadFileType:IMAGE fileDescription:fileDescription];
         Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:fileDescription]; /* returns the Upload object. */
 //    NSMutableArray *fileList =  upload.fileListArray;
 //    for(File *file in fileList)
@@ -49,9 +51,7 @@
 //        NSLog(@"File Url is  %@" , file.url);
 //        NSLog(@"File Description is %@" ,  file.description);
 //    }
-    BOOL success = [upload isResponseSuccess];
-    NSString *jsonResponse = [upload toString]; /* returns the response in JSON format. */
-NSLog(@"App42 Upload service result:%d,%@",success,jsonResponse);
+        NSLog(@"uploaded file=%@",upload.fileListArray);
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {

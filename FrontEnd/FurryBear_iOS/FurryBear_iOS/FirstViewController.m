@@ -42,7 +42,7 @@
     NSString *userName = user.userName;
     NSString *password = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,password);
-    UserService *userService = [ [App42_API_Utils getServiceAPI] buildUserService ];
+    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
 //    User *user = [userService authenticateUser:userName password:password];
     @try{
 //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];

@@ -12,5 +12,8 @@
 @interface App42_API_Utils : NSObject
 {
 }
-+(ServiceAPI *)getServiceAPI;
++(App42_API_Utils *)sharedInstance;
+//
+-(UserService *)getUserService;
+-(UploadService *)getUploadService;
 @end

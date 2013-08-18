@@ -19,9 +19,9 @@ static ServiceAPI *serviceAPIobj = nil;
 	if (sharedInstance==nil) {
 		sharedInstance = [[super allocWithZone:NULL] init];
         //
-        ServiceAPI *serviceAPIObj = [[ServiceAPI alloc] init];
-        serviceAPIObj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
-        serviceAPIObj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
+        serviceAPIobj = [[ServiceAPI alloc] init];
+        serviceAPIobj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
+        serviceAPIobj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
 	}
 	return sharedInstance;
 }
@@ -52,8 +52,13 @@ static ServiceAPI *serviceAPIobj = nil;
 //}
 
 //implementations
-+(ServiceAPI *)getServiceAPI
+-(UserService *)getUserService
 {
-    return serviceAPIobj;
+    return [serviceAPIobj buildUserService];
+}
+
+-(UploadService *)getUploadService
+{
+    return [serviceAPIobj buildUploadService];
 }
 @end
