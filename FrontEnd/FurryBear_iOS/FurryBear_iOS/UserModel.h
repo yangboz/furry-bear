@@ -14,11 +14,11 @@
 }
 
 +(UserModel *)sharedInstance;
-+(User *)getUser;
-+(void)setUser:(User *)value;
+-(User *)getUser;
+-(void)setUser:(User *)value;
 
-+(NSMutableArray *)getData;
-+(void)setData:(NSMutableArray *)value;
+-(NSMutableArray *)getData;
+-(void)setData:(NSMutableArray *)value;
 
 @end
 

@@ -50,22 +50,22 @@ static NSMutableArray *data=nil;
 //}
 
 //implementations
-+(User *)getUser
+-(User *)getUser
 {
 	return user;
 }
 
-+(void)setUser:(User *)value
+-(void)setUser:(User *)value
 {
 	user = value;
 }
 
-+(NSMutableArray *)getData
+-(NSMutableArray *)getData
 {
 	return data;
 }
 
-+(void)setData:(NSMutableArray *)value
+-(void)setData:(NSMutableArray *)value
 {
 	data = value;
 }

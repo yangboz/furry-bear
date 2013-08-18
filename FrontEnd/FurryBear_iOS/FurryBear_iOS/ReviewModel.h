@@ -14,9 +14,9 @@
 }
 
 +(ReviewModel *)sharedInstance;
-+(Review *)getReview;
-+(void)setReview:(Review *)value;
+-(Review *)getReview;
+-(void)setReview:(Review *)value;
 
-+(NSMutableArray *)getData;
-+(void)setData:(NSMutableArray *)value;
+-(NSMutableArray *)getData;
+-(void)setData:(NSMutableArray *)value;
 @end

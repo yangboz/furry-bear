@@ -31,10 +31,10 @@
 #pragma mark - IBActions
 - (IBAction)uploadPhoto:(id)sender
 {
-    NSString *userName = [[UserModel getUser] userName];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     NSString *fileName = self.filenameTxt.text;
 //    NSString *filePath = @"Local file path";
-    NSString *fileType = OTHER;//IMAGE
+    NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
     UploadService *uploadService = [[App42_API_Utils sharedInstance] getUploadService];
 //    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];    //

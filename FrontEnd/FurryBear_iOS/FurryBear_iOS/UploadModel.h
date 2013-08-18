@@ -12,9 +12,9 @@
 @interface UploadModel : NSObject
 {}
 +(UploadModel *)sharedInstance;
-+(Upload *)getUpload;
-+(void)setUpload:(Upload *)value;
+-(Upload *)getUpload;
+-(void)setUpload:(Upload *)value;
 
-+(NSMutableArray *)getData;
-+(void)setData:(NSMutableArray *)value;
+-(NSMutableArray *)getData;
+-(void)setData:(NSMutableArray *)value;
 @end

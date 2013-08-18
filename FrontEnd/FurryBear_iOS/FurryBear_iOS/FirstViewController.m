@@ -38,7 +38,7 @@
 (LoginViewController *)controller
 {
     //Initialize the App42 serviceAPI instance
-    User *user = [UserModel getUser];
+    User *user = [[UserModel sharedInstance] getUser];
     NSString *userName = user.userName;
     NSString *password = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,password);

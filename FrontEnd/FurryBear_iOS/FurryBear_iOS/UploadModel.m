@@ -49,22 +49,22 @@ static NSMutableArray *data=nil;
 //}
 
 //implementations
-+(Upload *)getUpload
+-(Upload *)getUpload
 {
 	return upload;
 }
 
-+(void)setUpload:(Upload *)value
+-(void)setUpload:(Upload *)value
 {
 	upload = value;
 }
 
-+(NSMutableArray *)getData
+-(NSMutableArray *)getData
 {
 	return data;
 }
 
-+(void)setData:(NSMutableArray *)value
+-(void)setData:(NSMutableArray *)value
 {
 	data = value;
 }

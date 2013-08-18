@@ -49,22 +49,22 @@ static NSMutableArray *data=nil;
 //}
 
 //implementations
-+(Review *)getReview
+-(Review *)getReview
 {
 	return review;
 }
 
-+(void)setReview:(Review *)value
+-(void)setReview:(Review *)value
 {
 	review = value;
 }
 
-+(NSMutableArray *)getData
+-(NSMutableArray *)getData
 {
 	return data;
 }
 
-+(void)setData:(NSMutableArray *)value
+-(void)setData:(NSMutableArray *)value
 {
 	data = value;
 }

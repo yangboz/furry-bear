@@ -53,7 +53,7 @@
     User *user = [[User alloc] init];
     user.userName = self.usernameTextField.text;
     user.password = self.passwordTextField.text;
-    [UserModel setUser:user];
+    [[UserModel sharedInstance] setUser:user];
     //
 	[self.delegate loginViewControllerDidSave:self];
 }
