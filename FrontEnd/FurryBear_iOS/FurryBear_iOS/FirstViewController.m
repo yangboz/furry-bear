@@ -52,6 +52,9 @@
         NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
         //Dismiss loginView modal.
         [self dismissViewControllerAnimated:YES completion:nil];
+        //Upload the label of login button.
+        
+        //
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {

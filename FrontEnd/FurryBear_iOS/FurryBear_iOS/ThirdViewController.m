@@ -32,7 +32,7 @@
 - (IBAction)uploadPhoto:(id)sender
 {
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-    NSString *fileName = self.filenameTxt.text;
+    NSString *fileName = [self.filenameTxt.text stringByAppendingString:@".png"];
 //    NSString *filePath = @"Local file path";
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;

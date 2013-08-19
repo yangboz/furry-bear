@@ -52,12 +52,22 @@ static NSMutableArray *data=nil;
 //implementations
 -(User *)getUser
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil) {
+        user.userName = [defaults objectForKey:@"userName"];
+        user.password = [defaults objectForKey:@"passWord"];
+    }
 	return user;
 }
 
 -(void)setUser:(User *)value
 {
 	user = value;
+    //Saving the login data
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:value.userName forKey:@"userName"];
+    [userDefaults setObject:value.password forKey:@"passWord"];
+    [userDefaults synchronize];
 }
 
 -(NSMutableArray *)getData
