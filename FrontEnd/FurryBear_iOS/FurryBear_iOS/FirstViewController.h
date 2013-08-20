@@ -12,5 +12,7 @@
 #import "App42_API_Utils.h"
 
 @interface FirstViewController : UIViewController <LoginViewControllerDelegate>
-
+{
+}
+-(void)userDefaultsLogin;
 @end
