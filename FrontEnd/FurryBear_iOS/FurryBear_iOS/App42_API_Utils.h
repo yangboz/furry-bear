@@ -16,4 +16,5 @@
 //
 -(UserService *)getUserService;
 -(UploadService *)getUploadService;
+-(CatalogueService *)getCatalogueService;
 @end

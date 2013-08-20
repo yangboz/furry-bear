@@ -61,4 +61,9 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildUploadService];
 }
+
+-(CatalogueService *)getCatalogueService
+{
+    return [serviceAPIobj buildCatalogueService];
+}
 @end

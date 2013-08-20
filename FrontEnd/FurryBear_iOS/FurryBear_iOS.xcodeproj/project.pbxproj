@@ -13,6 +13,7 @@
 		6591054E17B681410085BEE6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591054D17B681410085BEE6 /* UserModel.m */; };
 		6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* ThirdViewController.m */; };
 		65B2C20517BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */; };
+		65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2C20717C3C6EC001D2445 /* FourthViewController.m */; };
 		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
@@ -45,6 +46,8 @@
 		6598CAD817B48B5A0054E127 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		6598CAD917B48B5A0054E127 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
+		65B2C20617C3C6EC001D2445 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		65B2C20717C3C6EC001D2445 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,9 +159,7 @@
 				6590950C17B8B0F40068F69B /* assets */,
 				65C004A817B4F61D00D3565F /* LoginViewController.h */,
 				65C004A917B4F61E00D3565F /* LoginViewController.m */,
-				6598CAD917B48B5A0054E127 /* ThirdViewController.m */,
 				65E11AAF17B33D0600940B1A /* AppDelegate.h */,
-				6598CAD817B48B5A0054E127 /* ThirdViewController.h */,
 				65E11AB017B33D0600940B1A /* AppDelegate.m */,
 				65E11AB817B33D0600940B1A /* MainStoryboard_iPhone.storyboard */,
 				65E11ABB17B33D0600940B1A /* MainStoryboard_iPad.storyboard */,
@@ -166,6 +167,10 @@
 				65E11ABF17B33D0600940B1A /* FirstViewController.m */,
 				65E11AC517B33D0600940B1A /* SecondViewController.h */,
 				65E11AC617B33D0600940B1A /* SecondViewController.m */,
+				6598CAD817B48B5A0054E127 /* ThirdViewController.h */,
+				6598CAD917B48B5A0054E127 /* ThirdViewController.m */,
+				65B2C20617C3C6EC001D2445 /* FourthViewController.h */,
+				65B2C20717C3C6EC001D2445 /* FourthViewController.m */,
 				65E11AA717B33D0600940B1A /* Supporting Files */,
 			);
 			path = FurryBear_iOS;
@@ -266,6 +271,7 @@
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
+				65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
