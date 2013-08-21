@@ -21,5 +21,14 @@
 - (IBAction)uploadPhoto:(id)sender;
 
 - (IBAction)choosePhoto:(id)sender;
+@property (retain, nonatomic) IBOutlet UISlider *slider_rating;
+@property (retain, nonatomic) IBOutlet UISlider *slider_price;
+@property (retain, nonatomic) IBOutlet UITextField *txt_address;
+@property (retain, nonatomic) IBOutlet UITextField *txt_restaurant;
+@property (retain, nonatomic) IBOutlet UITextField *txt_telephone;
+@property (retain, nonatomic) IBOutlet UISwitch *switch_agree;
+@property (retain, nonatomic) IBOutlet UIButton *btn_add_item;
+
+- (IBAction)on_add_item:(id)sender;
 
 @end

@@ -134,6 +134,25 @@
     [_photoButton release];
     [_filenameTxt release];
     [_fileDescTxtView release];
+    [_slider_rating release];
+    [_slider_price release];
+    [_txt_address release];
+    [_txt_restaurant release];
+    [_txt_telephone release];
+    [_switch_agree release];
+    [_btn_add_item release];
     [super dealloc];
+}
+- (IBAction)on_add_item:(id)sender {
+    NSLog(@"on_add_item!");
+    //
+    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    ItemData *itemData = [[ItemData alloc] init];
+//    ItemData.price = self.slider_price.value;
+//    ItemData.rating = self.slider_rating.value;
+    //
+    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
+    [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
 }
 @end

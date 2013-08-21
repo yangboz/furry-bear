@@ -351,7 +351,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-3V-wGU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default address for testing..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BfV-3V-wGU">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="213" id="e33-1G-mRA"/>
                                 </constraints>
@@ -366,7 +366,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMl-C2-E6N">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default restaurant" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMl-C2-E6N">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -378,7 +378,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlU-8h-xch">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="000-111-222" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SlU-8h-xch">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
@@ -403,6 +403,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="on_add_item:" destination="xyd-9B-Aeh" eventType="touchUpInside" id="ORx-Ex-urZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -455,9 +458,16 @@
                     <navigationItem key="navigationItem" id="aOg-gy-eee"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btn_add_item" destination="SV4-Zu-rgb" id="R9B-W9-DM7"/>
                         <outlet property="fileDescTxtView" destination="eG0-zc-hXK" id="bVd-yH-MR8"/>
                         <outlet property="filenameTxt" destination="gB6-Qc-kYH" id="F8J-U5-KTI"/>
                         <outlet property="photoButton" destination="AMu-bV-9Jr" id="226-94-0nG"/>
+                        <outlet property="slider_price" destination="MxA-Jg-PaY" id="XZX-Qa-AH6"/>
+                        <outlet property="slider_rating" destination="2E6-Oi-O73" id="x4S-pb-UVr"/>
+                        <outlet property="switch_agree" destination="TSH-BL-5QG" id="J2v-4z-xh4"/>
+                        <outlet property="txt_address" destination="BfV-3V-wGU" id="pvJ-kJ-Tfe"/>
+                        <outlet property="txt_restaurant" destination="TMl-C2-E6N" id="shY-AB-Aup"/>
+                        <outlet property="txt_telephone" destination="SlU-8h-xch" id="Elt-ae-0fp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCY-DO-ph2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -546,10 +556,18 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdViewController.h"/>
             <relationships>
                 <relationship kind="action" name="choosePhoto:"/>
+                <relationship kind="action" name="on_add_item:"/>
                 <relationship kind="action" name="uploadPhoto:"/>
+                <relationship kind="outlet" name="btn_add_item" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="fileDescTxtView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="filenameTxt" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="photoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="slider_price" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="slider_rating" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="switch_agree" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="txt_address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txt_restaurant" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txt_telephone" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>

@@ -66,4 +66,12 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildCatalogueService];
 }
+-(NSString *)getDefaultCatalogueName
+{
+    return @"Food";
+}
+-(NSString *)getDefaultCategoryName
+{
+    return @"Western-style";
+}
 @end
