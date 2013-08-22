@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Login View Controller - LOGIN-->
+        <!--Login View Controller - SIGNUP-->
         <scene sceneID="L1M-Ky-AX1">
             <objects>
                 <tableViewController id="5mb-op-ca2" customClass="LoginViewController" sceneMemberID="viewController">
@@ -121,7 +121,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="LOGIN" id="wL2-qd-fQR">
+                    <navigationItem key="navigationItem" title="SIGNUP" id="wL2-qd-fQR">
                         <barButtonItem key="leftBarButtonItem" title="BACK" id="S8d-cB-DNC">
                             <connections>
                                 <action selector="cancelAction:" destination="5mb-op-ca2" id="iQy-lE-PG9"/>

@@ -149,8 +149,11 @@
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     ItemData *itemData = [[ItemData alloc] init];
-//    ItemData.price = self.slider_price.value;
-//    ItemData.rating = self.slider_rating.value;
+    itemData.price = self.slider_price.value;
+//    itemData.rating = self.slider_rating.value;
+    itemData.name = self.filenameTxt.text;
+    itemData.description = self.fileDescTxtView.text;
+//    itemData.image = 
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
