@@ -285,7 +285,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-Qc-kYH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png/*.jpg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-Qc-kYH">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="xVC-7l-B9B"/>
                                 </constraints>

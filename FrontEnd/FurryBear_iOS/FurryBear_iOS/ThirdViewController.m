@@ -151,14 +151,14 @@
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //
     ItemData *itemData = [[ItemData alloc] init];
-     itemData.itemId = @"8";
+     itemData.itemId = @"7";
     itemData.price = self.slider_price.value;
 //    itemData.rating = self.slider_rating.value;
     itemData.name = self.filenameTxt.text;
     itemData.description = self.fileDescTxtView.text;
-    itemData.imageName = [self.filenameTxt.text stringByAppendingString:@".png"];
-//    itemData.imageInputStream = UIImagePNGRepresentation(self.photo);
-    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
+    itemData.imageName = [self.filenameTxt.text stringByAppendingString:@".jpg"];
+    itemData.imageInputStream = UIImagePNGRepresentation(self.photo);
+//    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
