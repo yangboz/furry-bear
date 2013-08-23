@@ -14,6 +14,8 @@
 		6598CADA17B48B5A0054E127 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* ThirdViewController.m */; };
 		65B2C20517BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */; };
 		65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2C20717C3C6EC001D2445 /* FourthViewController.m */; };
+		65B2C20F17C7B820001D2445 /* Hanbuger00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B2C20E17C7B820001D2445 /* Hanbuger00.jpg */; };
+		65B2C21117C7BBFA001D2445 /* Scallop00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B2C21017C7BBFA001D2445 /* Scallop00.jpg */; };
 		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
@@ -48,6 +50,8 @@
 		65B2C20417BE6DFE001D2445 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65B2C20617C3C6EC001D2445 /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		65B2C20717C3C6EC001D2445 /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		65B2C20E17C7B820001D2445 /* Hanbuger00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hanbuger00.jpg; sourceTree = "<group>"; };
+		65B2C21017C7BBFA001D2445 /* Scallop00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Scallop00.jpg; sourceTree = "<group>"; };
 		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +97,8 @@
 		6590950C17B8B0F40068F69B /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				65B2C21017C7BBFA001D2445 /* Scallop00.jpg */,
+				65B2C20E17C7B820001D2445 /* Hanbuger00.jpg */,
 				65E11AC117B33D0600940B1A /* first.png */,
 				65E11AC317B33D0600940B1A /* first@2x.png */,
 				65E11AC817B33D0600940B1A /* second.png */,
@@ -251,6 +257,8 @@
 				65E11AC417B33D0600940B1A /* first@2x.png in Resources */,
 				65E11AC917B33D0600940B1A /* second.png in Resources */,
 				65E11ACB17B33D0700940B1A /* second@2x.png in Resources */,
+				65B2C20F17C7B820001D2445 /* Hanbuger00.jpg in Resources */,
+				65B2C21117C7BBFA001D2445 /* Scallop00.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +324,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yangbo zhou (B63925L7G3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yangbo zhou (B63925L7G3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -331,6 +340,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -347,7 +358,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yangbo zhou (B63925L7G3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yangbo zhou (B63925L7G3)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -355,6 +367,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

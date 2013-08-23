@@ -149,14 +149,34 @@
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    //
     ItemData *itemData = [[ItemData alloc] init];
+     itemData.itemId = @"8";
     itemData.price = self.slider_price.value;
 //    itemData.rating = self.slider_rating.value;
     itemData.name = self.filenameTxt.text;
     itemData.description = self.fileDescTxtView.text;
-    itemData.imageInputStream = UIImagePNGRepresentation(self.photo);
+    itemData.imageName = [self.filenameTxt.text stringByAppendingString:@".png"];
+//    itemData.imageInputStream = UIImagePNGRepresentation(self.photo);
+    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
-    [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
+    Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
+//    NSString *catalogueName =  catalogue.name;
+    NSMutableArray *categoryList = catalogue.categoryListArray;
+    for(CategoryData *category in categoryList)
+    {
+        NSLog(@"name is = %@",category.name);
+        NSLog(@"description is = %@",category.description);
+        NSMutableArray *itemList = category.itemListArray;
+        for (categoryItem *item in itemList)
+        {
+            NSLog(@"price is = %f",item.price);
+            NSLog(@"itemId is = %@",item.itemId);
+            NSLog(@"name is = %@",item.name);
+        }
+    }
+    NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. */
+    NSLog(@"Add catalogue service response:%@",jsonResponse);
 }
 @end
