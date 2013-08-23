@@ -68,9 +68,30 @@
         NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
         //Dismiss loginView modal.
         [self dismissViewControllerAnimated:YES completion:nil];
-        //Upload the label of login button.
-        
-        //
+        //Save the login info to userDefaults
+        User *user = [[User alloc] init];
+        user.userName = userName;
+        user.password = passWord;
+        [[UserModel sharedInstance] setUser:user];
+        //Get default catalogue and category name.
+        NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+        NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+        //GET ITEMS BY CATEGORY
+        CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
+        Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+        NSMutableArray *categoryList = catalogue.categoryListArray;
+        for(CategoryData *category in categoryList)
+        {
+            NSLog(@"name is = %@",category.name);
+            NSLog(@"description is = %@",category.description);
+            NSMutableArray *itemList = category.itemListArray;
+            for (categoryItem *item in itemList)
+            {
+                NSLog(@"price is = %f",item.price);
+                NSLog(@"itemId is = %@",item.itemId);
+                NSLog(@"name is = %@",item.name);  
+            }    
+        }
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -110,9 +131,7 @@
         NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
         //Dismiss loginView modal.
         [self dismissViewControllerAnimated:YES completion:nil];
-        //Upload the label of login button.
-        
-        //
+
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {

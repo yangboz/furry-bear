@@ -146,7 +146,7 @@
 }
 - (IBAction)on_add_item:(id)sender {
     NSLog(@"on_add_item!");
-    //
+    //Get default catalogue and category name.
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //
