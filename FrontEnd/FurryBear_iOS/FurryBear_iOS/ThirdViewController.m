@@ -153,7 +153,7 @@
 //    itemData.rating = self.slider_rating.value;
     itemData.name = self.filenameTxt.text;
     itemData.description = self.fileDescTxtView.text;
-//    itemData.image = 
+    itemData.imageInputStream = UIImagePNGRepresentation(self.photo);
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
