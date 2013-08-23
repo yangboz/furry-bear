@@ -285,16 +285,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-Qc-kYH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gB6-Qc-kYH">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="TFi-gu-n3b"/>
+                                    <constraint firstAttribute="width" constant="163" id="xVC-7l-B9B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4z-d1-4Ab">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="izy-WM-gIX"/>
+                                    <constraint firstAttribute="width" constant="100" id="Gr2-Yc-LZe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -319,7 +319,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-zc-hXK">
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="iyv-Fx-ZaY"/>
                                     <constraint firstAttribute="height" constant="66" id="o7r-sW-tdB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -367,6 +366,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default restaurant" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMl-C2-E6N">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="aDB-cc-mDh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -424,11 +426,11 @@
                             <constraint firstAttribute="trailing" secondItem="SlU-8h-xch" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Es0-uJ-JyT"/>
                             <constraint firstAttribute="bottom" secondItem="SV4-Zu-rgb" secondAttribute="bottom" constant="7" id="KPV-Xx-PwO"/>
                             <constraint firstItem="is8-sB-03s" firstAttribute="top" secondItem="eG0-zc-hXK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Mmh-WK-PIN"/>
-                            <constraint firstAttribute="trailing" secondItem="gB6-Qc-kYH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OSX-Fm-Me6"/>
                             <constraint firstItem="Ws8-g6-LdU" firstAttribute="top" secondItem="AMu-bV-9Jr" secondAttribute="top" type="default" id="Ocd-Xt-K69"/>
                             <constraint firstItem="hn1-mn-LZy" firstAttribute="top" secondItem="BfV-3V-wGU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OtP-fm-EcO"/>
                             <constraint firstItem="TSH-BL-5QG" firstAttribute="centerX" secondItem="SlU-8h-xch" secondAttribute="centerX" type="default" id="Qae-yr-XyD"/>
                             <constraint firstItem="hn1-mn-LZy" firstAttribute="leading" secondItem="wAs-Jd-pZU" secondAttribute="leading" type="default" id="RyL-3A-ZVD"/>
+                            <constraint firstItem="gB6-Qc-kYH" firstAttribute="trailing" secondItem="eG0-zc-hXK" secondAttribute="trailing" type="default" id="TIo-3m-NFE"/>
                             <constraint firstItem="gB6-Qc-kYH" firstAttribute="leading" secondItem="AMu-bV-9Jr" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="U0g-Sj-029"/>
                             <constraint firstAttribute="bottom" secondItem="MxA-Jg-PaY" secondAttribute="bottom" constant="216" id="WhD-tI-qn6"/>
                             <constraint firstItem="3Ra-se-LhS" firstAttribute="leading" secondItem="xHs-ES-ff5" secondAttribute="leading" type="default" id="XeM-j3-pJo"/>
