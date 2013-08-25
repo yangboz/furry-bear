@@ -34,7 +34,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - FirstViewController
+- (void)dealloc {
+    [myTableView release];
+    [super dealloc];
+}
+
+#pragma mark - UserLoginAlertView
 -(void)userDefaultsLogin
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -228,8 +233,5 @@
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
 }
-- (void)dealloc {
-    [myTableView release];
-    [super dealloc];
-}
+
 @end

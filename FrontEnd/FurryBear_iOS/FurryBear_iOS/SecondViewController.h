@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+{
+    NSMutableArray *testingData;
+}
+@property (nonatomic,strong) NSMutableArray *favorites;
 
 @end
