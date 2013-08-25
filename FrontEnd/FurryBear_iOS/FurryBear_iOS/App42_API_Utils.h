@@ -17,6 +17,8 @@
 -(UserService *)getUserService;
 -(UploadService *)getUploadService;
 -(CatalogueService *)getCatalogueService;
+-(ReviewService *)getReviewService;
+//
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
 @end
