@@ -13,6 +13,6 @@
 {
     NSMutableArray *testingData;
 }
-@property (nonatomic,strong) NSMutableArray *favorites;
+//@property (nonatomic,strong) NSMutableArray *favorites;
 
 @end

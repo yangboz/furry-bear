@@ -19,7 +19,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // table view data is being set here
-    testingData = [NSMutableArray arrayWithCapacity:20];
+    testingData = [[NSMutableArray alloc] init];
+//    _favorites = [NSMutableArray arrayWithCapacity:20];
     ItemData *itemData = [[ItemData alloc] init];
     itemData.itemId = @"0";
     itemData.name = @"Default";
@@ -82,5 +83,12 @@
           indexPath.section,indexPath.row,cell.textLabel.text);
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [testingData removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
 
 @end
