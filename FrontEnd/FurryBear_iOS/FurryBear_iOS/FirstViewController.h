@@ -11,8 +11,10 @@
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "App42_API_Utils.h"
 
-@interface FirstViewController : UIViewController <LoginViewControllerDelegate>
+@interface FirstViewController : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
+    NSMutableArray *testingData;
+    IBOutlet UITableView *myTableView;
 }
 -(void)userDefaultsLogin;
 @end

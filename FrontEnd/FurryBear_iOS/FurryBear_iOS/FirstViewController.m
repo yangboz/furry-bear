@@ -20,6 +20,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //
     [self userDefaultsLogin];
+    // table view data is being set here
+    testingData = [[NSMutableArray alloc]initWithObjects:
+              @"Data 1 in array",@"Data 2 in array",@"Data 3 in array",
+              @"Data 4 in array",@"Data 5 in array",@"Data 5 in array",
+              @"Data 6 in array",@"Data 7 in array",@"Data 8 in array",
+              @"Data 9 in array", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,4 +160,76 @@
     }
 }
 
+#pragma mark - Table view data source
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [testingData count]/2;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"cellID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
+                             cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:
+                UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    NSString *stringForCell;
+    if (indexPath.section == 0) {
+        stringForCell= [testingData objectAtIndex:indexPath.row];
+        
+    }
+    else {
+        stringForCell= [testingData objectAtIndex:indexPath.row+ [testingData count]/2];
+        
+    }
+    [cell.textLabel setText:stringForCell];
+    return cell;
+}
+
+//Default is 1 if not implement
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:
+(NSInteger)section{
+    NSString *headerTitle;
+    if (section==0) {
+        headerTitle = @"Section 1 Header";
+    }
+    else{
+        headerTitle = @"Section 2 Header";
+        
+    }
+    return headerTitle;
+}
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:
+(NSInteger)section{
+    NSString *footerTitle;
+    if (section==0) {
+        footerTitle = @"Section 1 Footer";
+    }
+    else{
+        footerTitle = @"Section 2 Footer";
+        
+    }
+    return footerTitle;
+}
+
+#pragma mark - TableView delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
+(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"Section:%d Row:%d selected and its data is %@",
+          indexPath.section,indexPath.row,cell.textLabel.text);
+}
+- (void)dealloc {
+    [myTableView release];
+    [super dealloc];
+}
 @end
