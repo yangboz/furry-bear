@@ -21,11 +21,29 @@
     //
     [self userDefaultsLogin];
     // table view data is being set here
-    testingData = [[NSMutableArray alloc]initWithObjects:
-              @"Data 1 in array",@"Data 2 in array",@"Data 3 in array",
-              @"Data 4 in array",@"Data 5 in array",@"Data 5 in array",
-              @"Data 6 in array",@"Data 7 in array",@"Data 8 in array",
-              @"Data 9 in array", nil];
+    testingData = [[NSMutableArray alloc] init];
+    ItemData *itemData = [[ItemData alloc] init];
+    itemData.itemId = @"0";
+    itemData.name = @"Default";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"first.png";
+    itemData.price = 2;
+    [testingData addObject:itemData];
+    itemData = [[ItemData alloc] init];
+    itemData.itemId = @"1";
+    itemData.name = @"Scallop";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"Scallop000.jpg";
+    itemData.price = 4;
+    [testingData addObject:itemData];
+    itemData = [[ItemData alloc] init];
+    itemData.itemId = @"2";
+    itemData.name = @"Hanburge";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"Hanburge000.jpg";
+    itemData.price = 5;
+    [testingData addObject:itemData];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -166,63 +184,27 @@
 }
 
 #pragma mark - Table view data source
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [testingData count]/2;
+	return 1;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
-    static NSString *cellIdentifier = @"cellID";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
-                             cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:
-                UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    NSString *stringForCell;
-    if (indexPath.section == 0) {
-        stringForCell= [testingData objectAtIndex:indexPath.row];
-        
-    }
-    else {
-        stringForCell= [testingData objectAtIndex:indexPath.row+ [testingData count]/2];
-        
-    }
-    [cell.textLabel setText:stringForCell];
+	return [testingData count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:@"FeatureCell"];
+	ItemData *itemData = [testingData objectAtIndex:indexPath.row];
+	cell.textLabel.text = itemData.name;
+	cell.detailTextLabel.text = itemData.imageName;
     return cell;
 }
 
-//Default is 1 if not implement
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:
-(NSInteger)section{
-    NSString *headerTitle;
-    if (section==0) {
-        headerTitle = @"Section 1 Header";
-    }
-    else{
-        headerTitle = @"Section 2 Header";
-        
-    }
-    return headerTitle;
-}
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:
-(NSInteger)section{
-    NSString *footerTitle;
-    if (section==0) {
-        footerTitle = @"Section 1 Footer";
-    }
-    else{
-        footerTitle = @"Section 2 Footer";
-        
-    }
-    return footerTitle;
-}
 
 #pragma mark - TableView delegate
 
