@@ -9,20 +9,40 @@
 #import "ComplexReviewViewController.h"
 
 @interface ComplexReviewViewController ()
-
+#define SEGUE_NAME_IMAGE @"segue_image"
+#define SEGUE_NAME_REVIEW @"segue_review"
+#define SEGUE_NAME_COMMENT @"segue_comment"
 @end
 
 @implementation ComplexReviewViewController
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// Do any additional setup after loading the view, typically from a nib.
+    // table view data is being set here
+    testingData = [[NSMutableArray alloc] init];
+    //    _favorites = [NSMutableArray arrayWithCapacity:20];
+    ItemData *itemData = [[ItemData alloc] init];
+    itemData.itemId = @"0";
+    itemData.name = @"Default";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"first.png";
+    itemData.price = 2;
+    [testingData addObject:itemData];
+    itemData = [[ItemData alloc] init];
+    itemData.itemId = @"1";
+    itemData.name = @"Scallop";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"Scallop000.jpg";
+    itemData.price = 4;
+    [testingData addObject:itemData];
+    itemData = [[ItemData alloc] init];
+    itemData.itemId = @"2";
+    itemData.name = @"Hanburge";
+    itemData.image = @"http://www.google.com";
+    itemData.imageName = @"Hanburge000.jpg";
+    itemData.price = 5;
+    [testingData addObject:itemData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,35 +52,64 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 1;
+	return 3;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 3;
+	return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *tableIdentifier = @"ComplexReviewCell";
+	UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:tableIdentifier];
+	if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+    }
+    ItemData *itemData = [testingData objectAtIndex:indexPath.row];
+	cell.textLabel.text = itemData.name;
+	cell.detailTextLabel.text = itemData.imageName;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+#pragma mark - TableView delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
+(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"Section:%d Row:%d selected and its data is %@",
+          indexPath.section,indexPath.row,cell.textLabel.text);
+    //
+    NSString *segueName = SEGUE_NAME_IMAGE;
+    switch (indexPath.section) {
+        case 0:
+            segueName = SEGUE_NAME_IMAGE;
+            break;
+        case 1:
+            segueName = SEGUE_NAME_REVIEW;
+            break;
+        case 2:
+            segueName = SEGUE_NAME_COMMENT;
+            break;
+        default:
+            segueName = SEGUE_NAME_IMAGE;
+            break;
+    }
+   [self performSegueWithIdentifier:segueName sender:self];
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 1) {
-        [self performSegueWithIdentifier:@"segue_image" sender:self];
-    } else {
-        [self performSegueWithIdentifier:@"segue_review" sender:self];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [testingData removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

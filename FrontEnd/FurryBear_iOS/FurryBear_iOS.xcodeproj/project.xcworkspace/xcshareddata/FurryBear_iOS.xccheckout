@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9CAA5320-57DD-4FBE-9B8E-4043A6597980</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FurryBear_iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B13FC632-1F0E-4741-A885-E029735FB22A</key>
+		<string>https://github.com/yangboz/furry-bear</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FrontEnd/FurryBear_iOS/FurryBear_iOS.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B13FC632-1F0E-4741-A885-E029735FB22A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yangboz/furry-bear</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B13FC632-1F0E-4741-A885-E029735FB22A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B13FC632-1F0E-4741-A885-E029735FB22A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>furry-bear</string>
+		</dict>
+	</array>
+</dict>
+</plist>

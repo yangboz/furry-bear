@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
-@interface ComplexReviewViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
-
+@interface ComplexReviewViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *testingData;
+}
 @end
