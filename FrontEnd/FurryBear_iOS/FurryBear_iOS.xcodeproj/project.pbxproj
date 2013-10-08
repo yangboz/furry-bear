@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651973331803B1F300922BEE /* ComplexReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651973321803B1F300922BEE /* ComplexReviewViewController.m */; };
 		6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951617B8D1CD0068F69B /* App42_API_Utils.m */; };
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
@@ -42,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651973311803B1F300922BEE /* ComplexReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexReviewViewController.h; sourceTree = "<group>"; };
+		651973321803B1F300922BEE /* ComplexReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexReviewViewController.m; sourceTree = "<group>"; };
 		6590951517B8D1CD0068F69B /* App42_API_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Utils.h; sourceTree = "<group>"; };
 		6590951617B8D1CD0068F69B /* App42_API_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Utils.m; sourceTree = "<group>"; };
 		6590951817BB3A820068F69B /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				65B2C20617C3C6EC001D2445 /* FourthViewController.h */,
 				65B2C20717C3C6EC001D2445 /* FourthViewController.m */,
 				65E11AA717B33D0600940B1A /* Supporting Files */,
+				651973311803B1F300922BEE /* ComplexReviewViewController.h */,
+				651973321803B1F300922BEE /* ComplexReviewViewController.m */,
 			);
 			path = FurryBear_iOS;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
+				651973331803B1F300922BEE /* ComplexReviewViewController.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */,
 			);

@@ -582,10 +582,10 @@
             </objects>
             <point key="canvasLocation" x="653" y="1173"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Complex Review-->
         <scene sceneID="rYo-rO-Obk">
             <objects>
-                <tableViewController id="F9j-2t-FCJ" sceneMemberID="viewController">
+                <tableViewController id="F9j-2t-FCJ" customClass="ComplexReview" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PMq-ke-gKR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
