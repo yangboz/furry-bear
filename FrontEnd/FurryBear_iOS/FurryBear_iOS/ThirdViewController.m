@@ -7,7 +7,6 @@
 //
 
 #import "ThirdViewController.h"
-#import "UserModel.h"
 
 @interface ThirdViewController ()
 
