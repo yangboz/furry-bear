@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		651973361803BB4400922BEE /* ComplexReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651973351803BB4400922BEE /* ComplexReviewViewController.m */; };
+		6519FC47181CC5E90010942A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC46181CC5E90010942A /* TestViewController.m */; };
 		6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951617B8D1CD0068F69B /* App42_API_Utils.m */; };
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		651973341803BB4400922BEE /* ComplexReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplexReviewViewController.h; sourceTree = "<group>"; };
 		651973351803BB4400922BEE /* ComplexReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexReviewViewController.m; sourceTree = "<group>"; };
+		6519FC45181CC5E90010942A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		6519FC46181CC5E90010942A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		6590951517B8D1CD0068F69B /* App42_API_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Utils.h; sourceTree = "<group>"; };
 		6590951617B8D1CD0068F69B /* App42_API_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Utils.m; sourceTree = "<group>"; };
 		6590951817BB3A820068F69B /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */,
 				65A4716D181754A200C18DAC /* VC_SegueItemReview.h */,
 				65A4716E181754A200C18DAC /* VC_SegueItemReview.m */,
+				6519FC45181CC5E90010942A /* TestViewController.h */,
+				6519FC46181CC5E90010942A /* TestViewController.m */,
 			);
 			name = ctrls;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */,
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
+				6519FC47181CC5E90010942A /* TestViewController.m in Sources */,
 				65A4716F181754A200C18DAC /* VC_SegueItemReview.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
 				651973361803BB4400922BEE /* ComplexReviewViewController.m in Sources */,
