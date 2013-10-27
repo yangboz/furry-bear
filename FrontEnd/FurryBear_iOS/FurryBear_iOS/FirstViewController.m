@@ -21,29 +21,7 @@
     //
     [self userDefaultsLogin];
     // table view data is being set here
-    testingData = [[NSMutableArray alloc] init];
-    ItemData *itemData = [[ItemData alloc] init];
-    itemData.itemId = @"0";
-    itemData.name = @"Default";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"first.png";
-    itemData.price = 2;
-    [testingData addObject:itemData];
-    itemData = [[ItemData alloc] init];
-    itemData.itemId = @"1";
-    itemData.name = @"Scallop";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"Scallop000.jpg";
-    itemData.price = 4;
-    [testingData addObject:itemData];
-    itemData = [[ItemData alloc] init];
-    itemData.itemId = @"2";
-    itemData.name = @"Hanburge";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"Hanburge000.jpg";
-    itemData.price = 5;
-    [testingData addObject:itemData];
-
+    //featuredCategoryItems = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,11 +92,13 @@
             NSLog(@"name is = %@",category.name);
             NSLog(@"description is = %@",category.description);
             NSMutableArray *itemList = category.itemListArray;
+            featuredCategoryItems = [NSMutableArray  arrayWithArray:itemList];
             for (categoryItem *item in itemList)
             {
                 NSLog(@"price is = %f",item.price);
                 NSLog(@"itemId is = %@",item.itemId);
-                NSLog(@"name is = %@",item.name);  
+                NSLog(@"name is = %@",item.name);
+                NSLog(@"tinyUrl is = %@",item.tinyUrl);
             }    
         }
     }@catch (App42BadParameterException *ex) {
@@ -192,16 +172,21 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-	return [testingData count];
+    NSLog(@"featuredCategoryItems,count:%d",[featuredCategoryItems count]);
+	return [featuredCategoryItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:@"FeatureCell"];
-	ItemData *itemData = [testingData objectAtIndex:indexPath.row];
-	cell.textLabel.text = itemData.name;
-	cell.detailTextLabel.text = itemData.imageName;
+	FeatureCell *cell = (FeatureCell *)[tableView
+                                        dequeueReusableCellWithIdentifier:@"FeatureCell"];
+	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
+    
+	cell.nameLabel.text = catItem.name;
+	//cell.detailTextLabel.text = itemData.imageName;
+    NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
+    NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
+    cell.itemImageView.image = [UIImage imageWithData:data];
     return cell;
 }
 

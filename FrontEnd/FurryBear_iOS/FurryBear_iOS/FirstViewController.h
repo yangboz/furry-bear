@@ -10,10 +10,11 @@
 #import "LoginViewController.h"
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "App42_API_Utils.h"
+#import "FeatureCell.h"
 
 @interface FirstViewController : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray *testingData;
+    NSMutableArray *featuredCategoryItems;
     IBOutlet UITableView *myTableView;
 }
 -(void)userDefaultsLogin;
