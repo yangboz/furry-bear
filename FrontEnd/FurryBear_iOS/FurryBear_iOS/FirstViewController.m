@@ -14,6 +14,8 @@
 
 @implementation FirstViewController
 
+@synthesize myTableView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,6 +33,7 @@
 }
 
 - (void)dealloc {
+    [featuredCategoryItems release];
     [myTableView release];
     [super dealloc];
 }
@@ -92,7 +95,8 @@
             NSLog(@"name is = %@",category.name);
             NSLog(@"description is = %@",category.description);
             NSMutableArray *itemList = category.itemListArray;
-            featuredCategoryItems = [NSMutableArray  arrayWithArray:itemList];
+            //featuredCategoryItems = [NSMutableArray  arrayWithArray:itemList];
+            featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
             for (categoryItem *item in itemList)
             {
                 NSLog(@"price is = %f",item.price);
@@ -180,6 +184,7 @@
 {
 	FeatureCell *cell = (FeatureCell *)[tableView
                                         dequeueReusableCellWithIdentifier:@"FeatureCell"];
+    NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
 	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
     
 	cell.nameLabel.text = catItem.name;

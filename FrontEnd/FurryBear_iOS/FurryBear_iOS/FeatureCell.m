@@ -28,4 +28,13 @@
     // Configure the view for the selected state
 }
 
+- (void)dealloc
+{
+    [self.nameLabel release];
+    [self.itemImageView release];
+    [self.ratingImageView release];
+    //
+    [super dealloc];
+}
+
 @end

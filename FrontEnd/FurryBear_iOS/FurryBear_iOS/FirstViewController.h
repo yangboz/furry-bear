@@ -15,7 +15,7 @@
 @interface FirstViewController : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *featuredCategoryItems;
-    IBOutlet UITableView *myTableView;
 }
 -(void)userDefaultsLogin;
+@property(nonatomic,strong)IBOutlet UITableView *myTableView;
 @end

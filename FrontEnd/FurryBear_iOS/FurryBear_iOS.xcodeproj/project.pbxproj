@@ -170,6 +170,7 @@
 			children = (
 				6519FC48181CCAA40010942A /* cells */,
 				65C004A817B4F61D00D3565F /* LoginViewController.h */,
+				65C004A917B4F61E00D3565F /* LoginViewController.m */,
 				65E11ABE17B33D0600940B1A /* FirstViewController.h */,
 				65E11ABF17B33D0600940B1A /* FirstViewController.m */,
 				651973341803BB4400922BEE /* ComplexReviewViewController.h */,
@@ -180,7 +181,6 @@
 				6598CAD917B48B5A0054E127 /* ThirdViewController.m */,
 				65B2C20617C3C6EC001D2445 /* FourthViewController.h */,
 				65B2C20717C3C6EC001D2445 /* FourthViewController.m */,
-				65C004A917B4F61E00D3565F /* LoginViewController.m */,
 				65A4716A181752F600C18DAC /* VC_SegueImageUpload.h */,
 				65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */,
 				65A4716D181754A200C18DAC /* VC_SegueItemReview.h */,
