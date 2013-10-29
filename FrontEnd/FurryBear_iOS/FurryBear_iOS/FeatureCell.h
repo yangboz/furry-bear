@@ -10,7 +10,7 @@
 
 @interface FeatureCell : UITableViewCell
 {}
-@property (nonatomic, strong) IBOutlet UILabel *nameLabel;
+@property (nonatomic, strong) IBOutlet UITextField *nameLabel;
 @property (nonatomic, strong) IBOutlet UIImageView
 *ratingImageView;
 @property (nonatomic, strong) IBOutlet UIImageView

@@ -41,31 +41,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-MG-bOt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-MG-bOt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Ok-ncO">
-                                                    <rect key="frame" x="0.0" y="421" width="320" height="30"/>
+                                                    <rect key="frame" x="0.0" y="230" width="320" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQB-Wu-YZH">
-                                                    <rect key="frame" x="0.0" y="383" width="320" height="37"/>
+                                                    <rect key="frame" x="0.0" y="263" width="320" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcL-Mm-eGj">
-                                                    <rect key="frame" x="139" y="362" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImageView" destination="v9a-MG-bOt" id="pDx-iD-XlK"/>
-                                            <outlet property="nameLabel" destination="WcL-Mm-eGj" id="zLe-S7-Yn4"/>
+                                            <outlet property="nameLabel" destination="r7b-Ok-ncO" id="6jb-8O-cDH"/>
                                             <outlet property="ratingImageView" destination="uQB-Wu-YZH" id="g8m-xo-Eqj"/>
                                         </connections>
                                     </tableViewCell>
