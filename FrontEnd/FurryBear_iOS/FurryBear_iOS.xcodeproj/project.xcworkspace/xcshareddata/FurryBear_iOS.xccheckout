@@ -12,6 +12,8 @@
 	<dict>
 		<key>B13FC632-1F0E-4741-A885-E029735FB22A</key>
 		<string>https://github.com/yangboz/furry-bear</string>
+		<key>EEFB0DCC-0EAD-49B3-8AE0-9705DFB02B9C</key>
+		<string>https://github.com/shephertz/App42_iOS_SDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FrontEnd/FurryBear_iOS/FurryBear_iOS.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>B13FC632-1F0E-4741-A885-E029735FB22A</key>
 		<string>../../../..</string>
+		<key>EEFB0DCC-0EAD-49B3-8AE0-9705DFB02B9C</key>
+		<string>../../../../../App42_iOS_SDK</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/yangboz/furry-bear</string>
@@ -28,6 +32,14 @@
 	<string>B13FC632-1F0E-4741-A885-E029735FB22A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EEFB0DCC-0EAD-49B3-8AE0-9705DFB02B9C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>App42_iOS_SDK</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

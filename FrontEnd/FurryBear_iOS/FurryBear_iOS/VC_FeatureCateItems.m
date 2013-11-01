@@ -90,13 +90,13 @@
         CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
         Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
         NSMutableArray *categoryList = catalogue.categoryListArray;
-        NSLog(@"categoryList len:%d",[categoryList count]);
         for(CategoryData *category in categoryList)
         {
             NSLog(@"name is = %@",category.name);
             NSLog(@"description is = %@",category.description);
             NSMutableArray *itemList = category.itemListArray;
-            //featuredCategoryItems = [NSMutableArray  arrayWithArray:itemList];
+            //
+            NSLog(@"category itemList len:%d",[itemList count]);
             featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
             for (categoryItem *item in itemList)
             {

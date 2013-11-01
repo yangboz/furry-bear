@@ -20,8 +20,8 @@ static ServiceAPI *serviceAPIobj = nil;
 		sharedInstance = [[super allocWithZone:NULL] init];
         //
         serviceAPIobj = [[ServiceAPI alloc] init];
-        serviceAPIobj.apiKey = @"c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6";
-        serviceAPIobj.secretKey = @"75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2";
+        serviceAPIobj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
+        serviceAPIobj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
 	}
 	return sharedInstance;
 }
