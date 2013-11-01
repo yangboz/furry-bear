@@ -13,3 +13,20 @@ Back end
 ==========
 
 Using App42(http://api.shephertz.com/cloudapidocs) BAAS solution.
+
+Glossary 
+==========
+
+[NoSQLStorage] http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/storage_api.html
+
+[Catalogue/Category] http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/catalogue_api.html
+
+[GeoSptical] http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/geospatial_api.html
+
+ItemId [Cata/Cate] == json/docID [NoSQL]
+
+CatalogueName [Cata]  == dbName [NoSQL]
+
+CategoryName [Cate] == collectionName [NoSQL]
+
+geoStorageName [Geo] == ItemId [Cate]
