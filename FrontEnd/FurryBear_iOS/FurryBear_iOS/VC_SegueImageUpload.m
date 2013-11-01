@@ -125,8 +125,8 @@
     //    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];    //
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     @try{
-        //        Upload *upload = [uploadService uploadFile:fileName filePath:@"first.png" uploadFileType:fileType fileDescription:fileDescription];
-        //        Upload *upload = [uploadService uploadFileForUser:fileName userName:userName filePath:@"second.png" uploadFileType:IMAGE fileDescription:fileDescription];
+        //MBProgressHUD show
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:fileDescription]; /* returns the Upload object. */
         //    NSMutableArray *fileList =  upload.fileListArray;
         //    for(File *file in fileList)
@@ -137,6 +137,17 @@
         //        NSLog(@"File Description is %@" ,  file.description);
         //    }
         NSLog(@"uploaded file=%@",upload.fileListArray);
+        //Save to UploadModel
+//        [[UploadModel sharedInstance] setUpload:upload];
+        [[UploadModel sharedInstance] setFileName:fileName];
+        [[UploadModel sharedInstance] setFileType:IMAGE];
+        [[UploadModel sharedInstance] setFileDescription:fileDescription];
+        [[UploadModel sharedInstance] setImageData:imageData];
+        //Auto back navigation
+        [self.navigationController popViewControllerAnimated:YES];
+        //MBProgressHUD hide
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {

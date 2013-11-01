@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
+#import "App42_API_Utils.h"
+#import "UserModel.h"
+#import "UploadModel.h"
 
 @interface VC_SegueItemReview : UITableViewController
-
+{}
+- (IBAction)on_add_item:(id)sender;
+@property (retain, nonatomic) IBOutlet UISlider *slider_price;
 @end

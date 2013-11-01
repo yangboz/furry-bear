@@ -774,15 +774,18 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owd-Hz-sID">
-                                    <rect key="frame" x="20" y="179" width="280" height="97"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Default image"/>
-                                    <connections>
-                                        <action selector="choosePhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="rnk-bn-aSa"/>
-                                        <action selector="uploadPhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="jHj-t0-ahC"/>
-                                    </connections>
-                                </button>
+                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="3000" translatesAutoresizingMaskIntoConstraints="NO" id="boz-Hp-S0U">
+                                    <rect key="frame" x="18" y="74" width="284" height="34"/>
+                                </slider>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-ib-glw">
+                                    <rect key="frame" x="20" y="33" width="50" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="Wrb-8S-02B"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                         </scrollView>
                         <sections/>
@@ -792,8 +795,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="SEGUE_REVIEW" id="lnj-2Q-Pjn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4aL-KF-xO5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4aL-KF-xO5">
+                            <connections>
+                                <action selector="on_add_item:" destination="RF8-or-Kjy" id="s9C-lb-Hnm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="slider_price" destination="boz-Hp-S0U" id="FiH-GR-anN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7b-cl-pER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -817,7 +827,6 @@
                                     <state key="normal" title="Default image"/>
                                     <connections>
                                         <action selector="choosePhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="QvW-3U-pet"/>
-                                        <action selector="uploadPhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="kIu-Ge-xHI"/>
                                     </connections>
                                 </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png/*.jpg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-0t-5bZ">

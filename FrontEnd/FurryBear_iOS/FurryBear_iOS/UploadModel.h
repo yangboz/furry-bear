@@ -17,4 +17,15 @@
 
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
+
+-(NSString *)getFileName;
+-(void)setFileName:(NSString *)value;
+-(NSString *)getFileType;
+-(void)setFileType:(NSString *)value;
+-(NSString *)getFileDescription;
+-(void)setFileDescription:(NSString *)value;
+
+-(NSData *)getImageData;
+-(void)setImageData:(NSData *)value;
+
 @end

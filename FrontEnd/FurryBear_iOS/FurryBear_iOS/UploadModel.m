@@ -13,7 +13,10 @@
 static UploadModel *sharedInstance = nil;
 static Upload *upload=nil;
 static NSMutableArray *data=nil;
-
+static NSString *fileName=nil;
+static NSString *fileType=nil;
+static NSString *fileDescription=nil;
+static NSData *imageData=nil;
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(UploadModel *)sharedInstance
 {
@@ -67,5 +70,45 @@ static NSMutableArray *data=nil;
 -(void)setData:(NSMutableArray *)value
 {
 	data = value;
+}
+
+-(NSString *)getFileName
+{
+	return fileName;
+}
+
+-(void)setFileName:(NSString *)value
+{
+	fileName = value;
+}
+
+-(NSString *)getFileType
+{
+	return fileType;
+}
+
+-(void)setFileType:(NSString *)value
+{
+	fileType = value;
+}
+
+-(NSString *)getFileDescription
+{
+	return fileDescription;
+}
+
+-(void)setFileDescription:(NSString *)value
+{
+	fileDescription = value;
+}
+
+-(NSData *)getImageData
+{
+	return imageData;
+}
+
+-(void)setImageData:(NSData *)value
+{
+	imageData = value;
 }
 @end

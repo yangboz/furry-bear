@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		651973361803BB4400922BEE /* ComplexReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 651973351803BB4400922BEE /* ComplexReviewViewController.m */; };
 		6519FC4B181CCE5E0010942A /* FeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC4A181CCE5E0010942A /* FeatureCell.m */; };
+		6519FC4F182346EC0010942A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC4E182346EC0010942A /* MBProgressHUD.m */; };
+		6519FC51182346FA0010942A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6519FC50182346FA0010942A /* LICENSE */; };
 		6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951617B8D1CD0068F69B /* App42_API_Utils.m */; };
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
@@ -50,6 +52,9 @@
 		651973351803BB4400922BEE /* ComplexReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplexReviewViewController.m; sourceTree = "<group>"; };
 		6519FC49181CCE5E0010942A /* FeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureCell.h; sourceTree = "<group>"; };
 		6519FC4A181CCE5E0010942A /* FeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureCell.m; sourceTree = "<group>"; };
+		6519FC4D182346EC0010942A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6519FC4E182346EC0010942A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6519FC50182346FA0010942A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6590951517B8D1CD0068F69B /* App42_API_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Utils.h; sourceTree = "<group>"; };
 		6590951617B8D1CD0068F69B /* App42_API_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Utils.m; sourceTree = "<group>"; };
 		6590951817BB3A820068F69B /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
@@ -123,6 +128,16 @@
 				6519FC4A181CCE5E0010942A /* FeatureCell.m */,
 			);
 			name = cells;
+			sourceTree = "<group>";
+		};
+		6519FC4C182346BF0010942A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6519FC50182346FA0010942A /* LICENSE */,
+				6519FC4D182346EC0010942A /* MBProgressHUD.h */,
+				6519FC4E182346EC0010942A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		6590950C17B8B0F40068F69B /* assets */ = {
@@ -220,6 +235,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6519FC4C182346BF0010942A /* MBProgressHUD */,
 				65A471691817527900C18DAC /* ctrls */,
 				6590951417B8D0A60068F69B /* utils */,
 				6590951317B8D0920068F69B /* model */,
@@ -304,6 +320,7 @@
 				65E11AB717B33D0600940B1A /* Default-568h@2x.png in Resources */,
 				65E11ABA17B33D0600940B1A /* MainStoryboard_iPhone.storyboard in Resources */,
 				65E11ABD17B33D0600940B1A /* MainStoryboard_iPad.storyboard in Resources */,
+				6519FC51182346FA0010942A /* LICENSE in Resources */,
 				65E11AC217B33D0600940B1A /* first.png in Resources */,
 				65E11AC417B33D0600940B1A /* first@2x.png in Resources */,
 				65E11AC917B33D0600940B1A /* second.png in Resources */,
@@ -340,6 +357,7 @@
 				651973361803BB4400922BEE /* ComplexReviewViewController.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */,
+				6519FC4F182346EC0010942A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

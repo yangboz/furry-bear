@@ -44,14 +44,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
@@ -116,5 +114,43 @@
 }
 
  */
-
+- (IBAction)on_add_item:(id)sender {
+    NSLog(@"on_add_item!");
+    //Get default catalogue and category name.
+    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    //
+    UploadModel *uploadModel = [UploadModel sharedInstance];
+    //
+    ItemData *itemData = [[ItemData alloc] init];
+    itemData.itemId = [[NSUUID UUID] UUIDString];
+    itemData.price = self.slider_price.value;
+    //    itemData.rating = self.slider_rating.value;
+    itemData.name = [uploadModel getFileName];
+    itemData.description = [uploadModel getFileDescription];
+    itemData.imageName = [[uploadModel getFileName] stringByAppendingString:@".jpg"];
+    itemData.imageInputStream = [uploadModel getImageData];
+    //    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
+    //
+    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
+    Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
+    //    NSString *catalogueName =  catalogue.name;
+    NSMutableArray *categoryList = catalogue.categoryListArray;
+    for(CategoryData *category in categoryList)
+    {
+        NSLog(@"name is = %@",category.name);
+        NSLog(@"description is = %@",category.description);
+        NSMutableArray *itemList = category.itemListArray;
+        for (categoryItem *item in itemList)
+        {
+            NSLog(@"price is = %f",item.price);
+            NSLog(@"itemId is = %@",item.itemId);
+            NSLog(@"name is = %@",item.name);
+        }
+    }
+    NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. */
+    NSLog(@"Add catalogue service response:%@",jsonResponse);
+    //TODO:Continue on item review.
+    
+}
 @end
