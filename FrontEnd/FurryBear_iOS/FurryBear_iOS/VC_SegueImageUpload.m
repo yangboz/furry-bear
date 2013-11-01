@@ -116,6 +116,9 @@
 #pragma mark - IBActions
 - (IBAction)uploadPhoto:(id)sender
 {
+    //MBProgressHUD show
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     NSString *fileName = [self.filenameTxt.text stringByAppendingString:@".png"];
     //    NSString *filePath = @"Local file path";
@@ -125,8 +128,7 @@
     //    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];    //
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     @try{
-        //MBProgressHUD show
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //
         Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:fileDescription]; /* returns the Upload object. */
         //    NSMutableArray *fileList =  upload.fileListArray;
         //    for(File *file in fileList)

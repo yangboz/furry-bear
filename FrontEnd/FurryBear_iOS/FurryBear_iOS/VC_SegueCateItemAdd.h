@@ -1,5 +1,5 @@
 //
-//  VC_SegueItemReview.h
+//  VC_SegueCateItemAdd.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-10-23.
@@ -12,7 +12,7 @@
 #import "UserModel.h"
 #import "UploadModel.h"
 
-@interface VC_SegueItemReview : UITableViewController
+@interface VC_SegueCateItemAdd : UITableViewController
 {}
 - (IBAction)on_add_item:(id)sender;
 @property (retain, nonatomic) IBOutlet UISlider *slider_price;

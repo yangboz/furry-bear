@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "VC_SegueItemReview.h"
+#import "VC_SegueCateItemAdd.h"
 
-@interface VC_SegueItemReview ()
+@interface VC_SegueCateItemAdd ()
 
 @end
 
-@implementation VC_SegueItemReview
+@implementation VC_SegueCateItemAdd
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"VC_SegueItemReview viewDidLoad!");
+    NSLog(@"VC_SegueCateItemAdd viewDidLoad!");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -128,7 +128,7 @@
     //    itemData.rating = self.slider_rating.value;
     itemData.name = [uploadModel getFileName];
     itemData.description = [uploadModel getFileDescription];
-    itemData.imageName = [[uploadModel getFileName] stringByAppendingString:@".jpg"];
+    itemData.imageName = [itemData.name stringByAppendingString:@".jpg"];
     itemData.imageInputStream = [uploadModel getImageData];
     //    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
     //
