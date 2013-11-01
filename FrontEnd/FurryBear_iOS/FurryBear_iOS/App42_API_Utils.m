@@ -20,8 +20,8 @@ static ServiceAPI *serviceAPIobj = nil;
 		sharedInstance = [[super allocWithZone:NULL] init];
         //
         serviceAPIobj = [[ServiceAPI alloc] init];
-        serviceAPIobj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
-        serviceAPIobj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
+        serviceAPIobj.apiKey = @"c391f5559629412cb15f24b873e3da03f12f004a048b41ba637b31b03c63c8b6";
+        serviceAPIobj.secretKey = @"75750a0348cc2c34e1070fe499c3d4278eca77bdde0841dffcc97f1e41ea6fc2";
 	}
 	return sharedInstance;
 }
@@ -71,6 +71,11 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildReviewService];
 }
+
+-(StorageService *)getStorageService
+{
+    return [serviceAPIobj buildStorageService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {
@@ -79,5 +84,20 @@ static ServiceAPI *serviceAPIobj = nil;
 -(NSString *)getDefaultCategoryName
 {
     return @"Western-style";
+}
+-(NSString *)getTimeStampName
+{
+    //NSDate timestamp
+    NSDate *datenow = [NSDate date];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate:datenow];
+    NSDate *localeDate = [datenow  dateByAddingTimeInterval: interval];
+    NSLog(@"%@", localeDate);
+    //Convert it.
+    //NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:1363948516];
+    //NSLog(@"1363948516  = %@",confromTimesp);
+    NSString *timeStamp = [NSString stringWithFormat:@"%ld", (long)[localeDate timeIntervalSince1970]];
+    NSLog(@"timeSp:%@",timeStamp);
+    return timeStamp;
 }
 @end

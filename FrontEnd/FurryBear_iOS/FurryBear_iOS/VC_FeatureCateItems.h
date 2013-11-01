@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  VC_FeatureCateItems.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
@@ -12,7 +12,7 @@
 #import "App42_API_Utils.h"
 #import "FeatureCell.h"
 
-@interface FirstViewController : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *featuredCategoryItems;
 }

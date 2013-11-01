@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  VC_FeatureCateItems.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "VC_FeatureCateItems.h"
 
-@interface FirstViewController ()
+@interface VC_FeatureCateItems ()
 
 @end
 
-@implementation FirstViewController
+@implementation VC_FeatureCateItems
 
 @synthesize myTableView;
 
@@ -90,6 +90,7 @@
         CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
         Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
         NSMutableArray *categoryList = catalogue.categoryListArray;
+        NSLog(@"categoryList len:%d",[categoryList count]);
         for(CategoryData *category in categoryList)
         {
             NSLog(@"name is = %@",category.name);

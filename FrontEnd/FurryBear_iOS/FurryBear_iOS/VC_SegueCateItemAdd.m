@@ -119,18 +119,10 @@
     //Get default catalogue and category name.
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-    //
-    UploadModel *uploadModel = [UploadModel sharedInstance];
-    //
-    ItemData *itemData = [[ItemData alloc] init];
-    itemData.itemId = [[NSUUID UUID] UUIDString];
+    //NoSQL storage with extra information.
+    //Update item with price information.
+    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
     itemData.price = self.slider_price.value;
-    //    itemData.rating = self.slider_rating.value;
-    itemData.name = [uploadModel getFileName];
-    itemData.description = [uploadModel getFileDescription];
-    itemData.imageName = [itemData.name stringByAppendingString:@".jpg"];
-    itemData.imageInputStream = [uploadModel getImageData];
-    //    itemData.image =  [[NSBundle mainBundle]pathForResource:@"Scallop00" ofType:@"jpg"];
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
@@ -150,7 +142,14 @@
     }
     NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. */
     NSLog(@"Add catalogue service response:%@",jsonResponse);
-    //TODO:Continue on item review.
+    //Auto back navigation
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+- (void)dealloc {
+    [self.slider_price release];
+    [super dealloc];
+}
+
 @end

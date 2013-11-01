@@ -11,6 +11,7 @@
 #import "App42_API_Utils.h"
 #import "UserModel.h"
 #import "UploadModel.h"
+#import "ItemDataModel.h"
 #import "MBProgressHUD.h"
 
 @interface VC_SegueImageUpload : UITableViewController <UIImagePickerControllerDelegate>

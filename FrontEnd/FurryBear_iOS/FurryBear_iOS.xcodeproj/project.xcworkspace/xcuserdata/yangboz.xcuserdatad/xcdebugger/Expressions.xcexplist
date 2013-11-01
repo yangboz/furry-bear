@@ -3,17 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[FirstViewController tableView:cellForRowAtIndexPath:]:FirstViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "catItem.tinyUrl">
-            </PersistentString>
-            <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[VC_SegueItemReview on_add_item:]:VC_SegueItemReview.m">
          <PersistentStrings>
             <PersistentString
@@ -21,6 +10,25 @@
             </PersistentString>
             <PersistentString
                value = "uploadModel.getFileDescription">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VC_SegueImageUpload uploadPhoto:]:VC_SegueImageUpload.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemData.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FirstViewController tableView:cellForRowAtIndexPath:]:FirstViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "catItem.tinyUrl">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

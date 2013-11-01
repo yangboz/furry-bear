@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     NSLog(@"VC_SegueImageUpload viewDidLoad!");
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -139,12 +140,16 @@
         //        NSLog(@"File Description is %@" ,  file.description);
         //    }
         NSLog(@"uploaded file=%@",upload.fileListArray);
-        //Save to UploadModel
+        //Save to ItemDataModel
 //        [[UploadModel sharedInstance] setUpload:upload];
-        [[UploadModel sharedInstance] setFileName:fileName];
-        [[UploadModel sharedInstance] setFileType:IMAGE];
-        [[UploadModel sharedInstance] setFileDescription:fileDescription];
-        [[UploadModel sharedInstance] setImageData:imageData];
+        ItemData *itemData = [[ItemData alloc] init];
+
+        itemData.name = [[App42_API_Utils sharedInstance] getTimeStampName]; //Make it unique,time-based sort-able.
+        itemData.imageName = fileName;
+        itemData.imageInputStream = imageData;
+        itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique.
+        itemData.description = fileDescription;
+        [[ItemDataModel sharedInstance]setItemData:itemData];
         //Auto back navigation
         [self.navigationController popViewControllerAnimated:YES];
         //MBProgressHUD hide

@@ -1,21 +1,21 @@
 //
-//  UploadModel.m
+//  StorageModel.m
 //  FurryBear_iOS
 //
-//  Created by yangboz on 13-8-14.
+//  Created by yangboz on 13-11-01.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "UploadModel.h"
+#import "StorageModel.h"
 
-@implementation UploadModel
+@implementation StorageModel
 //It declares a static instance of your singleton object and initializes it to nil.
-static UploadModel *sharedInstance = nil;
-static Upload *upload=nil;
+static StorageModel *sharedInstance = nil;
+static Storage *storage=nil;
 static NSMutableArray *data=nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
-+(UploadModel *)sharedInstance
++(StorageModel *)sharedInstance
 {
 	if (sharedInstance==nil) {
 		sharedInstance = [[super allocWithZone:NULL] init];
@@ -49,14 +49,14 @@ static NSMutableArray *data=nil;
 //}
 
 //implementations
--(Upload *)getUpload
+-(Storage *)getStorage
 {
-	return upload;
+	return storage;
 }
 
--(void)setUpload:(Upload *)value
+-(void)setStorage:(Storage *)value
 {
-	upload = value;
+	storage = value;
 }
 
 -(NSMutableArray *)getData
