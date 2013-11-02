@@ -27,7 +27,10 @@
 {
     [super viewDidLoad];
     NSLog(@"VC_SegueImageUpload viewDidLoad!");
-    
+    //Update the UITextView with border.
+    self.fileDescTxtView.layer.borderWidth = 1.0f;
+    self.fileDescTxtView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.fileDescTxtView.layer.cornerRadius = 4.0f;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -147,7 +150,7 @@
         itemData.name = [[App42_API_Utils sharedInstance] getTimeStampName]; //Make it unique,time-based sort-able.
         itemData.imageName = fileName;
         itemData.imageInputStream = imageData;
-        itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique.
+        //itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique,equal to the NoSQL docID
         itemData.description = fileDescription;
         [[ItemDataModel sharedInstance]setItemData:itemData];
         //Auto back navigation

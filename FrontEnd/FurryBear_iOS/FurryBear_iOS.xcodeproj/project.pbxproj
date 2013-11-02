@@ -15,6 +15,7 @@
 		6519FC5A182378570010942A /* StorageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC59182378570010942A /* StorageModel.m */; };
 		6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5C18237A2E0010942A /* ItemDataModel.m */; };
 		6519FC5F18240CC30010942A /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */; };
+		6519FC63182492B70010942A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC62182492B70010942A /* JSONKit.m */; };
 		6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951617B8D1CD0068F69B /* App42_API_Utils.m */; };
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
@@ -65,6 +66,8 @@
 		6519FC5B18237A2E0010942A /* ItemDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDataModel.h; sourceTree = "<group>"; };
 		6519FC5C18237A2E0010942A /* ItemDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDataModel.m; sourceTree = "<group>"; };
 		6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shephertz_App42_iOS_API.framework; path = ../../../App42_iOS_SDK/1.7/Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
+		6519FC61182492B70010942A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		6519FC62182492B70010942A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		6590951517B8D1CD0068F69B /* App42_API_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Utils.h; sourceTree = "<group>"; };
 		6590951617B8D1CD0068F69B /* App42_API_Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Utils.m; sourceTree = "<group>"; };
 		6590951817BB3A820068F69B /* ReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewModel.h; sourceTree = "<group>"; };
@@ -149,6 +152,22 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		6519FC601824929F0010942A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				6519FC61182492B70010942A /* JSONKit.h */,
+				6519FC62182492B70010942A /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		6519FC641824975C0010942A /* vo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = vo;
+			sourceTree = "<group>";
+		};
 		6590950C17B8B0F40068F69B /* assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +189,7 @@
 		6590951317B8D0920068F69B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6519FC641824975C0010942A /* vo */,
 				6591054C17B681410085BEE6 /* UserModel.h */,
 				6591054D17B681410085BEE6 /* UserModel.m */,
 				6590951817BB3A820068F69B /* ReviewModel.h */,
@@ -250,6 +270,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6519FC601824929F0010942A /* JSONKit */,
 				6519FC4C182346BF0010942A /* MBProgressHUD */,
 				65A471691817527900C18DAC /* ctrls */,
 				6590951417B8D0A60068F69B /* utils */,
@@ -371,6 +392,7 @@
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
 				65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */,
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
+				6519FC63182492B70010942A /* JSONKit.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
 				651973361803BB4400922BEE /* ComplexReviewViewController.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,

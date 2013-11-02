@@ -857,7 +857,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressTxt" destination="mnG-p0-wao" id="FSH-j7-LGY"/>
+                        <outlet property="agreeNextTimeSwitch" destination="dWk-ZC-arV" id="EXw-8I-Jgt"/>
+                        <outlet property="resturantTxt" destination="lDf-Dg-i1t" id="VpA-Z2-2Ze"/>
                         <outlet property="slider_price" destination="boz-Hp-S0U" id="FiH-GR-anN"/>
+                        <outlet property="telphoneTxt" destination="D6I-aA-jdh" id="6eg-DI-8Yi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7b-cl-pER" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -116,13 +116,45 @@
  */
 - (IBAction)on_add_item:(id)sender {
     NSLog(@"on_add_item!");
+    //Display MBProgressHUD
+    //@see:https://github.com/matej/MBProgressHUD
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //Get default catalogue and category name.
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //NoSQL storage with extra information.
-    //Update item with price information.
+    NSString *dbName = defaultCatalogueName;
+    NSString *collectionName = defaultCategoryName;
+    NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+    [storageDict setValue:self.addressTxt.text forKey:KEY_NAME_ADDRESS];
+    [storageDict setValue:self.telphoneTxt.text forKey:KEY_NAME_TELPHONE];
+    [storageDict setValue:self.resturantTxt.text forKey:KEY_NAME_RESTAURANT];
+    [storageDict setValue:[NSNumber numberWithBool:self.agreeNextTimeSwitch.isOn] forKey:KEY_NAME_AGREE_NEXT_TIME];
+    NSString *jsonStr = [storageDict JSONString];
+    NSLog(@"JSON storageDict:%@",jsonStr);
+    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
+    Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
+    NSLog(@"dbName is = %@",storage.dbName);
+    NSLog(@"collectionName is = %@",storage.collectionName);
+    NSMutableArray *jsonDocArray = storage.jsonDocArray;
     ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
+    for(JSONDocument *jsonDoc in jsonDocArray)
+    {
+        NSLog(@"docId is = %@ " , jsonDoc.docId);
+        //Save the docId as a ItemID
+        itemData.itemId = jsonDoc.docId;
+        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
+    }
+    /* returns the response in JSON format. */
+    NSString *jsonResponse_noSQL = [storage toString];
+    NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
+    //TODO:JSON Response string parse to save $oid
+    //NSDictionary *jsonResponseDict_noSQL = [[jsonResponse_noSQL JSONData] objectFromJSONData];
+    //NSLog(@"JSON responseDict_noSQL:%@",jsonResponseDict_noSQL);
+    //Update item with price information.
     itemData.price = self.slider_price.value;
+    //hard-code the ItemID for testing.
+    itemData.itemId = @"11";
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
