@@ -11,6 +11,7 @@
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "App42_API_Utils.h"
 #import "FeatureCell.h"
+#import "AsyncImageView.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

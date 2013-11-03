@@ -120,6 +120,10 @@
 -(void)on_review_item:(id)sender
 {
     NSLog(@"on_review_item sender!");
+    //Update the UITextView with border.
+    self.itemCommentsTxtView.layer.borderWidth = 1.0f;
+    self.itemCommentsTxtView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.itemCommentsTxtView.layer.cornerRadius = 4.0f;
 }
 
 @end

@@ -23,11 +23,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JV9-kH-dW9"/>
                                     <barButtonItem title="一道菜" style="plain" id="iDt-h8-Lfz"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7YE-Ya-roH"/>
-                                    <barButtonItem title="SIGNUP" id="7pw-tY-qh4">
-                                        <connections>
-                                            <segue destination="eKL-Pg-oFS" kind="modal" identifier="UserLogin" id="Zte-yy-i8D"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="SIGNUP" id="7pw-tY-qh4"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="453" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBA-dA-rKw">
@@ -41,7 +37,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-MG-bOt">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-MG-bOt" customClass="AsyncImageView">
                                                     <rect key="frame" x="40" y="53" width="240" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -96,7 +92,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
+            <point key="canvasLocation" x="661" y="480"/>
         </scene>
         <!--Login View Controller - SIGNUP-->
         <scene sceneID="L1M-Ky-AX1">
@@ -182,12 +178,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMr-jy-1Eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="-273"/>
+            <point key="canvasLocation" x="1195" y="-201"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZdL-cg-3XB">
             <objects>
                 <navigationController definesPresentationContext="YES" id="eKL-Pg-oFS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tAh-Az-tDX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUY-H9-BhL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -197,7 +194,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-xY-TRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="-273"/>
+            <point key="canvasLocation" x="661" y="-201"/>
         </scene>
         <!--Second View Controller - Favorites-->
         <scene sceneID="WwJ-YA-hAX">
@@ -256,7 +253,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIw-PA-NPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="508"/>
+            <point key="canvasLocation" x="661" y="1164"/>
         </scene>
         <!--Fourth View Controller-->
         <scene sceneID="ANB-cL-Sff">
@@ -454,7 +451,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u09-Qh-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="1864"/>
+            <point key="canvasLocation" x="673" y="1916"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4g2-iK-ghz">
@@ -725,11 +722,12 @@
                         <segue destination="73r-GX-FfG" kind="relationship" relationship="viewControllers" id="qTf-xF-7VN"/>
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="Qvv-sC-bmv"/>
+                        <segue destination="eKL-Pg-oFS" kind="push" id="ikZ-C4-brr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="146" y="52"/>
         </scene>
     </scenes>
     <resources>

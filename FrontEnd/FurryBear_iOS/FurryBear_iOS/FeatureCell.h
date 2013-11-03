@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface FeatureCell : UITableViewCell
 {}
 @property (nonatomic, strong) IBOutlet UITextField *nameLabel;
 @property (nonatomic, strong) IBOutlet UIImageView
 *ratingImageView;
-@property (nonatomic, strong) IBOutlet UIImageView
+@property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
 @end
