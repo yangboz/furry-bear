@@ -41,13 +41,13 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Ok-ncO">
-                                                    <rect key="frame" x="0.0" y="251" width="320" height="30"/>
+                                                    <rect key="frame" x="0.0" y="244" width="320" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQB-Wu-YZH">
-                                                    <rect key="frame" x="0.0" y="289" width="320" height="37"/>
+                                                    <rect key="frame" x="0.0" y="277" width="320" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="661" y="480"/>
         </scene>
-        <!--Login View Controller - SIGNUP-->
+        <!--Login View Controller - 一道菜-->
         <scene sceneID="L1M-Ky-AX1">
             <objects>
                 <tableViewController id="5mb-op-ca2" customClass="LoginViewController" sceneMemberID="viewController">
@@ -158,7 +158,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SIGNUP" id="wL2-qd-fQR">
+                    <navigationItem key="navigationItem" title="一道菜" id="wL2-qd-fQR">
                         <barButtonItem key="leftBarButtonItem" title="BACK" id="S8d-cB-DNC">
                             <connections>
                                 <action selector="cancelAction:" destination="5mb-op-ca2" id="iQy-lE-PG9"/>
@@ -183,7 +183,7 @@
         <scene sceneID="ZdL-cg-3XB">
             <objects>
                 <navigationController definesPresentationContext="YES" id="eKL-Pg-oFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="404-s5-Vgo"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="404-s5-Vgo"/>
                     <navigationItem key="navigationItem" id="tAh-Az-tDX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUY-H9-BhL">
                         <autoresizingMask key="autoresizingMask"/>
@@ -196,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="661" y="-201"/>
         </scene>
-        <!--Second View Controller - Favorites-->
+        <!--Second View Controller - 一道菜-->
         <scene sceneID="WwJ-YA-hAX">
             <objects>
                 <tableViewController id="rwX-70-jyu" customClass="SecondViewController" sceneMemberID="viewController">
@@ -233,7 +233,7 @@
                             <outlet property="delegate" destination="rwX-70-jyu" id="jVg-QG-kjV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="OVL-CD-GlL"/>
+                    <navigationItem key="navigationItem" title="一道菜" id="OVL-CD-GlL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEa-LH-zDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="839"/>
         </scene>
-        <!--Complex Review View Controller - CategoryItemAddReview-->
+        <!--Complex Review View Controller - 一道菜-->
         <scene sceneID="N6K-0E-Huq">
             <objects>
                 <tableViewController id="5Cr-FB-yY8" customClass="ComplexReviewViewController" sceneMemberID="viewController">
@@ -442,7 +442,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CategoryItemAddReview" id="QtH-oW-kE5"/>
+                    <navigationItem key="navigationItem" title="一道菜" id="QtH-oW-kE5"/>
                     <connections>
                         <segue destination="f2S-2I-uz6" kind="push" identifier="segue_image" id="VP2-WC-hRx"/>
                         <segue destination="RF8-or-Kjy" kind="push" identifier="segue_review" id="nyM-UH-hJV"/>
@@ -469,7 +469,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="1560"/>
         </scene>
-        <!--Segue Cate Item Review - SEGUE_COMMENT-->
+        <!--Segue Cate Item Review - 一道菜-->
         <scene sceneID="ndS-Cf-8LZ">
             <objects>
                 <tableViewController id="QG7-q2-Dqf" customClass="VC_SegueCateItemReview" sceneMemberID="viewController">
@@ -517,7 +517,7 @@
                             <outlet property="delegate" destination="QG7-q2-Dqf" id="0gl-4C-vWB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SEGUE_COMMENT" id="Uuf-4M-dGM">
+                    <navigationItem key="navigationItem" title="一道菜" id="Uuf-4M-dGM">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="FSY-6l-jzj">
                             <connections>
                                 <action selector="on_review_item:" destination="QG7-q2-Dqf" id="QLY-fU-scP"/>
@@ -533,7 +533,7 @@
             </objects>
             <point key="canvasLocation" x="1186" y="2490"/>
         </scene>
-        <!--Segue Cate Item Add - SEGUE_REVIEW-->
+        <!--Segue Cate Item Add - 一道菜-->
         <scene sceneID="fRm-W1-2Pp">
             <objects>
                 <tableViewController id="RF8-or-Kjy" customClass="VC_SegueCateItemAdd" sceneMemberID="viewController">
@@ -545,62 +545,50 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="3000" translatesAutoresizingMaskIntoConstraints="NO" id="boz-Hp-S0U">
-                                    <rect key="frame" x="18" y="62" width="284" height="34"/>
-                                </slider>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-ib-glw">
-                                    <rect key="frame" x="20" y="33" width="50" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="50" id="Wrb-8S-02B"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aT-fQ-fuY">
-                                    <rect key="frame" x="20" y="103" width="74" height="21"/>
+                                    <rect key="frame" x="20" y="48" width="74" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-p0-wao">
-                                    <rect key="frame" x="20" y="132" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="77" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drj-cc-hEX">
-                                    <rect key="frame" x="20" y="170" width="94" height="21"/>
+                                    <rect key="frame" x="20" y="115" width="94" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-Dg-i1t">
-                                    <rect key="frame" x="20" y="199" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="144" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telephone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUL-Ss-ffW">
-                                    <rect key="frame" x="20" y="237" width="85" height="21"/>
+                                    <rect key="frame" x="20" y="182" width="85" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D6I-aA-jdh">
-                                    <rect key="frame" x="20" y="266" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="211" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aggree to next time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhN-vO-ie5">
-                                    <rect key="frame" x="20" y="304" width="163" height="21"/>
+                                    <rect key="frame" x="20" y="249" width="163" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dWk-ZC-arV">
-                                    <rect key="frame" x="20" y="333" width="51" height="31"/>
+                                    <rect key="frame" x="20" y="278" width="51" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </switch>
                             </subviews>
@@ -611,7 +599,7 @@
                             <outlet property="delegate" destination="RF8-or-Kjy" id="fa1-OL-gW9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SEGUE_REVIEW" id="lnj-2Q-Pjn">
+                    <navigationItem key="navigationItem" title="一道菜" id="lnj-2Q-Pjn">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="4aL-KF-xO5">
                             <connections>
                                 <action selector="on_add_item:" destination="RF8-or-Kjy" id="s9C-lb-Hnm"/>
@@ -622,7 +610,6 @@
                         <outlet property="addressTxt" destination="mnG-p0-wao" id="FSH-j7-LGY"/>
                         <outlet property="agreeNextTimeSwitch" destination="dWk-ZC-arV" id="EXw-8I-Jgt"/>
                         <outlet property="resturantTxt" destination="lDf-Dg-i1t" id="VpA-Z2-2Ze"/>
-                        <outlet property="slider_price" destination="boz-Hp-S0U" id="FiH-GR-anN"/>
                         <outlet property="telphoneTxt" destination="D6I-aA-jdh" id="6eg-DI-8Yi"/>
                     </connections>
                 </tableViewController>
@@ -630,7 +617,7 @@
             </objects>
             <point key="canvasLocation" x="1186" y="1831"/>
         </scene>
-        <!--Segue Image Upload - SEGUE_IMAGE-->
+        <!--Segue Image Upload - 一道菜-->
         <scene sceneID="Hd6-gd-cIa">
             <objects>
                 <tableViewController id="f2S-2I-uz6" customClass="VC_SegueImageUpload" sceneMemberID="viewController">
@@ -639,49 +626,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <scrollView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fUB-K3-6aY">
-                            <rect key="frame" x="0.0" y="64" width="320" height="464"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4R-2D-Y86">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4R-2D-Y86">
                                     <rect key="frame" x="20" y="48" width="280" height="97"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Default image"/>
+                                    <state key="normal" title="Default image">
+                                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </state>
                                     <connections>
                                         <action selector="choosePhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="QvW-3U-pet"/>
                                     </connections>
                                 </button>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png/*.jpg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-0t-5bZ">
-                                    <rect key="frame" x="20" y="188" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="182" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="hC5-dD-1JQ">
-                                    <rect key="frame" x="10" y="277" width="290" height="118"/>
+                                    <rect key="frame" x="10" y="249" width="290" height="118"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" enablesReturnKeyAutomatically="YES"/>
                                 </textView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UPLOAD:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAW-Wi-x0F">
-                                    <rect key="frame" x="10" y="19" width="83" height="21"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAW-Wi-x0F">
+                                    <rect key="frame" x="10" y="19" width="68" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bis-kC-2pv">
-                                    <rect key="frame" x="10" y="159" width="59" height="21"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bis-kC-2pv">
+                                    <rect key="frame" x="10" y="153" width="59" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DESCRIPTION:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyi-wi-7qm">
-                                    <rect key="frame" x="10" y="240" width="124" height="21"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyi-wi-7qm">
+                                    <rect key="frame" x="10" y="220" width="94" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-PB-UIE">
+                                    <rect key="frame" x="10" y="375" width="59" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="0.0" maxValue="3000" translatesAutoresizingMaskIntoConstraints="NO" id="MVT-NP-JEy">
+                                    <rect key="frame" x="8" y="401" width="294" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </slider>
                             </subviews>
                         </scrollView>
                         <sections/>
@@ -690,7 +690,7 @@
                             <outlet property="delegate" destination="f2S-2I-uz6" id="LBF-7E-LKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SEGUE_IMAGE" id="M55-gg-Amg">
+                    <navigationItem key="navigationItem" title="一道菜" id="M55-gg-Amg">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="lJP-nS-VZJ">
                             <connections>
                                 <action selector="uploadPhoto:" destination="f2S-2I-uz6" id="tNs-Z4-Kpx"/>
@@ -701,6 +701,7 @@
                         <outlet property="fileDescTxtView" destination="hC5-dD-1JQ" id="nLJ-xb-qfy"/>
                         <outlet property="filenameTxt" destination="JDr-0t-5bZ" id="6Km-iP-jC9"/>
                         <outlet property="photoButton" destination="O4R-2D-Y86" id="nlo-q2-M2x"/>
+                        <outlet property="slider_price" destination="MVT-NP-JEy" id="gcc-nD-45f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8z-fR-0NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -720,7 +721,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
-                        <segue destination="73r-GX-FfG" kind="relationship" relationship="viewControllers" id="qTf-xF-7VN"/>
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="Qvv-sC-bmv"/>
                         <segue destination="eKL-Pg-oFS" kind="relationship" relationship="viewControllers" id="Sgm-5a-4LX"/>

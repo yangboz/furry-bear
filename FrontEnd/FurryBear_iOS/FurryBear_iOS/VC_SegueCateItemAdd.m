@@ -119,6 +119,8 @@
     //Display MBProgressHUD
     //@see:https://github.com/matej/MBProgressHUD
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //ItemData transporting.
+    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
     //Get default catalogue and category name.
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -133,17 +135,18 @@
     NSString *jsonStr = [storageDict JSONString];
     NSLog(@"JSON storageDict:%@",jsonStr);
     StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
-    Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
+    Storage *storage = [storageService updateDocumentByDocId:dbName collectionName:collectionName docId:itemData.itemId newJsonDoc:jsonStr];
+    //Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
     NSLog(@"collectionName is = %@",storage.collectionName);
     NSMutableArray *jsonDocArray = storage.jsonDocArray;
-    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
+    //
     for(JSONDocument *jsonDoc in jsonDocArray)
     {
         NSLog(@"docId is = %@ " , jsonDoc.docId);
         //Save the docId as a ItemID
         itemData.itemId = jsonDoc.docId;
-        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
+        NSLog(@"Updated JsonDoc is = %@" , jsonDoc.jsonDoc);
     }
     /* returns the response in JSON format. */
     NSString *jsonResponse_noSQL = [storage toString];
@@ -151,10 +154,8 @@
     //TODO:JSON Response string parse to save $oid
     //NSDictionary *jsonResponseDict_noSQL = [[jsonResponse_noSQL JSONData] objectFromJSONData];
     //NSLog(@"JSON responseDict_noSQL:%@",jsonResponseDict_noSQL);
-    //Update item with price information.
-    itemData.price = self.slider_price.value;
     //hard-code the ItemID for testing.
-    itemData.itemId = @"11";
+    //itemData.itemId = @"11";
     //
     CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
     Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
@@ -180,7 +181,10 @@
 }
 
 - (void)dealloc {
-    [self.slider_price release];
+    [self.addressTxt release];
+    [self.resturantTxt release];
+    [self.telphoneTxt release];
+    [self.agreeNextTimeSwitch release];
     [super dealloc];
 }
 

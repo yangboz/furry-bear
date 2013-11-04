@@ -13,16 +13,19 @@
 #import "UploadModel.h"
 #import "ItemDataModel.h"
 #import "MBProgressHUD.h"
+#import "JSONKit.h"
 
 @interface VC_SegueImageUpload : UITableViewController <UIImagePickerControllerDelegate>
 {
+    
 }
 @property(nonatomic, retain) UIImage *photo;
+@property(nonatomic, retain) MBProgressHUD *photo;
 @property (retain, nonatomic) IBOutlet UIButton *photoButton;
 @property (retain, nonatomic) IBOutlet UITextField *filenameTxt;
 @property (retain, nonatomic) IBOutlet UITextView *fileDescTxtView;
+@property (retain, nonatomic) IBOutlet UISlider *slider_price;
 
 - (IBAction)uploadPhoto:(id)sender;
-
 - (IBAction)choosePhoto:(id)sender;
 @end
