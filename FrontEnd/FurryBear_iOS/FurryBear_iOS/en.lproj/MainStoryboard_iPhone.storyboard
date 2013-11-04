@@ -23,7 +23,6 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JV9-kH-dW9"/>
                                     <barButtonItem title="一道菜" style="plain" id="iDt-h8-Lfz"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7YE-Ya-roH"/>
-                                    <barButtonItem title="SIGNUP" id="7pw-tY-qh4"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="453" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBA-dA-rKw">
@@ -38,11 +37,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9a-MG-bOt" customClass="AsyncImageView">
-                                                    <rect key="frame" x="40" y="53" width="240" height="160"/>
+                                                    <rect key="frame" x="20" y="10" width="280" height="233"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7b-Ok-ncO">
-                                                    <rect key="frame" x="0.0" y="242" width="320" height="30"/>
+                                                    <rect key="frame" x="0.0" y="251" width="320" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -184,12 +183,13 @@
         <scene sceneID="ZdL-cg-3XB">
             <objects>
                 <navigationController definesPresentationContext="YES" id="eKL-Pg-oFS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="404-s5-Vgo"/>
                     <navigationItem key="navigationItem" id="tAh-Az-tDX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bUY-H9-BhL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5mb-op-ca2" kind="relationship" relationship="rootViewController" id="v3a-Ow-jA9"/>
+                        <segue destination="5mb-op-ca2" kind="relationship" relationship="rootViewController" id="Rov-of-Iaq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWD-xY-TRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -711,6 +711,7 @@
         <scene sceneID="15">
             <objects>
                 <tabBarController title="一道菜" id="4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nkh-Hf-1Vu"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -722,12 +723,12 @@
                         <segue destination="73r-GX-FfG" kind="relationship" relationship="viewControllers" id="qTf-xF-7VN"/>
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="Qvv-sC-bmv"/>
-                        <segue destination="eKL-Pg-oFS" kind="push" id="ikZ-C4-brr"/>
+                        <segue destination="eKL-Pg-oFS" kind="relationship" relationship="viewControllers" id="Sgm-5a-4LX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="52"/>
+            <point key="canvasLocation" x="157" y="-82"/>
         </scene>
     </scenes>
     <resources>

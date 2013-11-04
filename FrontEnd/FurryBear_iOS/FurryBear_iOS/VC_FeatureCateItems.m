@@ -191,8 +191,9 @@
 	cell.nameLabel.text = catItem.name;
 	//cell.detailTextLabel.text = itemData.imageName;
     NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
-    NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
-    cell.itemImageView.image = [UIImage imageWithData:data];
+    //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
+    //cell.itemImageView.image = [UIImage imageWithData:data];
+    cell.itemImageView.imageURL = aURL;
     return cell;
 }
 
