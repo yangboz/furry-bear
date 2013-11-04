@@ -27,6 +27,8 @@
 		65B2C20F17C7B820001D2445 /* Hanbuger00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B2C20E17C7B820001D2445 /* Hanbuger00.jpg */; };
 		65B2C21117C7BBFA001D2445 /* Scallop00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65B2C21017C7BBFA001D2445 /* Scallop00.jpg */; };
 		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
+		65DDBEA11827F8C200D01DD2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DFC2721827F95D005A7F91 /* QuartzCore.framework */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
 		65E11AA517B33D0600940B1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA417B33D0600940B1A /* CoreGraphics.framework */; };
@@ -88,6 +90,9 @@
 		65B2C21017C7BBFA001D2445 /* Scallop00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Scallop00.jpg; sourceTree = "<group>"; };
 		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		65DDBE9F1827F8C200D01DD2 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		65DFC2721827F95D005A7F91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E11AA017B33D0600940B1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E11AA217B33D0600940B1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */,
 				6519FC5F18240CC30010942A /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */,
 				65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */,
@@ -142,14 +148,16 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
-		6519FC4C182346BF0010942A /* MBProgressHUD */ = {
+		6519FC4C182346BF0010942A /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				65DDBE9F1827F8C200D01DD2 /* SVProgressHUD.h */,
+				65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */,
 				6519FC50182346FA0010942A /* LICENSE */,
 				6519FC4D182346EC0010942A /* MBProgressHUD.h */,
 				6519FC4E182346EC0010942A /* MBProgressHUD.m */,
 			);
-			name = MBProgressHUD;
+			name = HUD;
 			sourceTree = "<group>";
 		};
 		6519FC601824929F0010942A /* JSONKit */ = {
@@ -266,6 +274,7 @@
 		65E11A9F17B33D0600940B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65DFC2721827F95D005A7F91 /* QuartzCore.framework */,
 				6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */,
 				65E11AA017B33D0600940B1A /* UIKit.framework */,
 				65E11AA217B33D0600940B1A /* Foundation.framework */,
@@ -279,7 +288,7 @@
 			children = (
 				6536E42F1825ED640024CAF2 /* AsyncImageView */,
 				6519FC601824929F0010942A /* JSONKit */,
-				6519FC4C182346BF0010942A /* MBProgressHUD */,
+				6519FC4C182346BF0010942A /* HUD */,
 				65A471691817527900C18DAC /* ctrls */,
 				6590951417B8D0A60068F69B /* utils */,
 				6590951317B8D0920068F69B /* model */,
@@ -403,6 +412,7 @@
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
 				6519FC63182492B70010942A /* JSONKit.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
+				65DDBEA11827F8C200D01DD2 /* SVProgressHUD.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				65B2C20817C3C6EC001D2445 /* FourthViewController.m in Sources */,
 				6519FC4F182346EC0010942A /* MBProgressHUD.m in Sources */,

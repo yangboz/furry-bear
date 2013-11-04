@@ -31,6 +31,10 @@
     self.fileDescTxtView.layer.borderWidth = 1.0f;
     self.fileDescTxtView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.fileDescTxtView.layer.cornerRadius = 4.0f;
+    //Update the UIButton with border.
+    self.photoButton.layer.borderWidth = 1.0f;
+    self.photoButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.photoButton.layer.cornerRadius = 4.0f;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -120,9 +124,8 @@
 #pragma mark - IBActions
 - (IBAction)uploadPhoto:(id)sender
 {
-    //MBProgressHUD show
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Loading";
+    //ProgressHUD show
+    [SVProgressHUD show];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
@@ -157,8 +160,8 @@
         [[ItemDataModel sharedInstance]setItemData:itemData];
         //Auto back navigation
         [self.navigationController popViewControllerAnimated:YES];
-        //MBProgressHUD hide
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        //ProgressHUD dismiss
+        [SVProgressHUD dismiss];
         
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
@@ -167,10 +170,6 @@
     }@catch (App42Exception *ex) {
         NSLog(@"App42 Exception found:%@",ex.description);
     }
-    //
-    //Display MBProgressHUD
-    //@see:https://github.com/matej/MBProgressHUD
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //Get default catalogue and category name.
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];

@@ -12,6 +12,7 @@
 #import "App42_API_Utils.h"
 #import "FeatureCell.h"
 #import "AsyncImageView.h"
+#import "SVProgressHUD.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

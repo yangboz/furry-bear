@@ -67,6 +67,8 @@
 
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
+    //ProgressHUD show
+    [SVProgressHUD show];
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
     UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
     //    User *user = [userService authenticateUser:userName password:password];
@@ -117,6 +119,8 @@
         [alert show];
         [alert release];
     }
+    //ProgressHUD dismiss
+    [SVProgressHUD dismiss];
 }
 
 #pragma mark - LoginViewControllerDelegate

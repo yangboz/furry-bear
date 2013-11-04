@@ -17,16 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-f7-ixi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-f7-ixi">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JV9-kH-dW9"/>
                                     <barButtonItem title="一道菜" style="plain" id="iDt-h8-Lfz"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7YE-Ya-roH"/>
                                 </items>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="453" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBA-dA-rKw">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="453" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBA-dA-rKw">
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureCell" rowHeight="453" id="ESp-db-574" customClass="FeatureCell">
@@ -93,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="661" y="480"/>
         </scene>
-        <!--Login View Controller - 一道菜-->
+        <!--Login View Controller - 者-->
         <scene sceneID="L1M-Ky-AX1">
             <objects>
                 <tableViewController id="5mb-op-ca2" customClass="LoginViewController" sceneMemberID="viewController">
@@ -158,7 +160,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="wL2-qd-fQR">
+                    <navigationItem key="navigationItem" title="者" id="wL2-qd-fQR">
                         <barButtonItem key="leftBarButtonItem" title="BACK" id="S8d-cB-DNC">
                             <connections>
                                 <action selector="cancelAction:" destination="5mb-op-ca2" id="iQy-lE-PG9"/>
@@ -196,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="661" y="-201"/>
         </scene>
-        <!--Second View Controller - 一道菜-->
+        <!--Second View Controller - 藏-->
         <scene sceneID="WwJ-YA-hAX">
             <objects>
                 <tableViewController id="rwX-70-jyu" customClass="SecondViewController" sceneMemberID="viewController">
@@ -233,7 +235,7 @@
                             <outlet property="delegate" destination="rwX-70-jyu" id="jVg-QG-kjV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="OVL-CD-GlL"/>
+                    <navigationItem key="navigationItem" title="藏" id="OVL-CD-GlL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEa-LH-zDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="839"/>
         </scene>
-        <!--Complex Review View Controller - 一道菜-->
+        <!--Complex Review View Controller - 一道-->
         <scene sceneID="N6K-0E-Huq">
             <objects>
                 <tableViewController id="5Cr-FB-yY8" customClass="ComplexReviewViewController" sceneMemberID="viewController">
@@ -442,7 +444,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="QtH-oW-kE5"/>
+                    <navigationItem key="navigationItem" title="一道" id="QtH-oW-kE5"/>
                     <connections>
                         <segue destination="f2S-2I-uz6" kind="push" identifier="segue_image" id="VP2-WC-hRx"/>
                         <segue destination="RF8-or-Kjy" kind="push" identifier="segue_review" id="nyM-UH-hJV"/>
@@ -469,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="1560"/>
         </scene>
-        <!--Segue Cate Item Review - 一道菜-->
+        <!--Segue Cate Item Review - 菜品-->
         <scene sceneID="ndS-Cf-8LZ">
             <objects>
                 <tableViewController id="QG7-q2-Dqf" customClass="VC_SegueCateItemReview" sceneMemberID="viewController">
@@ -486,7 +488,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </slider>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0i-A2-K2L">
-                                    <rect key="frame" x="12" y="134" width="288" height="189"/>
+                                    <rect key="frame" x="20" y="134" width="280" height="189"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -517,7 +519,7 @@
                             <outlet property="delegate" destination="QG7-q2-Dqf" id="0gl-4C-vWB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="Uuf-4M-dGM">
+                    <navigationItem key="navigationItem" title="菜品" id="Uuf-4M-dGM">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="FSY-6l-jzj">
                             <connections>
                                 <action selector="on_review_item:" destination="QG7-q2-Dqf" id="QLY-fU-scP"/>
@@ -533,7 +535,7 @@
             </objects>
             <point key="canvasLocation" x="1186" y="2490"/>
         </scene>
-        <!--Segue Cate Item Add - 一道菜-->
+        <!--Segue Cate Item Add - 菜址-->
         <scene sceneID="fRm-W1-2Pp">
             <objects>
                 <tableViewController id="RF8-or-Kjy" customClass="VC_SegueCateItemAdd" sceneMemberID="viewController">
@@ -599,7 +601,7 @@
                             <outlet property="delegate" destination="RF8-or-Kjy" id="fa1-OL-gW9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="lnj-2Q-Pjn">
+                    <navigationItem key="navigationItem" title="菜址" id="lnj-2Q-Pjn">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="4aL-KF-xO5">
                             <connections>
                                 <action selector="on_add_item:" destination="RF8-or-Kjy" id="s9C-lb-Hnm"/>
@@ -617,7 +619,7 @@
             </objects>
             <point key="canvasLocation" x="1186" y="1831"/>
         </scene>
-        <!--Segue Image Upload - 一道菜-->
+        <!--Segue Image Upload - 菜片-->
         <scene sceneID="Hd6-gd-cIa">
             <objects>
                 <tableViewController id="f2S-2I-uz6" customClass="VC_SegueImageUpload" sceneMemberID="viewController">
@@ -632,8 +634,8 @@
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4R-2D-Y86">
                                     <rect key="frame" x="20" y="48" width="280" height="97"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Default image">
-                                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    <state key="normal" title="Choose Photo">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
                                         <action selector="choosePhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="QvW-3U-pet"/>
@@ -646,7 +648,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="hC5-dD-1JQ">
-                                    <rect key="frame" x="10" y="249" width="290" height="118"/>
+                                    <rect key="frame" x="20" y="249" width="280" height="118"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -690,7 +692,7 @@
                             <outlet property="delegate" destination="f2S-2I-uz6" id="LBF-7E-LKw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="M55-gg-Amg">
+                    <navigationItem key="navigationItem" title="菜片" id="M55-gg-Amg">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="lJP-nS-VZJ">
                             <connections>
                                 <action selector="uploadPhoto:" destination="f2S-2I-uz6" id="tNs-Z4-Kpx"/>
