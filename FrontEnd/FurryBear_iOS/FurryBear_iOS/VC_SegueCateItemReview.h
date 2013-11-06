@@ -11,6 +11,7 @@
 #import "App42_API_Utils.h"
 #import "ItemDataModel.h"
 #import "StorageModel.h"
+#import "UserModel.h"
 
 @interface VC_SegueCateItemReview : UITableViewController
 {}

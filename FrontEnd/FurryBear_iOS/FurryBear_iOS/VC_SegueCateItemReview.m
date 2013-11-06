@@ -124,7 +124,24 @@
 -(void)on_review_item:(id)sender
 {
     NSLog(@"on_review_item sender!");
-
+    //Get userID,itemID
+    NSString *userID = [[[UserModel sharedInstance] getUser] userName];
+    //NSString *itemID = [[[ItemDataModel sharedInstance] getItemData] itemId];
+    NSString *itemID = @"10";
+    //Reviewing
+    NSString *reviewComment = self.itemCommentsTxtView.text;
+    double reviewRating = (double)self.slider_rating.value;
+    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
+    Review *review = [reviewService createReview:userID itemID:itemID reviewComment:reviewComment reviewRating:reviewRating]; /* returns the Review object. */
+    NSLog(@"userId =%@", review.userId);
+    NSLog(@"itemId =%@", review.itemId);
+    NSLog(@"comment =%@", review.comment);
+    NSLog(@"rating =%f", review.rating);
+    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+    NSLog(@"reviewService jsonResponse:%@",jsonResponse);
+    //After reviewing
+    //Auto back navigation
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
