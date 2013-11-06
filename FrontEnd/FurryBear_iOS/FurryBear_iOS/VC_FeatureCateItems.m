@@ -191,6 +191,10 @@
                                         dequeueReusableCellWithIdentifier:@"FeatureCell"];
     NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
 	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
+    //Customize cell.
+    cell.contentView.layer.cornerRadius = 4.0f;
+    [cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
+    [cell.contentView.layer setBorderWidth:1.0f];
     
 	cell.nameLabel.text = catItem.name;
 	//cell.detailTextLabel.text = itemData.imageName;

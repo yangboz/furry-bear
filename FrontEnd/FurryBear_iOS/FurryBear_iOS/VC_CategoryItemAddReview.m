@@ -1,48 +1,24 @@
 //
-//  ComplexReviewViewController.m
+//  VC_CategoryItemAddReview.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-10-8.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "ComplexReviewViewController.h"
+#import "VC_CategoryItemAddReview.h"
 
-@interface ComplexReviewViewController ()
+@interface VC_CategoryItemAddReview ()
 #define SEGUE_NAME_IMAGE @"segue_image"
 #define SEGUE_NAME_REVIEW @"segue_review"
 #define SEGUE_NAME_COMMENT @"segue_comment"
 @end
 
-@implementation ComplexReviewViewController
+@implementation VC_CategoryItemAddReview
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    // table view data is being set here
-    testingData = [[NSMutableArray alloc] init];
-    //    _favorites = [NSMutableArray arrayWithCapacity:20];
-    ItemData *itemData = [[ItemData alloc] init];
-    itemData.itemId = @"0";
-    itemData.name = @"Default";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"first.png";
-    itemData.price = 2;
-    [testingData addObject:itemData];
-    itemData = [[ItemData alloc] init];
-    itemData.itemId = @"1";
-    itemData.name = @"Scallop";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"Scallop000.jpg";
-    itemData.price = 4;
-    [testingData addObject:itemData];
-    itemData = [[ItemData alloc] init];
-    itemData.itemId = @"2";
-    itemData.name = @"Hanburge";
-    itemData.image = @"http://www.google.com";
-    itemData.imageName = @"Hanburge000.jpg";
-    itemData.price = 5;
-    [testingData addObject:itemData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,15 +41,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *tableIdentifier = @"ComplexReviewCell";
+    static NSString *tableIdentifier = @"Cell";
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:tableIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-    ItemData *itemData = [testingData objectAtIndex:indexPath.row];
-    cell.textLabel.text = itemData.name;
-    cell.detailTextLabel.text = itemData.imageName;
     return cell;
 }
 
@@ -108,7 +81,6 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [testingData removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

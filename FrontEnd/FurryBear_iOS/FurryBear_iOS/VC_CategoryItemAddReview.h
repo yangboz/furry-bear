@@ -1,5 +1,5 @@
 //
-//  ComplexReviewViewController.h
+//  VC_CategoryItemAddReview.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-10-8.
@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
-@interface ComplexReviewViewController : UITableViewController <UITableViewDelegate,UITableViewDataSource>
+@interface VC_CategoryItemAddReview : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray *testingData;
 }
 @end
