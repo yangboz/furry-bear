@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  VC_FavoriteCateItems.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "VC_FavoriteCateItems.h"
 
-@interface SecondViewController ()
+@interface VC_FavoriteCateItems ()
 
 @end
 
-@implementation SecondViewController
+@implementation VC_FavoriteCateItems
 
 - (void)viewDidLoad
 {

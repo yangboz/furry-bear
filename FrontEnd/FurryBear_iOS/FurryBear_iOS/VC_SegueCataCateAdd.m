@@ -1,18 +1,18 @@
 //
-//  FourthViewController.m
+//  VC_SegueCataCateAdd.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-20.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "FourthViewController.h"
+#import "VC_SegueCataCateAdd.h"
 
-@interface FourthViewController ()
+@interface VC_SegueCataCateAdd ()
 
 @end
 
-@implementation FourthViewController
+@implementation VC_SegueCataCateAdd
 @synthesize txt_catalogue,txt_category;
 @synthesize btn_catalogue,btn_category;
 

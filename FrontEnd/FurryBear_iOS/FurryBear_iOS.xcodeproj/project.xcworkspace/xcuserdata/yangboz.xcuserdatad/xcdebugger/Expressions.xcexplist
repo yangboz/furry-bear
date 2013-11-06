@@ -3,13 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[VC_SegueItemReview on_add_item:]:VC_SegueItemReview.m">
+         contextName = "-[VC_CategoryItemAddReview tableView:didSelectRowAtIndexPath:]:VC_CategoryItemAddReview.m">
          <PersistentStrings>
             <PersistentString
-               value = "itemData.name">
-            </PersistentString>
-            <PersistentString
-               value = "uploadModel.getFileDescription">
+               value = "indexPath.section">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -18,6 +15,17 @@
          <PersistentStrings>
             <PersistentString
                value = "itemData.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VC_SegueItemReview on_add_item:]:VC_SegueItemReview.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemData.name">
+            </PersistentString>
+            <PersistentString
+               value = "uploadModel.getFileDescription">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

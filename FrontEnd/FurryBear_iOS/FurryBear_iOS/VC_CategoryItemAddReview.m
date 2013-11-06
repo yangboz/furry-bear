@@ -12,6 +12,8 @@
 #define SEGUE_NAME_IMAGE @"segue_image"
 #define SEGUE_NAME_REVIEW @"segue_review"
 #define SEGUE_NAME_COMMENT @"segue_comment"
+#define SEGUE_NAME_CATACATE @"segue_catacate"
+#define SEGUE_NAME_SIGNUP @"segue_signup"
 @end
 
 @implementation VC_CategoryItemAddReview
@@ -30,7 +32,7 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -70,6 +72,12 @@
             break;
         case 2:
             segueName = SEGUE_NAME_COMMENT;
+            break;
+        case 3:
+            segueName = SEGUE_NAME_CATACATE;
+            break;
+        case 4:
+            segueName = SEGUE_NAME_SIGNUP;
             break;
         default:
             segueName = SEGUE_NAME_IMAGE;

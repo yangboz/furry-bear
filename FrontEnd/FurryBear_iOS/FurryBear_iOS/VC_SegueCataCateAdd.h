@@ -1,5 +1,5 @@
 //
-//  FourthViewController.h
+//  VC_SegueCataCateAdd.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-20.
@@ -10,7 +10,7 @@
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "App42_API_Utils.h"
 
-@interface FourthViewController : UIViewController
+@interface VC_SegueCataCateAdd : UITableViewController
 @property (retain, nonatomic) IBOutlet UITextField *txt_category;
 @property (retain, nonatomic) IBOutlet UITextField *txt_catalogue;
 @property (retain, nonatomic) IBOutlet UIButton *btn_category;

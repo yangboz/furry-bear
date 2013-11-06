@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  VC_FavoriteCateItems.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
-@interface SecondViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+@interface VC_FavoriteCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *testingData;
 }
