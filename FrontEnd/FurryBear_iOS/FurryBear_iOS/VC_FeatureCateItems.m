@@ -14,7 +14,7 @@
 
 @implementation VC_FeatureCateItems
 
-@synthesize myTableView;
+@synthesize myTableView,cateTabBarItem;
 
 - (void)viewDidLoad
 {
@@ -24,6 +24,8 @@
     [self userDefaultsLogin];
     // table view data is being set here
     //featuredCategoryItems = [[NSMutableArray alloc] init];
+    //Notify listening
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:@"categoryItemsAdded" object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +37,7 @@
 - (void)dealloc {
     [featuredCategoryItems release];
     [myTableView release];
+    [cateTabBarItem release];
     [super dealloc];
 }
 
@@ -86,28 +89,7 @@
         user.password = passWord;
         [[UserModel sharedInstance] setUser:user];
         //Get default catalogue and category name.
-        NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
-        NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-        //GET ITEMS BY CATEGORY
-        CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
-        Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
-        NSMutableArray *categoryList = catalogue.categoryListArray;
-        for(CategoryData *category in categoryList)
-        {
-            NSLog(@"name is = %@",category.name);
-            NSLog(@"description is = %@",category.description);
-            NSMutableArray *itemList = category.itemListArray;
-            //
-            NSLog(@"category itemList len:%d",[itemList count]);
-            featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
-            for (categoryItem *item in itemList)
-            {
-                NSLog(@"price is = %f",item.price);
-                NSLog(@"itemId is = %@",item.itemId);
-                NSLog(@"name is = %@",item.name);
-                NSLog(@"tinyUrl is = %@",item.tinyUrl);
-            }    
-        }
+        [self loadFeaturedCategoryItems];
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -121,6 +103,36 @@
     }
     //ProgressHUD dismiss
     [SVProgressHUD dismiss];
+}
+
+-(void)loadFeaturedCategoryItems
+{
+    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    //GET ITEMS BY CATEGORY
+    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
+    Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+    NSMutableArray *categoryList = catalogue.categoryListArray;
+    for(CategoryData *category in categoryList)
+    {
+        NSLog(@"name is = %@",category.name);
+        NSLog(@"description is = %@",category.description);
+        NSMutableArray *itemList = category.itemListArray;
+        //
+        NSLog(@"category itemList len:%d",[itemList count]);
+        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
+        for (categoryItem *item in itemList)
+        {
+            NSLog(@"price is = %f",item.price);
+            NSLog(@"itemId is = %@",item.itemId);
+            NSLog(@"name is = %@",item.name);
+            NSLog(@"tinyUrl is = %@",item.tinyUrl);
+        }
+        //Table view reload
+        [self.myTableView reloadData];
+        //
+        //self.cateTabBarItem.badgeValue = @"1";
+    }
 }
 
 #pragma mark - LoginViewControllerDelegate

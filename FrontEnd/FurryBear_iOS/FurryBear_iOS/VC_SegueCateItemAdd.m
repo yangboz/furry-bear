@@ -177,7 +177,11 @@
     NSLog(@"Add catalogue service response:%@",jsonResponse);
     //Auto back navigation
     [self.navigationController popViewControllerAnimated:YES];
-    
+    //Notify to notification center.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"categoryItemsAdded" object:self];
+    //
+    UITabBarController *bottomTabBarCtrl= (UITabBarController *)self.navigationController.parentViewController;
+    bottomTabBarCtrl.selectedIndex = 0;
 }
 
 - (void)dealloc {

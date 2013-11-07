@@ -19,5 +19,8 @@
     NSMutableArray *featuredCategoryItems;
 }
 -(void)userDefaultsLogin;
+-(void)loadFeaturedCategoryItems;
 @property(nonatomic,strong)IBOutlet UITableView *myTableView;
+@property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
+
 @end
