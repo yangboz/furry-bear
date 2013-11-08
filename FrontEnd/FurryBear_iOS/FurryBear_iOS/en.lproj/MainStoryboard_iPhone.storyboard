@@ -114,7 +114,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="KnightZhou" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-RW-xYe">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-RW-xYe">
                                                     <rect key="frame" x="10" y="7" width="300" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Ix3-1s-VCf"/>
@@ -141,7 +141,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="7740321" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYg-u7-Abw">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YYg-u7-Abw">
                                                     <rect key="frame" x="10" y="7" width="300" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="ARh-lz-Hdd"/>
@@ -168,14 +168,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YoungWelle@gmail.com" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmp-tu-lKa">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your@email.com" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmp-tu-lKa">
                                                     <rect key="frame" x="10" y="7" width="300" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Wl2-OT-eEp"/>
                                                         <constraint firstAttribute="width" constant="300" id="xgV-SQ-evW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -196,6 +196,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="qmp-tu-lKa" id="flD-yG-R2W"/>
                         <outlet property="passwordTextField" destination="YYg-u7-Abw" id="exo-A4-LTn"/>
                         <outlet property="usernameTextField" destination="wzA-RW-xYe" id="mq7-0q-XMl"/>
                     </connections>

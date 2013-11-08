@@ -14,7 +14,7 @@
 
 @implementation LoginViewController
 @synthesize delegate;
-@synthesize usernameTextField,passwordTextField;
+@synthesize usernameTextField,passwordTextField,emailTextField;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,18 +49,28 @@
 }
 - (IBAction)doneAction:(id)sender
 {
+    //User sign up here.
+    UserService *userService = [[App42_API_Utils sharedInstance] getUserService];
+    User *user = [userService createUser:self.usernameTextField.text password:self.passwordTextField.text emailAddress:self.emailTextField.text]; /* returns the User object. */
+    NSLog(@"userName is %@" , user.userName);
+    NSLog(@"emailId is %@" ,  user.email);
+    NSString *jsonResponse = [user toString]; /* returns the response in JSON format. (as shown below)*/
+    NSLog(@"UserService->createUser results:%@",jsonResponse);
     //Save user object to model.
-    User *user = [[User alloc] init];
-    user.userName = self.usernameTextField.text;
-    user.password = self.passwordTextField.text;
-    [[UserModel sharedInstance] setUser:user];
+    User *userObj = [[User alloc] init];
+    userObj.userName = self.usernameTextField.text;
+    userObj.password = self.passwordTextField.text;
+    [[UserModel sharedInstance] setUser:userObj];
     //
 	[self.delegate loginViewControllerDidSave:self];
+    //Auto back navigation
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)dealloc {
 
     [passwordTextField release];
     [usernameTextField release];
+    [emailTextField release];
     [super dealloc];
 }
 @end

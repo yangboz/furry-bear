@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "UserModel.h"
+#import "App42_API_Utils.h"
 
 @class LoginViewController;
 
@@ -25,6 +27,8 @@
 @property (retain, nonatomic) IBOutlet UITextField *usernameTextField;
 
 @property (retain, nonatomic) IBOutlet UITextField *passwordTextField;
+
+@property (retain, nonatomic) IBOutlet UITextField *emailTextField;
 
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)doneAction:(id)sender;
