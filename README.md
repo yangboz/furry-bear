@@ -30,3 +30,12 @@ CatalogueName [Cata]  == dbName [NoSQL]
 CategoryName [Cate] == collectionName [NoSQL]
 
 geoStorageName [Geo] == ItemId [Cate]
+
+Backlog 
+==========
+
+1.Review/Rating item can't repetive summbit by single user and it is not edit-able;
+
+2.Should find NoSQL function to realize the "Favorite item" requirements;
+
+3.Geo location inputment requirements;
