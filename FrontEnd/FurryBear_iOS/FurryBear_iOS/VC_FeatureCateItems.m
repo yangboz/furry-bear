@@ -127,6 +127,10 @@
             NSLog(@"itemId is = %@",item.itemId);
             NSLog(@"name is = %@",item.name);
             NSLog(@"tinyUrl is = %@",item.tinyUrl);
+            //Load itemId related NoSQL documents.
+            //#1.FIND DOCUMENT BY ID
+            //#2.GET REVIEWS COUNT BY ITEM
+            //#3.GET REVIEW BY ITEM
         }
         //Table view reload
         [self.myTableView reloadData];
@@ -228,4 +232,62 @@
           indexPath.section,indexPath.row,cell.textLabel.text);
 }
 
+#pragma mark App42 APIs
+-(void)App42_findDocumentById:(NSString *)docId
+{
+    NSString *dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    NSString *collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+//    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
+    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
+    //
+    Storage *storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
+    NSLog(@"dbName is = %@",storage.dbName);
+    NSLog(@"collectionName is = %@",storage.collectionName);
+    NSMutableArray *jsonDocList = storage.jsonDocArray;
+    for(JSONDocument *jsonDoc in jsonDocList)
+    {
+        NSLog(@"docId is = %@ " , jsonDoc.docId);
+        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
+    }
+    
+    NSString *jsonResponse = [storage toString]; /* returns the response in JSON format. */
+    NSLog(@"App42_findDocumentById jsonResponse:%@",jsonResponse);
+}
+
+-(void)App42_getReviewsCountByItem:(NSString*)itemId
+{
+    //NSString *itemId = @"ItemID";
+    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
+    App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
+    BOOL success = response.isResponseSuccess;
+    NSLog(@"App42_getReviewsCountByItem success?%d",success);
+    int totalRecords = response.totalRecords;
+    NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
+    NSString *jsonResponse = [response toString];
+    NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
+    /* returns the response in JSON format. (as shown below)
+    {
+        "app42": {
+            "response": {
+                "success": true,
+                "totalRecords": 3
+            }
+        }  
+    }*/
+}
+-(void)App42_getReviewByItem:(NSString*)itemId
+{
+//    NSString *itemId = @"itemID";
+    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
+    NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
+    for(Review *review in reviewList){
+        NSLog(@"userId =%@", review.userId);
+        NSLog(@"itemId =%@", review.itemId);
+        NSLog(@"comment=%@",review.comment);
+              NSLog(@"rating=%f", review.rating);
+                    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+        NSLog(@"App42_getReviewByItem jsonResponse:%@",jsonResponse);
+        //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
+                    }
+}
 @end
