@@ -13,13 +13,13 @@
 		6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5618236CFB0010942A /* VC_SegueCateItemReview.m */; };
 		6519FC5A182378570010942A /* StorageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC59182378570010942A /* StorageModel.m */; };
 		6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5C18237A2E0010942A /* ItemDataModel.m */; };
-		6519FC5F18240CC30010942A /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */; };
 		6519FC63182492B70010942A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC62182492B70010942A /* JSONKit.m */; };
 		6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6536E4311825ED810024CAF2 /* AsyncImageView.m */; };
 		6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951617B8D1CD0068F69B /* App42_API_Utils.m */; };
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
 		6591054E17B681410085BEE6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591054D17B681410085BEE6 /* UserModel.m */; };
+		659108811835B9B900096A59 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */; };
 		6598CADA17B48B5A0054E127 /* VC_CategoryItemAddReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* VC_CategoryItemAddReview.m */; };
 		65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
@@ -65,7 +65,6 @@
 		6519FC59182378570010942A /* StorageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageModel.m; sourceTree = "<group>"; };
 		6519FC5B18237A2E0010942A /* ItemDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDataModel.h; sourceTree = "<group>"; };
 		6519FC5C18237A2E0010942A /* ItemDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDataModel.m; sourceTree = "<group>"; };
-		6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shephertz_App42_iOS_API.framework; path = ../../../App42_iOS_SDK/1.7/Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		6519FC61182492B70010942A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		6519FC62182492B70010942A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		6536E4301825ED810024CAF2 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		6590951C17BB3D070068F69B /* UploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadModel.m; sourceTree = "<group>"; };
 		6591054C17B681410085BEE6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		6591054D17B681410085BEE6 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shephertz_App42_iOS_API.framework; path = ../../../../../Downloads/Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		6598CAD817B48B5A0054E127 /* VC_CategoryItemAddReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_CategoryItemAddReview.h; sourceTree = "<group>"; };
 		6598CAD917B48B5A0054E127 /* VC_CategoryItemAddReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_CategoryItemAddReview.m; sourceTree = "<group>"; };
 		65A4716A181752F600C18DAC /* VC_SegueImageUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueImageUpload.h; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659108811835B9B900096A59 /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */,
-				6519FC5F18240CC30010942A /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */,
 				65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */,
 				65E11AA517B33D0600940B1A /* CoreGraphics.framework in Frameworks */,
@@ -281,8 +281,8 @@
 		65E11A9F17B33D0600940B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */,
 				65DFC2721827F95D005A7F91 /* QuartzCore.framework */,
-				6519FC5E18240CC30010942A /* Shephertz_App42_iOS_API.framework */,
 				65E11AA017B33D0600940B1A /* UIKit.framework */,
 				65E11AA217B33D0600940B1A /* Foundation.framework */,
 				65E11AA417B33D0600940B1A /* CoreGraphics.framework */,
@@ -526,6 +526,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					/Users/yangboz/Documents/Git/App42_iOS_SDK/1.7,
+					/Users/yangboz/Downloads,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/FurryBear_iOS-Prefix.pch";
@@ -544,6 +545,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					/Users/yangboz/Documents/Git/App42_iOS_SDK/1.7,
+					/Users/yangboz/Downloads,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/FurryBear_iOS-Prefix.pch";
