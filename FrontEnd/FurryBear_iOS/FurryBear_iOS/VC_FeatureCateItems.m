@@ -26,6 +26,8 @@
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:@"categoryItemsAdded" object:nil];
+    //TableView customize style
+    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -220,10 +222,10 @@
     NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
 	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
     //Customize cell.
-    cell.contentView.layer.cornerRadius = 4.0f;
-    [cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
-    [cell.contentView.layer setBorderWidth:1.0f];
-    
+    //cell.contentView.layer.cornerRadius = 4.0f;
+    //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
+    //[cell.contentView.layer setBorderWidth:1.0f];
+    //
 	cell.nameLabel.text = catItem.name;
 	//cell.detailTextLabel.text = itemData.imageName;
     NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];

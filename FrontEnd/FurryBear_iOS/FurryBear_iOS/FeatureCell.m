@@ -17,8 +17,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        self.imageView.layer.masksToBounds = YES;
-        self.imageView.layer.cornerRadius = 5.0;
+        //self.imageView.layer.masksToBounds = YES;
+        //self.imageView.layer.cornerRadius = 5.0;
     }
     return self;
 }
