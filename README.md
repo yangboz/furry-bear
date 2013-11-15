@@ -9,6 +9,8 @@ Front end
 
 A prototype of jQuery mobile, based on an open source project named "restaurant picker".
 
+An iOS based version is under construction named "FurryBear".
+
 Back end
 ==========
 
