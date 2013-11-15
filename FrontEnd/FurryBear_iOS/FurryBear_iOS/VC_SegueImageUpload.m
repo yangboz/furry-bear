@@ -195,6 +195,8 @@
     /* returns the response in JSON format. */
     NSString *jsonResponse_noSQL = [storage toString];
     NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
+    //Update the item data model.
+    [[ItemDataModel sharedInstance] setItemData:itemData];
 }
 
 - (IBAction)choosePhoto:(id)sender

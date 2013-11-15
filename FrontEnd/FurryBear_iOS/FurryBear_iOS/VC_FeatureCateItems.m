@@ -129,6 +129,7 @@
             NSLog(@"tinyUrl is = %@",item.tinyUrl);
             //Load itemId related NoSQL documents.
             //#1.FIND DOCUMENT BY ID
+            [self App42_findDocumentById:item.itemId];
             //#2.GET REVIEWS COUNT BY ITEM
             //#3.GET REVIEW BY ITEM
         }

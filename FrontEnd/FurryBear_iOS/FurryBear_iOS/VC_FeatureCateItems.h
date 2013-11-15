@@ -22,5 +22,8 @@
 -(void)loadFeaturedCategoryItems;
 @property(nonatomic,strong)IBOutlet UITableView *myTableView;
 @property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
-
+//App42_API calls
+-(void)App42_findDocumentById:(NSString *)docId;
+-(void)App42_getReviewsCountByItem:(NSString*)itemId;
+-(void)App42_getReviewByItem:(NSString*)itemId;
 @end
