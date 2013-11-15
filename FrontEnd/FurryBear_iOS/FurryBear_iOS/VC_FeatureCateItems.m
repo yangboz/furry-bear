@@ -52,12 +52,17 @@
         [self tryLogin:userName pwdValue:passWord];
     }else//Display login popup view
     {
-        UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Enter Credentials" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        prompt.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-        [[prompt textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
-        [prompt show];
-        [prompt release];
+        [self displayLoginPopup];
     }
+}
+
+-(void)displayLoginPopup
+{
+    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Enter Credentials" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    prompt.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [[prompt textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
+    [prompt show];
+    [prompt release];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -100,6 +105,8 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         [alert release];
+        //Display the login popup window again.
+        //[self displayLoginPopup];
     }
     //ProgressHUD dismiss
     [SVProgressHUD dismiss];
@@ -131,7 +138,11 @@
             //#1.FIND DOCUMENT BY ID
             [self App42_findDocumentById:item.itemId];
             //#2.GET REVIEWS COUNT BY ITEM
+            [self App42_getReviewsCountByItem:item.itemId];
             //#3.GET REVIEW BY ITEM
+            //[self App42_getReviewByItem:item.itemId];
+            //#4.GET AVERAGE REVIEW BY ITEM
+            [self App42_getAverageReviewByItem:item.itemId];
         }
         //Table view reload
         [self.myTableView reloadData];
@@ -276,6 +287,7 @@
         }  
     }*/
 }
+//@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
 -(void)App42_getReviewByItem:(NSString*)itemId
 {
 //    NSString *itemId = @"itemID";
@@ -288,7 +300,19 @@
               NSLog(@"rating=%f", review.rating);
                     NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
         NSLog(@"App42_getReviewByItem jsonResponse:%@",jsonResponse);
-        //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
                     }
+}
+//@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#getaverage_reviewbyitem
+-(void)App42_getAverageReviewByItem:(NSString *)itemId
+{
+   // NSString *itemId = @"itemID";
+    ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
+    Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
+    NSLog(@"userId =%@", review.userId);
+    NSLog(@"itemId =%@", review.itemId);
+    NSLog(@"comment=%@",review.comment);
+    NSLog(@"rating=%f", review.rating);
+    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+    NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
 }
 @end

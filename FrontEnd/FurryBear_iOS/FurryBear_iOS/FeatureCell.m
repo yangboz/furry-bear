@@ -10,7 +10,7 @@
 
 @implementation FeatureCell
 
-@synthesize nameLabel,ratingImageView,itemImageView;
+@synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,7 +34,9 @@
 {
     [self.nameLabel release];
     [self.itemImageView release];
-    [self.ratingImageView release];
+    [self.ratingCountLabel release];
+    [self.reviewCountLabel release];
+    [self.userIdLabel release];
     //
     [super dealloc];
 }
