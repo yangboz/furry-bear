@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6519FC4B181CCE5E0010942A /* FeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC4A181CCE5E0010942A /* FeatureCell.m */; };
-		6519FC4F182346EC0010942A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC4E182346EC0010942A /* MBProgressHUD.m */; };
-		6519FC51182346FA0010942A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6519FC50182346FA0010942A /* LICENSE */; };
 		6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5618236CFB0010942A /* VC_SegueCateItemReview.m */; };
 		6519FC5A182378570010942A /* StorageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC59182378570010942A /* StorageModel.m */; };
 		6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5C18237A2E0010942A /* ItemDataModel.m */; };
@@ -32,12 +30,13 @@
 		659108BD1836766000096A59 /* pic_plank_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6591089E1836766000096A59 /* pic_plank_down@2x.png */; };
 		659108BE1836766000096A59 /* pic_plank_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 6591089F1836766000096A59 /* pic_plank_up.png */; };
 		659108BF1836766000096A59 /* pic_plank_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659108A01836766000096A59 /* pic_plank_up@2x.png */; };
+		659108C4183708CD00096A59 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 659108C3183708CD00096A59 /* MBProgressHUD.m */; };
+		659108C6183708DE00096A59 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 659108C5183708DE00096A59 /* LICENSE */; };
 		6598CADA17B48B5A0054E127 /* VC_CategoryItemAddReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 6598CAD917B48B5A0054E127 /* VC_CategoryItemAddReview.m */; };
 		65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65B2C20817C3C6EC001D2445 /* VC_SegueCataCateAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2C20717C3C6EC001D2445 /* VC_SegueCataCateAdd.m */; };
 		65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C004A917B4F61E00D3565F /* LoginViewController.m */; };
-		65DDBEA11827F8C200D01DD2 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DFC2721827F95D005A7F91 /* QuartzCore.framework */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
@@ -62,9 +61,6 @@
 /* Begin PBXFileReference section */
 		6519FC49181CCE5E0010942A /* FeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureCell.h; sourceTree = "<group>"; };
 		6519FC4A181CCE5E0010942A /* FeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureCell.m; sourceTree = "<group>"; };
-		6519FC4D182346EC0010942A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		6519FC4E182346EC0010942A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		6519FC50182346FA0010942A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6519FC5518236CFB0010942A /* VC_SegueCateItemReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemReview.h; sourceTree = "<group>"; };
 		6519FC5618236CFB0010942A /* VC_SegueCateItemReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueCateItemReview.m; sourceTree = "<group>"; };
 		6519FC58182378570010942A /* StorageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageModel.h; sourceTree = "<group>"; };
@@ -96,6 +92,9 @@
 		6591089E1836766000096A59 /* pic_plank_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic_plank_down@2x.png"; path = "tiebaPic/pic_plank_down@2x.png"; sourceTree = "<group>"; };
 		6591089F1836766000096A59 /* pic_plank_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pic_plank_up.png; path = tiebaPic/pic_plank_up.png; sourceTree = "<group>"; };
 		659108A01836766000096A59 /* pic_plank_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic_plank_up@2x.png"; path = "tiebaPic/pic_plank_up@2x.png"; sourceTree = "<group>"; };
+		659108C2183708CD00096A59 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		659108C3183708CD00096A59 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		659108C5183708DE00096A59 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6598CAD817B48B5A0054E127 /* VC_CategoryItemAddReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_CategoryItemAddReview.h; sourceTree = "<group>"; };
 		6598CAD917B48B5A0054E127 /* VC_CategoryItemAddReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_CategoryItemAddReview.m; sourceTree = "<group>"; };
 		65A4716A181752F600C18DAC /* VC_SegueImageUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueImageUpload.h; sourceTree = "<group>"; };
@@ -106,8 +105,6 @@
 		65B2C20717C3C6EC001D2445 /* VC_SegueCataCateAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueCataCateAdd.m; sourceTree = "<group>"; };
 		65C004A817B4F61D00D3565F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		65C004A917B4F61E00D3565F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		65DDBE9F1827F8C200D01DD2 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		65DFC2721827F95D005A7F91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		65E11A9D17B33D0600940B1A /* FurryBear_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FurryBear_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E11AA017B33D0600940B1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -163,11 +160,9 @@
 		6519FC4C182346BF0010942A /* HUD */ = {
 			isa = PBXGroup;
 			children = (
-				65DDBE9F1827F8C200D01DD2 /* SVProgressHUD.h */,
-				65DDBEA01827F8C200D01DD2 /* SVProgressHUD.m */,
-				6519FC50182346FA0010942A /* LICENSE */,
-				6519FC4D182346EC0010942A /* MBProgressHUD.h */,
-				6519FC4E182346EC0010942A /* MBProgressHUD.m */,
+				659108C5183708DE00096A59 /* LICENSE */,
+				659108C2183708CD00096A59 /* MBProgressHUD.h */,
+				659108C3183708CD00096A59 /* MBProgressHUD.m */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -404,7 +399,6 @@
 				65E11ABA17B33D0600940B1A /* MainStoryboard_iPhone.storyboard in Resources */,
 				65E11ABD17B33D0600940B1A /* MainStoryboard_iPad.storyboard in Resources */,
 				659108B51836766000096A59 /* pic_background@2x.png in Resources */,
-				6519FC51182346FA0010942A /* LICENSE in Resources */,
 				659108B41836766000096A59 /* pic_background.png in Resources */,
 				659108BA1836766000096A59 /* pic_plank_among.png in Resources */,
 				659108B11836766000096A59 /* ico_people@2x.png in Resources */,
@@ -412,6 +406,7 @@
 				65F8392C17F110E000BAC36A /* 2Stars.png in Resources */,
 				65F8392D17F110E000BAC36A /* 3Stars.png in Resources */,
 				659108BC1836766000096A59 /* pic_plank_down.png in Resources */,
+				659108C6183708DE00096A59 /* LICENSE in Resources */,
 				659108B01836766000096A59 /* ico_people.png in Resources */,
 				65F8392E17F110E000BAC36A /* 4Stars.png in Resources */,
 				65F8392F17F110E000BAC36A /* 5Stars.png in Resources */,
@@ -434,6 +429,7 @@
 				6519FC4B181CCE5E0010942A /* FeatureCell.m in Sources */,
 				6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */,
 				6598CADA17B48B5A0054E127 /* VC_CategoryItemAddReview.m in Sources */,
+				659108C4183708CD00096A59 /* MBProgressHUD.m in Sources */,
 				65C004AA17B4F61E00D3565F /* LoginViewController.m in Sources */,
 				65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */,
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
@@ -444,10 +440,8 @@
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
 				6519FC63182492B70010942A /* JSONKit.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
-				65DDBEA11827F8C200D01DD2 /* SVProgressHUD.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				65B2C20817C3C6EC001D2445 /* VC_SegueCataCateAdd.m in Sources */,
-				6519FC4F182346EC0010942A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

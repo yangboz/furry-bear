@@ -77,8 +77,6 @@
 
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
-    //ProgressHUD show
-    [SVProgressHUD show];
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
     UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
     //    User *user = [userService authenticateUser:userName password:password];
@@ -110,12 +108,13 @@
         //Display the login popup window again.
         //[self displayLoginPopup];
     }
-    //ProgressHUD dismiss
-    [SVProgressHUD dismiss];
 }
 
 -(void)loadFeaturedCategoryItems
 {
+    //ProgressHUD show
+    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //GET ITEMS BY CATEGORY
@@ -140,7 +139,8 @@
             //#1.FIND DOCUMENT BY ID
             [self App42_findDocumentById:item.itemId];
             //#2.GET REVIEWS COUNT BY ITEM
-            [self App42_getReviewsCountByItem:item.itemId];
+            int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
+            NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
             //#3.GET REVIEW BY ITEM
             //[self App42_getReviewByItem:item.itemId];
             //#4.GET AVERAGE REVIEW BY ITEM
@@ -150,6 +150,8 @@
         [self.myTableView reloadData];
         //
         //self.cateTabBarItem.badgeValue = @"1";
+        //ProgressHUD dismiss
+        //[MBProgressHUD hideHUDForView:self.view animated:YES];
     }
 }
 
@@ -232,6 +234,8 @@
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
+    //Contray to MVC,temporary transfor the navigationController reference to cell
+    cell.navigationController = self.navigationController;
     return cell;
 }
 
@@ -268,7 +272,7 @@
     NSLog(@"App42_findDocumentById jsonResponse:%@",jsonResponse);
 }
 
--(void)App42_getReviewsCountByItem:(NSString*)itemId
+-(int)App42_getReviewsCountByItem:(NSString*)itemId
 {
     //NSString *itemId = @"ItemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
@@ -288,6 +292,7 @@
             }
         }  
     }*/
+    return totalRecords;
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
 -(void)App42_getReviewByItem:(NSString*)itemId

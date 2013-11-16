@@ -12,7 +12,7 @@
 #import "App42_API_Utils.h"
 #import "FeatureCell.h"
 #import "AsyncImageView.h"
-#import "SVProgressHUD.h"
+#import "MBProgressHUD.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
@@ -25,7 +25,7 @@
 -(void)displayLoginPopup;
 //App42_API calls
 -(void)App42_findDocumentById:(NSString *)docId;
--(void)App42_getReviewsCountByItem:(NSString*)itemId;
+-(int)App42_getReviewsCountByItem:(NSString*)itemId;
 -(void)App42_getReviewByItem:(NSString*)itemId;
 -(void)App42_getAverageReviewByItem:(NSString *)itemId;
 @end

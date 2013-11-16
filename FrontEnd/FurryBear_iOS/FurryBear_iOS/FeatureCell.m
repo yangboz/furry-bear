@@ -11,6 +11,7 @@
 @implementation FeatureCell
 
 @synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel;
+@synthesize navigationController;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -37,8 +38,17 @@
     [self.ratingCountLabel release];
     [self.reviewCountLabel release];
     [self.userIdLabel release];
+    [self.navigationController release];
     //
     [super dealloc];
 }
+#pragma mark IBActions
+- (IBAction)reviewAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+}
+
+#pragma mark Public Properties/Functions
+
 
 @end

@@ -10,11 +10,16 @@
 #import "AsyncImageView.h"
 
 @interface FeatureCell : UITableViewCell
-{}
+{
+}
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *reviewCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratingCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *userIdLabel;
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
+//IBActions
+-(IBAction)reviewAction:(id)sender;
+//Public Properties/Functions
+@property(nonatomic,retain) UINavigationController *navigationController;
 @end

@@ -125,7 +125,7 @@
 - (IBAction)uploadPhoto:(id)sender
 {
     //ProgressHUD show
-    [SVProgressHUD show];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
@@ -161,7 +161,7 @@
         //Auto back navigation
         [self.navigationController popViewControllerAnimated:YES];
         //ProgressHUD dismiss
-        [SVProgressHUD dismiss];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
