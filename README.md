@@ -33,6 +33,13 @@ CategoryName [Cate] == collectionName [NoSQL]
 
 geoStorageName [Geo] == ItemId [Cate]
 
+TODO 
+==========
+
+1.Re-factory the VCFeatureItems from UIView based to UITableView with UINavigationController based;
+
+2.Log out function implementation;
+
 Backlog 
 ==========
 
