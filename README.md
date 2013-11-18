@@ -40,6 +40,8 @@ TODO
 
 2.Log out function implementation;
 
+3.Using NSOperation to refactory the App42 API service calls;
+
 Backlog 
 ==========
 
@@ -49,4 +51,4 @@ Backlog
 
 3.Geo location inputment requirements;
 
-4.Using NSOperation to refactory the App42 API service calls;
+4. One category item match along with one NoSQL document and many Reviews; 
