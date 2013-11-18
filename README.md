@@ -48,3 +48,5 @@ Backlog
 2.Should find NoSQL function to realize the "Favorite item" requirements;
 
 3.Geo location inputment requirements;
+
+4.Using NSOperation to refactory the App42 API service calls;
