@@ -128,7 +128,8 @@
         NSMutableArray *itemList = category.itemListArray;
         //
         NSLog(@"category itemList len:%d",[itemList count]);
-        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
+//        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
+        featuredCategoryItems = [[NSMutableArray alloc] init];
         for (categoryItem *item in itemList)
         {
             NSLog(@"price is = %f",item.price);
@@ -136,15 +137,23 @@
             NSLog(@"name is = %@",item.name);
             NSLog(@"tinyUrl is = %@",item.tinyUrl);
             //Load itemId related NoSQL documents.
+            //featuredCategoryItem dictionary:
+            NSMutableDictionary *fCateItemDict = [[NSMutableDictionary alloc] init];
             //#1.FIND DOCUMENT BY ID
             [self App42_findDocumentById:item.itemId];
             //#2.GET REVIEWS COUNT BY ITEM
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
-            //#3.GET REVIEW BY ITEM
-            //[self App42_getReviewByItem:item.itemId];
+            //#3.GET REVIEWs BY ITEM
+            //[self App42_getReviewsByItem:item.itemId];
             //#4.GET AVERAGE REVIEW BY ITEM
-            [self App42_getAverageReviewByItem:item.itemId];
+            int rating = [self App42_getAverageReviewByItem:item.itemId];
+            //
+            [fCateItemDict setObject:item forKey:@"cateItem"];
+            [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
+            [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
+            //[fCateItemDict setObject:rating forKey:@"username"];
+            [featuredCategoryItems addObject:fCateItemDict];
         }
         //Table view reload
         [self.myTableView reloadData];
@@ -222,18 +231,22 @@
 	FeatureCell *cell = (FeatureCell *)[tableView
                                         dequeueReusableCellWithIdentifier:@"FeatureCell"];
     NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
-	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
+//	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
+    NSDictionary *fCateItemDict = (NSDictionary *)[featuredCategoryItems objectAtIndex:indexPath.row];
     //Customize cell.
     //cell.contentView.layer.cornerRadius = 4.0f;
     //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
     //[cell.contentView.layer setBorderWidth:1.0f];
     //
+    categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
 	cell.nameLabel.text = catItem.name;
 	//cell.detailTextLabel.text = itemData.imageName;
     NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
+    cell.reviewCountLabel.text = [fCateItemDict objectForKey:@"reviewCount"];
+    cell.ratingCountLabel.text = [fCateItemDict objectForKey:@"rating"];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     return cell;
@@ -295,7 +308,7 @@
     return totalRecords;
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
--(void)App42_getReviewByItem:(NSString*)itemId
+-(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId
 {
 //    NSString *itemId = @"itemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
@@ -306,11 +319,14 @@
         NSLog(@"comment=%@",review.comment);
               NSLog(@"rating=%f", review.rating);
                     NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-        NSLog(@"App42_getReviewByItem jsonResponse:%@",jsonResponse);
+        NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
                     }
+    //
+    NSMutableArray *results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
+    return results;
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#getaverage_reviewbyitem
--(void)App42_getAverageReviewByItem:(NSString *)itemId
+-(int)App42_getAverageReviewByItem:(NSString *)itemId
 {
    // NSString *itemId = @"itemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
@@ -321,5 +337,6 @@
     NSLog(@"rating=%f", review.rating);
     NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
     NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
+    return review.rating;
 }
 @end

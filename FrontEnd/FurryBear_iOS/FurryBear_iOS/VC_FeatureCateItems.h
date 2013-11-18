@@ -24,8 +24,8 @@
 @property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
 -(void)displayLoginPopup;
 //App42_API calls
--(void)App42_findDocumentById:(NSString *)docId;
+-(JSONDocument *)App42_findDocumentById:(NSString *)docId;
 -(int)App42_getReviewsCountByItem:(NSString*)itemId;
--(void)App42_getReviewByItem:(NSString*)itemId;
--(void)App42_getAverageReviewByItem:(NSString *)itemId;
+-(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId;
+-(int)App42_getAverageReviewByItem:(NSString *)itemId;//Rating value only.
 @end
