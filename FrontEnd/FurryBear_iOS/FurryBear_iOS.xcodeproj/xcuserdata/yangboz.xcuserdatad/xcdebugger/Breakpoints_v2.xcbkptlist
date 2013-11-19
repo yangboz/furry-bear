@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "406480349.53998"
+            timestampString = "406514790.18877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "-App42_getReviewsCountByItem:"
             landmarkType = "5">
          </BreakpointContent>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "406480349.53998"
+            timestampString = "406514790.18877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "364"
+            endingLineNumber = "364"
             landmarkName = "-App42_getAverageReviewByItem:"
             landmarkType = "5">
          </BreakpointContent>
@@ -68,7 +68,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
@@ -79,6 +79,52 @@
             endingLineNumber = "151"
             landmarkName = "-loadFeaturedCategoryItems"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
+            timestampString = "406514780.742156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "-loadFeaturedCategoryItems"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VC_FeatureCateItems loadFeaturedCategoryItems]"
+                  moduleName = "FurryBear_iOS"
+                  urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeatureCateItems.m"
+                  timestampString = "406514790.587585"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "2900">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VC_FeatureCateItems loadFeaturedCategoryItems]"
+                  moduleName = "FurryBear_iOS"
+                  urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeatureCateItems.m"
+                  timestampString = "406514790.589655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "3033">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

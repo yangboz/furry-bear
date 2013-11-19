@@ -153,7 +153,13 @@
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
             [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
             //[fCateItemDict setObject:rating forKey:@"username"];
+            
             [featuredCategoryItems addObject:fCateItemDict];
+            for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
+                for (id key in fCateItemDict) {
+                    NSLog(@"key: %@, value: %@ \n", key, [fCateItemDict objectForKey:key]);
+                }
+            }
         }
         //Table view reload
         [self.myTableView reloadData];
@@ -264,7 +270,7 @@
 }
 
 #pragma mark App42 APIs
--(void)App42_findDocumentById:(NSString *)docId
+-(JSONDocument *)App42_findDocumentById:(NSString *)docId
 {
     NSString *dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -283,16 +289,19 @@
     
     NSString *jsonResponse = [storage toString]; /* returns the response in JSON format. */
     NSLog(@"App42_findDocumentById jsonResponse:%@",jsonResponse);
+    return [jsonDocList objectAtIndex:0];
 }
 
 -(int)App42_getReviewsCountByItem:(NSString*)itemId
 {
+    int totalRecords = 0;
+    @try{
     //NSString *itemId = @"ItemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
     App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
     BOOL success = response.isResponseSuccess;
     NSLog(@"App42_getReviewsCountByItem success?%d",success);
-    int totalRecords = response.totalRecords;
+    totalRecords = response.totalRecords;
     NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
     NSString *jsonResponse = [response toString];
     NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
@@ -305,11 +314,20 @@
             }
         }  
     }*/
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
     return totalRecords;
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
 -(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId
 {
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    @try{
 //    NSString *itemId = @"itemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
     NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
@@ -322,12 +340,21 @@
         NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
                     }
     //
-    NSMutableArray *results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
+    results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
     return results;
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#getaverage_reviewbyitem
 -(int)App42_getAverageReviewByItem:(NSString *)itemId
 {
+    int avgRating = 0;
+    @try{
    // NSString *itemId = @"itemID";
     ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
     Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
@@ -337,6 +364,13 @@
     NSLog(@"rating=%f", review.rating);
     NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
     NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
-    return review.rating;
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return avgRating;
 }
 @end
