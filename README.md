@@ -42,6 +42,8 @@ TODO
 
 3.Using NSOperation to refactory the App42 API service calls;
 
+4.UI screen layout re-define;
+
 Backlog 
 ==========
 
