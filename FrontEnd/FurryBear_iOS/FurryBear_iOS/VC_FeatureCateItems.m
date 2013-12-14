@@ -251,8 +251,10 @@
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
-    cell.reviewCountLabel.text = [fCateItemDict objectForKey:@"reviewCount"];
-    cell.ratingCountLabel.text = [fCateItemDict objectForKey:@"rating"];
+    NSString *reviewCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"reviewCount"] integerValue]];
+    cell.reviewCountLabel.text = reviewCount;
+    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
+    cell.ratingCountLabel.text = ratingCount;
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     return cell;
