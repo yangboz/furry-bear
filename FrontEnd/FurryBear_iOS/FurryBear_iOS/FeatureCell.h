@@ -16,6 +16,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *reviewCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratingCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *userIdLabel;
+@property (nonatomic, strong) IBOutlet UILabel *timeStampLabel;
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
 //IBActions

@@ -10,7 +10,7 @@
 
 @implementation FeatureCell
 
-@synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel;
+@synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel,timeStampLabel;
 @synthesize navigationController;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -38,6 +38,7 @@
     [self.ratingCountLabel release];
     [self.reviewCountLabel release];
     [self.userIdLabel release];
+    [self.timeStampLabel release];
     [self.navigationController release];
     //
     [super dealloc];

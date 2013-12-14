@@ -255,6 +255,8 @@
     cell.reviewCountLabel.text = reviewCount;
     NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.ratingCountLabel.text = ratingCount;
+//    cell.userIdLabel.text =
+//    cell.timeStampLabel.text =
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     return cell;
