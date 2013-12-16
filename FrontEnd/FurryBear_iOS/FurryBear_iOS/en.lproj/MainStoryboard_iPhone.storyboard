@@ -129,7 +129,7 @@
                             <constraint firstItem="JBA-dA-rKw" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" id="uUc-Sy-jwR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="7"/>
+                    <tabBarItem key="tabBarItem" image="fork-32.png" id="7"/>
                     <connections>
                         <outlet property="cateTabBarItem" destination="7" id="8Ha-RY-DbY"/>
                         <outlet property="myTableView" destination="JBA-dA-rKw" id="PLw-Su-PtX"/>
@@ -288,7 +288,7 @@
         <scene sceneID="grQ-Nk-af7">
             <objects>
                 <navigationController definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="6Ro-SI-cUS"/>
+                    <tabBarItem key="tabBarItem" image="wine_glass-25.png" id="6Ro-SI-cUS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wxw-MJ-1Gc">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -347,7 +347,7 @@
         <scene sceneID="QeR-xd-dMy">
             <objects>
                 <navigationController definesPresentationContext="YES" id="uVi-hG-yh2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="hzx-D2-AfS"/>
+                    <tabBarItem key="tabBarItem" image="knife-25.png" id="hzx-D2-AfS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3PP-D4-DBY">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -598,7 +598,7 @@
         <scene sceneID="4g2-iK-ghz">
             <objects>
                 <navigationController definesPresentationContext="YES" id="eNb-Hr-2Ir" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="feR-E5-R4P"/>
+                    <tabBarItem key="tabBarItem" image="spoon-25.png" id="feR-E5-R4P"/>
                     <navigationItem key="navigationItem" id="3Ld-75-ws9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q4k-5E-RCQ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -888,11 +888,15 @@
     </scenes>
     <resources>
         <image name="1Star.png" width="38" height="38"/>
+        <image name="fork-32.png" width="32" height="32"/>
         <image name="ico_people.png" width="15" height="19"/>
         <image name="ico_reply.png" width="15" height="19"/>
+        <image name="knife-25.png" width="25" height="25"/>
         <image name="pic_plank_among.png" width="320" height="5"/>
         <image name="pic_plank_down.png" width="320" height="33"/>
         <image name="pic_plank_up.png" width="320" height="5"/>
+        <image name="spoon-25.png" width="25" height="25"/>
+        <image name="wine_glass-25.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
