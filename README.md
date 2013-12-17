@@ -56,3 +56,5 @@ Backlog
 4.One category item match along with one NoSQL document and many Reviews; 
 
 5.Collobrative Filtering Recommandation implmentation;
+
+6.User list with roles assignment, support add friends and send card message;
