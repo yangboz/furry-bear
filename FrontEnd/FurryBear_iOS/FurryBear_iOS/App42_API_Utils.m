@@ -76,6 +76,10 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildStorageService];
 }
+-(RecommenderService *)getRecommenderService
+{
+    return [serviceAPIobj buildRecommenderService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {
