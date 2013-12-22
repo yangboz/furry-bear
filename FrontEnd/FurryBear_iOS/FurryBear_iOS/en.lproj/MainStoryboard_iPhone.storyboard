@@ -86,7 +86,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text=",12345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pB1-hL-MkD">
-                                                    <rect key="frame" x="157" y="337" width="42" height="21"/>
+                                                    <rect key="frame" x="77" y="338" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,17 +102,12 @@
                                                         <action selector="reviewAction:" destination="ESp-db-574" eventType="touchUpInside" id="LrE-Ic-hsV"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="He2-nn-tA4">
-                                                    <rect key="frame" x="72" y="336" width="82" height="26"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImageView" destination="oLt-0z-uN5" id="l2e-AC-YjV"/>
                                             <outlet property="nameLabel" destination="Fpp-68-Wgx" id="D3O-Ft-fqX"/>
                                             <outlet property="ratingCountLabel" destination="pB1-hL-MkD" id="9nH-ol-wh7"/>
-                                            <outlet property="ratingImageView" destination="He2-nn-tA4" id="h9H-su-9OP"/>
                                             <outlet property="reviewCountLabel" destination="73o-AH-pdB" id="jVW-cz-8ZZ"/>
                                             <outlet property="userIdLabel" destination="Rau-rK-iQM" id="kLC-MK-sja"/>
                                         </connections>
@@ -437,21 +432,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mHv-jQ-wve">
-                                                    <rect key="frame" x="68" y="3" width="34" height="22"/>
+                                                    <rect key="frame" x="49" y="3" width="34" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4bt-qx-c6i">
-                                                    <rect key="frame" x="68" y="25" width="32" height="15"/>
+                                                    <rect key="frame" x="49" y="25" width="32" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="1Star.png" id="EyZ-K4-gX6">
-                                                    <rect key="frame" x="15" y="2" width="38" height="38"/>
+                                                    <rect key="frame" x="15" y="12" width="19" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -904,7 +899,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1Star.png" width="38" height="38"/>
+        <image name="1Star.png" width="19" height="19"/>
         <image name="chili_pepper-32.png" width="32" height="32"/>
         <image name="ico_people.png" width="15" height="19"/>
         <image name="ico_reply.png" width="15" height="19"/>

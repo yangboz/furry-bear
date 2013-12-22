@@ -253,14 +253,13 @@
     cell.itemImageView.imageURL = aURL;
     NSString *reviewCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"reviewCount"] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
-    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.ratingCountLabel.text = ratingCount;
+//    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
+    cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
 //    cell.userIdLabel.text =
 //    cell.timeStampLabel.text =
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //
-    cell.ratingImageView.image = [self imageForRating:[[fCateItemDict objectForKey:@"reviewCount"] integerValue]+1];
     return cell;
 }
 
@@ -380,14 +379,15 @@
     return avgRating;
 }
 #pragma mark Utility functions
-- (UIImage *)imageForRating:(int)rating
+- (NSString *)symbolForRating:(int)rating
 {
     switch (rating) {
-        case 1: return [UIImage imageNamed:@"1StarSmall"];
-        case 2: return [UIImage imageNamed:@"2StarsSmall"];
-        case 3: return [UIImage imageNamed:@"3StarsSmall"];
-        case 4: return [UIImage imageNamed:@"4StarsSmall"];
-        case 5: return [UIImage imageNamed:@"5StarsSmall"];
+        case 0: return @"☆";
+        case 1: return @"★";
+        case 2: return @"★★";
+        case 3: return @"★★★";
+        case 4: return @"★★★★";
+        case 5: return @"★★★★★";
     }
     return nil;
 }

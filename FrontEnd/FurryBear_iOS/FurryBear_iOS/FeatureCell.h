@@ -20,8 +20,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *timeStampLabel;
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
-@property (nonatomic, strong) IBOutlet UIImageView
-*ratingImageView;
 //IBActions
 -(IBAction)reviewAction:(id)sender;
 //Public Properties/Functions

@@ -20,7 +20,7 @@
 }
 -(void)userDefaultsLogin;
 -(void)loadFeaturedCategoryItems;
-- (UIImage *)imageForRating:(int)rating;
+- (NSString *)symbolForRating:(int)rating;
 @property(nonatomic,strong)IBOutlet UITableView *myTableView;
 @property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
 -(void)displayLoginPopup;

@@ -23,14 +23,14 @@
 //    _favorites = [NSMutableArray arrayWithCapacity:20];
     ItemData *itemData = [[ItemData alloc] init];
     itemData.itemId = @"0";
-    itemData.name = @"Default";
+    itemData.name = @"★";
     itemData.image = @"http://www.google.com";
     itemData.imageName = @"first.png";
     itemData.price = 2;
     [testingData addObject:itemData];
     itemData = [[ItemData alloc] init];
     itemData.itemId = @"1";
-    itemData.name = @"Scallop";
+    itemData.name = @"☆";
     itemData.image = @"http://www.google.com";
     itemData.imageName = @"Scallop000.jpg";
     itemData.price = 4;
