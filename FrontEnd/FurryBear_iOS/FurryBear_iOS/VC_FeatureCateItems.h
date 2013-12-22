@@ -20,6 +20,7 @@
 }
 -(void)userDefaultsLogin;
 -(void)loadFeaturedCategoryItems;
+- (UIImage *)imageForRating:(int)rating;
 @property(nonatomic,strong)IBOutlet UITableView *myTableView;
 @property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
 -(void)displayLoginPopup;
@@ -28,4 +29,5 @@
 -(int)App42_getReviewsCountByItem:(NSString*)itemId;
 -(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId;
 -(int)App42_getAverageReviewByItem:(NSString *)itemId;//Rating value only.
+
 @end

@@ -11,6 +11,7 @@
 
 @interface FeatureCell : UITableViewCell
 {
+    
 }
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *reviewCountLabel;
@@ -19,8 +20,11 @@
 @property (nonatomic, strong) IBOutlet UILabel *timeStampLabel;
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
+@property (nonatomic, strong) IBOutlet UIImageView
+*ratingImageView;
 //IBActions
 -(IBAction)reviewAction:(id)sender;
 //Public Properties/Functions
 @property(nonatomic,retain) UINavigationController *navigationController;
+
 @end
