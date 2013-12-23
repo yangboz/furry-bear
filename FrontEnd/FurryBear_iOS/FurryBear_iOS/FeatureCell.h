@@ -20,10 +20,11 @@
 @property (nonatomic, strong) IBOutlet UILabel *timeStampLabel;
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
+//
+@property (nonatomic, strong) IBOutlet UIButton *reviewIconBtn;
+@property (nonatomic, strong) IBOutlet UIButton *userIconBtn;
 //IBActions
--(IBAction)reviewIconAction:(id)sender;
--(IBAction)userIconAction:(id)sender;
--(IBAction)itemDetailAction:(id)sender;
+
 //Public Properties/Functions
 @property(nonatomic,retain) UINavigationController *navigationController;
 

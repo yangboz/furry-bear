@@ -259,6 +259,9 @@
 //    cell.timeStampLabel.text =
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
+    //IBAction for cell buttons
+    [cell.reviewIconBtn addTarget:self action:@selector(reviewIconAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.userIconBtn addTarget:self action:@selector(userIconAction:) forControlEvents:UIControlEventTouchUpInside];
     //
     return cell;
 }
@@ -390,5 +393,20 @@
         case 5: return @",★★★★★";
     }
     return nil;
+}
+#pragma mark IBActions inside of cell.
+- (void)reviewIconAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+}
+
+- (void)userIconAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+}
+
+- (void)itemDetailAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
 }
 @end

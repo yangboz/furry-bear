@@ -94,9 +94,6 @@
                                                     <state key="normal" image="ico_reply.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="reviewIconAction:" destination="ESp-db-574" eventType="touchUpInside" id="iQu-TR-W9G"/>
-                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50I-3n-bYy">
                                                     <rect key="frame" x="196" y="337" width="15" height="22"/>
@@ -104,9 +101,6 @@
                                                     <state key="normal" image="ico_people.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="userIconAction:" destination="ESp-db-574" eventType="touchUpInside" id="NzJ-PG-g1T"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -115,6 +109,9 @@
                                             <outlet property="nameLabel" destination="Fpp-68-Wgx" id="D3O-Ft-fqX"/>
                                             <outlet property="ratingCountLabel" destination="pB1-hL-MkD" id="9nH-ol-wh7"/>
                                             <outlet property="reviewCountLabel" destination="73o-AH-pdB" id="jVW-cz-8ZZ"/>
+                                            <outlet property="reviewIconBtn" destination="eBh-eb-Yry" id="tCB-k2-9aN"/>
+                                            <outlet property="timeStampLabel" destination="g5e-c4-adZ" id="Y2j-lx-UsW"/>
+                                            <outlet property="userIconBtn" destination="50I-3n-bYy" id="CvN-kg-PDh"/>
                                             <outlet property="userIdLabel" destination="Rau-rK-iQM" id="kLC-MK-sja"/>
                                         </connections>
                                     </tableViewCell>

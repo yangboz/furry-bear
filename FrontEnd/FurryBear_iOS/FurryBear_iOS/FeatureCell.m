@@ -10,7 +10,7 @@
 
 @implementation FeatureCell
 
-@synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel,timeStampLabel;
+@synthesize nameLabel,ratingCountLabel,reviewCountLabel,itemImageView,userIdLabel,timeStampLabel,reviewIconBtn,userIconBtn;
 @synthesize navigationController;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -40,24 +40,13 @@
     [self.userIdLabel release];
     [self.timeStampLabel release];
     [self.navigationController release];
+    [self.reviewIconBtn release];
+    [self.userIconBtn release];
     //
     [super dealloc];
 }
 #pragma mark IBActions
-- (IBAction)reviewIconAction:(id)sender
-{
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-}
 
-- (IBAction)userIconAction:(id)sender
-{
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-}
-
-- (IBAction)itemDetailAction:(id)sender
-{
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-}
 
 #pragma mark Public Properties/Functions
 

@@ -29,5 +29,8 @@
 -(int)App42_getReviewsCountByItem:(NSString*)itemId;
 -(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId;
 -(int)App42_getAverageReviewByItem:(NSString *)itemId;//Rating value only.
-
+//IBActions inside of cell
+-(void)reviewIconAction:(id)sender;
+-(void)userIconAction:(id)sender;
+-(void)itemDetailAction:(id)sender;
 @end
