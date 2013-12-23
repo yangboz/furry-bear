@@ -21,7 +21,9 @@
 @property (nonatomic, strong) IBOutlet AsyncImageView
 *itemImageView;
 //IBActions
--(IBAction)reviewAction:(id)sender;
+-(IBAction)reviewIconAction:(id)sender;
+-(IBAction)userIconAction:(id)sender;
+-(IBAction)itemDetailAction:(id)sender;
 //Public Properties/Functions
 @property(nonatomic,retain) UINavigationController *navigationController;
 

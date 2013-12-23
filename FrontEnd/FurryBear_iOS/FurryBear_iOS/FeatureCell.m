@@ -44,7 +44,17 @@
     [super dealloc];
 }
 #pragma mark IBActions
-- (IBAction)reviewAction:(id)sender
+- (IBAction)reviewIconAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+}
+
+- (IBAction)userIconAction:(id)sender
+{
+    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+}
+
+- (IBAction)itemDetailAction:(id)sender
 {
     [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
 }
