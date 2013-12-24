@@ -5,6 +5,47 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller - 一道菜-->
+        <scene sceneID="HtG-9v-aie">
+            <objects>
+                <tableViewController id="R0t-Nz-zzV" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ms3-Q9-wHT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="s2W-oV-GJt">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s2W-oV-GJt" id="DY2-KI-IDN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="一道菜" id="YxT-Yp-Bch"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ui-RW-uvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166" y="693"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lkh-CG-B5b">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Au4-A7-qIm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="chili_pepper-32.png" id="Lfn-2p-878"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M1H-kW-PKJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="R0t-Nz-zzV" kind="relationship" relationship="rootViewController" id="zzD-0l-zoh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qv-3V-ME3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-698" y="693"/>
+        </scene>
         <!--Feature Cate Items - First-->
         <scene sceneID="11">
             <objects>
@@ -894,11 +935,12 @@
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="uZs-dV-GmU"/>
                         <segue destination="0nB-eT-Qzv" kind="relationship" relationship="viewControllers" id="Qwm-yg-OG8"/>
+                        <segue destination="Au4-A7-qIm" kind="relationship" relationship="viewControllers" id="VSR-gr-YFH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="-82"/>
+            <point key="canvasLocation" x="125" y="2"/>
         </scene>
     </scenes>
     <resources>

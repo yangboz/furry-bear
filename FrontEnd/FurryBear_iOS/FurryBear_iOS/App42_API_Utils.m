@@ -80,6 +80,10 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildRecommenderService];
 }
+-(QueueService *)getQueueService
+{
+    return [serviceAPIobj buildQueueService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {

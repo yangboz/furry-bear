@@ -402,6 +402,7 @@
 
 - (void)userIconAction:(id)sender
 {
+    self.tabBarController.selectedIndex = 2;
     [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
 }
 

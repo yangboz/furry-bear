@@ -20,6 +20,7 @@
 -(ReviewService *)getReviewService;
 -(StorageService *)getStorageService;
 -(RecommenderService *)getRecommenderService;
+-(QueueService *)getQueueService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
