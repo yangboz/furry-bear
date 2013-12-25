@@ -140,7 +140,7 @@
             //featuredCategoryItem dictionary:
             NSMutableDictionary *fCateItemDict = [[NSMutableDictionary alloc] init];
             //#1.FIND DOCUMENT BY ID
-            [self App42_findDocumentById:item.itemId];
+            JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
             //#2.GET REVIEWS COUNT BY ITEM
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
@@ -148,6 +148,10 @@
             //[self App42_getReviewsByItem:item.itemId];
             //#4.GET AVERAGE REVIEW BY ITEM
             int rating = [self App42_getAverageReviewByItem:item.itemId];
+            //#5.GET USER NAME
+//            NSString *username = jsonDoc.
+            //#6.GET ITEM TIMESTAMP
+            
             //
             [fCateItemDict setObject:item forKey:@"cateItem"];
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
@@ -381,6 +385,18 @@
     }
     return avgRating;
 }
+-(NSString *)App42_getItemUserName:(NSString *)itemId
+{
+    NSString *username = @"";
+    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
+    userService
+    return username;
+}
+-(NSString *)App42_getItemTimeStamp:(NSString *)itemId
+{
+    NSString *timestamp = @"";
+    return timestamp;
+}
 #pragma mark Utility functions
 - (NSString *)symbolForRating:(int)rating
 {
@@ -397,6 +413,7 @@
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
+    self.tabBarController.selectedIndex = 2;
     [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
 }
 
