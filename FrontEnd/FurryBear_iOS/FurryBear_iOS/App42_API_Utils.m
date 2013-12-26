@@ -84,6 +84,11 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildQueueService];
 }
+
+-(ScoreBoardService *)getScoreBoardService;
+{
+    return [serviceAPIobj buildScoreBoardService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {

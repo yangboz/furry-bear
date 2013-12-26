@@ -21,6 +21,7 @@
 -(StorageService *)getStorageService;
 -(RecommenderService *)getRecommenderService;
 -(QueueService *)getQueueService;
+-(ScoreBoardService *)getScoreBoardService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
