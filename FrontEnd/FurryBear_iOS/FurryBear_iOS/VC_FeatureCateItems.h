@@ -13,6 +13,7 @@
 #import "FeatureCell.h"
 #import "AsyncImageView.h"
 #import "MBProgressHUD.h"
+#import "JSONKit.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

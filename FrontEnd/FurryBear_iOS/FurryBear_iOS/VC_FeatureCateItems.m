@@ -141,23 +141,26 @@
             NSMutableDictionary *fCateItemDict = [[NSMutableDictionary alloc] init];
             //#1.FIND DOCUMENT BY ID
             JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
-            //#2.GET REVIEWS COUNT BY ITEM
+            //#2.GET USER NAME
+            //            NSString *username = jsonDoc.
+            //#3.GET ITEM TIMESTAMP
+            NSString *timestamp = [self App42_getItemTimeStamp:jsonDoc];
+            //With try catch...
+            //#4.GET REVIEWS COUNT BY ITEM
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
-            //#3.GET REVIEWs BY ITEM
+            //#5.GET REVIEWs BY ITEM
             //[self App42_getReviewsByItem:item.itemId];
-            //#4.GET AVERAGE REVIEW BY ITEM
+            //#6.GET AVERAGE REVIEW BY ITEM
             int rating = [self App42_getAverageReviewByItem:item.itemId];
-            //#5.GET USER NAME
-//            NSString *username = jsonDoc.
-            //#6.GET ITEM TIMESTAMP
-            
+
             //
             [fCateItemDict setObject:item forKey:@"cateItem"];
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
             [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
             //[fCateItemDict setObject:rating forKey:@"username"];
-            
+            [fCateItemDict setObject:timestamp forKey:@"timestamp"];
+            //
             [featuredCategoryItems addObject:fCateItemDict];
             for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
                 for (id key in fCateItemDict) {
@@ -260,7 +263,7 @@
 //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
 //    cell.userIdLabel.text =
-//    cell.timeStampLabel.text =
+    cell.timeStampLabel.text = [fCateItemDict objectForKey:@"timestamp"];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
@@ -385,16 +388,20 @@
     }
     return avgRating;
 }
--(NSString *)App42_getItemUserName:(NSString *)itemId
+//@private
+-(NSString *)App42_getItemUserName:(NSString *)jsonDoc
 {
     NSString *username = @"";
-    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
-    userService
+    
     return username;
 }
--(NSString *)App42_getItemTimeStamp:(NSString *)itemId
+-(NSString *)App42_getItemTimeStamp:(JSONDocument *)jsonDoc
 {
     NSString *timestamp = @"";
+    NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
+    //
+    timestamp = [dict objectForKey:@"_$updatedAt"];
+    NSLog(@"json._$updatedAt:%@", timestamp);
     return timestamp;
 }
 #pragma mark Utility functions
