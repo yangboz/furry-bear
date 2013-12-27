@@ -44,6 +44,8 @@ TODO
 
 4.UI screen layout re-define;
 
+5.Using ScoreBoard/LeadBoard and QueueService to apply the send user card message function;
+
 Backlog 
 ==========
 
