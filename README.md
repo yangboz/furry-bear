@@ -60,3 +60,5 @@ Backlog
 5.Collobrative Filtering Recommandation implmentation;
 
 6.User list with roles assignment, support add friends and send card message;
+
+7.Timestamp string converting results as required; 
