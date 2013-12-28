@@ -9,11 +9,7 @@
 #import "VC_CategoryItemAddReview.h"
 
 @interface VC_CategoryItemAddReview ()
-#define SEGUE_NAME_IMAGE @"segue_image"
-#define SEGUE_NAME_REVIEW @"segue_review"
-#define SEGUE_NAME_COMMENT @"segue_comment"
-#define SEGUE_NAME_CATACATE @"segue_catacate"
-#define SEGUE_NAME_SIGNUP @"segue_signup"
+
 @end
 
 @implementation VC_CategoryItemAddReview

@@ -142,7 +142,7 @@
             //#1.FIND DOCUMENT BY ID
             JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
             //#2.GET USER NAME
-            //            NSString *username = jsonDoc.
+            NSString *username = [self App42_getItemOwnerName:jsonDoc];
             //#3.GET ITEM TIMESTAMP
             NSString *timestamp = [self App42_getItemTimeStamp:jsonDoc];
             //With try catch...
@@ -389,10 +389,12 @@
     return avgRating;
 }
 //@private
--(NSString *)App42_getItemUserName:(NSString *)jsonDoc
+-(NSString *)App42_getItemOwnerName:(JSONDocument *)jsonDoc
 {
     NSString *username = @"";
-    
+    NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
+    //
+    username = [dict objectForKey:KEY_NAME_OWNERNAME];
     return username;
 }
 -(NSString *)App42_getItemTimeStamp:(JSONDocument *)jsonDoc

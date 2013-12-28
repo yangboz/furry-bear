@@ -14,6 +14,7 @@
 #import "AsyncImageView.h"
 #import "MBProgressHUD.h"
 #import "JSONKit.h"
+#import "Prefs.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

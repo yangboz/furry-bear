@@ -15,6 +15,7 @@
 #import "MBProgressHUD.h"
 #import "JSONKit.h"
 #import "MBProgressHUD.h"
+#import "Prefs.h"
 
 @interface VC_SegueImageUpload : UITableViewController <UIImagePickerControllerDelegate>
 {

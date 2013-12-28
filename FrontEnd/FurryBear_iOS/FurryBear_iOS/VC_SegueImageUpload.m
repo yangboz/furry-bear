@@ -177,6 +177,8 @@
     NSString *dbName = defaultCatalogueName;
     NSString *collectionName = defaultCategoryName;
     NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+    //Insert username key-value.
+    [storageDict setObject:userName forKey:KEY_NAME_OWNERNAME];
     NSString *jsonStr = [storageDict JSONString];
     NSLog(@"JSON storageDict:%@",jsonStr);
     StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];

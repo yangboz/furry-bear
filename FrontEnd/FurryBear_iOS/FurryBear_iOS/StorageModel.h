@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
-#define KEY_NAME_ADDRESS @"address"
-#define KEY_NAME_TELPHONE @"telphone"
-#define KEY_NAME_RESTAURANT @"restaurant"
-#define KEY_NAME_AGREE_NEXT_TIME @"agreeNextTime"
+#import "Prefs.h"
 
 @interface StorageModel : NSObject
 {

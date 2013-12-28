@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
+#import "Prefs.h"
 
 @interface VC_CategoryItemAddReview : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 {
