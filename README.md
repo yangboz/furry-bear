@@ -46,6 +46,7 @@ TODO
 
 5.Using ScoreBoard/LeadBoard and QueueService to apply the send user card message function;
 
+
 Backlog 
 ==========
 
@@ -60,5 +61,7 @@ Backlog
 5.Collobrative Filtering Recommandation implmentation;
 
 6.User list with roles assignment, support add friends and send card message;
+
+7.Gamification by design;?
 
 7.Timestamp string converting results as required; 
