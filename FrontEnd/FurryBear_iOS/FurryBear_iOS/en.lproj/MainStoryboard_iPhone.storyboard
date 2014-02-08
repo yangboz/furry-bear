@@ -321,10 +321,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="“一道菜”，每个人心里都会有道菜，时间长不吃就会惦记。每个人心里都会有个人，时间长不见就会想念。菜想吃的时候可以去做，而人一旦失去就永远相见与梦里。所以，珍惜嘴边菜，善待身边人。" id="Yhr-S9-wUH">
+                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Yhr-S9-wUH">
                             <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <string key="text">“一道菜”，每个人心里都会有道菜，时间长不吃就会惦记。每个人心里都会有个人，时间长不见就会想念。菜想吃的时候可以去做，而人一旦失去就永远相见与梦里。所以，珍惜嘴边菜，善待身边人。味道这个东西，言语难以形容，把你喜欢的一道菜赠予你觉得能懂它的人，让味道从一条舌头传到另一条舌头。</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
