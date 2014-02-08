@@ -20,5 +20,11 @@
 #define KEY_NAME_RESTAURANT @"restaurant"
 #define KEY_NAME_AGREE_NEXT_TIME @"agreeNextTime"
 #define KEY_NAME_OWNERNAME @"ownername"
+//Email Service-GmailAccount
+#define GMAIL_HOST @"smtp.gmail.com"
+#define GMAIL_PORT 465
+#define GMAIL_ID @"YoungWelle@gmail.com"
+#define GMAIL_PWD @"7740321"
+#define GMAIL_IS_SSL YES
 //
 #endif
