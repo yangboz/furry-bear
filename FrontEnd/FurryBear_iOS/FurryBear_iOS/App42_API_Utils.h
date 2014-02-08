@@ -22,6 +22,7 @@
 -(RecommenderService *)getRecommenderService;
 -(QueueService *)getQueueService;
 -(ScoreBoardService *)getScoreBoardService;
+-(EmailService *)getEmailService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;

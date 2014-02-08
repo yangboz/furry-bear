@@ -89,6 +89,11 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildScoreBoardService];
 }
+
+-(EmailService *)getEmailService;
+{
+    return [serviceAPIobj buildEmailService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {
