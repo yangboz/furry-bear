@@ -14,6 +14,7 @@
 #define SEGUE_NAME_COMMENT @"segue_comment"
 #define SEGUE_NAME_CATACATE @"segue_catacate"
 #define SEGUE_NAME_SIGNUP @"segue_signup"
+#define SEGUE_NAME_EMAIL @"segue_email"
 //NO SQL keys
 #define KEY_NAME_ADDRESS @"address"
 #define KEY_NAME_TELPHONE @"telphone"
