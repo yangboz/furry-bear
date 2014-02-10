@@ -115,3 +115,7 @@ Low-level design
 10.支持群组信息首页展示（只需要两条，图片＋评分＋评价者的vid和头像);
 
 11.
+
+Gist
+====================
+https://gist.github.com/yangboz/8917276
