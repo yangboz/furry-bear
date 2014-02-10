@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - 一道菜-->
+        <!--News Letter Send - NEWS_LETTER-->
         <scene sceneID="HtG-9v-aie">
             <objects>
-                <tableViewController id="R0t-Nz-zzV" sceneMemberID="viewController">
+                <tableViewController id="R0t-Nz-zzV" customClass="VC_NewsLetterSend" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ms3-Q9-wHT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,15 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道菜" id="YxT-Yp-Bch"/>
+                    <navigationItem key="navigationItem" title="NEWS_LETTER" id="YxT-Yp-Bch"/>
+                    <connections>
+                        <outlet property="btn_send" destination="18P-hu-WJ8" id="9hz-jp-0mT"/>
+                        <outlet property="textMimeTypeSegmentedCtr" destination="VfS-Sc-Fyb" id="uaO-oO-kws"/>
+                        <outlet property="txt_sendFrom" destination="E6Z-7x-T3Y" id="URK-st-9GX"/>
+                        <outlet property="txt_sendMsg" destination="V5s-uD-0Xr" id="RNh-iG-aPh"/>
+                        <outlet property="txt_sendSubject" destination="teh-bF-jSA" id="BjH-RH-bHR"/>
+                        <outlet property="txt_sendTo" destination="tyy-tI-J7Y" id="tXQ-Ai-yS0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ui-RW-uvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

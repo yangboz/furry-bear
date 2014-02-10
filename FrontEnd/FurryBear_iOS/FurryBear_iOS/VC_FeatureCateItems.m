@@ -292,6 +292,8 @@
 //    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
     StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
     //
+
+    //
     Storage *storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
     NSLog(@"collectionName is = %@",storage.collectionName);
