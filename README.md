@@ -46,7 +46,7 @@ TODO
 
 5.Using ScoreBoard/LeadBoard and QueueService to apply the send user card message function;
 
-6.Email service for newsletter;
+6.Email service for newsletter(email subscribe/unsubscribe,get/set email list);
 
 
 Backlog 
