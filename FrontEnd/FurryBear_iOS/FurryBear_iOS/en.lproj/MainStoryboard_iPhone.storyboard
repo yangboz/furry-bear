@@ -131,6 +131,9 @@
                                                     <state key="normal" title="SUBMIT">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="on_send_newsletter:" destination="R0t-Nz-zzV" eventType="touchUpInside" id="Eyq-gr-7un"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -141,7 +144,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="NEWS_LETTER" id="YxT-Yp-Bch"/>
                     <connections>
-                        <outlet property="btn_send" destination="18P-hu-WJ8" id="9hz-jp-0mT"/>
                         <outlet property="textMimeTypeSegmentedCtr" destination="VfS-Sc-Fyb" id="uaO-oO-kws"/>
                         <outlet property="txt_sendFrom" destination="E6Z-7x-T3Y" id="URK-st-9GX"/>
                         <outlet property="txt_sendMsg" destination="V5s-uD-0Xr" id="RNh-iG-aPh"/>

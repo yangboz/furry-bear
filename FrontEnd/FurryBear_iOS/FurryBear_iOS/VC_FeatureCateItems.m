@@ -142,7 +142,7 @@
             //#1.FIND DOCUMENT BY ID
             JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
             //#2.GET USER NAME
-            NSString *username = [self App42_getItemOwnerName:jsonDoc];
+            //NSString *username = [self App42_getItemOwnerName:jsonDoc];
             //#3.GET ITEM TIMESTAMP
             NSString *timestamp = [self App42_getItemTimeStamp:jsonDoc];
             //With try catch...

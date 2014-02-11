@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "App42_API_Utils.h"
 
 @interface VC_NewsLetterSend : UITableViewController
 {}
@@ -15,5 +16,6 @@
 @property(nonatomic,strong)IBOutlet UITextField *txt_sendMsg;
 @property(nonatomic,strong)IBOutlet UITextField *txt_sendFrom;
 @property (retain, getter=isOn) IBOutlet UISegmentedControl *textMimeTypeSegmentedCtr;
-@property(nonatomic,strong)IBOutlet UIButton *btn_send;
+//
+- (IBAction)on_send_newsletter:(id)sender;
 @end

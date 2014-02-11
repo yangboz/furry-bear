@@ -44,25 +44,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *tableIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:tableIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+    }
     return cell;
 }
 
@@ -116,5 +115,35 @@
 }
 
  */
+
+#pragma mark - IBOutlet
+-(void)on_send_newsletter:(id)sender;
+{
+    EmailService *emailService = [[App42_API_Utils sharedInstance] getEmailService];
+    @try{
+        //App42 service API call here.
+        Email *email = [emailService sendMail:self.txt_sendTo.text subject:self.txt_sendSubject.text Message:self.txt_sendMsg.text fromEmail:self.txt_sendFrom.text emailMIME:[self getTextMimeType]];/* returns the Email object. */
+        NSString *jsonResponse = [email toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"EmailService json response:%@",jsonResponse);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+    }
+    
+    
+}
+//Private
+-(NSString *)getTextMimeType;
+{
+    NSString *textMimeType = PLAIN_TEXT_MIME_TYPE;
+    if (self.textMimeTypeSegmentedCtr.selectedSegmentIndex==0) {
+        textMimeType = HTML_TEXT_MIME_TYPE;
+    }
+    return textMimeType;
+}
 
 @end
