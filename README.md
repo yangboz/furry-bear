@@ -119,3 +119,7 @@ Low-level design
 Gist
 ====================
 https://gist.github.com/yangboz/8917276
+
+WeChat API
+====================
+http://open.weixin.qq.com/document/
