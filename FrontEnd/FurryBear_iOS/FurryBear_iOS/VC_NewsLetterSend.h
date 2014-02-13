@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "App42_API_Utils.h"
 
-@interface VC_NewsLetterSend : UITableViewController
+@interface VC_NewsLetterSend : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 {}
 @property(nonatomic,strong)IBOutlet UITextField *txt_sendTo;
 @property(nonatomic,strong)IBOutlet UITextField *txt_sendSubject;
