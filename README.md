@@ -123,3 +123,7 @@ https://gist.github.com/yangboz/8917276
 WeChat API
 ====================
 http://open.weixin.qq.com/document/
+
+SpriteBuilder
+====================
+http://www.spritebuilder.com/
