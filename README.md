@@ -110,7 +110,7 @@ Low-level design
 
 8.支持地理位置搜索;
 
-9.支持地理位置输入(Auto Complete);
+9.支持地理位置输入(GEO Tag,Auto Complete);
 
 10.支持群组信息首页展示（只需要两条，图片＋评分＋评价者的vid和头像);
 
