@@ -128,6 +128,9 @@
     NSString *dbName = defaultCatalogueName;
     NSString *collectionName = defaultCategoryName;
     NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+    //UserName
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    [storageDict setValue:userName forKey:KEY_NAME_OWNERNAME];
     [storageDict setValue:self.addressTxt.text forKey:KEY_NAME_ADDRESS];
     [storageDict setValue:self.telphoneTxt.text forKey:KEY_NAME_TELPHONE];
     [storageDict setValue:self.resturantTxt.text forKey:KEY_NAME_RESTAURANT];

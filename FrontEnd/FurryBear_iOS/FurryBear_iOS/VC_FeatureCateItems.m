@@ -142,7 +142,7 @@
             //#1.FIND DOCUMENT BY ID
             JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
             //#2.GET USER NAME
-            //NSString *username = [self App42_getItemOwnerName:jsonDoc];
+            NSString *username = [self App42_getItemOwnerName:jsonDoc];
             //#3.GET ITEM TIMESTAMP
             NSString *timestamp = [self App42_getItemTimeStamp:jsonDoc];
             //With try catch...
@@ -158,7 +158,7 @@
             [fCateItemDict setObject:item forKey:@"cateItem"];
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
             [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
-            //[fCateItemDict setObject:rating forKey:@"username"];
+            [fCateItemDict setObject:username forKey:@"username"];
             [fCateItemDict setObject:timestamp forKey:@"timestamp"];
             //
             [featuredCategoryItems addObject:fCateItemDict];
@@ -262,7 +262,7 @@
     cell.reviewCountLabel.text = reviewCount;
 //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
-//    cell.userIdLabel.text =
+    cell.userIdLabel.text = [fCateItemDict objectForKey:@"username"];
     cell.timeStampLabel.text = [fCateItemDict objectForKey:@"timestamp"];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
@@ -393,7 +393,7 @@
 //@private
 -(NSString *)App42_getItemOwnerName:(JSONDocument *)jsonDoc
 {
-    NSString *username = @"";
+    NSString *username = @"nil";
     NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
     //
     username = [dict objectForKey:KEY_NAME_OWNERNAME];
