@@ -15,6 +15,7 @@
 #import "MBProgressHUD.h"
 #import "JSONKit.h"
 #import "Prefs.h"
+#import "VC_SegueCateItemReview.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

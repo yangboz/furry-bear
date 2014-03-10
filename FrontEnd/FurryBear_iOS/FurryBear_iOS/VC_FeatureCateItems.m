@@ -430,8 +430,12 @@
 
 - (void)userIconAction:(id)sender
 {
-    self.tabBarController.selectedIndex = 2;
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+//    self.tabBarController.selectedIndex = 2;
+//    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
+//    [self.navigationController pushViewController:itemReview animated:YES];
+    [self presentViewController:itemReview animated:YES completion:NULL];
+    [itemReview release];
 }
 
 - (void)itemDetailAction:(id)sender
