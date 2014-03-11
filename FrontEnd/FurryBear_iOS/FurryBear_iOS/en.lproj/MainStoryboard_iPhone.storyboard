@@ -159,7 +159,7 @@
         <scene sceneID="Lkh-CG-B5b">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Au4-A7-qIm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="chili_pepper-32.png" id="Lfn-2p-878"/>
+                    <tabBarItem key="tabBarItem" title="" image="carrot-32.png" id="Lfn-2p-878"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="M1H-kW-PKJ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1240,6 +1240,7 @@
     </scenes>
     <resources>
         <image name="1Star.png" width="19" height="19"/>
+        <image name="carrot-32.png" width="32" height="32"/>
         <image name="chili_pepper-32.png" width="32" height="32"/>
         <image name="ico_people.png" width="15" height="19"/>
         <image name="ico_reply.png" width="15" height="19"/>
