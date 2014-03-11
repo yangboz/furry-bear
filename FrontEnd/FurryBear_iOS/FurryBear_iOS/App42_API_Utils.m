@@ -94,6 +94,11 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildEmailService];
 }
+
+-(BuddyService *)getBuddyService;
+{
+    return [serviceAPIobj buildBuddyService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {

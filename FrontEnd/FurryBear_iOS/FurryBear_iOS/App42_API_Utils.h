@@ -23,6 +23,7 @@
 -(QueueService *)getQueueService;
 -(ScoreBoardService *)getScoreBoardService;
 -(EmailService *)getEmailService;
+-(BuddyService *)getBuddyService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
