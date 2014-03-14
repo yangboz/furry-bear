@@ -135,3 +135,9 @@ http://code4app.com/ios/
 UI4App
 ====================
 http://ui4app.com/category/friendslist
+
+UIAlertView+
+====================
+https://github.com/Darktt/DTAlertView
+
+https://github.com/ChrisXu1221/CXAlertView.git
