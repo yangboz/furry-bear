@@ -16,7 +16,6 @@
 #import "JSONKit.h"
 #import "Prefs.h"
 #import "VC_SegueCateItemReview.h"
-#import "DTAlertView.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

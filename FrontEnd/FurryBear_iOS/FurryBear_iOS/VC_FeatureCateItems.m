@@ -10,7 +10,7 @@
 
 @interface VC_FeatureCateItems ()
 {
-    DTAlertView *progressAlertView;
+    
 }
 @end
 
@@ -116,18 +116,7 @@
 {
     //ProgressHUD show
     //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    DTAlertViewButtonClickedBlock block = ^(DTAlertView *_alertView, NSUInteger buttonIndex, NSUInteger cancelButtonIndex){
-        if (buttonIndex == cancelButtonIndex) {
-            [NSObject cancelPreviousPerformRequestsWithTarget:self];
-        }
-    };
-    
-    progressAlertView = [DTAlertView alertViewUseBlock:block title:@"Loading..." message:nil cancelButtonTitle:@"Cancel" positiveButtonTitle:nil];
-    [progressAlertView setAlertViewMode:DTAlertViewModeProgress];
-    [progressAlertView setPercentage:0];
-    [progressAlertView show];
-    
-    [self performSelector:@selector(changePercentage:) withObject:@(0.1f) afterDelay:1.0f];
+
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -446,10 +435,12 @@
 {
 //    self.tabBarController.selectedIndex = 2;
 //    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
+//    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
 //    [self.navigationController pushViewController:itemReview animated:YES];
-    [self presentViewController:itemReview animated:YES completion:NULL];
-    [itemReview release];
+//    [self presentViewController:itemReview animated:YES completion:NULL];
+//    [itemReview release];
+    //Send user friends request with DTAlertView.
+    
 }
 
 - (void)itemDetailAction:(id)sender
@@ -457,24 +448,5 @@
     [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
 }
 
-#pragma mark - DTAlertView
 
-- (void)changePercentage:(NSNumber *)percentage
-{
-    CGFloat _percentage = [percentage floatValue];
-    
-    [progressAlertView setPercentage:_percentage];
-    
-    if (_percentage < 1.0f) {
-        [self performSelector:@selector(changePercentage:) withObject:@(_percentage + 0.1f) afterDelay:1.0f];
-    } else {
-        [progressAlertView dismiss];
-    }
-}
-
-- (void)changeProgressStatus
-{
-    [progressAlertView setProgressStatus:DTProgressStatusMake(20, 20)];
-    [progressAlertView setPercentage:0.0f];
-}
 @end

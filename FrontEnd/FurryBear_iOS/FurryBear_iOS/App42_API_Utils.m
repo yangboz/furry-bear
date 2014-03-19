@@ -12,6 +12,7 @@
 //It declares a static instance of your singleton object and initializes it to nil.
 static App42_API_Utils *sharedInstance = nil;
 static ServiceAPI *serviceAPIobj = nil;
+static DTAlertView *progressAlertView = nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(App42_API_Utils *)sharedInstance
@@ -22,7 +23,22 @@ static ServiceAPI *serviceAPIobj = nil;
         serviceAPIobj = [[ServiceAPI alloc] init];
         serviceAPIobj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
         serviceAPIobj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
+        //With loading HUD
+        DTAlertViewButtonClickedBlock block = ^(DTAlertView *_alertView, NSUInteger buttonIndex, NSUInteger cancelButtonIndex){
+            if (buttonIndex == cancelButtonIndex) {
+                [NSObject cancelPreviousPerformRequestsWithTarget:self];
+            }
+        };
+        //Configure the AlertView;
+        progressAlertView = [DTAlertView alertViewUseBlock:block title:@"Loading..." message:nil cancelButtonTitle:@"Cancel" positiveButtonTitle:nil];
+        [progressAlertView setAlertViewMode:DTAlertViewModeProgress];
+        [progressAlertView setPercentage:0];
 	}
+    //
+    [progressAlertView show];
+    //
+    [self performSelector:@selector(changePercentage:) withObject:@(0.1f) afterDelay:1.0f];
+    //
 	return sharedInstance;
 }
 //It overrides the allocWithZone: method to ensure that another instance is not allocated if someone tries to allocate and initialize an instance of your class directly instead of using the class factory method. Instead, it just returns the shared object.
@@ -123,4 +139,26 @@ static ServiceAPI *serviceAPIobj = nil;
     NSLog(@"timeSp:%@",timeStamp);
     return timeStamp;
 }
+
+#pragma mark - DTAlertView
+
+- (void)changePercentage:(NSNumber *)percentage
+{
+    CGFloat _percentage = [percentage floatValue];
+    
+    [progressAlertView setPercentage:_percentage];
+    
+    if (_percentage < 1.0f) {
+        [self performSelector:@selector(changePercentage:) withObject:@(_percentage + 0.1f) afterDelay:1.0f];
+    } else {
+        [progressAlertView dismiss];
+    }
+}
+
+- (void)changeProgressStatus
+{
+    [progressAlertView setProgressStatus:DTProgressStatusMake(20, 20)];
+    [progressAlertView setPercentage:0.0f];
+}
+
 @end
