@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
-#import "DTAlertView.h"
 
-@interface App42_API_Utils : NSObject
+
+@interface App42_API_Utils : UIView
 {
     
 }
@@ -30,4 +30,5 @@
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
 -(NSString *)getTimeStampName;
+
 @end

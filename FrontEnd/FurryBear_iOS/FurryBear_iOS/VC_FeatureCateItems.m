@@ -114,9 +114,8 @@
 
 -(void)loadFeaturedCategoryItems
 {
-    //ProgressHUD show
-    //[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-
+    //ProgressBar show
+    [[PopupManager sharedInstance] showProgressBar];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -175,8 +174,8 @@
         [self.myTableView reloadData];
         //
         //self.cateTabBarItem.badgeValue = @"1";
-        //ProgressHUD dismiss
-        //[MBProgressHUD hideHUDForView:self.view animated:YES];
+        //ProgressBar hide
+        [[PopupManager sharedInstance] hideProgressBar];
     }
 }
 
