@@ -87,6 +87,7 @@ static DTAlertView *progressAlertView = nil;
 
 #pragma mark -FriendRequest/Invite
 //@see http://api.shephertz.com/app42-docs/buddy-management-service/#send_friend_request
+//@see http://blogs.shephertz.com/2013/09/05/manage-your-friends-using-app42-buddy-management-api/
 -(void)showFriendRequest
 {
     DTAlertView *alertView = nil;
