@@ -115,7 +115,7 @@
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
-    [[PopupManager sharedInstance] showProgressBar];
+    [[PopupManager sharedInstance] popupProgressBar];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -175,7 +175,7 @@
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
-        [[PopupManager sharedInstance] hideProgressBar];
+        [[PopupManager sharedInstance] dismissProgressBar];
     }
 }
 
@@ -272,8 +272,12 @@
     [cell.reviewIconBtn addTarget:self action:@selector(reviewIconAction:) forControlEvents:UIControlEventTouchUpInside];
     //Set buddy name
     [[UserModel sharedInstance] setBuddyName: cell.userIdLabel.text];
-    //
+    //see friend request
     [cell.userIconBtn addTarget:self action:@selector(userIconAction:) forControlEvents:UIControlEventTouchUpInside];
+    //see detail
+    cell.imageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
+    [cell.imageView addGestureRecognizer:tapGesture];
     //
     return cell;
 }
@@ -442,12 +446,13 @@
 //    [self presentViewController:itemReview animated:YES completion:NULL];
 //    [itemReview release];
     //Send user friends request with PopupManager.
-    [[PopupManager sharedInstance] showFriendRequest];
+    [[PopupManager sharedInstance] popupFriendRequest];
 }
 
 - (void)itemDetailAction:(id)sender
 {
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+    //PopupManager+CXAlertView
+    [[PopupManager sharedInstance]popupCateItemDetail];
 }
 
 

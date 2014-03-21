@@ -10,16 +10,18 @@
 #import "DTAlertView.h"
 #import "App42_API_Utils.h"
 #import "UserModel.h"
+#import "CXAlertView.h"
 
 @interface PopupManager : UIView <DTAlertViewDelegate>
 {}
 +(PopupManager *)sharedInstance;
 
 //ProgressView
--(void)showProgressBar;
--(void)hideProgressBar;
+-(void)popupProgressBar;
+-(void)dismissProgressBar;
 //FriendRequest/Invite
--(void)showFriendRequest;
--(void)showFriendInvite;
-//
+-(void)popupFriendRequest;
+-(void)popupFriendInvite;
+//CateItemDetailView
+-(void)popupCateItemDetail;
 @end
