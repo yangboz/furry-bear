@@ -14,6 +14,7 @@
 static UserModel *sharedInstance = nil;
 static User *user=nil;
 static NSMutableArray *data=nil;
+static NSString *buddyName=nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(UserModel *)sharedInstance
@@ -80,4 +81,13 @@ static NSMutableArray *data=nil;
 	data = value;
 }
 
+#pragma mark -BuddyService
+-(NSString *)getBuddyName;
+{
+    return buddyName;
+}
+-(void)setBuddyName:(NSString *)value;
+{
+    buddyName = value;
+}
 @end

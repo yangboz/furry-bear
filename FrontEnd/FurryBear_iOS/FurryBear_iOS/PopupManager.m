@@ -85,5 +85,54 @@ static DTAlertView *progressAlertView = nil;
     }
 }
 
+#pragma mark -FriendRequest/Invite
+//@see http://api.shephertz.com/app42-docs/buddy-management-service/#send_friend_request
+-(void)showFriendRequest
+{
+    DTAlertView *alertView = nil;
+    alertView = [DTAlertView alertViewWithTitle:@"FriendsRequest" message:@"Say something" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
+    [alertView setAlertViewMode:DTAlertViewModeTextInput];
+    [alertView show];
+}
+
+-(void)showFriendInvite
+{
+    
+}
+
+#pragma mark - DTAlertView Delegate Methods
+
+- (void)alertView:(DTAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //
+    NSLog(@"You click button title : %@", alertView.clickedButtonTitle);
+    //
+    if (alertView.textField != nil) {
+        if (buttonIndex == alertView.cancelButtonIndex) {
+            [alertView dismiss];
+            //
+            return;
+        }
+        //
+        NSLog(@"Inputed Text : %@", alertView.textField.text);
+        //
+        NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+        NSString *buddyName = [[UserModel sharedInstance] getBuddyName];
+        NSString *message = alertView.textField.text;
+        BuddyService *buddyService  = [[App42_API_Utils sharedInstance] getBuddyService];
+        Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
+        NSLog(@"userName is : %@", buddy.userName);
+        NSLog(@"buddyName is : %@", buddy.buddyName);
+        NSLog(@"message is : %@", buddy.message);
+        NSLog(@"sendedOn is : %@", buddy.sendedOn);
+        //
+        [alertView dismiss];
+        
+        return;
+    }
+    //
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
 
 @end

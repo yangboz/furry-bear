@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "DTAlertView.h"
-@interface PopupManager : UIView
+#import "App42_API_Utils.h"
+#import "UserModel.h"
+
+@interface PopupManager : UIView <DTAlertViewDelegate>
 {}
 +(PopupManager *)sharedInstance;
 
 //ProgressView
 -(void)showProgressBar;
 -(void)hideProgressBar;
+//FriendRequest/Invite
+-(void)showFriendRequest;
+-(void)showFriendInvite;
+//
 @end

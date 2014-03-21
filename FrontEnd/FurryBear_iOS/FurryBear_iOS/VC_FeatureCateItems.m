@@ -270,6 +270,9 @@
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
     [cell.reviewIconBtn addTarget:self action:@selector(reviewIconAction:) forControlEvents:UIControlEventTouchUpInside];
+    //Set buddy name
+    [[UserModel sharedInstance] setBuddyName: cell.userIdLabel.text];
+    //
     [cell.userIconBtn addTarget:self action:@selector(userIconAction:) forControlEvents:UIControlEventTouchUpInside];
     //
     return cell;
@@ -438,8 +441,8 @@
 //    [self.navigationController pushViewController:itemReview animated:YES];
 //    [self presentViewController:itemReview animated:YES completion:NULL];
 //    [itemReview release];
-    //Send user friends request with DTAlertView.
-    
+    //Send user friends request with PopupManager.
+    [[PopupManager sharedInstance] showFriendRequest];
 }
 
 - (void)itemDetailAction:(id)sender

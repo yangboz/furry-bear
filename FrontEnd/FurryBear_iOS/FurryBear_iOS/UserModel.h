@@ -16,6 +16,9 @@
 +(UserModel *)sharedInstance;
 -(User *)getUser;
 -(void)setUser:(User *)value;
+//BuddyServie
+-(NSString *)getBuddyName;
+-(void)setBuddyName:(NSString *)value;
 
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
