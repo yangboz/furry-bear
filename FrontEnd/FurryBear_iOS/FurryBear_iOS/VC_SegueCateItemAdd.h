@@ -13,8 +13,8 @@
 #import "UploadModel.h"
 #import "ItemDataModel.h"
 #import "JSONKit.h"
-#import "MBProgressHUD.h"
 #import "StorageModel.h"
+#import "Prefs.h"
 
 @interface VC_SegueCateItemAdd : UITableViewController
 {}

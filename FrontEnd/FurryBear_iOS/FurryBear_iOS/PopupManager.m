@@ -91,7 +91,7 @@ static DTAlertView *progressAlertView = nil;
 -(void)popupFriendRequest
 {
     DTAlertView *alertView = nil;
-    alertView = [DTAlertView alertViewWithTitle:@"FriendsRequest" message:@"Say something" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
+    alertView = [DTAlertView alertViewWithTitle:@"Friend Request" message:@"Say something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
     [alertView setAlertViewMode:DTAlertViewModeTextInput];
     [alertView show];
 }

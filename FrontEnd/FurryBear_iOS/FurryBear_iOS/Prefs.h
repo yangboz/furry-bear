@@ -27,5 +27,6 @@
 #define GMAIL_ID @"YoungWelle@gmail.com"
 #define GMAIL_PWD @"7740321"
 #define GMAIL_IS_SSL YES
-//
+//Notification name
+#define NOTIFY_NAME_CATE_ITEM_ADDED @"categoryItemsAdded"
 #endif

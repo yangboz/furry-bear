@@ -27,7 +27,7 @@
     // table view data is being set here
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:@"categoryItemsAdded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
     //TableView customize style
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -111,7 +111,7 @@
         //[self displayLoginPopup];
     }
 }
-
+#pragma mark -UITableView reload
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
@@ -433,8 +433,8 @@
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
-    self.tabBarController.selectedIndex = 2;
-    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+//    self.tabBarController.selectedIndex = 2;
+//    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
 }
 
 - (void)userIconAction:(id)sender

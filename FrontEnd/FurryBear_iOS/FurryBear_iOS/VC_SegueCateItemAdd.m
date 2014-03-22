@@ -115,10 +115,9 @@
 
  */
 - (IBAction)on_add_item:(id)sender {
-    NSLog(@"on_add_item!");
-    //Display MBProgressHUD
-    //@see:https://github.com/matej/MBProgressHUD
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSLog(@"CategoryService->on_add_item!");
+    //TODO:Display ProgressBar
+
     //ItemData transporting.
     ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
     //Get default catalogue and category name.
@@ -181,7 +180,7 @@
     //Auto back navigation
     [self.navigationController popViewControllerAnimated:YES];
     //Notify to notification center.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"categoryItemsAdded" object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NAME_CATE_ITEM_ADDED object:self];
     //
     UITabBarController *bottomTabBarCtrl= (UITabBarController *)self.navigationController.parentViewController;
     bottomTabBarCtrl.selectedIndex = 0;
