@@ -153,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ui-RW-uvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-166" y="693"/>
+            <point key="canvasLocation" x="-392" y="2536"/>
         </scene>
         <!--Category Item Main-->
         <scene sceneID="6mp-fg-Vfm">
@@ -205,22 +205,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIR-Ho-zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-360" y="-137"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Lkh-CG-B5b">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="Au4-A7-qIm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="carrot-32.png" id="Lfn-2p-878"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M1H-kW-PKJ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="R0t-Nz-zzV" kind="relationship" relationship="rootViewController" id="zzD-0l-zoh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qv-3V-ME3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-698" y="693"/>
         </scene>
         <!--Feature Cate Items - First-->
         <scene sceneID="11">
@@ -495,7 +479,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMr-jy-1Eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="2309"/>
+            <point key="canvasLocation" x="334" y="2536"/>
         </scene>
         <!--Table View Controller - 关于-->
         <scene sceneID="JZA-MA-Bx3">
@@ -735,7 +719,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="NEWS_LETTER:" id="KE2-kp-HGp">
+                            <tableViewSection headerTitle="NEWS_LETTER_SETTING:" id="KE2-kp-HGp">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="azS-l7-2GD" style="IBUITableViewCellStyleDefault" id="oR4-Sf-vjS">
                                         <rect key="frame" x="0.0" y="579" width="320" height="44"/>
@@ -756,6 +740,27 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="NEWS_LETTER_SEND:" id="rEK-fQ-ZaS">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="fhJ-8d-8DR" style="IBUITableViewCellStyleDefault" id="rVd-6l-gg4">
+                                        <rect key="frame" x="0.0" y="671" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rVd-6l-gg4" id="UfD-wl-qeI">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fhJ-8d-8DR">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="一道" id="QtH-oW-kE5"/>
@@ -764,7 +769,8 @@
                         <segue destination="RF8-or-Kjy" kind="push" identifier="segue_review" id="nyM-UH-hJV"/>
                         <segue destination="QG7-q2-Dqf" kind="push" identifier="segue_comment" id="oC7-kH-QWD"/>
                         <segue destination="5mb-op-ca2" kind="push" identifier="segue_signup" id="bY4-c4-2Hm"/>
-                        <segue destination="7yG-b2-PeI" kind="push" identifier="segue_email" id="sAH-5c-PZl"/>
+                        <segue destination="7yG-b2-PeI" kind="push" identifier="segue_email_setting" id="sAH-5c-PZl"/>
+                        <segue destination="R0t-Nz-zzV" kind="push" identifier="seque_email_send" id="UC3-mi-bNU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u09-Qh-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -855,7 +861,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62A-Ir-ADx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="2656"/>
+            <point key="canvasLocation" x="706" y="2536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4g2-iK-ghz">
@@ -1142,7 +1148,6 @@
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="uZs-dV-GmU"/>
                         <segue destination="0nB-eT-Qzv" kind="relationship" relationship="viewControllers" id="Qwm-yg-OG8"/>
-                        <segue destination="Au4-A7-qIm" kind="relationship" relationship="viewControllers" id="VSR-gr-YFH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -1294,12 +1299,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOo-JX-uQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-272" y="2101"/>
+            <point key="canvasLocation" x="-28" y="2536"/>
         </scene>
     </scenes>
     <resources>
         <image name="1Star.png" width="19" height="19"/>
-        <image name="carrot-32.png" width="32" height="32"/>
         <image name="chili_pepper-32.png" width="32" height="32"/>
         <image name="ico_people.png" width="15" height="19"/>
         <image name="ico_reply.png" width="15" height="19"/>

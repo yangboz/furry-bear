@@ -28,7 +28,7 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -76,7 +76,10 @@
             segueName = SEGUE_NAME_SIGNUP;
             break;
         case 5:
-            segueName = SEGUE_NAME_EMAIL;
+            segueName = SEGUE_NAME_EMAIL_SETTING;
+            break;
+        case 6:
+            segueName = SEQUE_NAME_EMAIL_SEND;
             break;
         default:
             segueName = SEGUE_NAME_IMAGE;
