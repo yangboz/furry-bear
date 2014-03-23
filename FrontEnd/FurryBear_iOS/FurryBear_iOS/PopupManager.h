@@ -10,7 +10,6 @@
 #import "DTAlertView.h"
 #import "App42_API_Utils.h"
 #import "UserModel.h"
-#import "CXAlertView.h"
 
 @interface PopupManager : UIView <DTAlertViewDelegate>
 {}

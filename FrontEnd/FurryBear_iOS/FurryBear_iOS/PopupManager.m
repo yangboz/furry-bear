@@ -137,10 +137,7 @@ static DTAlertView *progressAlertView = nil;
 #pragma mark -CateItemDetailView
 -(void)popupCateItemDetail
 {
-    // Create alertView with the old fashioned way.
-    CXAlertView *alertView = [[CXAlertView alloc] initWithTitle:@"Steven Jobs" message:@"\"Steven Paul Jobs, the co-founder, two-time CEO, and chairman of Apple Inc., died October 5, 2011, after a long battle with cancer. He was 56. He was is survived by his wife and four children.The achievements in Jobs' career included helping to popularize the personal computer, leading the development of groundbreaking technology products including the Macintosh, iPod, and iPhone, and driving Pixar Animation Studios to prominence. Jobs’ charisma, drive for success and control, and vision contributed to revolutionary changes in the way technology integrates into and affects the daily life of most people in the world.\" - Wikipedia" cancelButtonTitle:nil];
-           // Remember to call this, or alertview will never be seen.
-    [alertView show];
+    
 }
 
 @end
