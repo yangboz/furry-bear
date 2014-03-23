@@ -33,6 +33,23 @@ CategoryName [Cate] == collectionName [NoSQL]
 
 geoStorageName [Geo] == ItemId [Cate]
 
+iOS frameworks
+==========
+
+AssetsLibrary.framework
+
+Accelerate.framework
+
+Shephertz_App42_iOS_API.framework
+
+QuartzCore.framework
+
+UIKit.framework
+
+Fundation.framework
+
+CoreGraphics.framework
+
 TODO 
 ==========
 
