@@ -139,50 +139,7 @@ static DTAlertView *progressAlertView = nil;
 {
     // Create alertView with the old fashioned way.
     CXAlertView *alertView = [[CXAlertView alloc] initWithTitle:@"Steven Jobs" message:@"\"Steven Paul Jobs, the co-founder, two-time CEO, and chairman of Apple Inc., died October 5, 2011, after a long battle with cancer. He was 56. He was is survived by his wife and four children.The achievements in Jobs' career included helping to popularize the personal computer, leading the development of groundbreaking technology products including the Macintosh, iPod, and iPhone, and driving Pixar Animation Studios to prominence. Jobs’ charisma, drive for success and control, and vision contributed to revolutionary changes in the way technology integrates into and affects the daily life of most people in the world.\" - Wikipedia" cancelButtonTitle:nil];
-    // Add additional button as you like with block to handle UIControlEventTouchUpInside event.
-    [alertView addButtonWithTitle:@"Dismiss"
-                             type:CXAlertViewButtonTypeCancel
-                          handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
-                              // Dismiss alertview
-                              [alertView dismiss];
-                          }];
-    
-    // This is a demo for changing content at realtime.
-    [alertView addButtonWithTitle:@"Taipei 101"
-                             type:CXAlertViewButtonTypeDefault
-                          handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
-                              alertView.title = @"Taipei 101";
-                              UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"taipei101.jpg"]];
-                              imageView.backgroundColor = [UIColor clearColor];
-                              alertView.contentView = imageView;
-                          }];
-    
-    // This is a demo for multiple line of title.
-    [alertView addButtonWithTitle:@"Multititle"
-                             type:CXAlertViewButtonTypeCustom
-                          handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
-                              alertView.contentView = nil;
-                              alertView.title = @"This \n is \n a \n multiline \n title demo without content.";
-                          }];
-    
-    [alertView addButtonWithTitle:@"Another"
-                             type:CXAlertViewButtonTypeDefault
-                          handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
-                              alertView.title = @"Red custom view";
-                              UIView *view = [[UIView alloc] initWithFrame:CGRectMake( 0, 0, 200, 200)];
-                              view.backgroundColor = [UIColor redColor];
-                              alertView.contentView = view;
-                          }];
-    
-    [alertView addButtonWithTitle:@"Shake"
-                             type:CXAlertViewButtonTypeDefault
-                          handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
-                              
-                              [alertView shake];
-                              
-                          }];
-    
-    // Remember to call this, or alertview will never be seen.
+           // Remember to call this, or alertview will never be seen.
     [alertView show];
 }
 

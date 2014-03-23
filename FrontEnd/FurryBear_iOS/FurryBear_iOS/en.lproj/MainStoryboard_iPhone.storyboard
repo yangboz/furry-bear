@@ -237,7 +237,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="nil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5e-c4-adZ">
-                                                    <rect key="frame" x="220" y="334" width="84" height="17"/>
+                                                    <rect key="frame" x="220" y="299" width="84" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,9 +268,17 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-cR-Hzg">
+                                                    <rect key="frame" x="285" y="331" width="15" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="read_more-20.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="detailIconBtn" destination="9Hl-cR-Hzg" id="kQ0-eD-qKj"/>
                                             <outlet property="itemImageView" destination="oLt-0z-uN5" id="l2e-AC-YjV"/>
                                             <outlet property="nameLabel" destination="Fpp-68-Wgx" id="D3O-Ft-fqX"/>
                                             <outlet property="ratingCountLabel" destination="pB1-hL-MkD" id="9nH-ol-wh7"/>
@@ -1249,6 +1257,7 @@
         <image name="pic_plank_among.png" width="320" height="5"/>
         <image name="pic_plank_down.png" width="320" height="33"/>
         <image name="pic_plank_up.png" width="320" height="5"/>
+        <image name="read_more-20.png" width="16" height="16"/>
         <image name="tomato-32.png" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

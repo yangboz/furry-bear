@@ -274,11 +274,12 @@
     [[UserModel sharedInstance] setBuddyName: cell.userIdLabel.text];
     //see friend request
     [cell.userIconBtn addTarget:self action:@selector(userIconAction:) forControlEvents:UIControlEventTouchUpInside];
-    //see detail
-    cell.imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
-    [cell.imageView addGestureRecognizer:tapGesture];
-    //
+    //see detail by tap image.
+//    cell.imageView.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
+//    [cell.imageView addGestureRecognizer:tapGesture];
+    //see detail by click detail icon
+    [cell.detailIconBtn addTarget:self action:@selector(itemDetailAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
