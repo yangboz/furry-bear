@@ -129,7 +129,11 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-    NSString *fileName = [self.filenameTxt.text stringByAppendingString:@".png"];
+    //
+    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
+    self.filenameTxt.text = fileName;
+    //Save the fileName to Model.
+    [[UploadModel sharedInstance] setUploadImageFile:fileName];
     //    NSString *filePath = @"Local file path";
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
@@ -262,6 +266,20 @@
 	[picker dismissModalViewControllerAnimated:YES];
 	self.photo = [info objectForKey:UIImagePickerControllerEditedImage];
 	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
+    //Using AssetsLibrary framework to get the imageFileName;
+    NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
+    __block NSString *fileName = nil;
+    
+    ALAssetsLibrary *library = [[[ALAssetsLibrary alloc] init] autorelease];
+    [library assetForURL:assetURL resultBlock:^(ALAsset *asset)  {
+        fileName = asset.defaultRepresentation.filename;
+    } failureBlock:nil];
+    NSLog(@"Picked image file name:%@",fileName);
+    if(nil==fileName)
+    {
+        fileName = [[UploadModel sharedInstance] getUploadImageFile];
+    }
 }
 
 

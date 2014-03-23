@@ -14,7 +14,10 @@
 +(UploadModel *)sharedInstance;
 -(Upload *)getUpload;
 -(void)setUpload:(Upload *)value;
-
+//
+-(NSString *)getUploadImageFile;
+-(void)setUploadImageFile:(NSString *)value;
+//
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
 

@@ -1112,7 +1112,7 @@
                                         <action selector="choosePhoto:" destination="f2S-2I-uz6" eventType="touchUpInside" id="QvW-3U-pet"/>
                                     </connections>
                                 </button>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png/*.jpg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-0t-5bZ">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*.png/*.jpg" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDr-0t-5bZ">
                                     <rect key="frame" x="20" y="182" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
