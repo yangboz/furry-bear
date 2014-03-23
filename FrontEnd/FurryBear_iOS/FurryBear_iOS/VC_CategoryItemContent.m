@@ -14,7 +14,8 @@
 
 @implementation VC_CategoryItemContent
 
-@synthesize titleLabel,userImageView,descriptionText;
+@synthesize titleLabel,userImageView,desTextView;
+@synthesize titleText,userImageFile,descText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //Site initialization with site properties
+    self.titleLabel.text = self.titleText;
+    self.desTextView.text = self.descText;
+    self.userImageView.image = [UIImage imageNamed:self.userImageFile];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +48,11 @@
     //IBOutlets
     [titleLabel release];
     [userImageView release];
-    [descriptionText release];
+    [desTextView release];
+    //Site properties
+    [titleText release];
+    [userImageFile release];
+    [descText release];
 }
 /*
 #pragma mark - Navigation

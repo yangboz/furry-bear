@@ -10,7 +10,14 @@
 
 @interface VC_CategoryItemContent : UIViewController
 {}
+//IBOutlets
 @property (strong, nonatomic) IBOutlet UIImageView *userImageView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UITextView *descriptionText;
+@property (strong, nonatomic) IBOutlet UITextView *desTextView;
+//Site properties
+@property NSInteger pageIndex;
+@property(assign, nonatomic) NSString *titleText;
+@property(assign, nonatomic) NSString *descText;
+@property(assign, nonatomic) NSString *userImageFile;
+//
 @end

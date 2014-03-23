@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="-166" y="693"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Category Item Main-->
         <scene sceneID="6mp-fg-Vfm">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n41-z0-6I5" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="VC_CategoryItemMain" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n41-z0-6I5" customClass="VC_CategoryItemMain" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw6-qb-uVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-714" y="-137"/>
@@ -166,7 +166,7 @@
         <!--Category Item Content-->
         <scene sceneID="21Y-dv-JSN">
             <objects>
-                <viewController id="QUO-CW-INd" customClass="VC_CategoryItemContent" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC_CategoryItemContent" id="QUO-CW-INd" customClass="VC_CategoryItemContent" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ucB-D0-vQA"/>
                         <viewControllerLayoutGuide type="bottom" id="nat-MX-igc"/>
@@ -197,7 +197,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionText" destination="e9A-Ro-7dN" id="gu8-S9-fCt"/>
+                        <outlet property="desTextView" destination="e9A-Ro-7dN" id="5hY-7A-rbo"/>
                         <outlet property="titleLabel" destination="cv1-dF-kB5" id="Dnb-eC-v7U"/>
                         <outlet property="userImageView" destination="HkK-95-7Ky" id="P6O-46-Jas"/>
                     </connections>

@@ -452,7 +452,7 @@
 
 - (void)itemDetailAction:(id)sender
 {
-    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
+    VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
         [self.navigationController pushViewController:itemReview animated:YES];
     [self presentViewController:itemReview animated:YES completion:NULL];
     [itemReview release];

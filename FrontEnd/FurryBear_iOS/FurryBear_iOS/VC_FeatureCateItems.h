@@ -18,6 +18,7 @@
 #import "VC_SegueCateItemReview.h"
 #import "PopupManager.h"
 #import "UserModel.h"
+#import "VC_CategoryItemMain.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
