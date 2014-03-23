@@ -254,7 +254,7 @@
     //[cell.contentView.layer setBorderWidth:1.0f];
     //
     categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
-	cell.nameLabel.text = catItem.name;
+	cell.nameLabel.text = catItem.description;
 	//cell.detailTextLabel.text = itemData.imageName;
     NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];

@@ -26,6 +26,7 @@
 -(ScoreBoardService *)getScoreBoardService;
 -(EmailService *)getEmailService;
 -(BuddyService *)getBuddyService;
+-(LogService *)getLogService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;

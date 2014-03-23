@@ -101,6 +101,11 @@ static ServiceAPI *serviceAPIobj = nil;
 {
     return [serviceAPIobj buildBuddyService];
 }
+
+-(LogService *)getLogService;
+{
+    return [serviceAPIobj buildLogService];
+}
 //
 -(NSString *)getDefaultCatalogueName
 {
