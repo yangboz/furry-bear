@@ -206,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="-524" y="-137"/>
         </scene>
-        <!--Table View Controller - 友-->
+        <!--Buddy Related - 友-->
         <scene sceneID="LmU-m7-KfN">
             <objects>
-                <tableViewController id="EUC-wh-Fju" sceneMemberID="viewController">
+                <tableViewController id="EUC-wh-Fju" customClass="VC_BuddyRelated" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CgD-SC-rqf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

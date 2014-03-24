@@ -14,19 +14,19 @@
 
 @implementation VC_BuddyRelated
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //App42_API_Utils
+    buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    NSArray *buddys = [buddyService getFriendRequest:userName];
+    NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+    NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+    NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+    NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
 }
 
 - (void)didReceiveMemoryWarning
