@@ -22,13 +22,25 @@
     buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     //1.Get friend request
-    NSArray *buddys = [buddyService getFriendRequest:userName];
-    NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
-    NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
-    NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
-    NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
-    //fill up the UITableView at first.
-    addFriendRequests = [NSMutableArray arrayWithArray:buddys];
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getFriendRequest:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        addFriendRequests = [NSMutableArray arrayWithArray:buddys];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+        addFriendRequests = [[NSMutableArray alloc] init];
+    }
     //2.Accept/reject friend request by cell item check.
     
 }
@@ -72,18 +84,17 @@
     //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
     //[cell.contentView.layer setBorderWidth:1.0f];
     //
-    Buddy *friendRequest = (Buddy *)[addFriendRequests objectAtIndex:indexPath.row];
-    cell.userNameLabel.text = friendRequest.userName;
-    cell.buddyNameLabel.text = friendRequest.buddyName;
-    cell.messageLabel.text =  friendRequest.message;
+    selectedFriendRequest = (Buddy *)[addFriendRequests objectAtIndex:indexPath.row];
+    cell.userNameLabel.text = selectedFriendRequest.userName;
+    cell.buddyNameLabel.text = selectedFriendRequest.buddyName;
+    cell.messageLabel.text =  selectedFriendRequest.message;
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
     //accept
-//    [cell.acceptIconBtn addTarget:self action:@selector(acceptIconAction:) forControlEvents:UIControlEventTouchUpInside];
-//    cell.acceptIconBtn.tag = indexPath.row;
+    [cell.acceptIconBtn addTarget:self action:@selector(acceptIconAction:) forControlEvents:UIControlEventTouchUpInside];
     //reject
-//    [cell.rejectIconBtn addTarget:self action:@selector(rejectIconAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.rejectIconBtn addTarget:self action:@selector(rejectIconAction:) forControlEvents:UIControlEventTouchUpInside];
 
     return cell;
 
@@ -111,9 +122,10 @@
 #pragma mark -Cell buttons' IBActions
 - (void)acceptIconAction:(id)sender
 {
-    NSString *userName = @"";
-    NSString *buddyName = @"John";
-    Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:userName toUser:buddyName];
+    //
+    NSString *userName = selectedFriendRequest.userName;
+    NSString *buddyName = selectedFriendRequest.buddyName;
+    Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:buddyName toUser:buddyName];
     NSLog(@"userName is :%@",buddy.userName);
     NSLog(@"buddyName is :%@",buddy.buddyName);
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -123,8 +135,10 @@
 }
 - (void)rejectIconAction:(id)sender
 {
-    NSString *userName = @"Nick";
-    NSString *buddyName = @"John";
+    //
+    NSString *userName = selectedFriendRequest.userName;
+    NSString *buddyName = selectedFriendRequest.buddyName;
+    //
     Buddy *buddy = [buddyService rejectFriendRequestFromBuddy:userName toUser:buddyName];
     NSLog(@"userName is :%@",buddy.userName);
     NSLog(@"buddyName is :%@",buddy.buddyName);
@@ -134,9 +148,4 @@
     NSLog(@"rejectedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
 }
 
-- (Buddy *)getFriendRequest:(NSInteger)indexPathRow
-{
-    Buddy *friendRequest = [addFriendRequests objectAtIndex:indexPathRow];
-    return friendRequest;
-}
 @end

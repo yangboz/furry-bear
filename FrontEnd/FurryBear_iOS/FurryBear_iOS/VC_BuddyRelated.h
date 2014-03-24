@@ -17,5 +17,6 @@
     NSMutableArray *allFriends;
     BuddyService *buddyService;
     NSMutableArray *addFriendRequests;
+    Buddy *selectedFriendRequest;
 }
 @end

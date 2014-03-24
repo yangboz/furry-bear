@@ -121,11 +121,30 @@ static DTAlertView *progressAlertView = nil;
         NSString *buddyName = [[UserModel sharedInstance] getBuddyName];
         NSString *message = alertView.textField.text;
         BuddyService *buddyService  = [[App42_API_Utils sharedInstance] getBuddyService];
-        Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
-        NSLog(@"userName is : %@", buddy.userName);
-        NSLog(@"buddyName is : %@", buddy.buddyName);
-        NSLog(@"message is : %@", buddy.message);
-        NSLog(@"sendedOn is : %@", buddy.sendedOn);
+        @try{
+            //App42 service API call here.
+            Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
+            //
+            NSLog(@"userName is : %@", buddy.userName);
+            NSLog(@"buddyName is : %@", buddy.buddyName);
+            NSLog(@"message is : %@", buddy.message);
+            NSLog(@"sendedOn is : %@", buddy.sendedOn);
+        }@catch (App42BadParameterException *ex) {
+            NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+            if(4613==ex.appErrorCode)
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Your are already friends!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                [alertView release];
+            }
+        }@catch (App42SecurityException *ex) {
+            NSLog(@"SecurityException found!");
+        }@catch (App42Exception *ex) {
+            NSLog(@"App42 Exception found:%@",ex.description);
+            //NSAlert here.
+        }
+        
+       
         //
         [alertView dismiss];
         
