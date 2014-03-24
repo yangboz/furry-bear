@@ -27,6 +27,10 @@
     NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
     NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
     NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+    //fill up the UITableView at first.
+    addFriendRequests = [NSMutableArray arrayWithArray:buddys];
+    //2.Accept/reject friend request by cell item check.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,17 +59,34 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-	return [allFriends count];
+	return [addFriendRequests count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:@"FriendCell"];
-	ItemData *itemData = [allFriends objectAtIndex:indexPath.row];
-	cell.textLabel.text = itemData.name;
-	cell.detailTextLabel.text = itemData.imageName;
+	BuddyCell *cell = (BuddyCell *)[tableView
+                                        dequeueReusableCellWithIdentifier:@"BuddyCell"];
+    NSLog(@"getFriendRequest count:%d",[addFriendRequests count]);
+    //Customize cell.
+    //cell.contentView.layer.cornerRadius = 4.0f;
+    //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
+    //[cell.contentView.layer setBorderWidth:1.0f];
+    //
+    Buddy *friendRequest = (Buddy *)[addFriendRequests objectAtIndex:indexPath.row];
+    cell.userNameLabel.text = friendRequest.userName;
+    cell.buddyNameLabel.text = friendRequest.buddyName;
+    cell.messageLabel.text =  friendRequest.message;
+    //Contray to MVC,temporary transfor the navigationController reference to cell
+    cell.navigationController = self.navigationController;
+    //IBAction for cell buttons
+    //accept
+//    [cell.acceptIconBtn addTarget:self action:@selector(acceptIconAction:) forControlEvents:UIControlEventTouchUpInside];
+//    cell.acceptIconBtn.tag = indexPath.row;
+    //reject
+//    [cell.rejectIconBtn addTarget:self action:@selector(rejectIconAction:) forControlEvents:UIControlEventTouchUpInside];
+
     return cell;
+
 }
 
 
@@ -82,9 +103,40 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [allFriends removeObjectAtIndex:indexPath.row];
+        [addFriendRequests removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
+#pragma mark -Cell buttons' IBActions
+- (void)acceptIconAction:(id)sender
+{
+    NSString *userName = @"";
+    NSString *buddyName = @"John";
+    Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:userName toUser:buddyName];
+    NSLog(@"userName is :%@",buddy.userName);
+    NSLog(@"buddyName is :%@",buddy.buddyName);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
+    NSLog(@"acceptedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
+}
+- (void)rejectIconAction:(id)sender
+{
+    NSString *userName = @"Nick";
+    NSString *buddyName = @"John";
+    Buddy *buddy = [buddyService rejectFriendRequestFromBuddy:userName toUser:buddyName];
+    NSLog(@"userName is :%@",buddy.userName);
+    NSLog(@"buddyName is :%@",buddy.buddyName);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
+    NSLog(@"rejectedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
+}
+
+- (Buddy *)getFriendRequest:(NSInteger)indexPathRow
+{
+    Buddy *friendRequest = [addFriendRequests objectAtIndex:indexPathRow];
+    return friendRequest;
+}
 @end
