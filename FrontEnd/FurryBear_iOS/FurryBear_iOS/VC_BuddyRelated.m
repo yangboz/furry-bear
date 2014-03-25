@@ -18,19 +18,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //popupAllFriendRequests if neccessary.
+    [[PopupManager_AlertTable sharedInstance] popupAllFriendRequests];
     //App42_API_Utils
     buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-    //1.Get friend request
+    //GetAllFriends
     @try{
         //App42 service API call here.
-        NSArray *buddys = [buddyService getFriendRequest:userName];
+        NSArray *buddys = [buddyService getAllFriends:userName];
         NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
         NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
         NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
         NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
         //fill up the UITableView at first.
-        addFriendRequests = [NSMutableArray arrayWithArray:buddys];
+        allFriends = [NSMutableArray arrayWithArray:buddys];
+
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -38,11 +41,10 @@
     }@catch (App42Exception *ex) {
         NSLog(@"App42 Exception found:%@",ex.description);
         //NSAlert here.
-        //None friend request
-        addFriendRequests = [[NSMutableArray alloc] init];
+        //None friends
+        allFriends = [[NSMutableArray alloc] init];
     }
-    //2.Accept/reject friend request by cell item check.
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,31 +73,32 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-	return [addFriendRequests count];
+	return [allFriends count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BuddyCell *cell = (BuddyCell *)[tableView
-                                        dequeueReusableCellWithIdentifier:@"BuddyCell"];
-    NSLog(@"getFriendRequest count:%d",[addFriendRequests count]);
+	FriendCell *cell = (FriendCell *)[tableView
+                                        dequeueReusableCellWithIdentifier:@"FriendCell"];
+    NSLog(@"allFriends count:%d",[allFriends count]);
     //Customize cell.
     //cell.contentView.layer.cornerRadius = 4.0f;
     //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
     //[cell.contentView.layer setBorderWidth:1.0f];
     //
-    selectedFriendRequest = (Buddy *)[addFriendRequests objectAtIndex:indexPath.row];
-    cell.userNameLabel.text = selectedFriendRequest.userName;
-    cell.buddyNameLabel.text = selectedFriendRequest.buddyName;
-    cell.messageLabel.text =  selectedFriendRequest.message;
+    selectedFriend = (Buddy *)[allFriends objectAtIndex:indexPath.row];
+    cell.buddyNameLabel.text = selectedFriend.buddyName;
+    //
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    cell.acceptedOnLabel.text = [formatter stringFromDate:selectedFriend.acceptedOn];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
-    //accept
-    [cell.acceptIconBtn addTarget:self action:@selector(acceptIconAction:) forControlEvents:UIControlEventTouchUpInside];
-    //reject
-    [cell.rejectIconBtn addTarget:self action:@selector(rejectIconAction:) forControlEvents:UIControlEventTouchUpInside];
-
+    //block
+    [cell.blockIconBtn addTarget:self action:@selector(blockIconAction:) forControlEvents:UIControlEventTouchUpInside];
+    //unblock
+    [cell.blockIconBtn addTarget:self action:@selector(unblockIconAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 
 }
@@ -114,7 +117,7 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [addFriendRequests removeObjectAtIndex:indexPath.row];
+        [allFriends removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -123,8 +126,8 @@
 - (void)acceptIconAction:(id)sender
 {
     //
-    NSString *userName = selectedFriendRequest.userName;
-    NSString *buddyName = selectedFriendRequest.buddyName;
+    NSString *userName = selectedFriend.userName;
+    NSString *buddyName = selectedFriend.buddyName;
     Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:buddyName toUser:buddyName];
     NSLog(@"userName is :%@",buddy.userName);
     NSLog(@"buddyName is :%@",buddy.buddyName);
@@ -136,8 +139,8 @@
 - (void)rejectIconAction:(id)sender
 {
     //
-    NSString *userName = selectedFriendRequest.userName;
-    NSString *buddyName = selectedFriendRequest.buddyName;
+    NSString *userName = selectedFriend.userName;
+    NSString *buddyName = selectedFriend.buddyName;
     //
     Buddy *buddy = [buddyService rejectFriendRequestFromBuddy:userName toUser:buddyName];
     NSLog(@"userName is :%@",buddy.userName);
@@ -147,5 +150,32 @@
     NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
     NSLog(@"rejectedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
 }
-
+- (void)blockIconAction:(id)sender
+{
+    //
+    NSString *userName = selectedFriend.userName;
+    NSString *buddyName = selectedFriend.buddyName;
+    //
+    Buddy *buddy = [buddyService blockBuddy:buddyName byUser:userName];
+    NSLog(@"userName is :%@",buddy.userName);
+    NSLog(@"buddyName is :%@",buddy.buddyName);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
+    NSLog(@"rejectedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
+}
+- (void)unblockIconAction:(id)sender
+{
+    //
+    NSString *userName = selectedFriend.userName;
+    NSString *buddyName = selectedFriend.buddyName;
+    //
+    Buddy *buddy = [buddyService unblockBuddy:buddyName byUser:userName];
+    NSLog(@"userName is :%@",buddy.userName);
+    NSLog(@"buddyName is :%@",buddy.buddyName);
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
+    NSLog(@"rejectedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
+}
 @end

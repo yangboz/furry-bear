@@ -69,9 +69,39 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 	[alert show];
 }
 //AllFriendRequestView
--(void)popupAllFriendRequest;
+-(void)popupAllFriendRequests;
 {
-    
+    //App42_API_Utils
+    buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getFriendRequest:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        dataMutableArray = [NSMutableArray arrayWithArray:buddys];
+        //Popup view
+        SBTableAlert *alert;
+        alert	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
+        //    [alert.view setTag:1];
+        [alert setType:SBTableAlertTypeMultipleSelct];
+        [alert setDelegate:self];
+        [alert setDataSource:self];
+        [alert show];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+        dataMutableArray = [[NSMutableArray alloc] init];
+    }
 }
 #pragma mark - SBTableAlertDataSource
 

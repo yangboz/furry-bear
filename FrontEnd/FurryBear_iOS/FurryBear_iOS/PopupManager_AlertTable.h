@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "App42_API_Utils.h"
 #import "SBTableAlert.h"
+#import "UserModel.h"
 
 @interface PopupManager_AlertTable : UITableViewController<SBTableAlertDataSource,SBTableAlertDelegate>
 {
@@ -19,5 +20,5 @@
 //CateItemDetailView
 -(void)popupCateItemDetail;
 //AllFriendRequestView
--(void)popupAllFriendRequest;
+-(void)popupAllFriendRequests;
 @end
