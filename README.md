@@ -156,7 +156,9 @@ UIAlertView+
 ====================
 https://github.com/Darktt/DTAlertView
 
-https://github.com/ChrisXu1221/CXAlertView.git
+https://github.com/mindbrix/TSAlertView
+
+https://github.com/mindbrix/SBTableAlert
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/yangboz/furry-bear/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
