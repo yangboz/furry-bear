@@ -16,9 +16,10 @@
 #import "JSONKit.h"
 #import "Prefs.h"
 #import "VC_SegueCateItemReview.h"
-#import "PopupManager.h"
+#import "PopupManager_DTAlertView.h"
 #import "UserModel.h"
 #import "VC_CategoryItemMain.h"
+#import "PopupManager_AlertTable.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {

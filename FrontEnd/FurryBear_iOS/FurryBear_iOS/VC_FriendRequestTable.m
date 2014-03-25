@@ -32,6 +32,31 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Do any additional setup after loading the view.
+    //App42_API_Utils
+    buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getAllFriends:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        allFriends = [NSMutableArray arrayWithArray:buddys];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+        allFriends = [[NSMutableArray alloc] init];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,9 +76,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [allFriends count];
 }
 
 /*

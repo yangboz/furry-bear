@@ -1,21 +1,21 @@
 //
-//  PopupManager.m
+//  PopupManager_DTAlertView.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 14-3-20.
 //  Copyright (c) 2014年 GODPAPER. All rights reserved.
 //
 
-#import "PopupManager.h"
+#import "PopupManager_DTAlertView.h"
 
-@implementation PopupManager
+@implementation PopupManager_DTAlertView
 
 //It declares a static instance of your singleton object and initializes it to nil.
-static PopupManager *sharedInstance = nil;
+static PopupManager_DTAlertView *sharedInstance = nil;
 static DTAlertView *progressAlertView = nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
-+(PopupManager *)sharedInstance
++(PopupManager_DTAlertView *)sharedInstance
 {
 	if (sharedInstance==nil) {
 		sharedInstance = [[super allocWithZone:NULL] init];

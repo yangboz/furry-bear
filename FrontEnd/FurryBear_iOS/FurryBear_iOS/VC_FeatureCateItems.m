@@ -115,7 +115,7 @@
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
-    [[PopupManager sharedInstance] popupProgressBar];
+    [[PopupManager_DTAlertView sharedInstance] popupProgressBar];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -175,7 +175,7 @@
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
-        [[PopupManager sharedInstance] dismissProgressBar];
+        [[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
     }
 }
 
@@ -436,6 +436,7 @@
 {
 //    self.tabBarController.selectedIndex = 2;
 //    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
+    [[PopupManager_AlertTable sharedInstance]popupCateItemDetail];
 }
 
 - (void)userIconAction:(id)sender
@@ -447,7 +448,7 @@
 //    [self presentViewController:itemReview animated:YES completion:NULL];
 //    [itemReview release];
     //Send user friends request with PopupManager.
-    [[PopupManager sharedInstance] popupFriendRequest];
+    [[PopupManager_DTAlertView sharedInstance] popupFriendRequest];
 }
 
 - (void)itemDetailAction:(id)sender

@@ -1,0 +1,23 @@
+//
+//  PopupManager_AlertTable.h
+//  FurryBear_iOS
+//
+//  Created by yangboz on 14-3-25.
+//  Copyright (c) 2014年 GODPAPER. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "App42_API_Utils.h"
+#import "SBTableAlert.h"
+
+@interface PopupManager_AlertTable : UITableViewController<SBTableAlertDataSource,SBTableAlertDelegate>
+{
+    BuddyService *buddyService;
+    NSMutableArray *dataMutableArray;//categoryItemReviews,allFriendRequests..
+}
++(PopupManager_AlertTable *)sharedInstance;
+//CateItemDetailView
+-(void)popupCateItemDetail;
+//AllFriendRequestView
+-(void)popupAllFriendRequest;
+@end

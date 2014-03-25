@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SBTableAlert.h"
+#import "App42_API_Utils.h"
+#import "UserModel.h"
 
 @interface VC_FriendRequestTable : UITableViewController<SBTableAlertDataSource,SBTableAlertDelegate>
-{}
+{
+    NSMutableArray *allFriends;
+    BuddyService *buddyService;
+}
 @end

@@ -1,5 +1,5 @@
 //
-//  PopupManager.h
+//  PopupManager_DTAlertView.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 14-3-20.
@@ -11,9 +11,9 @@
 #import "App42_API_Utils.h"
 #import "UserModel.h"
 
-@interface PopupManager : UIView <DTAlertViewDelegate>
+@interface PopupManager_DTAlertView : UIView <DTAlertViewDelegate>
 {}
-+(PopupManager *)sharedInstance;
++(PopupManager_DTAlertView *)sharedInstance;
 
 //ProgressView
 -(void)popupProgressBar;
