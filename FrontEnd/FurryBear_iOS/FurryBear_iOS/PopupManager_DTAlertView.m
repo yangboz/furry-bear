@@ -93,12 +93,21 @@ static DTAlertView *progressAlertView = nil;
     DTAlertView *alertView = nil;
     alertView = [DTAlertView alertViewWithTitle:@"Friend Request" message:@"Say something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
     [alertView setAlertViewMode:DTAlertViewModeTextInput];
+    //set tag to differ
+    [alertView setTag:0];
+    //
     [alertView show];
 }
 
--(void)popupFriendInvite
+-(void)popupFriendTalk
 {
-    
+    DTAlertView *alertView = nil;
+    alertView = [DTAlertView alertViewWithTitle:@"Friend Talk" message:@"Say something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
+    [alertView setAlertViewMode:DTAlertViewModeTextInput];
+    //set tag to differ
+    [alertView setTag:1];
+    //
+    [alertView show];
 }
 
 #pragma mark - DTAlertView Delegate Methods
@@ -107,20 +116,27 @@ static DTAlertView *progressAlertView = nil;
 {
     //
     NSLog(@"You click button title : %@", alertView.clickedButtonTitle);
+    //Clicked cancel button to dismiss
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        [alertView dismiss];
+        //
+        return;
+    }
+    //Say nothing
+    if ([alertView.textField.text  isEqual: @""]) {
+        [alertView dismiss];
+        //
+        return;
+    }
     //
-    if (alertView.textField != nil) {
-        if (buttonIndex == alertView.cancelButtonIndex) {
-            [alertView dismiss];
-            //
-            return;
-        }
-        //
-        NSLog(@"Inputed Text : %@", alertView.textField.text);
-        //
-        NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-        NSString *buddyName = [[UserModel sharedInstance] getBuddyName];
-        NSString *message = alertView.textField.text;
-        BuddyService *buddyService  = [[App42_API_Utils sharedInstance] getBuddyService];
+    NSLog(@"Inputed Text : %@", alertView.textField.text);
+    //App42_API_call prepare
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    NSString *buddyName = [[UserModel sharedInstance] getBuddyName];
+    NSString *message = alertView.textField.text;
+    BuddyService *buddyService  = [[App42_API_Utils sharedInstance] getBuddyService];
+    if (alertView.tag==0) {
+        //sendFriendRequestFromUser
         @try{
             //App42 service API call here.
             Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
@@ -143,14 +159,35 @@ static DTAlertView *progressAlertView = nil;
             NSLog(@"App42 Exception found:%@",ex.description);
             //NSAlert here.
         }
+        //
+        [alertView dismiss];
         
-       
+        return;
+    }else if (alertView.tag==1)
+    {
+        //sendMessageToFriend
+        @try{
+            //App42 service API call here.
+            Buddy *buddy = [buddyService sendMessage:message toFriend:buddyName fromUser:userName];
+            //
+            NSLog(@"userName is : %@", buddy.userName);
+            NSLog(@"buddyName is : %@", buddy.buddyName);
+            NSLog(@"message is : %@", buddy.message);
+            NSLog(@"sendedOn is : %@", buddy.sendedOn);
+        }@catch (App42BadParameterException *ex) {
+            NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+        }@catch (App42SecurityException *ex) {
+            NSLog(@"SecurityException found!");
+        }@catch (App42Exception *ex) {
+            NSLog(@"App42 Exception found:%@",ex.description);
+            //NSAlert here.
+        }
         //
         [alertView dismiss];
         
         return;
     }
-    //
+    //cancelPreviousPerformRequestsWithTarget
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 #pragma mark -CateItemDetailView

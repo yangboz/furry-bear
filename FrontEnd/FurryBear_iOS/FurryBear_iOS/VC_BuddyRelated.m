@@ -112,6 +112,8 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
+    //Popup FriendTalk
+    [[PopupManager_DTAlertView sharedInstance] popupFriendTalk];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -126,7 +128,6 @@
 - (void)acceptIconAction:(id)sender
 {
     //
-    NSString *userName = selectedFriend.userName;
     NSString *buddyName = selectedFriend.buddyName;
     Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:buddyName toUser:buddyName];
     NSLog(@"userName is :%@",buddy.userName);

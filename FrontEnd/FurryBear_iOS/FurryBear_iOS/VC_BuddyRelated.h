@@ -11,6 +11,7 @@
 #import "UserModel.h"
 #import "FriendCell.h"
 #import "PopupManager_AlertTable.h"
+#import "PopupManager_DTAlertView.h"
 
 @interface VC_BuddyRelated : UITableViewController
 <UITableViewDataSource,UITableViewDelegate>
