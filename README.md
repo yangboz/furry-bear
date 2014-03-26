@@ -134,7 +134,10 @@ Low-level design
 
 Gist
 ====================
-https://gist.github.com/yangboz/8917276
+App42_API_Call: https://gist.github.com/yangboz/8917276
+
+Objective-C Singleton: https://gist.github.com/yangboz/9753779
+
 
 WeChat API
 ====================
