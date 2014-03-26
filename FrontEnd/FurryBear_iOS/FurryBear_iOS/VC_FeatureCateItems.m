@@ -22,8 +22,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //
-    [self userDefaultsLogin];
+    //if auto signin
+    if ([[UserModel sharedInstance] getAutoSignin]) {
+        [self userDefaultsLogin];
+    }else
+    {
+        [self displayLoginPopup];
+    }
     // table view data is being set here
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening

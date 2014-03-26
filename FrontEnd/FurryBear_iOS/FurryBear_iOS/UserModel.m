@@ -95,11 +95,25 @@ static BOOL autoSignin=YES;
 -(BOOL)getAutoSignin;
 {
     //@see http://www.ecanarys.com/blog-entry/implementing-ios-setting-bundle
-    //TODO:read ios setting bundle
+    //read ios setting bundle
+    ///for reading default value
+    NSString *kAutoSigninKey=@"autoSignin_preference";
+    //Set the application defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *testValue=[defaults stringForKey:kAutoSigninKey];
+    NSLog(@"autoSignin_preference value(before register):%@",testValue);
+    //@see http://useyourloaf.com/blog/2010/05/18/adding-a-settings-bundle-to-an-iphone-app.html
+    if([testValue isEqual:nil])
+    {
+        //Set the application defaults
+        NSDictionary *autoSigninDefaults = [NSDictionary dictionaryWithObject:@"YES" forKey:kAutoSigninKey];
+        [defaults registerDefaults:autoSigninDefaults];
+        [defaults synchronize];
+    }else{//Get preferences
+        autoSignin = [defaults boolForKey:kAutoSigninKey];
+        NSLog(@"autoSignin_preference value(after register):%@",testValue);
+    }
+    //
     return autoSignin;
-}
--(void)setAutoSignin:(BOOL)value;
-{
-    autoSignin = value;
 }
 @end
