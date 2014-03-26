@@ -160,6 +160,10 @@ https://github.com/mindbrix/TSAlertView
 
 https://github.com/mindbrix/SBTableAlert
 
+UITableCell
+====================
+https://github.com/tmdvs/TDBadgedCell
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/yangboz/furry-bear/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
