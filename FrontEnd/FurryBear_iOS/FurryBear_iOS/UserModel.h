@@ -19,7 +19,10 @@
 //BuddyServie
 -(NSString *)getBuddyName;
 -(void)setBuddyName:(NSString *)value;
-
+//Settings.bundle
+-(BOOL)getAutoSignin;
+-(void)setAutoSignin:(BOOL)value;
+//
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
 

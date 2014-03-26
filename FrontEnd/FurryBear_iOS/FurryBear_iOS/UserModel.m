@@ -15,6 +15,7 @@ static UserModel *sharedInstance = nil;
 static User *user=nil;
 static NSMutableArray *data=nil;
 static NSString *buddyName=nil;
+static BOOL autoSignin=YES;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(UserModel *)sharedInstance
@@ -81,7 +82,7 @@ static NSString *buddyName=nil;
 	data = value;
 }
 
-#pragma mark -BuddyService
+#pragma mark - BuddyService
 -(NSString *)getBuddyName;
 {
     return buddyName;
@@ -89,5 +90,16 @@ static NSString *buddyName=nil;
 -(void)setBuddyName:(NSString *)value;
 {
     buddyName = value;
+}
+#pragma mark - Settings.bundle
+-(BOOL)getAutoSignin;
+{
+    //@see http://www.ecanarys.com/blog-entry/implementing-ios-setting-bundle
+    //TODO:read ios setting bundle
+    return autoSignin;
+}
+-(void)setAutoSignin:(BOOL)value;
+{
+    autoSignin = value;
 }
 @end
