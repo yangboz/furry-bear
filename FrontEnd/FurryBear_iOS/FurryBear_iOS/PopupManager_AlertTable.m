@@ -86,6 +86,7 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
         //Popup view
         tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
         //    [alert.view setTag:1];
+        [tableAlertView setStyle:SBTableAlertStylePlain];
         [tableAlertView setType:SBTableAlertTypeMultipleSelct];
         [tableAlertView setDelegate:self];
         [tableAlertView setDataSource:self];
@@ -112,8 +113,12 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 		// Note: SBTableAlertCell
 		cell = [[[SBTableAlertCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
 	}
-	
-	[cell.textLabel setText:[NSString stringWithFormat:@"Cell %d", indexPath.row]];
+	//Set text label with friend request
+    
+    Buddy *buddy = (Buddy *)[dataMutableArray objectAtIndex:indexPath.row ];
+	cell.textLabel.text = buddy.buddyName;
+    cell.detailTextLabel.text =
+    [[App42_API_Utils sharedInstance] getFormattedDate:buddy.sendedOn];
 	
 	return cell;
 }
@@ -125,7 +130,7 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 	else
 		return 10;
      */
-    return 0;
+    return [dataMutableArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableAlert:(SBTableAlert *)tableAlert {
@@ -161,18 +166,5 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 	
 	[tableAlert release];
 }
-
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-	return [dataMutableArray count];
-}
-
 
 @end

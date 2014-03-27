@@ -131,5 +131,11 @@ static ServiceAPI *serviceAPIobj = nil;
     return timeStamp;
 }
 
+-(NSString *)getFormattedDate:(NSDate *)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    return [formatter stringFromDate:date];
+}
 
 @end

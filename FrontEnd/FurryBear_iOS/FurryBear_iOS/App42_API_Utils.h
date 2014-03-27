@@ -31,5 +31,6 @@
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;
 -(NSString *)getTimeStampName;
+-(NSString *)getFormattedDate:(NSDate *)date;
 
 @end
