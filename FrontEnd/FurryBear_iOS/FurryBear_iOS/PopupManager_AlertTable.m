@@ -61,12 +61,11 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 //CateItemDetailView
 -(void)popupCateItemDetail;
 {
-    SBTableAlert *alert;
-	alert	= [[SBTableAlert alloc] initWithTitle:@"Item Review" cancelButtonTitle:@"OK" messageFormat:nil];
-    //    [alert.view setTag:1];
-    //    [alert setDelegate:self];
-    //	[alert setDataSource:self];
-	[alert show];
+    tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Item Review" cancelButtonTitle:@"OK" messageFormat:nil];
+    //    [tableAlertView.view setTag:1];
+    //    [tableAlertView setDelegate:self];
+    //	[tableAlertView setDataSource:self];
+	[tableAlertView show];
 }
 //AllFriendRequestView
 -(void)popupAllFriendRequests;
@@ -85,13 +84,12 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
         //fill up the UITableView at first.
         dataMutableArray = [NSMutableArray arrayWithArray:buddys];
         //Popup view
-        SBTableAlert *alert;
-        alert	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
+        tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
         //    [alert.view setTag:1];
-        [alert setType:SBTableAlertTypeMultipleSelct];
-        [alert setDelegate:self];
-        [alert setDataSource:self];
-        [alert show];
+        [tableAlertView setType:SBTableAlertTypeMultipleSelct];
+        [tableAlertView setDelegate:self];
+        [tableAlertView setDataSource:self];
+        [tableAlertView show];
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -163,5 +161,18 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 	
 	[tableAlert release];
 }
+
+#pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+	return [dataMutableArray count];
+}
+
 
 @end

@@ -266,7 +266,14 @@
                             <outlet property="delegate" destination="EUC-wh-Fju" id="E5X-WL-NBD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="友" id="KTY-Vg-nsJ"/>
+                    <navigationItem key="navigationItem" title="友" id="KTY-Vg-nsJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="yqR-nn-kL2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Wsf-of-O1k">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2da-y7-4Ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

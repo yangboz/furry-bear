@@ -13,6 +13,7 @@
 
 @interface PopupManager_AlertTable : UITableViewController<SBTableAlertDataSource,SBTableAlertDelegate>
 {
+    SBTableAlert *tableAlertView;
     BuddyService *buddyService;
     NSMutableArray *dataMutableArray;//categoryItemReviews,allFriendRequests..
 }
