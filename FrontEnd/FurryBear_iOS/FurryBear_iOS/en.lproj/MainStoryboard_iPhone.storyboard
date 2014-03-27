@@ -158,10 +158,12 @@
         <!--Category Item Main-->
         <scene sceneID="6mp-fg-Vfm">
             <objects>
-                <pageViewController storyboardIdentifier="VC_CategoryItemMain" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n41-z0-6I5" customClass="VC_CategoryItemMain" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="VC_CategoryItemMain" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="n41-z0-6I5" customClass="VC_CategoryItemMain" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ofF-j0-ho7"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dw6-qb-uVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-878" y="-137"/>
+            <point key="canvasLocation" x="1171" y="480"/>
         </scene>
         <!--Category Item Content-->
         <scene sceneID="21Y-dv-JSN">
@@ -204,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIR-Ho-zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-524" y="-137"/>
+            <point key="canvasLocation" x="1525" y="480"/>
         </scene>
         <!--Buddy Related - 友-->
         <scene sceneID="LmU-m7-KfN">
@@ -354,11 +356,11 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureCell" rowHeight="365" id="ESp-db-574" customClass="FeatureCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeatureCell" rowHeight="365" id="ESp-db-574" customClass="FeatureCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="365"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ESp-db-574" id="757-rh-uBm">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="364"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="364"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="pic_plank_among.png" translatesAutoresizingMaskIntoConstraints="NO" id="XgB-xD-Ybq">
@@ -426,9 +428,9 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hl-cR-Hzg">
-                                                    <rect key="frame" x="285" y="331" width="15" height="22"/>
+                                                    <rect key="frame" x="285" y="334" width="16" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="read_more-20.png">
+                                                    <state key="normal" image="favorite_heart.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -444,6 +446,7 @@
                                             <outlet property="timeStampLabel" destination="g5e-c4-adZ" id="Y2j-lx-UsW"/>
                                             <outlet property="userIconBtn" destination="50I-3n-bYy" id="CvN-kg-PDh"/>
                                             <outlet property="userIdLabel" destination="Rau-rK-iQM" id="kLC-MK-sja"/>
+                                            <segue destination="n41-z0-6I5" kind="push" trigger="accessoryAction" id="Tb2-L4-lci"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -625,11 +628,21 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="关于" id="ueT-Cc-ydb"/>
+                    <navigationItem key="navigationItem" title="关于" id="ueT-Cc-ydb">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="QYT-ct-mav">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="OXd-3a-czR">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYv-Ws-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-183"/>
+            <point key="canvasLocation" x="1171" y="-184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="grQ-Nk-af7">
@@ -688,7 +701,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEa-LH-zDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195" y="508"/>
+            <point key="canvasLocation" x="1171" y="1164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QeR-xd-dMy">
@@ -1077,7 +1090,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aT-vm-Wh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="2490"/>
+            <point key="canvasLocation" x="1176" y="3174"/>
         </scene>
         <!--Segue Cate Item Add - 菜址-->
         <scene sceneID="fRm-W1-2Pp">
@@ -1161,7 +1174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7b-cl-pER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="1831"/>
+            <point key="canvasLocation" x="1176" y="2511"/>
         </scene>
         <!--Segue Image Upload - 菜片-->
         <scene sceneID="Hd6-gd-cIa">
@@ -1252,7 +1265,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8z-fR-0NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="1173"/>
+            <point key="canvasLocation" x="1176" y="1852"/>
         </scene>
         <!--Tab Bar Controller - 一道菜-->
         <scene sceneID="15">
@@ -1430,6 +1443,7 @@
         <image name="add_user-32.png" width="32" height="32"/>
         <image name="carrot-32.png" width="32" height="32"/>
         <image name="chili_pepper-32.png" width="32" height="32"/>
+        <image name="favorite_heart.png" width="32" height="32"/>
         <image name="ico_people.png" width="15" height="19"/>
         <image name="ico_reply.png" width="15" height="19"/>
         <image name="mashroom-32.png" width="32" height="32"/>
@@ -1437,7 +1451,6 @@
         <image name="pic_plank_among.png" width="320" height="5"/>
         <image name="pic_plank_down.png" width="320" height="33"/>
         <image name="pic_plank_up.png" width="320" height="5"/>
-        <image name="read_more-20.png" width="16" height="16"/>
         <image name="remove_user-32.png" width="32" height="32"/>
         <image name="tomato-32.png" width="32" height="32"/>
     </resources>
