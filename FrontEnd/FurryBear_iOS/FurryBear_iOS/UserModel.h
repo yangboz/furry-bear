@@ -24,6 +24,8 @@
 //friendsRelated
 -(NSMutableArray *)getFriendRequests;
 -(NSMutableArray *)getAllFriends;
+//messageRelated
+-(NSMutableArray *)getAllMessagesFromBuddy:(NSString *)buddyName;
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;

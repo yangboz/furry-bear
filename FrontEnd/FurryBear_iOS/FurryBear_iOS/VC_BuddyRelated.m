@@ -20,9 +20,6 @@
     // Do any additional setup after loading the view.
     //popupAllFriendRequests if neccessary.
     [[PopupManager_AlertTable sharedInstance] popupAllFriendRequests];
-    //App42_API_Utils
-    buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
-    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     //GetAllFriends
     allFriends = [[UserModel sharedInstance]  getAllFriends];
 }
@@ -58,6 +55,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CellIdentifier = @"Cell";
+
+    TDBadgedCell *cell = [[[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    selectedFriend = (Buddy *)[allFriends objectAtIndex:indexPath.row];
+    
+	cell.textLabel.text = selectedFriend.buddyName;
+	cell.textLabel.font = [UIFont boldSystemFontOfSize:14];
+	
+	cell.detailTextLabel.text = [[App42_API_Utils sharedInstance]getFormattedDate:[selectedFriend acceptedOn]];
+	cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
+	
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    //allMessagesFromBuddy
+    allMessagesFromBuddy = [[UserModel sharedInstance] getAllMessagesFromBuddy:selectedFriend.buddyName];
+    
+	cell.badgeString = [NSString stringWithFormat:@"%d",[allMessagesFromBuddy count]];
+    return cell;
+/*
 	FriendCell *cell = (FriendCell *)[tableView
                                         dequeueReusableCellWithIdentifier:@"FriendCell"];
     NSLog(@"allFriends count:%d",[allFriends count]);
@@ -65,6 +81,7 @@
     //cell.contentView.layer.cornerRadius = 4.0f;
     //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
     //[cell.contentView.layer setBorderWidth:1.0f];
+    //App42_API_getMessagesFromBuddy
     //
     selectedFriend = (Buddy *)[allFriends objectAtIndex:indexPath.row];
     cell.buddyNameLabel.text = selectedFriend.buddyName;
@@ -72,6 +89,10 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY-MM-dd"];
     cell.acceptedOnLabel.text = [formatter stringFromDate:selectedFriend.acceptedOn];
+    //allMessagesFromBuddy
+    allMessagesFromBuddy = [[UserModel sharedInstance] getAllMessagesFromBuddy:selectedFriend.buddyName];
+    //Testing
+    cell.buddyNameLabel.text = [NSString stringWithFormat:@"%d",[allMessagesFromBuddy count]];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
@@ -80,7 +101,7 @@
     //unblock
     [cell.blockIconBtn addTarget:self action:@selector(unblockIconAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
-
+*/
 }
 
 

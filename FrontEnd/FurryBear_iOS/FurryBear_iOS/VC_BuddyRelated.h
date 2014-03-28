@@ -12,6 +12,7 @@
 #import "FriendCell.h"
 #import "PopupManager_AlertTable.h"
 #import "PopupManager_DTAlertView.h"
+#import "TDBadgedCell.h"
 
 @interface VC_BuddyRelated : UITableViewController
 <UITableViewDataSource,UITableViewDelegate>
@@ -19,5 +20,6 @@
     NSMutableArray *allFriends;
     BuddyService *buddyService;
     Buddy *selectedFriend;
+    NSMutableArray *allMessagesFromBuddy;
 }
 @end

@@ -18,6 +18,7 @@ static NSString *buddyName=nil;
 static BOOL autoSignin=YES;
 static NSMutableArray *friendRequests=nil;
 static NSMutableArray *allFriends=nil;
+static NSMutableArray *messagesFromBuddy=nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(UserModel *)sharedInstance
@@ -174,5 +175,32 @@ static NSMutableArray *allFriends=nil;
     }
     return allFriends;
 }
-
+#pragma mark - Messages related
+-(NSMutableArray *)getAllMessagesFromBuddy:(NSString *)buddyName
+{
+    //App42_API_Utils
+    BuddyService *buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getAllMessagesFromBuddy:buddyName toUser:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        messagesFromBuddy = [NSMutableArray arrayWithArray:buddys];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+        messagesFromBuddy = [[NSMutableArray alloc] init];
+    }
+    return messagesFromBuddy;
+};
 @end
