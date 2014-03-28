@@ -24,27 +24,7 @@
     buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     //GetAllFriends
-    @try{
-        //App42 service API call here.
-        NSArray *buddys = [buddyService getAllFriends:userName];
-        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
-        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
-        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
-        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
-        //fill up the UITableView at first.
-        allFriends = [NSMutableArray arrayWithArray:buddys];
-
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //NSAlert here.
-        //None friends
-        allFriends = [[NSMutableArray alloc] init];
-    }
-
+    allFriends = [[UserModel sharedInstance]  getAllFriends];
 }
 
 - (void)didReceiveMemoryWarning

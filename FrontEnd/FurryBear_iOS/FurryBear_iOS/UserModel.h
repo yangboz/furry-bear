@@ -21,8 +21,9 @@
 -(void)setBuddyName:(NSString *)value;
 //Settings.bundle
 -(BOOL)getAutoSignin;
-//getFriendRequests
+//friendsRelated
 -(NSMutableArray *)getFriendRequests;
+-(NSMutableArray *)getAllFriends;
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
