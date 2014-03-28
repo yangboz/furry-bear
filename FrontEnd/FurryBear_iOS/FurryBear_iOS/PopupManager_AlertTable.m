@@ -132,9 +132,23 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 	if (tableAlert.type == SBTableAlertTypeMultipleSelct) {
 		UITableViewCell *cell = [tableAlert.tableView cellForRowAtIndexPath:indexPath];
 		if (cell.accessoryType == UITableViewCellAccessoryNone)
-			[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-		else
+        {
+            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+            NSLog(@"selectedBuddy:%@",dataMutableArray);
+            //Accept friend request
+            Buddy *selectedBuddy = (Buddy *)[dataMutableArray objectAtIndex:indexPath.row ];
+            //
+            NSString *buddyName = selectedBuddy.buddyName;
+            Buddy *buddy = [buddyService acceptFriendRequestFromBuddy:buddyName toUser:buddyName];
+            NSLog(@"userName is :%@",buddy.userName);
+            NSLog(@"buddyName is :%@",buddy.buddyName);
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"YYYY-MM-dd"];
+            NSLog(@"sendedOn is :%@",[formatter stringFromDate:buddy.sendedOn]);
+            NSLog(@"acceptedOn is :%@",[formatter stringFromDate:buddy.acceptedOn]);
+		}else{
 			[cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
 		
 		[tableAlert.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	}
