@@ -70,37 +70,16 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 //AllFriendRequestView
 -(void)popupAllFriendRequests;
 {
-    //App42_API_Utils
-    buddyService = [[App42_API_Utils sharedInstance] getBuddyService];
-    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     //1.Get friend request
-    @try{
-        //App42 service API call here.
-        NSArray *buddys = [buddyService getFriendRequest:userName];
-        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
-        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
-        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
-        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
-        //fill up the UITableView at first.
-        dataMutableArray = [NSMutableArray arrayWithArray:buddys];
-        //Popup view
-        tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
-        //    [alert.view setTag:1];
-        [tableAlertView setStyle:SBTableAlertStylePlain];
-        [tableAlertView setType:SBTableAlertTypeMultipleSelct];
-        [tableAlertView setDelegate:self];
-        [tableAlertView setDataSource:self];
-        [tableAlertView show];
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //NSAlert here.
-        //None friend request
-        dataMutableArray = [[NSMutableArray alloc] init];
-    }
+    dataMutableArray = [[UserModel sharedInstance] getFriendRequests];
+    //2.Popup view
+    tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
+    //    [alert.view setTag:1];
+    [tableAlertView setStyle:SBTableAlertStylePlain];
+    [tableAlertView setType:SBTableAlertTypeMultipleSelct];
+    [tableAlertView setDelegate:self];
+    [tableAlertView setDataSource:self];
+    [tableAlertView show];
 }
 #pragma mark - SBTableAlertDataSource
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
+#import "App42_API_Utils.h"
 
 @interface UserModel : NSObject
 {
@@ -21,6 +21,8 @@
 -(void)setBuddyName:(NSString *)value;
 //Settings.bundle
 -(BOOL)getAutoSignin;
+//getFriendRequests
+-(NSMutableArray *)getFriendRequests;
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
