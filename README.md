@@ -65,6 +65,7 @@ TODO
 
 6.Email service for newsletter(email subscribe/unsubscribe,get/set email list);
 
+7.Friend/Buddy list view full with buddy service' functions; 
 
 Backlog 
 ==========
