@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Furry-bear by yangboz</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/yangboz/furry-bear">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Furry-bear</h1>
+            <h2>A prototype of reviewing Western-style food.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/yangboz/furry-bear/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/yangboz/furry-bear/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a name="furry-bear" class="anchor" href="#furry-bear"><span class="octicon octicon-link"></span></a>furry-bear</h1>
+
+<p>A prototype of reviewing Western-style food.</p>
+
+<h1>
+<a name="front-end" class="anchor" href="#front-end"><span class="octicon octicon-link"></span></a>Front end</h1>
+
+<p>A prototype of jQuery mobile, based on an open source project named "restaurant picker".</p>
+
+<p>An iOS based version is under construction named "FurryBear".</p>
+
+<h1>
+<a name="back-end" class="anchor" href="#back-end"><span class="octicon octicon-link"></span></a>Back end</h1>
+
+<p>Using App42(<a href="http://api.shephertz.com/cloudapidocs">http://api.shephertz.com/cloudapidocs</a>) BAAS solution.</p>
+
+<h1>
+<a name="glossary-" class="anchor" href="#glossary-"><span class="octicon octicon-link"></span></a>Glossary </h1>
+
+<p>[NoSQLStorage] <a href="http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/storage_api.html">http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/storage_api.html</a></p>
+
+<p>[Catalogue/Category] <a href="http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/catalogue_api.html">http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/catalogue_api.html</a></p>
+
+<p>[GeoSptical] <a href="http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/geospatial_api.html">http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/geospatial_api.html</a></p>
+
+<p>ItemId [Cata/Cate] == json/docID [NoSQL]</p>
+
+<p>CatalogueName [Cata]  == dbName [NoSQL]</p>
+
+<p>CategoryName [Cate] == collectionName [NoSQL]</p>
+
+<p>geoStorageName [Geo] == ItemId [Cate]</p>
+
+<h1>
+<a name="ios-frameworks" class="anchor" href="#ios-frameworks"><span class="octicon octicon-link"></span></a>iOS frameworks</h1>
+
+<p>AssetsLibrary.framework</p>
+
+<p>Accelerate.framework</p>
+
+<p>Shephertz_App42_iOS_API.framework</p>
+
+<p>QuartzCore.framework</p>
+
+<p>UIKit.framework</p>
+
+<p>Fundation.framework</p>
+
+<p>CoreGraphics.framework</p>
+
+<h1>
+<a name="todo-" class="anchor" href="#todo-"><span class="octicon octicon-link"></span></a>TODO </h1>
+
+<p>1.Re-factory the VCFeatureItems from UIView based to UITableView with UINavigationController based;</p>
+
+<p>2.Log out function implementation;</p>
+
+<p>3.Using NSOperation to refactory the App42 API service calls;</p>
+
+<p>4.UI screen layout re-define;</p>
+
+<p>5.Using ScoreBoard/LeadBoard and QueueService to apply the send user card message function;</p>
+
+<p>6.Email service for newsletter(email subscribe/unsubscribe,get/set email list);</p>
+
+<p>7.Friend/Buddy list view full with buddy service' functions; </p>
+
+<h1>
+<a name="backlog-" class="anchor" href="#backlog-"><span class="octicon octicon-link"></span></a>Backlog </h1>
+
+<p>1.Review/Rating item can't repetive summbit by single user and it is not edit-able;</p>
+
+<p>2.Should find NoSQL function to realize the "Favorite item" requirements;</p>
+
+<p>3.Geo location inputment requirements;</p>
+
+<p>4.One category item match along with one NoSQL document and many Reviews; </p>
+
+<p>5.Collobrative Filtering Recommandation implmentation;</p>
+
+<p>6.User list with roles assignment, support add friends and send card message;</p>
+
+<p>7.Gamification by design;?</p>
+
+<p>8.Timestamp string converting results as required; </p>
+
+<h1>
+<a name="reference" class="anchor" href="#reference"><span class="octicon octicon-link"></span></a>Reference</h1>
+
+<p>饭本,微博,微信,城觅,评酒(vivino)</p>
+
+<h1>
+<a name="design" class="anchor" href="#design"><span class="octicon octicon-link"></span></a>Design</h1>
+
+<p>用户群体：美食和美食图片要求高的客户,用户评分排行榜,一行图片</p>
+
+<p>启动画面：小宝宝象敲鼓一样敲碗，敲出来星星，萌</p>
+
+<p>目标用户</p>
+
+<p>“一道菜”，每个人心里都会有道菜，时间长不吃就会惦记。每个人心里都会有个人，时间长不见就会想念。菜想吃的时候可以去做，而人一旦失去就永远相见与梦里。所以，珍惜嘴边菜，善待身边人。</p>
+
+<h1>
+<a name="high-level-design" class="anchor" href="#high-level-design"><span class="octicon octicon-link"></span></a>High-level design</h1>
+
+<p>1.用户输入标准邮箱地址可以成功注册并返回注册成功提示信息;</p>
+
+<p>2.用户输入标准邮箱地址可以成功登录并跳转到首页;</p>
+
+<h1>
+<a name="low-level-design" class="anchor" href="#low-level-design"><span class="octicon octicon-link"></span></a>Low-level design</h1>
+
+<p>1.支持用户邮件注册功能;</p>
+
+<p>2.支持用户邮件登录功能;</p>
+
+<p>3.支持登录用户上传图片;</p>
+
+<p>4.支持登录用户添加上传图片文字描述信息;</p>
+
+<p>5.支持登录用户添加上传图片打分;</p>
+
+<p>6.支持登录用户添加上传图片价格;</p>
+
+<p>7.支持登录用户添加上传图片其他文字描述信息(电话，地址，餐厅);</p>
+
+<p>8.支持地理位置搜索;</p>
+
+<p>9.支持地理位置输入(GEO Tag,Auto Complete);</p>
+
+<p>10.支持群组信息首页展示（只需要两条，图片＋评分＋评价者的vid和头像);</p>
+
+<p>11.支持用户添加好友，给好友发送卡片式消息;</p>
+
+<h1>
+<a name="gist" class="anchor" href="#gist"><span class="octicon octicon-link"></span></a>Gist</h1>
+
+<p>App42_API_Call: <a href="https://gist.github.com/yangboz/8917276">https://gist.github.com/yangboz/8917276</a></p>
+
+<p>Objective-C Singleton: <a href="https://gist.github.com/yangboz/9753779">https://gist.github.com/yangboz/9753779</a></p>
+
+<h1>
+<a name="wechat-api" class="anchor" href="#wechat-api"><span class="octicon octicon-link"></span></a>WeChat API</h1>
+
+<p><a href="http://open.weixin.qq.com/document/">http://open.weixin.qq.com/document/</a></p>
+
+<h1>
+<a name="spritebuilder" class="anchor" href="#spritebuilder"><span class="octicon octicon-link"></span></a>SpriteBuilder</h1>
+
+<p><a href="http://www.spritebuilder.com/">http://www.spritebuilder.com/</a></p>
+
+<h1>
+<a name="code4app" class="anchor" href="#code4app"><span class="octicon octicon-link"></span></a>Code4App</h1>
+
+<p><a href="http://code4app.com/ios/">http://code4app.com/ios/</a></p>
+
+<h1>
+<a name="ui4app" class="anchor" href="#ui4app"><span class="octicon octicon-link"></span></a>UI4App</h1>
+
+<p><a href="http://ui4app.com/category/friendslist">http://ui4app.com/category/friendslist</a></p>
+
+<h1>
+<a name="uialertview" class="anchor" href="#uialertview"><span class="octicon octicon-link"></span></a>UIAlertView+</h1>
+
+<p><a href="https://github.com/Darktt/DTAlertView">https://github.com/Darktt/DTAlertView</a></p>
+
+<p><a href="https://github.com/mindbrix/TSAlertView">https://github.com/mindbrix/TSAlertView</a></p>
+
+<p><a href="https://github.com/mindbrix/SBTableAlert">https://github.com/mindbrix/SBTableAlert</a></p>
+
+<h1>
+<a name="uitablecell" class="anchor" href="#uitablecell"><span class="octicon octicon-link"></span></a>UITableCell+</h1>
+
+<p><a href="https://github.com/tmdvs/TDBadgedCell">https://github.com/tmdvs/TDBadgedCell</a></p>
+
+<h1>
+<a name="uitabbar" class="anchor" href="#uitabbar"><span class="octicon octicon-link"></span></a>UITabBar+</h1>
+
+<p><a href="https://github.com/boctor/idev-recipes/tree/master/RaisedCenterTabBar">https://github.com/boctor/idev-recipes/tree/master/RaisedCenterTabBar</a></p>
+
+<p><a href="https://bitdeli.com/free" title="Bitdeli Badge"><img src="https://d2weczhvl823v0.cloudfront.net/yangboz/furry-bear/trend.png" alt="Bitdeli Badge"></a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/yangboz">yangboz</a> can be found on <a href="https://github.com/yangboz/furry-bear">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
