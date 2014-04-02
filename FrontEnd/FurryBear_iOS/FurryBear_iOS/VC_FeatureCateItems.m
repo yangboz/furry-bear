@@ -33,8 +33,12 @@
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
-    //TableView customize style
+    //TableView traits setting here.
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.myTableView.allowsSelection = YES;
+    //@see http://stackoverflow.com/questions/8952688/didselectrowatindexpath-not-being-called/9248827#9248827
+    self.myTableView.delegate = self;
+//    self.myTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -297,6 +301,14 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
+    //Go to detail view here.
+    if(detailViewController == nil)
+    {
+        VC_SegueFeatureCateItemDetail *viewController = [[VC_SegueFeatureCateItemDetail alloc] init];
+        detailViewController = viewController;
+        [viewController release];
+    }
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark App42 APIs

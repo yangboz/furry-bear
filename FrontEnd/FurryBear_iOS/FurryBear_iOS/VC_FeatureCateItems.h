@@ -20,10 +20,12 @@
 #import "UserModel.h"
 #import "VC_CategoryItemMain.h"
 #import "PopupManager_AlertTable.h"
+#import "VC_SegueFeatureCateItemDetail.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *featuredCategoryItems;
+    VC_SegueFeatureCateItemDetail *detailViewController;
 }
 -(void)userDefaultsLogin;
 -(void)loadFeaturedCategoryItems;
