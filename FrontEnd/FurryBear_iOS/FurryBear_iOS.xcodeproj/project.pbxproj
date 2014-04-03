@@ -97,6 +97,10 @@
 		6551066A1860AAEA000333D4 /* tomato-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 6551064A1860AAEA000333D4 /* tomato-75.png */; };
 		6566A60B18ECF30900BF2088 /* RaisedCenterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566A60A18ECF30900BF2088 /* RaisedCenterTabBarController.m */; };
 		6566A60E18ECF9AD00BF2088 /* WBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566A60D18ECF9AD00BF2088 /* WBTabBarController.m */; };
+		6566A61D18EDBB3D00BF2088 /* hood-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566A61918EDBB3D00BF2088 /* hood-selected.png */; };
+		6566A61E18EDBB3D00BF2088 /* hood-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566A61A18EDBB3D00BF2088 /* hood-selected@2x.png */; };
+		6566A61F18EDBB3D00BF2088 /* hood.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566A61B18EDBB3D00BF2088 /* hood.png */; };
+		6566A62018EDBB3D00BF2088 /* hood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566A61C18EDBB3D00BF2088 /* hood@2x.png */; };
 		6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6583619118DB375600C732FF /* PopupManager_DTAlertView.m */; };
 		658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658361AA18DC8D7000C732FF /* Accelerate.framework */; };
 		658361C218DEB63000C732FF /* read_more-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361C018DEB63000C732FF /* read_more-20.png */; };
@@ -270,6 +274,10 @@
 		6566A60A18ECF30900BF2088 /* RaisedCenterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaisedCenterTabBarController.m; sourceTree = "<group>"; };
 		6566A60C18ECF9AD00BF2088 /* WBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTabBarController.h; sourceTree = "<group>"; };
 		6566A60D18ECF9AD00BF2088 /* WBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabBarController.m; sourceTree = "<group>"; };
+		6566A61918EDBB3D00BF2088 /* hood-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hood-selected.png"; sourceTree = "<group>"; };
+		6566A61A18EDBB3D00BF2088 /* hood-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hood-selected@2x.png"; sourceTree = "<group>"; };
+		6566A61B18EDBB3D00BF2088 /* hood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hood.png; sourceTree = "<group>"; };
+		6566A61C18EDBB3D00BF2088 /* hood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hood@2x.png"; sourceTree = "<group>"; };
 		6583619018DB375600C732FF /* PopupManager_DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupManager_DTAlertView.h; sourceTree = "<group>"; };
 		6583619118DB375600C732FF /* PopupManager_DTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupManager_DTAlertView.m; sourceTree = "<group>"; };
 		658361AA18DC8D7000C732FF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -622,6 +630,17 @@
 			name = RaisedCenterTabBar;
 			sourceTree = "<group>";
 		};
+		6566A61818EDBB2600BF2088 /* WBTarBar */ = {
+			isa = PBXGroup;
+			children = (
+				6566A61918EDBB3D00BF2088 /* hood-selected.png */,
+				6566A61A18EDBB3D00BF2088 /* hood-selected@2x.png */,
+				6566A61B18EDBB3D00BF2088 /* hood.png */,
+				6566A61C18EDBB3D00BF2088 /* hood@2x.png */,
+			);
+			name = WBTarBar;
+			sourceTree = "<group>";
+		};
 		658361BD18DEB58400C732FF /* icon_finder */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +688,7 @@
 		6590950C17B8B0F40068F69B /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				6566A61818EDBB2600BF2088 /* WBTarBar */,
 				658A68FC186738DA00EC090F /* stars */,
 				655105E2185EF8C5000333D4 /* icons */,
 				655105D3185EF208000333D4 /* LaunchImage */,
@@ -979,12 +999,14 @@
 				659108B11836766000096A59 /* ico_people@2x.png in Resources */,
 				655105CC185EF01D000333D4 /* AppIcon60x60.png in Resources */,
 				6551061A185EFA0A000333D4 /* spoon-256.png in Resources */,
+				6566A62018EDBB3D00BF2088 /* hood@2x.png in Resources */,
 				655106691860AAEA000333D4 /* tomato-512.png in Resources */,
 				65A98C6318CF5416007DD653 /* carrot-512.png in Resources */,
 				6551061D185EFA0A000333D4 /* spoon-512.png in Resources */,
 				65510620185EFA0A000333D4 /* wine_glass-128.png in Resources */,
 				655106621860AAEA000333D4 /* peanuts-75.png in Resources */,
 				655105DD185EF33A000333D4 /* Default-Landscape@2x.png in Resources */,
+				6566A61E18EDBB3D00BF2088 /* hood-selected@2x.png in Resources */,
 				65510615185EFA0A000333D4 /* knife-512.png in Resources */,
 				658361EE18DFCA5400C732FF /* add_user-32.png in Resources */,
 				6551064C1860AAEA000333D4 /* chili_pepper-128.png in Resources */,
@@ -1001,6 +1023,7 @@
 				659108C6183708DE00096A59 /* LICENSE in Resources */,
 				6551061F185EFA0A000333D4 /* wine_glass-100.png in Resources */,
 				655106581860AAEA000333D4 /* mashroom-50.png in Resources */,
+				6566A61D18EDBB3D00BF2088 /* hood-selected.png in Resources */,
 				655106551860AAEA000333D4 /* mashroom-25.png in Resources */,
 				655106501860AAEA000333D4 /* chili_pepper-50.png in Resources */,
 				6551060E185EFA0A000333D4 /* fork-75.png in Resources */,
@@ -1010,6 +1033,7 @@
 				65510617185EFA0A000333D4 /* spoon-100.png in Resources */,
 				6551065B1860AAEA000333D4 /* peanuts-100.png in Resources */,
 				655105DE185EF33A000333D4 /* Default-Portrait.png in Resources */,
+				6566A61F18EDBB3D00BF2088 /* hood.png in Resources */,
 				6551060C185EFA0A000333D4 /* fork-50.png in Resources */,
 				65A98C5F18CF5416007DD653 /* carrot-25.png in Resources */,
 				655105CF185EF01D000333D4 /* AppIcon76x76@2x.png in Resources */,
