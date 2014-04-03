@@ -666,7 +666,7 @@
         <!--Navigation Controller-->
         <scene sceneID="grQ-Nk-af7">
             <objects>
-                <navigationController definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PlusController" definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" image="peanuts-32.png" id="6Ro-SI-cUS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wxw-MJ-1Gc">
                         <autoresizingMask key="autoresizingMask"/>
