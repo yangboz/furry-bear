@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "[dataMutableArray count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[VC_SegueImageUpload uploadPhoto:]:VC_SegueImageUpload.m">
          <PersistentStrings>
             <PersistentString
@@ -11,13 +22,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GLOBAL">
+         contextName = "-[VC_FeatureCateItems tableView:didSelectRowAtIndexPath:]:VC_FeatureCateItems.m">
          <PersistentStrings>
             <PersistentString
-               value = "indexPath.row">
-            </PersistentString>
-            <PersistentString
-               value = "[dataMutableArray count]">
+               value = "self.navigtaionController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -47,15 +55,15 @@
          contextName = "-[VC_FeatureCateItems tableView:numberOfRowsInSection:]:VC_FeatureCateItems.m">
       </ContextState>
       <ContextState
+         contextName = "-[PopupManager_AlertTable tableAlert:didSelectRowAtIndexPath:]:PopupManager_AlertTable.m">
+      </ContextState>
+      <ContextState
          contextName = "-[AppDelegate application:didFinishLaunchingWithOptions:]:AppDelegate.m">
          <PersistentStrings>
             <PersistentString
                value = "[user description]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PopupManager_AlertTable tableAlert:didSelectRowAtIndexPath:]:PopupManager_AlertTable.m">
       </ContextState>
       <ContextState
          contextName = "-[VC_FeatureCateItems tableView:cellForRowAtIndexPath:]:VC_FeatureCateItems.m">

@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "418096223.136774"
+            timestampString = "418097014.01763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
             landmarkName = "-App42_getReviewsCountByItem:"
             landmarkType = "5">
          </BreakpointContent>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "418096223.136774"
+            timestampString = "418097014.01763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "-App42_getAverageReviewByItem:"
             landmarkType = "5">
          </BreakpointContent>
@@ -200,12 +200,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "418096223.136774"
+            timestampString = "418096524.62827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -216,12 +216,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeatureCateItems.m"
-            timestampString = "418096223.136774"
+            timestampString = "418097008.885941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
+            landmarkName = "-itemDetailAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

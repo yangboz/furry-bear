@@ -95,6 +95,7 @@
 		655106681860AAEA000333D4 /* tomato-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 655106481860AAEA000333D4 /* tomato-50.png */; };
 		655106691860AAEA000333D4 /* tomato-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 655106491860AAEA000333D4 /* tomato-512.png */; };
 		6551066A1860AAEA000333D4 /* tomato-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 6551064A1860AAEA000333D4 /* tomato-75.png */; };
+		6566A60B18ECF30900BF2088 /* RaisedCenterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566A60A18ECF30900BF2088 /* RaisedCenterTabBarController.m */; };
 		6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6583619118DB375600C732FF /* PopupManager_DTAlertView.m */; };
 		658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658361AA18DC8D7000C732FF /* Accelerate.framework */; };
 		658361C218DEB63000C732FF /* read_more-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361C018DEB63000C732FF /* read_more-20.png */; };
@@ -264,6 +265,8 @@
 		655106481860AAEA000333D4 /* tomato-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tomato-50.png"; sourceTree = "<group>"; };
 		655106491860AAEA000333D4 /* tomato-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tomato-512.png"; sourceTree = "<group>"; };
 		6551064A1860AAEA000333D4 /* tomato-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tomato-75.png"; sourceTree = "<group>"; };
+		6566A60918ECF30900BF2088 /* RaisedCenterTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaisedCenterTabBarController.h; sourceTree = "<group>"; };
+		6566A60A18ECF30900BF2088 /* RaisedCenterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaisedCenterTabBarController.m; sourceTree = "<group>"; };
 		6583619018DB375600C732FF /* PopupManager_DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupManager_DTAlertView.h; sourceTree = "<group>"; };
 		6583619118DB375600C732FF /* PopupManager_DTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupManager_DTAlertView.m; sourceTree = "<group>"; };
 		658361AA18DC8D7000C732FF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -605,6 +608,15 @@
 			path = tomato;
 			sourceTree = "<group>";
 		};
+		6566A60818ECF2D400BF2088 /* RaisedCenterTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				6566A60918ECF30900BF2088 /* RaisedCenterTabBarController.h */,
+				6566A60A18ECF30900BF2088 /* RaisedCenterTabBarController.m */,
+			);
+			name = RaisedCenterTabBar;
+			sourceTree = "<group>";
+		};
 		658361BD18DEB58400C732FF /* icon_finder */ = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +822,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6566A60818ECF2D400BF2088 /* RaisedCenterTabBar */,
 				6583620E18E3B18300C732FF /* TBadageCell */,
 				658361FA18E11C2800C732FF /* SBTableAlert */,
 				65A98C4D18CF3D2C007DD653 /* DTAlertView */,
@@ -1052,6 +1065,7 @@
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				6583620818E1C38400C732FF /* VC_BuddyRelated.m in Sources */,
+				6566A60B18ECF30900BF2088 /* RaisedCenterTabBarController.m in Sources */,
 				65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */,
 				6583620B18E1CD9800C732FF /* FriendCell.m in Sources */,
 				6583620018E11C7100C732FF /* SBTableAlert.m in Sources */,
