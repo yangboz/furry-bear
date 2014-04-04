@@ -172,6 +172,8 @@ UITabBar+
 ====================
 https://github.com/boctor/idev-recipes/tree/master/RaisedCenterTabBar
 
+https://github.com/tciuro/CustomTabBar
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/yangboz/furry-bear/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
