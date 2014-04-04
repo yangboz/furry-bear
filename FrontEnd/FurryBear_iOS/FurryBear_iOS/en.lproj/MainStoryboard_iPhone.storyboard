@@ -666,7 +666,7 @@
         <!--Navigation Controller-->
         <scene sceneID="grQ-Nk-af7">
             <objects>
-                <navigationController storyboardIdentifier="PlusController" definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" image="peanuts-32.png" id="6Ro-SI-cUS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wxw-MJ-1Gc">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1020,7 +1020,7 @@
         <!--Navigation Controller-->
         <scene sceneID="4g2-iK-ghz">
             <objects>
-                <navigationController definesPresentationContext="YES" id="eNb-Hr-2Ir" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PlusController" definesPresentationContext="YES" id="eNb-Hr-2Ir" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" image="tomato-32.png" id="feR-E5-R4P"/>
                     <navigationItem key="navigationItem" id="3Ld-75-ws9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q4k-5E-RCQ">
@@ -1289,7 +1289,7 @@
         <!--Tab Bar Controller - 一道菜-->
         <scene sceneID="15">
             <objects>
-                <tabBarController title="一道菜" id="4" sceneMemberID="viewController">
+                <tabBarController title="一道菜" id="4" customClass="WBTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="nkh-Hf-1Vu"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
