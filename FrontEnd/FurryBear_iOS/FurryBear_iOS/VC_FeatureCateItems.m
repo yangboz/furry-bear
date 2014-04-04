@@ -309,7 +309,23 @@
         detailViewController = viewController;
         [viewController release];
     }
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    //VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
+    //
+    //[self.navigationController pushViewController:itemReview animated:YES];
+    //[self presentViewController:itemReview animated:YES completion:NULL];
+    UIView *view1 = [[UIView alloc]initWithFrame:self.view.frame];
+//    UIView *view2 = [itemReview view];
+    UIView *view2 = [[UIView alloc]initWithFrame:self.view.frame];
+    view2.backgroundColor = [UIColor orangeColor];
+    //
+    [UIView  transitionFromView:view1 toView:view2 duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished){
+        [view1 removeFromSuperview];
+    }];
+    [self.view addSubview:view2];
+    [self.view sendSubviewToBack:view2];
+    //
+    //[itemReview release];
+
 }
 
 #pragma mark App42 APIs
@@ -472,9 +488,16 @@
 - (void)itemDetailAction:(id)sender
 {
     VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
-        [self.navigationController pushViewController:itemReview animated:YES];
-    [self presentViewController:itemReview animated:YES completion:NULL];
+    //
+    //[self.navigationController pushViewController:itemReview animated:YES];
+    //[self presentViewController:itemReview animated:YES completion:NULL];
+    
+    //
+    [UIView  transitionFromView:self.view toView:itemReview.view duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+    
     [itemReview release];
+    
+
     //PopupManager+CXAlertView
 //    [[PopupManager sharedInstance]popupCateItemDetail];
 }
