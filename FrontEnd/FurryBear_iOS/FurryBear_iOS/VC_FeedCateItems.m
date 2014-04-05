@@ -1,22 +1,18 @@
 //
-//  VC_FeatureCateItems.m
+//  VC_FeedCateItems.m
 //  FurryBear_iOS
 //
-//  Created by yangboz on 13-8-8.
-//  Copyright (c) 2013年 GODPAPER. All rights reserved.
+//  Created by yangboz on 14-4-5.
+//  Copyright (c) 2014年 GODPAPER. All rights reserved.
 //
 
-#import "VC_FeatureCateItems.h"
+#import "VC_FeedCateItems.h"
 
-@interface VC_FeatureCateItems ()
-{
-    
-}
+@interface VC_FeedCateItems ()
+
 @end
 
-@implementation VC_FeatureCateItems
-
-@synthesize myTableView,cateTabBarItem;
+@implementation VC_FeedCateItems
 
 - (void)viewDidLoad
 {
@@ -33,12 +29,6 @@
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
-    //TableView traits setting here.
-    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.myTableView.allowsSelection = YES;
-    //@see http://stackoverflow.com/questions/8952688/didselectrowatindexpath-not-being-called/9248827#9248827
-    self.myTableView.delegate = self;
-//    self.myTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,8 +39,6 @@
 
 - (void)dealloc {
     [featuredCategoryItems release];
-    [myTableView release];
-    [cateTabBarItem release];
     [super dealloc];
 }
 
@@ -82,7 +70,7 @@
 {
     UITextField *username = [alertView textFieldAtIndex:0];
     UITextField *password = [alertView textFieldAtIndex:1];
-//    NSLog(@"Username: %@\nPassword: %@", username.text, password.text);
+    //    NSLog(@"Username: %@\nPassword: %@", username.text, password.text);
     [self tryLogin:username.text pwdValue:password.text];
 }
 
@@ -124,7 +112,7 @@
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
-    [[PopupManager_DTAlertView sharedInstance] popupProgressBar];
+    //[[PopupManager_DTAlertView sharedInstance] popupProgressBar];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -139,7 +127,7 @@
         NSMutableArray *itemList = category.itemListArray;
         //
         NSLog(@"category itemList len:%d",[itemList count]);
-//        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
+        //        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
         featuredCategoryItems = [[NSMutableArray alloc] init];
         for (categoryItem *item in itemList)
         {
@@ -164,7 +152,7 @@
             //[self App42_getReviewsByItem:item.itemId];
             //#6.GET AVERAGE REVIEW BY ITEM
             int rating = [self App42_getAverageReviewByItem:item.itemId];
-
+            
             //
             [fCateItemDict setObject:item forKey:@"cateItem"];
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
@@ -180,11 +168,11 @@
             }
         }
         //Table view reload
-        [self.myTableView reloadData];
+        [self.tableView reloadData];
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
-        [[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
+        //[[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
     }
 }
 
@@ -205,16 +193,16 @@
     NSString *passWord = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
     UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
-//    User *user = [userService authenticateUser:userName password:password];
+    //    User *user = [userService authenticateUser:userName password:password];
     @try{
-//        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
+        //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
         App42Response *response = [userService authenticateUser:userName password:passWord];
         BOOL success = [response isResponseSuccess];
         NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
         NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
         //Dismiss loginView modal.
         [self dismissViewControllerAnimated:YES completion:nil];
-
+        
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -256,7 +244,7 @@
 	FeatureCell *cell = (FeatureCell *)[tableView
                                         dequeueReusableCellWithIdentifier:@"FeatureCell"];
     NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
-//	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
+    //	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
     NSDictionary *fCateItemDict = (NSDictionary *)[featuredCategoryItems objectAtIndex:indexPath.row];
     //Customize cell.
     //cell.contentView.layer.cornerRadius = 4.0f;
@@ -272,7 +260,7 @@
     cell.itemImageView.imageURL = aURL;
     NSString *reviewCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"reviewCount"] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
-//    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
+    //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.userIdLabel.text = [fCateItemDict objectForKey:@"username"];
     cell.timeStampLabel.text = [fCateItemDict objectForKey:@"timestamp"];
@@ -303,29 +291,7 @@
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
     //Go to detail view here.
-    if(detailViewController == nil)
-    {
-        VC_SegueFeatureCateItemDetail *viewController = [[VC_SegueFeatureCateItemDetail alloc] init];
-        detailViewController = viewController;
-        [viewController release];
-    }
-    //VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
-    //
-    //[self.navigationController pushViewController:itemReview animated:YES];
-    //[self presentViewController:itemReview animated:YES completion:NULL];
-//    UIView *view2 = [itemReview view];
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width*0.8, self.view.frame.size.height*0.8)];
-    view2.backgroundColor = [UIColor orangeColor];
-    view2.alpha = 0.7;
-    //
     
-    // add into window
-    //AppDelegate *appdelgateobj=(AppDelegate *)[ [UIApplication sharedApplication]delegate];
-    //[appdelgateobj.window addSubview:view2];
-    //[appdelgateobj.window bringSubviewToFront:view2];
-    //
-    //[itemReview release];
-
 }
 
 #pragma mark App42 APIs
@@ -333,10 +299,10 @@
 {
     NSString *dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-//    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
+    //    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
     StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
     //
-
+    
     //
     Storage *storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
@@ -357,24 +323,24 @@
 {
     int totalRecords = 0;
     @try{
-    //NSString *itemId = @"ItemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-    App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
-    BOOL success = response.isResponseSuccess;
-    NSLog(@"App42_getReviewsCountByItem success?%d",success);
-    totalRecords = response.totalRecords;
-    NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
-    NSString *jsonResponse = [response toString];
-    NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
-    /* returns the response in JSON format. (as shown below)
-    {
-        "app42": {
-            "response": {
-                "success": true,
-                "totalRecords": 3
-            }
-        }  
-    }*/
+        //NSString *itemId = @"ItemID";
+        ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
+        App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
+        BOOL success = response.isResponseSuccess;
+        NSLog(@"App42_getReviewsCountByItem success?%d",success);
+        totalRecords = response.totalRecords;
+        NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
+        NSString *jsonResponse = [response toString];
+        NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
+        /* returns the response in JSON format. (as shown below)
+         {
+         "app42": {
+         "response": {
+         "success": true,
+         "totalRecords": 3
+         }
+         }
+         }*/
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -389,19 +355,19 @@
 {
     NSMutableArray *results = [[NSMutableArray alloc] init];
     @try{
-//    NSString *itemId = @"itemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-    NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
-    for(Review *review in reviewList){
-        NSLog(@"userId =%@", review.userId);
-        NSLog(@"itemId =%@", review.itemId);
-        NSLog(@"comment=%@",review.comment);
-              NSLog(@"rating=%f", review.rating);
-                    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-        NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
-                    }
-    //
-    results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
+        //    NSString *itemId = @"itemID";
+        ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
+        NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
+        for(Review *review in reviewList){
+            NSLog(@"userId =%@", review.userId);
+            NSLog(@"itemId =%@", review.itemId);
+            NSLog(@"comment=%@",review.comment);
+            NSLog(@"rating=%f", review.rating);
+            NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+            NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
+        }
+        //
+        results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -416,15 +382,15 @@
 {
     int avgRating = 0;
     @try{
-   // NSString *itemId = @"itemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
-    Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
-    NSLog(@"userId =%@", review.userId);
-    NSLog(@"itemId =%@", review.itemId);
-    NSLog(@"comment=%@",review.comment);
-    NSLog(@"rating=%f", review.rating);
-    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-    NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
+        // NSString *itemId = @"itemID";
+        ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
+        Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
+        NSLog(@"userId =%@", review.userId);
+        NSLog(@"itemId =%@", review.itemId);
+        NSLog(@"comment=%@",review.comment);
+        NSLog(@"rating=%f", review.rating);
+        NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+        NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -468,19 +434,19 @@
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
-//    self.tabBarController.selectedIndex = 2;
-//    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
+    //    self.tabBarController.selectedIndex = 2;
+    //    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
     [[PopupManager_AlertTable sharedInstance]popupCateItemDetail];
 }
 
 - (void)userIconAction:(id)sender
 {
-//    self.tabBarController.selectedIndex = 2;
-//    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-//    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
-//    [self.navigationController pushViewController:itemReview animated:YES];
-//    [self presentViewController:itemReview animated:YES completion:NULL];
-//    [itemReview release];
+    //    self.tabBarController.selectedIndex = 2;
+    //    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
+    //    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
+    //    [self.navigationController pushViewController:itemReview animated:YES];
+    //    [self presentViewController:itemReview animated:YES completion:NULL];
+    //    [itemReview release];
     //Send user friends request with PopupManager.
     [[PopupManager_DTAlertView sharedInstance] popupFriendRequest];
 }
@@ -497,9 +463,9 @@
     
     [itemReview release];
     
-
+    
     //PopupManager+CXAlertView
-//    [[PopupManager sharedInstance]popupCateItemDetail];
+    //    [[PopupManager sharedInstance]popupCateItemDetail];
 }
 
 

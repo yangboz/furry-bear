@@ -21,6 +21,7 @@
 #import "VC_CategoryItemMain.h"
 #import "PopupManager_AlertTable.h"
 #import "VC_SegueFeatureCateItemDetail.h"
+#import "AppDelegate.h"
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
