@@ -9,7 +9,7 @@
                value = "indexPath.row">
             </PersistentString>
             <PersistentString
-               value = "[dataMutableArray count]">
+               value = "catItem.description">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,12 +22,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[VC_FeatureCateItems tableView:didSelectRowAtIndexPath:]:VC_FeatureCateItems.m">
+         contextName = "-[VC_CategoryItemAddReview tableView:didSelectRowAtIndexPath:]:VC_CategoryItemAddReview.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigtaionController">
+               value = "indexPath.section">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VC_FeedCateItems tableView:cellForRowAtIndexPath:]:VC_FeedCateItems.m">
       </ContextState>
       <ContextState
          contextName = "-[VC_SegueItemReview on_add_item:]:VC_SegueItemReview.m">
@@ -66,6 +69,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[VC_FeatureCateItems tableView:didSelectRowAtIndexPath:]:VC_FeatureCateItems.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigtaionController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[VC_FeatureCateItems tableView:cellForRowAtIndexPath:]:VC_FeatureCateItems.m">
          <PersistentStrings>
             <PersistentString
@@ -73,14 +84,6 @@
             </PersistentString>
             <PersistentString
                value = "fCateItemDict">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[VC_CategoryItemAddReview tableView:didSelectRowAtIndexPath:]:VC_CategoryItemAddReview.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "indexPath.section">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

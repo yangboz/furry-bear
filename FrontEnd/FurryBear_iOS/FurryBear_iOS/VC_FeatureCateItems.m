@@ -124,7 +124,7 @@
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
-    [[PopupManager_DTAlertView sharedInstance] popupProgressBar];
+    //[[PopupManager_DTAlertView sharedInstance] popupProgressBar];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
@@ -184,7 +184,7 @@
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
-        [[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
+        //[[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
     }
 }
 

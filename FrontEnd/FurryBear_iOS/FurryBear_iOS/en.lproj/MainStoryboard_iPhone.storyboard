@@ -752,6 +752,16 @@
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailIconBtn" destination="fju-2h-xm9" id="1r8-A7-jhx"/>
+                                    <outlet property="nameLabel" destination="YRb-HM-oz9" id="6jb-47-XPw"/>
+                                    <outlet property="ratingCountLabel" destination="tuu-i5-4jO" id="1Lr-dI-5QN"/>
+                                    <outlet property="reviewCountLabel" destination="l1t-I0-ufh" id="Jhd-A2-gKe"/>
+                                    <outlet property="reviewIconBtn" destination="36k-b1-6JT" id="CmS-xf-8TS"/>
+                                    <outlet property="timeStampLabel" destination="ypb-Ct-20U" id="qd9-ZG-jlC"/>
+                                    <outlet property="userIconBtn" destination="AhK-ye-OTu" id="mYY-Cp-sF8"/>
+                                    <outlet property="userIdLabel" destination="Z7f-Nr-cD3" id="b8y-cs-9M1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
