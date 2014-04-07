@@ -16,8 +16,6 @@
 
 @implementation VC_FeatureCateItems
 
-@synthesize myTableView,cateTabBarItem;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,16 +27,7 @@
     {
         [self displayLoginPopup];
     }
-    // table view data is being set here
-    //featuredCategoryItems = [[NSMutableArray alloc] init];
-    //Notify listening
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
-    //TableView traits setting here.
-    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.myTableView.allowsSelection = YES;
-    //@see http://stackoverflow.com/questions/8952688/didselectrowatindexpath-not-being-called/9248827#9248827
-    self.myTableView.delegate = self;
-//    self.myTableView.dataSource = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,8 +38,6 @@
 
 - (void)dealloc {
     [featuredCategoryItems release];
-    [myTableView release];
-    [cateTabBarItem release];
     [super dealloc];
 }
 
@@ -104,8 +91,7 @@
         user.userName = userName;
         user.password = passWord;
         [[UserModel sharedInstance] setUser:user];
-        //Get default catalogue and category name.
-        [self loadFeaturedCategoryItems];
+        //
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -118,73 +104,6 @@
         [alert release];
         //Display the login popup window again.
         //[self displayLoginPopup];
-    }
-}
-#pragma mark -UITableView reload
--(void)loadFeaturedCategoryItems
-{
-    //ProgressBar show
-    //[[PopupManager_DTAlertView sharedInstance] popupProgressBar];
-    //
-    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
-    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-    //GET ITEMS BY CATEGORY
-    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
-    Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
-    NSMutableArray *categoryList = catalogue.categoryListArray;
-    for(CategoryData *category in categoryList)
-    {
-        NSLog(@"name is = %@",category.name);
-        NSLog(@"description is = %@",category.description);
-        NSMutableArray *itemList = category.itemListArray;
-        //
-        NSLog(@"category itemList len:%d",[itemList count]);
-//        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
-        featuredCategoryItems = [[NSMutableArray alloc] init];
-        for (categoryItem *item in itemList)
-        {
-            NSLog(@"price is = %f",item.price);
-            NSLog(@"itemId is = %@",item.itemId);
-            NSLog(@"name is = %@",item.name);
-            NSLog(@"tinyUrl is = %@",item.tinyUrl);
-            //Load itemId related NoSQL documents.
-            //featuredCategoryItem dictionary:
-            NSMutableDictionary *fCateItemDict = [[NSMutableDictionary alloc] init];
-            //#1.FIND DOCUMENT BY ID
-            JSONDocument *jsonDoc = [self App42_findDocumentById:item.itemId];
-            //#2.GET USER NAME
-            NSString *username = [self App42_getItemOwnerName:jsonDoc];
-            //#3.GET ITEM TIMESTAMP
-            NSString *timestamp = [self App42_getItemTimeStamp:jsonDoc];
-            //With try catch...
-            //#4.GET REVIEWS COUNT BY ITEM
-            int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
-            NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
-            //#5.GET REVIEWs BY ITEM
-            //[self App42_getReviewsByItem:item.itemId];
-            //#6.GET AVERAGE REVIEW BY ITEM
-            int rating = [self App42_getAverageReviewByItem:item.itemId];
-
-            //
-            [fCateItemDict setObject:item forKey:@"cateItem"];
-            [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
-            [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
-            [fCateItemDict setObject:username forKey:@"username"];
-            [fCateItemDict setObject:timestamp forKey:@"timestamp"];
-            //
-            [featuredCategoryItems addObject:fCateItemDict];
-            for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
-                for (id key in fCateItemDict) {
-                    NSLog(@"key: %@, value: %@ \n", key, [fCateItemDict objectForKey:key]);
-                }
-            }
-        }
-        //Table view reload
-        [self.myTableView reloadData];
-        //
-        //self.cateTabBarItem.badgeValue = @"1";
-        //ProgressBar hide
-        //[[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
     }
 }
 
@@ -237,270 +156,5 @@
         loginViewController.delegate = self;
     }
 }
-
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-	return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    NSLog(@"featuredCategoryItems,count:%d",[featuredCategoryItems count]);
-	return [featuredCategoryItems count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	FeatureCell *cell = (FeatureCell *)[tableView
-                                        dequeueReusableCellWithIdentifier:@"FeatureCell"];
-    NSLog(@"featuredCategoryItems count:%d",[featuredCategoryItems count]);
-//	categoryItem *catItem = (categoryItem *)[featuredCategoryItems objectAtIndex:indexPath.row];
-    NSDictionary *fCateItemDict = (NSDictionary *)[featuredCategoryItems objectAtIndex:indexPath.row];
-    //Customize cell.
-    //cell.contentView.layer.cornerRadius = 4.0f;
-    //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
-    //[cell.contentView.layer setBorderWidth:1.0f];
-    //
-    categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
-	cell.nameLabel.text = catItem.description;
-	//cell.detailTextLabel.text = itemData.imageName;
-    NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
-    //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
-    //cell.itemImageView.image = [UIImage imageWithData:data];
-    cell.itemImageView.imageURL = aURL;
-    NSString *reviewCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"reviewCount"] integerValue]];
-    cell.reviewCountLabel.text = reviewCount;
-//    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.userIdLabel.text = [fCateItemDict objectForKey:@"username"];
-    cell.timeStampLabel.text = [fCateItemDict objectForKey:@"timestamp"];
-    //Contray to MVC,temporary transfor the navigationController reference to cell
-    cell.navigationController = self.navigationController;
-    //IBAction for cell buttons
-    [cell.reviewIconBtn addTarget:self action:@selector(reviewIconAction:) forControlEvents:UIControlEventTouchUpInside];
-    //Set buddy name
-    [[UserModel sharedInstance] setBuddyName: cell.userIdLabel.text];
-    //see friend request
-    [cell.userIconBtn addTarget:self action:@selector(userIconAction:) forControlEvents:UIControlEventTouchUpInside];
-    //see detail by tap image.
-    cell.imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
-    [cell.imageView addGestureRecognizer:tapGesture];
-    //see detail by click detail icon
-    [cell.detailIconBtn addTarget:self action:@selector(itemDetailAction:) forControlEvents:UIControlEventTouchUpInside];
-    return cell;
-}
-
-
-#pragma mark - TableView delegate
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
-(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"Section:%d Row:%d selected and its data is %@",
-          indexPath.section,indexPath.row,cell.textLabel.text);
-    //Go to detail view here.
-    if(detailViewController == nil)
-    {
-        VC_SegueFeatureCateItemDetail *viewController = [[VC_SegueFeatureCateItemDetail alloc] init];
-        detailViewController = viewController;
-        [viewController release];
-    }
-    //VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
-    //
-    //[self.navigationController pushViewController:itemReview animated:YES];
-    //[self presentViewController:itemReview animated:YES completion:NULL];
-//    UIView *view2 = [itemReview view];
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width*0.8, self.view.frame.size.height*0.8)];
-    view2.backgroundColor = [UIColor orangeColor];
-    view2.alpha = 0.7;
-    //
-    
-    // add into window
-    //AppDelegate *appdelgateobj=(AppDelegate *)[ [UIApplication sharedApplication]delegate];
-    //[appdelgateobj.window addSubview:view2];
-    //[appdelgateobj.window bringSubviewToFront:view2];
-    //
-    //[itemReview release];
-
-}
-
-#pragma mark App42 APIs
--(JSONDocument *)App42_findDocumentById:(NSString *)docId
-{
-    NSString *dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
-    NSString *collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-//    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
-    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
-    //
-
-    //
-    Storage *storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
-    NSLog(@"dbName is = %@",storage.dbName);
-    NSLog(@"collectionName is = %@",storage.collectionName);
-    NSMutableArray *jsonDocList = storage.jsonDocArray;
-    for(JSONDocument *jsonDoc in jsonDocList)
-    {
-        NSLog(@"docId is = %@ " , jsonDoc.docId);
-        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
-    }
-    
-    NSString *jsonResponse = [storage toString]; /* returns the response in JSON format. */
-    NSLog(@"App42_findDocumentById jsonResponse:%@",jsonResponse);
-    return [jsonDocList objectAtIndex:0];
-}
-
--(int)App42_getReviewsCountByItem:(NSString*)itemId
-{
-    int totalRecords = 0;
-    @try{
-    //NSString *itemId = @"ItemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-    App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
-    BOOL success = response.isResponseSuccess;
-    NSLog(@"App42_getReviewsCountByItem success?%d",success);
-    totalRecords = response.totalRecords;
-    NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
-    NSString *jsonResponse = [response toString];
-    NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
-    /* returns the response in JSON format. (as shown below)
-    {
-        "app42": {
-            "response": {
-                "success": true,
-                "totalRecords": 3
-            }
-        }  
-    }*/
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return totalRecords;
-}
-//@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
--(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId
-{
-    NSMutableArray *results = [[NSMutableArray alloc] init];
-    @try{
-//    NSString *itemId = @"itemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-    NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
-    for(Review *review in reviewList){
-        NSLog(@"userId =%@", review.userId);
-        NSLog(@"itemId =%@", review.itemId);
-        NSLog(@"comment=%@",review.comment);
-              NSLog(@"rating=%f", review.rating);
-                    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-        NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
-                    }
-    //
-    results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return results;
-}
-//@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#getaverage_reviewbyitem
--(int)App42_getAverageReviewByItem:(NSString *)itemId
-{
-    int avgRating = 0;
-    @try{
-   // NSString *itemId = @"itemID";
-    ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
-    Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
-    NSLog(@"userId =%@", review.userId);
-    NSLog(@"itemId =%@", review.itemId);
-    NSLog(@"comment=%@",review.comment);
-    NSLog(@"rating=%f", review.rating);
-    NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-    NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return avgRating;
-}
-//@private
--(NSString *)App42_getItemOwnerName:(JSONDocument *)jsonDoc
-{
-    NSString *username = @"nil";
-    NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
-    //
-    username = [dict objectForKey:KEY_NAME_OWNERNAME];
-    return username;
-}
--(NSString *)App42_getItemTimeStamp:(JSONDocument *)jsonDoc
-{
-    NSString *timestamp = @"";
-    NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
-    //
-    timestamp = [dict objectForKey:@"_$updatedAt"];
-    NSLog(@"json._$updatedAt:%@", timestamp);
-    return timestamp;
-}
-#pragma mark Utility functions
-- (NSString *)symbolForRating:(int)rating
-{
-    switch (rating) {
-        case 0: return @"☆";
-        case 1: return @"★";
-        case 2: return @"★★";
-        case 3: return @"★★★";
-        case 4: return @"★★★★";
-        case 5: return @"★★★★★";
-    }
-    return nil;
-}
-#pragma mark IBActions inside of cell.
-- (void)reviewIconAction:(id)sender
-{
-//    self.tabBarController.selectedIndex = 2;
-//    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
-    [[PopupManager_AlertTable sharedInstance]popupCateItemDetail];
-}
-
-- (void)userIconAction:(id)sender
-{
-//    self.tabBarController.selectedIndex = 2;
-//    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-//    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
-//    [self.navigationController pushViewController:itemReview animated:YES];
-//    [self presentViewController:itemReview animated:YES completion:NULL];
-//    [itemReview release];
-    //Send user friends request with PopupManager.
-    [[PopupManager_DTAlertView sharedInstance] popupFriendRequest];
-}
-
-- (void)itemDetailAction:(id)sender
-{
-    VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
-    //
-    //[self.navigationController pushViewController:itemReview animated:YES];
-    //[self presentViewController:itemReview animated:YES completion:NULL];
-    
-    //
-    [UIView  transitionFromView:self.view toView:itemReview.view duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
-    
-    [itemReview release];
-    
-
-    //PopupManager+CXAlertView
-//    [[PopupManager sharedInstance]popupCateItemDetail];
-}
-
 
 @end

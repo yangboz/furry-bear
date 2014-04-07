@@ -23,24 +23,12 @@
 #import "VC_SegueFeatureCateItemDetail.h"
 #import "AppDelegate.h"
 
-@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate>
 {
     NSMutableArray *featuredCategoryItems;
-    VC_SegueFeatureCateItemDetail *detailViewController;
 }
 -(void)userDefaultsLogin;
--(void)loadFeaturedCategoryItems;
-- (NSString *)symbolForRating:(int)rating;
-@property(nonatomic,strong)IBOutlet UITableView *myTableView;
-@property(nonatomic,strong)IBOutlet UITabBarItem *cateTabBarItem;
 -(void)displayLoginPopup;
 //App42_API calls
--(JSONDocument *)App42_findDocumentById:(NSString *)docId;
--(int)App42_getReviewsCountByItem:(NSString*)itemId;
--(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId;
--(int)App42_getAverageReviewByItem:(NSString *)itemId;//Rating value only.
-//IBActions inside of cell
--(void)reviewIconAction:(id)sender;
--(void)userIconAction:(id)sender;
--(void)itemDetailAction:(id)sender;
+//IBOutlets
 @end
