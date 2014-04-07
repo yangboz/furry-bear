@@ -15,7 +15,6 @@
 @implementation VC_CateItemDetail
 
 @synthesize cateItemData;
-@synthesize tf_description;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +36,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //Configure view
     self.tf_description.text = cateItemData.description;
+    self.lbl_price.text =
+    [NSString stringWithFormat:@"%f",
+    cateItemData.price];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,8 +50,9 @@
 - (void)dealloc
 {
     [cateItemData release];
-    [tf_description release];
+    [_tf_description release];
     //
+    [_lbl_price release];
     [super dealloc];
 }
 
