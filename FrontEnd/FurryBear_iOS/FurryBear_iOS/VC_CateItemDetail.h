@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "App42_API_Utils.h"
 
 @interface VC_CateItemDetail : UITableViewController
+{
+}
+@property(nonatomic,retain) categoryItem *cateItemData;
+//IBOutlets
+
+@property (retain, nonatomic) IBOutlet UITextField *tf_description;
 
 @end

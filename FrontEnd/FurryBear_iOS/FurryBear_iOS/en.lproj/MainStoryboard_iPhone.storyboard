@@ -762,7 +762,7 @@
                                     <outlet property="timeStampLabel" destination="ypb-Ct-20U" id="qd9-ZG-jlC"/>
                                     <outlet property="userIconBtn" destination="AhK-ye-OTu" id="mYY-Cp-sF8"/>
                                     <outlet property="userIdLabel" destination="Z7f-Nr-cD3" id="b8y-cs-9M1"/>
-                                    <segue destination="Ue4-Ke-PY9" kind="push" identifier="seque_item_detail" trigger="accessoryAction" id="U1H-8F-pcn"/>
+                                    <segue destination="Ue4-Ke-PY9" kind="push" identifier="segue_item_detail" trigger="accessoryAction" id="Bq7-gf-4Sn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -806,6 +806,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bC0-Nd-bDR" id="V2c-tj-eEx">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-3Y-Ssy">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -818,6 +826,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2dZ-Kp-e3v" id="Ckd-Op-c3g">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsV-PB-iR5">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -853,10 +869,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="菜" id="DRn-YA-yY9"/>
+                    <connections>
+                        <outlet property="tf_description" destination="O5D-3Y-Ssy" id="FK5-4p-5wy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNj-is-vHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="-852"/>
+            <point key="canvasLocation" x="700" y="-851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hSJ-vP-ovE">
@@ -1135,7 +1154,7 @@
                         <segue destination="QG7-q2-Dqf" kind="push" identifier="segue_comment" id="oC7-kH-QWD"/>
                         <segue destination="5mb-op-ca2" kind="push" identifier="segue_signup" id="bY4-c4-2Hm"/>
                         <segue destination="7yG-b2-PeI" kind="push" identifier="segue_email_setting" id="sAH-5c-PZl"/>
-                        <segue destination="R0t-Nz-zzV" kind="push" identifier="seque_email_send" id="UC3-mi-bNU"/>
+                        <segue destination="R0t-Nz-zzV" kind="push" identifier="segue_email_send" id="UC3-mi-bNU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u09-Qh-VfW" userLabel="First Responder" sceneMemberID="firstResponder"/>

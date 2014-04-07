@@ -215,14 +215,19 @@
         [alert release];
     }
 }
-
+#pragma mark - Navigation
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"UserLogin"]) {
+    if ([segue.identifier isEqualToString:SEGUE_NAME_LOGIN]) {
         UINavigationController *navigationController = segue.destinationViewController;
         //
         LoginViewController *loginViewController = [[navigationController viewControllers] objectAtIndex:0];
         loginViewController.delegate = self;
+    }
+    //VC_CategoryItemDetail
+    if ([segue.identifier isEqualToString:SEGUE_NAME_ITEM_DETAIL]) {
+        VC_CateItemDetail *categoryItemDetailVC = segue.destinationViewController;
+        categoryItemDetailVC.cateItemData = [self getCategoryItemData:selectedNSIndexPath];
     }
 }
 
@@ -290,8 +295,9 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
-    //Go to detail view here.
-    [self performSegueWithIdentifier:SEQUE_NAME_ITEM_DETAIL sender:self];
+    //Go to detail view with data.
+    selectedNSIndexPath = indexPath;
+    [self performSegueWithIdentifier:SEGUE_NAME_ITEM_DETAIL sender:self];
 }
 
 #pragma mark App42 APIs
@@ -431,6 +437,13 @@
     }
     return nil;
 }
+
+- (categoryItem *)getCategoryItemData:(NSIndexPath *)indexPath
+{
+    NSDictionary *fCateItemDict = (NSDictionary *)[featuredCategoryItems objectAtIndex:indexPath.row];
+    categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
+    return catItem;
+}
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
@@ -467,6 +480,5 @@
     //PopupManager+CXAlertView
     //    [[PopupManager sharedInstance]popupCateItemDetail];
 }
-
 
 @end

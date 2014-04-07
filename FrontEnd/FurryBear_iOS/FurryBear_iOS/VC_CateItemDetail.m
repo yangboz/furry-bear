@@ -14,6 +14,9 @@
 
 @implementation VC_CateItemDetail
 
+@synthesize cateItemData;
+@synthesize tf_description;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,12 +35,22 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Configure view
+    self.tf_description.text = cateItemData.description;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [cateItemData release];
+    [tf_description release];
+    //
+    [super dealloc];
 }
 
 #pragma mark - Table view data source
@@ -57,9 +70,12 @@
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.row==1) {
+        cell.detailTextLabel.text = cateItemData.description;
+    }
     
     return cell;
 }
@@ -111,6 +127,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
 */
 

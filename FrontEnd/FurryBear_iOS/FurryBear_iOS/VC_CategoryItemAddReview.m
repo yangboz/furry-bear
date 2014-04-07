@@ -79,7 +79,7 @@
             segueName = SEGUE_NAME_EMAIL_SETTING;
             break;
         case 6:
-            segueName = SEQUE_NAME_EMAIL_SEND;
+            segueName = SEGUE_NAME_EMAIL_SEND;
             break;
         default:
             segueName = SEGUE_NAME_IMAGE;

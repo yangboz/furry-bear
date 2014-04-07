@@ -22,9 +22,11 @@
 #import "PopupManager_AlertTable.h"
 #import "VC_SegueFeatureCateItemDetail.h"
 #import "AppDelegate.h"
+#import "VC_CateItemDetail.h"
 
 @interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *featuredCategoryItems;
+    NSIndexPath *selectedNSIndexPath;
 }
 @end
