@@ -368,10 +368,18 @@
                                     <navigationItem title="一道菜" id="9JU-Vt-mHE"/>
                                 </items>
                             </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sac-D4-cq9">
+                                <rect key="frame" x="0.0" y="100" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">“一道菜”，每个人心里都会有道菜，时间长不吃就会惦记。每个人心里都会有个人，时间长不见就会想念。菜想吃的时候可以去做，而人一旦失去就永远相见与梦里。所以，珍惜嘴边菜，善待身边人。味道这个东西，言语难以形容，把你喜欢的一道菜赠予你觉得能懂它的人，让味道从一条舌头传到另一条舌头。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="chili_pepper-32.png" id="7"/>
+                    <tabBarItem key="tabBarItem" image="peanuts-32.png" id="7"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="FA2-W9-fEc" id="kBd-9j-uVu"/>
                     </connections>
@@ -509,44 +517,6 @@
             </objects>
             <point key="canvasLocation" x="334" y="2536"/>
         </scene>
-        <!--Table View Controller - 关于-->
-        <scene sceneID="JZA-MA-Bx3">
-            <objects>
-                <tableViewController id="64x-af-rW3" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="I5D-td-wYi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Yhr-S9-wUH">
-                            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <string key="text">“一道菜”，每个人心里都会有道菜，时间长不吃就会惦记。每个人心里都会有个人，时间长不见就会想念。菜想吃的时候可以去做，而人一旦失去就永远相见与梦里。所以，珍惜嘴边菜，善待身边人。味道这个东西，言语难以形容，把你喜欢的一道菜赠予你觉得能懂它的人，让味道从一条舌头传到另一条舌头。</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <sections>
-                            <tableViewSection id="RGD-wy-Jdm">
-                                <cells/>
-                            </tableViewSection>
-                        </sections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="关于" id="ueT-Cc-ydb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="QYT-ct-mav">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="OXd-3a-czR">
-                                <rect key="frame" x="282" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XYv-Ws-PyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1171" y="-184"/>
-        </scene>
         <!--Feed Cate Items - 一道菜-->
         <scene sceneID="2RB-CX-rx5">
             <objects>
@@ -659,7 +629,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUM-Ug-M10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="-822"/>
+            <point key="canvasLocation" x="1161" y="-207"/>
         </scene>
         <!--Cate Item Detail - 菜-->
         <scene sceneID="VAp-nm-DFz">
@@ -777,13 +747,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNj-is-vHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="-851"/>
+            <point key="canvasLocation" x="1579" y="-207"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hSJ-vP-ovE">
             <objects>
                 <navigationController definesPresentationContext="YES" id="d1u-bJ-t87" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="wJj-1o-B5N"/>
+                    <tabBarItem key="tabBarItem" image="chili_pepper-32.png" id="wJj-1o-B5N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdf-Jo-bHu">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -793,23 +763,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgT-D1-a2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="-793"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="grQ-Nk-af7">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="0nB-eT-Qzv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="peanuts-32.png" id="6Ro-SI-cUS"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wxw-MJ-1Gc">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="64x-af-rW3" kind="relationship" relationship="rootViewController" id="EiJ-hG-NoL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V98-hI-swM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="662" y="-184"/>
+            <point key="canvasLocation" x="662" y="-207"/>
         </scene>
         <!--Favorite Cate Items - 藏-->
         <scene sceneID="WwJ-YA-hAX">
@@ -1433,7 +1387,6 @@
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="uVi-hG-yh2" kind="relationship" relationship="viewControllers" id="yiV-Hw-V6q"/>
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="uZs-dV-GmU"/>
-                        <segue destination="0nB-eT-Qzv" kind="relationship" relationship="viewControllers" id="Qwm-yg-OG8"/>
                         <segue destination="VOE-ct-zF0" kind="relationship" relationship="viewControllers" id="1vQ-kP-nvY"/>
                         <segue destination="d1u-bJ-t87" kind="relationship" relationship="viewControllers" id="8Uw-MP-dQs"/>
                     </connections>
