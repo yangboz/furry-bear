@@ -291,7 +291,7 @@
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
     //Go to detail view here.
-    
+    [self performSegueWithIdentifier:SEQUE_NAME_ITEM_DETAIL sender:self];
 }
 
 #pragma mark App42 APIs

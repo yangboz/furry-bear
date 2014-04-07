@@ -16,6 +16,7 @@
 #define SEGUE_NAME_SIGNUP @"segue_signup"
 #define SEGUE_NAME_EMAIL_SETTING @"segue_email_setting"
 #define SEQUE_NAME_EMAIL_SEND @"seque_email_send"//for NewsLetter
+#define SEQUE_NAME_ITEM_DETAIL @"seque_item_detail"
 //NO SQL keys
 #define KEY_NAME_ADDRESS @"address"
 #define KEY_NAME_TELPHONE @"telphone"
