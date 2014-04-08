@@ -28,5 +28,11 @@
 {
     NSMutableArray *featuredCategoryItems;
     NSIndexPath *selectedNSIndexPath;
+    //App42 related variables
+    NSString *dbName;
+    NSString *collectionName;
+    StorageService *storageService;
+    UserService *userService;
+    User *user;
 }
 @end

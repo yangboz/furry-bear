@@ -37,5 +37,6 @@
 #define DICT_KEY_USER_NAME @"username"
 #define DICT_KEY_TIME_STAMP @"timestamp"
 #define DICT_KEY_RATING @"rating"
+#define DICT_KEY_CATE_ITEM @"cateItem"
 
 #endif

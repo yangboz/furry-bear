@@ -154,11 +154,11 @@
             int rating = [self App42_getAverageReviewByItem:item.itemId];
             
             //
-            [fCateItemDict setObject:item forKey:@"cateItem"];
-            [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:@"reviewCount"];
-            [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:@"rating"];
-            [fCateItemDict setObject:username forKey:@"username"];
-            [fCateItemDict setObject:timestamp forKey:@"timestamp"];
+            [fCateItemDict setObject:item forKey:DICT_KEY_CATE_ITEM];
+            [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:DICT_KEY_REVIEW_COUNT];
+            [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:DICT_KEY_RATING];
+            [fCateItemDict setObject:username forKey:DICT_KEY_USER_NAME];
+            [fCateItemDict setObject:timestamp forKey:DICT_KEY_TIME_STAMP];
             //
             [featuredCategoryItems addObject:fCateItemDict];
             for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
@@ -188,11 +188,11 @@
 (LoginViewController *)controller
 {
     //Initialize the App42 serviceAPI instance
-    User *user = [[UserModel sharedInstance] getUser];
+    user = [[UserModel sharedInstance] getUser];
     NSString *userName = user.userName;
     NSString *passWord = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
-    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
+    userService = [ [App42_API_Utils sharedInstance] getUserService ];
     //    User *user = [userService authenticateUser:userName password:password];
     @try{
         //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
@@ -303,10 +303,10 @@
 #pragma mark App42 APIs
 -(JSONDocument *)App42_findDocumentById:(NSString *)docId
 {
-    NSString *dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
-    NSString *collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
-    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
+    storageService = [[App42_API_Utils sharedInstance] getStorageService];
     //
     
     //
@@ -466,19 +466,10 @@
 
 - (void)itemFavoriteAction:(id)sender
 {
-    VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
-    //
-    //[self.navigationController pushViewController:itemReview animated:YES];
-    //[self presentViewController:itemReview animated:YES completion:NULL];
-    
-    //
-    [UIView  transitionFromView:self.view toView:itemReview.view duration:2 options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
-    
-    [itemReview release];
+    //@see http://api.shephertz.com/app42-docs/user-management-service/#add_json_object
+    UserService *userService = [[App42_API_Utils sharedInstance] getUserService];
     
     
-    //PopupManager+CXAlertView
-    //    [[PopupManager sharedInstance]popupCateItemDetail];
 }
 
 @end
