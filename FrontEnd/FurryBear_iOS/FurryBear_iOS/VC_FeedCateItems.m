@@ -263,12 +263,12 @@
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
-    NSString *reviewCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"reviewCount"] integerValue]];
+    NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
     //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.userIdLabel.text = [fCateItemDict objectForKey:@"username"];
-    cell.timeStampLabel.text = [fCateItemDict objectForKey:@"timestamp"];
+    cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:DICT_KEY_RATING] integerValue]];
+    cell.userIdLabel.text = [fCateItemDict objectForKey:DICT_KEY_USER_NAME];
+    cell.timeStampLabel.text = [fCateItemDict objectForKey:DICT_KEY_TIME_STAMP];
     //Contray to MVC,temporary transfor the navigationController reference to cell
     cell.navigationController = self.navigationController;
     //IBAction for cell buttons
@@ -282,7 +282,7 @@
     UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
     [cell.imageView addGestureRecognizer:tapGesture];
     //see detail by click detail icon
-    [cell.detailIconBtn addTarget:self action:@selector(itemDetailAction:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.favIconBtn addTarget:self action:@selector(itemFavoriteAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -293,8 +293,8 @@
 (NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"Section:%d Row:%d selected and its data is %@",
-          indexPath.section,indexPath.row,cell.textLabel.text);
+    NSLog(@"Section:%ld Row:%ld selected and its data is %@",
+          (long)indexPath.section,(long)indexPath.row,cell.textLabel.text);
     //Go to detail view with data.
     selectedNSIndexPath = indexPath;
     [self performSegueWithIdentifier:SEGUE_NAME_ITEM_DETAIL sender:self];
@@ -464,7 +464,7 @@
     [[PopupManager_DTAlertView sharedInstance] popupFriendRequest];
 }
 
-- (void)itemDetailAction:(id)sender
+- (void)itemFavoriteAction:(id)sender
 {
     VC_CategoryItemMain *itemReview = [[VC_CategoryItemMain alloc] init];
     //

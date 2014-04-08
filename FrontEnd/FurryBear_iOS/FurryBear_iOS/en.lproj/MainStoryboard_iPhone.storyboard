@@ -607,7 +607,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="detailIconBtn" destination="fju-2h-xm9" id="1r8-A7-jhx"/>
+                                    <outlet property="favIconBtn" destination="fju-2h-xm9" id="yqK-54-UTZ"/>
                                     <outlet property="itemImageView" destination="wEZ-q6-eZJ" id="chY-Zc-imk"/>
                                     <outlet property="nameLabel" destination="YRb-HM-oz9" id="6jb-47-XPw"/>
                                     <outlet property="ratingCountLabel" destination="tuu-i5-4jO" id="1Lr-dI-5QN"/>

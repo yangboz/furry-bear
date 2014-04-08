@@ -23,7 +23,7 @@
 //
 @property (nonatomic, strong) IBOutlet UIButton *reviewIconBtn;
 @property (nonatomic, strong) IBOutlet UIButton *userIconBtn;
-@property (nonatomic, strong) IBOutlet UIButton *detailIconBtn;
+@property (nonatomic, strong) IBOutlet UIButton *favIconBtn;
 //IBActions
 
 //Public Properties/Functions

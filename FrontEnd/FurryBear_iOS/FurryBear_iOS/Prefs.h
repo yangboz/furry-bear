@@ -32,4 +32,10 @@
 #define GMAIL_IS_SSL YES
 //Notification name
 #define NOTIFY_NAME_CATE_ITEM_ADDED @"categoryItemsAdded"
+//CategoryDictionaryKey
+#define DICT_KEY_REVIEW_COUNT @"reviewCount"
+#define DICT_KEY_USER_NAME @"username"
+#define DICT_KEY_TIME_STAMP @"timestamp"
+#define DICT_KEY_RATING @"rating"
+
 #endif
