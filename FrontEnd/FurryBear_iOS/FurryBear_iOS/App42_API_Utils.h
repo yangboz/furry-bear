@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 
+#import "JSONKit.h"
+#import "UserModel.h"
+#import "ItemDataModel.h"
+#import "Prefs.h"
 
 @interface App42_API_Utils : UIView
 {
@@ -32,5 +36,7 @@
 -(NSString *)getDefaultCategoryName;
 -(NSString *)getTimeStampName;
 -(NSString *)getFormattedDate:(NSDate *)date;
+//NoSQL
+-(void)setCateItemId;
 
 @end

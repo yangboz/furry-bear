@@ -9,13 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "App42_API_Utils.h"
-#import "UserModel.h"
 #import "UploadModel.h"
-#import "ItemDataModel.h"
 #import "MBProgressHUD.h"
-#import "JSONKit.h"
-#import "MBProgressHUD.h"
-#import "Prefs.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @interface VC_SegueImageUpload : UITableViewController <UIImagePickerControllerDelegate>

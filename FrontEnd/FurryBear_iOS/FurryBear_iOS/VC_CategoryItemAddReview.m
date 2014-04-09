@@ -62,10 +62,10 @@
     switch (indexPath.section) {
         case 0:
             segueName = SEGUE_NAME_IMAGE;
-            SCNavigationController *nav = [[SCNavigationController alloc] init];
-            nav.scNaigationDelegate = self;
-            [nav showCameraWithParentController:self];
-            return;
+//            SCNavigationController *nav = [[SCNavigationController alloc] init];
+//            nav.scNaigationDelegate = self;
+//            [nav showCameraWithParentController:self];
+//            return;
             break;
         case 1:
             segueName = SEGUE_NAME_REVIEW;
