@@ -419,8 +419,8 @@
 {
     NSString *timestamp = @"";
     NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
-    //
-    timestamp = [dict objectForKey:@"_$updatedAt"];
+    //FIXME:JSON string parse changed here!!!
+    timestamp = [dict objectForKey:@"telphone"];
     NSLog(@"json._$updatedAt:%@", timestamp);
     return timestamp;
 }
@@ -467,18 +467,30 @@
 - (void)itemFavoriteAction:(id)sender
 {
     //@see http://api.shephertz.com/app42-docs/user-management-service/#add_json_object
-    UserService *userService = [[App42_API_Utils sharedInstance] getUserService];
-    //Favorite item json object assemble
-    NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
-    //Get cate item's id
-    categoryItem *cateItem = [self getCategoryItemData:selectedNSIndexPath];
-    NSLog(@"categoryItem id:%@",cateItem.itemId);
-    //Insert username key-value.
-    [storageDict setObject:cateItem.itemId forKey:KEY_NAME_FAV_ITEM];
-    NSString *jsonStr = [storageDict JSONString];
-    NSLog(@"JSON storageDict:%@",jsonStr);
-    //TODO:Add JSON object.
-    
+    //
+    @try{
+        UserService *_userService = [[App42_API_Utils sharedInstance] getUserService];
+        //Favorite item json object assemble
+        NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+        //Get cate item's id
+        categoryItem *cateItem = [self getCategoryItemData:selectedNSIndexPath];
+        NSLog(@"categoryItem id:%@",cateItem.itemId);
+        //Insert username key-value.
+        [storageDict setObject:cateItem.itemId forKey:KEY_NAME_FAV_ITEM];
+        NSString *jsonStr = [storageDict JSONString];
+        NSLog(@"JSON storageDict:%@",jsonStr);
+        //Add JSON object for favorite function.
+        NSString *_collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+        [_userService addUserInfo:storageDict collectionName:_collectionName];
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+
 }
 
 @end

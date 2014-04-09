@@ -134,7 +134,6 @@
 		6590951A17BB3A820068F69B /* ReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951917BB3A820068F69B /* ReviewModel.m */; };
 		6590951D17BB3D070068F69B /* UploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6590951C17BB3D070068F69B /* UploadModel.m */; };
 		6591054E17B681410085BEE6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6591054D17B681410085BEE6 /* UserModel.m */; };
-		659108811835B9B900096A59 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */; };
 		659108B01836766000096A59 /* ico_people.png in Resources */ = {isa = PBXBuildFile; fileRef = 659108911836766000096A59 /* ico_people.png */; };
 		659108B11836766000096A59 /* ico_people@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659108921836766000096A59 /* ico_people@2x.png */; };
 		659108B21836766000096A59 /* ico_reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 659108931836766000096A59 /* ico_reply.png */; };
@@ -186,6 +185,7 @@
 		65A46B0B18F4D72F00041DC5 /* SCSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46AEA18F4D72F00041DC5 /* SCSlider.m */; };
 		65A46B0C18F4D72F00041DC5 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46AEC18F4D72F00041DC5 /* UIImage+Resize.m */; };
 		65A46B1018F4D96100041DC5 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B0F18F4D96100041DC5 /* PostViewController.m */; };
+		65A46B2C18F5987800041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */; };
 		65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C4F18CF3D2C007DD653 /* DTAlertView.m */; };
@@ -370,7 +370,6 @@
 		6590951C17BB3D070068F69B /* UploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadModel.m; sourceTree = "<group>"; };
 		6591054C17B681410085BEE6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		6591054D17B681410085BEE6 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shephertz_App42_iOS_API.framework; path = ../../../../../Downloads/Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		659108911836766000096A59 /* ico_people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ico_people.png; path = tiebaPic/ico_people.png; sourceTree = "<group>"; };
 		659108921836766000096A59 /* ico_people@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ico_people@2x.png"; path = "tiebaPic/ico_people@2x.png"; sourceTree = "<group>"; };
 		659108931836766000096A59 /* ico_reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ico_reply.png; path = tiebaPic/ico_reply.png; sourceTree = "<group>"; };
@@ -432,6 +431,7 @@
 		65A46AEC18F4D72F00041DC5 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		65A46B0E18F4D96100041DC5 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		65A46B0F18F4D96100041DC5 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65A4716A181752F600C18DAC /* VC_SegueImageUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueImageUpload.h; sourceTree = "<group>"; };
 		65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueImageUpload.m; sourceTree = "<group>"; };
 		65A4716D181754A200C18DAC /* VC_SegueCateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemAdd.h; sourceTree = "<group>"; };
@@ -479,9 +479,9 @@
 				65A46ABF18F4D67800041DC5 /* ImageIO.framework in Frameworks */,
 				65A46ABD18F4D66C00041DC5 /* AVFoundation.framework in Frameworks */,
 				65A46ABB18F4D65D00041DC5 /* CoreMedia.framework in Frameworks */,
+				65A46B2C18F5987800041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				658361DC18DF39BD00C732FF /* AssetsLibrary.framework in Frameworks */,
 				658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */,
-				659108811835B9B900096A59 /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */,
 				65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */,
 				65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */,
@@ -1004,12 +1004,12 @@
 		65E11A9F17B33D0600940B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */,
 				65A46ABE18F4D67800041DC5 /* ImageIO.framework */,
 				65A46ABC18F4D66C00041DC5 /* AVFoundation.framework */,
 				65A46ABA18F4D65D00041DC5 /* CoreMedia.framework */,
 				658361DB18DF39BD00C732FF /* AssetsLibrary.framework */,
 				658361AA18DC8D7000C732FF /* Accelerate.framework */,
-				659108801835B9B900096A59 /* Shephertz_App42_iOS_API.framework */,
 				65DFC2721827F95D005A7F91 /* QuartzCore.framework */,
 				65E11AA017B33D0600940B1A /* UIKit.framework */,
 				65E11AA217B33D0600940B1A /* Foundation.framework */,
@@ -1417,6 +1417,7 @@
 					"$(SRCROOT)",
 					/Users/yangboz/Documents/Git/App42_iOS_SDK/1.7,
 					/Users/yangboz/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/FurryBear_iOS-Prefix.pch";
@@ -1438,6 +1439,7 @@
 					"$(SRCROOT)",
 					/Users/yangboz/Documents/Git/App42_iOS_SDK/1.7,
 					/Users/yangboz/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/FurryBear_iOS-Prefix.pch";

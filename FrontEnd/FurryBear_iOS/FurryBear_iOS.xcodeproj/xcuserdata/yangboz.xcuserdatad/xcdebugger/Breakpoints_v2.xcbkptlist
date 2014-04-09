@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeedCateItems.m"
-            timestampString = "418701178.737747"
+            timestampString = "418750107.860943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
             landmarkName = "-itemFavoriteAction:"
             landmarkType = "5">
          </BreakpointContent>
