@@ -62,6 +62,10 @@
     switch (indexPath.section) {
         case 0:
             segueName = SEGUE_NAME_IMAGE;
+            SCNavigationController *nav = [[SCNavigationController alloc] init];
+            nav.scNaigationDelegate = self;
+            [nav showCameraWithParentController:self];
+            return;
             break;
         case 1:
             segueName = SEGUE_NAME_REVIEW;
@@ -86,6 +90,13 @@
             break;
     }
     [self performSegueWithIdentifier:segueName sender:self];
+}
+
+#pragma mark - SCNavigationController delegate
+- (void)didTakePicture:(SCNavigationController *)navigationController image:(UIImage *)image {
+    PostViewController *con = [[PostViewController alloc] init];
+    con.postImage = image;
+    [navigationController pushViewController:con animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
