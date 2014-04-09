@@ -39,6 +39,7 @@
     self.session = nil;
     self.stillImageOutput = nil;
 //    self.stillImage = nil;
+    [super dealloc];
 }
 
 - (void)configureWithParentLayer:(UIView*)parent previewRect:(CGRect)preivewRect {

@@ -281,7 +281,7 @@
     cell.imageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemDetailAction:)] autorelease];
     [cell.imageView addGestureRecognizer:tapGesture];
-    //see detail by click detail icon
+    //Favorite item icon click handler
     [cell.favIconBtn addTarget:self action:@selector(itemFavoriteAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
@@ -468,7 +468,16 @@
 {
     //@see http://api.shephertz.com/app42-docs/user-management-service/#add_json_object
     UserService *userService = [[App42_API_Utils sharedInstance] getUserService];
-    
+    //Favorite item json object assemble
+    NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+    //Get cate item's id
+    categoryItem *cateItem = [self getCategoryItemData:selectedNSIndexPath];
+    NSLog(@"categoryItem id:%@",cateItem.itemId);
+    //Insert username key-value.
+    [storageDict setObject:cateItem.itemId forKey:KEY_NAME_FAV_ITEM];
+    NSString *jsonStr = [storageDict JSONString];
+    NSLog(@"JSON storageDict:%@",jsonStr);
+    //TODO:Add JSON object.
     
 }
 

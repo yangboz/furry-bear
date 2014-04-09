@@ -24,6 +24,7 @@
 #define KEY_NAME_RESTAURANT @"restaurant"
 #define KEY_NAME_AGREE_NEXT_TIME @"agreeNextTime"
 #define KEY_NAME_OWNERNAME @"ownername"
+#define KEY_NAME_FAV_ITEM @"favoriteItem"
 //Email Service-GmailAccount
 #define GMAIL_HOST @"smtp.gmail.com"
 #define GMAIL_PORT 465
