@@ -53,7 +53,7 @@ CoreGraphics.framework
 TODO 
 ==========
 
-1.Re-factory the VCFeatureItems from UIView based to UITableView with UINavigationController based;
+1.Re-factory the VCFeatureItems from UIView based to UITableView with UINavigationController based; (Done!)
 
 2.Log out function implementation;
 
