@@ -12,9 +12,13 @@
 @protocol SCNavigationControllerDelegate;
 
 @interface SCNavigationController : UINavigationController
-
+{
+    BOOL _isShowing;
+}
 
 - (void)showCameraWithParentController:(UIViewController*)parentController;
+
+- (BOOL)isShowing;
 
 @property (nonatomic, assign) id <SCNavigationControllerDelegate> scNaigationDelegate;
 

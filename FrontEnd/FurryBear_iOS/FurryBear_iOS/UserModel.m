@@ -203,4 +203,8 @@ static NSMutableArray *messagesFromBuddy=nil;
     }
     return messagesFromBuddy;
 };
+-(int)numberOfFriendRequests
+{
+    return [friendRequests count];
+};
 @end

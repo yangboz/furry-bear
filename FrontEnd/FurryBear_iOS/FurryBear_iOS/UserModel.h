@@ -29,7 +29,8 @@
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
-
+//
+-(int)numberOfFriendRequests;
 @end
 
 

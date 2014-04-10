@@ -31,6 +31,9 @@
     {
         scNav = [[SCNavigationController alloc] init];
         scNav.scNaigationDelegate = self;
+        
+    }
+    if (!scNav.isShowing) {
         [scNav showCameraWithParentController:self];
     }
 }

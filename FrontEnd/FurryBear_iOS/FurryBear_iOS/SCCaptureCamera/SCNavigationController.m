@@ -62,6 +62,8 @@
     if (shouldToDismiss) {
         [super dismissModalViewControllerAnimated:animated];
     }
+    //
+    _isShowing = NO;
 }
 
 #pragma mark - action(s)
@@ -69,8 +71,14 @@
     SCCaptureCameraController *con = [[SCCaptureCameraController alloc] init];
     [self setViewControllers:[NSArray arrayWithObjects:con, nil]];
     [parentController presentModalViewController:self animated:YES];
+    //
+    _isShowing = YES;
 }
 
+- (BOOL)isShowing
+{
+    return _isShowing;
+}
 
 #define CAN_ROTATE  0
 
