@@ -44,6 +44,7 @@
     if ([UIApplication sharedApplication].statusBarHidden != _isStatusBarHiddenBeforeShowCamera) {
         [[UIApplication sharedApplication] setStatusBarHidden:_isStatusBarHiddenBeforeShowCamera withAnimation:UIStatusBarAnimationSlide];
     }
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

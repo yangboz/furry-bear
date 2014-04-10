@@ -479,9 +479,9 @@
         [storageDict setObject:cateItem.itemId forKey:KEY_NAME_FAV_ITEM];
         NSString *jsonStr = [storageDict JSONString];
         NSLog(@"JSON storageDict:%@",jsonStr);
-        //Add JSON object for favorite function.
-        NSString *_collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-        [_userService addUserInfo:storageDict collectionName:_collectionName];
+        //TODO:Add JSON object for favorite function.
+//        NSString *_collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+//        [_userService addUserInfo:storageDict collectionName:_collectionName];
         //
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);

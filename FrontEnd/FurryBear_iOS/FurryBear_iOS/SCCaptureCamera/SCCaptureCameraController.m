@@ -118,7 +118,7 @@
     [manager configureWithParentLayer:self.view previewRect:_previewRect];
     self.captureManager = manager;
     
-    [self addTopViewWithText:@"拍照"];
+    [self addTopViewWithText:@""];
     [self addbottomContainerView];
     [self addCameraMenuView];
     [self addFocusView];
