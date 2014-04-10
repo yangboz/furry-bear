@@ -50,6 +50,8 @@ Fundation.framework
 
 CoreGraphics.framework
 
+CoreMedia.framework、AVFoundation.framework、ImmageIO.framework
+
 TODO 
 ==========
 
