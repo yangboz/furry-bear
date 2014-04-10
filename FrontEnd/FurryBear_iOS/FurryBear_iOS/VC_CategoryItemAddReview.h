@@ -14,5 +14,6 @@
 
 @interface VC_CategoryItemAddReview : UITableViewController <UITableViewDelegate,UITableViewDataSource,SCNavigationControllerDelegate>
 {
+    SCNavigationController *scNav;
 }
 @end

@@ -25,6 +25,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if(scNav==nil)
+    {
+        scNav = [[SCNavigationController alloc] init];
+        scNav.scNaigationDelegate = self;
+        [scNav showCameraWithParentController:self];
+    }
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -62,10 +72,6 @@
     switch (indexPath.section) {
         case 0:
             segueName = SEGUE_NAME_IMAGE;
-            SCNavigationController *nav = [[SCNavigationController alloc] init];
-            nav.scNaigationDelegate = self;
-            [nav showCameraWithParentController:self];
-            return;
             break;
         case 1:
             segueName = SEGUE_NAME_REVIEW;
@@ -154,7 +160,6 @@
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
  }
- 
  */
 
 @end
