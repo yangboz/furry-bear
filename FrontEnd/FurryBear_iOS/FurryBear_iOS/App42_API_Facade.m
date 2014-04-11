@@ -81,9 +81,52 @@ static LogService *logService= nil;
 #pragma mark -UserService
 
 #pragma mark -UploadService
-
+-(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
+         fileType:(NSString *)fileType
+  fileDescription:(NSString *)description;
+{
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+//    NSString *fileType = IMAGE;//IMAGE
+    //
+    @try{
+        //
+        Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:description]; /* returns the Upload object. */
+        //    NSMutableArray *fileList =  upload.fileListArray;
+        //    for(File *file in fileList)
+        //    {
+        //        NSLog(@"File Name is  %@" , file.name);
+        //        NSLog(@"File Type is  %@" ,  file.type);
+        //        NSLog(@"File Url is  %@" , file.url);
+        //        NSLog(@"File Description is %@" ,  file.description);
+        //    }
+        NSLog(@"uploaded file=%@",upload.fileListArray);
+        //Save to ItemDataModel
+        //        [[UploadModel sharedInstance] setUpload:upload];
+        ItemData *itemData = [[ItemData alloc] init];
+        
+        itemData.name = [[App42_API_Utils sharedInstance] getTimeStampName]; //Make it unique,time-based sort-able.
+        itemData.imageName = fileName;
+        itemData.imageInputStream = imageData;
+        //itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique,equal to the NoSQL docID
+        itemData.description = description;
+        [[ItemDataModel sharedInstance]setItemData:itemData];
+        //Auto back navigation
+        //        [self.navigationController popViewControllerAnimated:YES];
+        //ProgressHUD dismiss
+        //        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        //Save the fileName to Model.
+        [[UploadModel sharedInstance] setUploadImageFile:fileName];
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+}
 #pragma mark -CatalogueService
--(void)setCateItemId
+-(void)insertCateItemId
 {
     //Get default username
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];

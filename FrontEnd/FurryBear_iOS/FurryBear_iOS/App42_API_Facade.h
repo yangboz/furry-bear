@@ -13,10 +13,11 @@
 #import "UserModel.h"
 #import "ItemDataModel.h"
 #import "Prefs.h"
+#import "UploadModel.h"
 
 @interface App42_API_Facade : NSObject
 {
-
+    
 }
 
 +(App42_API_Facade *)sharedInstance;
@@ -24,9 +25,11 @@
 #pragma mark -UserService
 
 #pragma mark -UploadService
-
+-(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
+         fileType:(NSString *)fileType
+  fileDescription:(NSString *)description;
 #pragma mark -CatalogueService
--(void)setCateItemId;
+-(void)insertCateItemId;
 
 #pragma mark -ReviewService
 #pragma mark -StorageService

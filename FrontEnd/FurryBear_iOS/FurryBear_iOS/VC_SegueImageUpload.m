@@ -125,57 +125,16 @@
 - (IBAction)uploadPhoto:(id)sender
 {
     //ProgressHUD show
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
-    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-    //
-    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
-    self.filenameTxt.text = fileName;
-    //Save the fileName to Model.
-    [[UploadModel sharedInstance] setUploadImageFile:fileName];
-    //    NSString *filePath = @"Local file path";
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
-    UploadService *uploadService = [[App42_API_Utils sharedInstance] getUploadService];
-    //    UploadService *uploadService = [[App42_API_Utils getServiceAPI] buildUploadService];    //
     NSData *imageData = UIImagePNGRepresentation(self.photo);
-    @try{
-        //
-        Upload *upload = [uploadService uploadFileForUser:fileName userName:userName fileData:imageData uploadFileType:fileType fileDescription:fileDescription]; /* returns the Upload object. */
-        //    NSMutableArray *fileList =  upload.fileListArray;
-        //    for(File *file in fileList)
-        //    {
-        //        NSLog(@"File Name is  %@" , file.name);
-        //        NSLog(@"File Type is  %@" ,  file.type);
-        //        NSLog(@"File Url is  %@" , file.url);
-        //        NSLog(@"File Description is %@" ,  file.description);
-        //    }
-        NSLog(@"uploaded file=%@",upload.fileListArray);
-        //Save to ItemDataModel
-//        [[UploadModel sharedInstance] setUpload:upload];
-        ItemData *itemData = [[ItemData alloc] init];
-
-        itemData.name = [[App42_API_Utils sharedInstance] getTimeStampName]; //Make it unique,time-based sort-able.
-        itemData.imageName = fileName;
-        itemData.imageInputStream = imageData;
-        //itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique,equal to the NoSQL docID
-        itemData.description = fileDescription;
-        [[ItemDataModel sharedInstance]setItemData:itemData];
-        //Auto back navigation
-        [self.navigationController popViewControllerAnimated:YES];
-        //ProgressHUD dismiss
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-  //Delegate to App42_API_Utils
-    [[App42_API_Utils sharedInstance] setCateItemId];
+    //Delegate to App42_API_Facade
+    [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
+    //
+    [[App42_API_Facade sharedInstance] insertCateItemId];
 }
 
 - (IBAction)choosePhoto:(id)sender
@@ -239,20 +198,10 @@
 	[picker dismissModalViewControllerAnimated:YES];
 	self.photo = [info objectForKey:UIImagePickerControllerEditedImage];
 	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
-    //Using AssetsLibrary framework to get the imageFileName;
-    NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-    
-    __block NSString *fileName = nil;
-    
-    ALAssetsLibrary *library = [[[ALAssetsLibrary alloc] init] autorelease];
-    [library assetForURL:assetURL resultBlock:^(ALAsset *asset)  {
-        fileName = asset.defaultRepresentation.filename;
-    } failureBlock:nil];
+    //Using AssetsLibrary framework to get the
+    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
+    self.filenameTxt.text = fileName;
     NSLog(@"Picked image file name:%@",fileName);
-    if(nil==fileName)
-    {
-        fileName = [[UploadModel sharedInstance] getUploadImageFile];
-    }
 }
 
 
