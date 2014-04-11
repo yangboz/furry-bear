@@ -1005,7 +1005,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="一道" id="QtH-oW-kE5"/>
                     <connections>
-                        <segue destination="f2S-2I-uz6" kind="push" identifier="segue_image" id="VP2-WC-hRx"/>
                         <segue destination="RF8-or-Kjy" kind="push" identifier="segue_review" id="nyM-UH-hJV"/>
                         <segue destination="QG7-q2-Dqf" kind="push" identifier="segue_comment" id="oC7-kH-QWD"/>
                         <segue destination="5mb-op-ca2" kind="push" identifier="segue_signup" id="bY4-c4-2Hm"/>
@@ -1281,6 +1280,22 @@
             </objects>
             <point key="canvasLocation" x="1176" y="2511"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZZi-ch-V8A">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="l4r-au-lEt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tomato-32.png" id="ph5-df-9i9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLQ-JG-TMZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="f2S-2I-uz6" kind="relationship" relationship="rootViewController" id="nyh-h8-6UU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BB9-h7-R9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-158" y="-1017"/>
+        </scene>
         <!--Segue Image Upload - 菜片-->
         <scene sceneID="Hd6-gd-cIa">
             <objects>
@@ -1370,7 +1385,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8z-fR-0NA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="1852"/>
+            <point key="canvasLocation" x="334" y="-885"/>
         </scene>
         <!--Tab Bar Controller - 一道菜-->
         <scene sceneID="15">
@@ -1389,11 +1404,12 @@
                         <segue destination="eNb-Hr-2Ir" kind="relationship" relationship="viewControllers" id="uZs-dV-GmU"/>
                         <segue destination="VOE-ct-zF0" kind="relationship" relationship="viewControllers" id="1vQ-kP-nvY"/>
                         <segue destination="d1u-bJ-t87" kind="relationship" relationship="viewControllers" id="8Uw-MP-dQs"/>
+                        <segue destination="l4r-au-lEt" kind="relationship" relationship="viewControllers" id="Ho9-bi-XxN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="-86"/>
+            <point key="canvasLocation" x="-21" y="-136"/>
         </scene>
         <!--Login View Controller - 者-->
         <scene sceneID="uaw-Dg-MsG">
