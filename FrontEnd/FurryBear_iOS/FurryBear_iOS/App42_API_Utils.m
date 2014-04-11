@@ -140,40 +140,4 @@ static ServiceAPI *serviceAPIobj = nil;
     return [formatter stringFromDate:date];
 }
 
-//NoSQL
-#pragma mark -Proxy methods for usage.
--(void)setCateItemId
-{
-    //Get default username
-    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
-    //Get default catalogue and category name.
-    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
-    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-    //NoSQL storage with extra information.
-    NSString *dbName = defaultCatalogueName;
-    NSString *collectionName = defaultCategoryName;
-    NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
-    //Insert username key-value.
-    [storageDict setObject:userName forKey:KEY_NAME_OWNERNAME];
-    NSString *jsonStr = [storageDict JSONString];
-    NSLog(@"JSON storageDict:%@",jsonStr);
-    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
-    Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
-    NSLog(@"dbName is = %@",storage.dbName);
-    NSLog(@"collectionName is = %@",storage.collectionName);
-    NSMutableArray *jsonDocArray = storage.jsonDocArray;
-    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
-    for(JSONDocument *jsonDoc in jsonDocArray)
-    {
-        NSLog(@"docId is = %@ " , jsonDoc.docId);
-        //Save the docId as a ItemID
-        itemData.itemId = jsonDoc.docId;
-        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
-    }
-    /* returns the response in JSON format. */
-    NSString *jsonResponse_noSQL = [storage toString];
-    NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
-    //Update the item data model.
-    [[ItemDataModel sharedInstance] setItemData:itemData];
-}
 @end

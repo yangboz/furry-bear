@@ -36,7 +36,6 @@
 -(NSString *)getDefaultCategoryName;
 -(NSString *)getTimeStampName;
 -(NSString *)getFormattedDate:(NSDate *)date;
-//NoSQL
--(void)setCateItemId;
+
 
 @end
