@@ -23,7 +23,7 @@
 +(App42_API_Facade *)sharedInstance;
 //Facade exposed interface
 #pragma mark -UserService
-
+-(BOOL)userLogin:(NSString *)userName pwdValue:(NSString *)passWord;
 #pragma mark -UploadService
 -(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
          fileType:(NSString *)fileType

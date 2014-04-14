@@ -187,6 +187,7 @@
 		65A46B1018F4D96100041DC5 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B0F18F4D96100041DC5 /* PostViewController.m */; };
 		65A46B2C18F5987800041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */; };
 		65A46B2F18F77B4400041DC5 /* App42_API_Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B2E18F77B4400041DC5 /* App42_API_Facade.m */; };
+		65A46B3318FB77DD00041DC5 /* HYCircleLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B3218FB77DD00041DC5 /* HYCircleLoadingView.m */; };
 		65A4716C181752F600C18DAC /* VC_SegueImageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C4F18CF3D2C007DD653 /* DTAlertView.m */; };
@@ -435,6 +436,8 @@
 		65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65A46B2D18F77B4400041DC5 /* App42_API_Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Facade.h; sourceTree = "<group>"; };
 		65A46B2E18F77B4400041DC5 /* App42_API_Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Facade.m; sourceTree = "<group>"; };
+		65A46B3118FB77DD00041DC5 /* HYCircleLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCircleLoadingView.h; sourceTree = "<group>"; };
+		65A46B3218FB77DD00041DC5 /* HYCircleLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCircleLoadingView.m; sourceTree = "<group>"; };
 		65A4716A181752F600C18DAC /* VC_SegueImageUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueImageUpload.h; sourceTree = "<group>"; };
 		65A4716B181752F600C18DAC /* VC_SegueImageUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueImageUpload.m; sourceTree = "<group>"; };
 		65A4716D181754A200C18DAC /* VC_SegueCateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemAdd.h; sourceTree = "<group>"; };
@@ -923,6 +926,15 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		65A46B3018FB77C900041DC5 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				65A46B3118FB77DD00041DC5 /* HYCircleLoadingView.h */,
+				65A46B3218FB77DD00041DC5 /* HYCircleLoadingView.m */,
+			);
+			name = Loading;
+			sourceTree = "<group>";
+		};
 		65A471691817527900C18DAC /* ctrls */ = {
 			isa = PBXGroup;
 			children = (
@@ -1026,6 +1038,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65A46B3018FB77C900041DC5 /* Loading */,
 				65A46B0D18F4D96100041DC5 /* Post */,
 				65A46AC518F4D72F00041DC5 /* SCCaptureCamera */,
 				65A46AC018F4D71F00041DC5 /* SCCommon */,
@@ -1312,6 +1325,7 @@
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				6583620818E1C38400C732FF /* VC_BuddyRelated.m in Sources */,
 				6566A60B18ECF30900BF2088 /* RaisedCenterTabBarController.m in Sources */,
+				65A46B3318FB77DD00041DC5 /* HYCircleLoadingView.m in Sources */,
 				65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */,
 				6583620B18E1CD9800C732FF /* FriendCell.m in Sources */,
 				65A46AC418F4D71F00041DC5 /* SCCommon.m in Sources */,

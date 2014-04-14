@@ -79,7 +79,36 @@ static LogService *logService= nil;
 
 //implementations
 #pragma mark -UserService
-
+-(BOOL)userLogin:(NSString *)userName pwdValue:(NSString *)passWord;
+{
+    NSLog(@"User inputed username:%@,password:%@",userName,passWord);
+    //    User *user = [userService authenticateUser:userName password:password];
+    BOOL isSuccess = NO;
+    @try{
+        //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
+        App42Response *response = [userService authenticateUser:userName password:passWord];
+        BOOL isSuccess = [response isResponseSuccess];
+        NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"App42 user authenticate result:%d,%@",isSuccess,jsonResponse);
+        //Save the login info to userDefaults
+        User *user = [[User alloc] init];
+        user.userName = userName;
+        user.password = passWord;
+        [[UserModel sharedInstance] setUser:user];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //Alert messages.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    //
+    return isSuccess;
+}
 #pragma mark -UploadService
 -(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
          fileType:(NSString *)fileType

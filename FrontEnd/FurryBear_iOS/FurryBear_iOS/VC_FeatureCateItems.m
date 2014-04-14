@@ -8,18 +8,16 @@
 
 #import "VC_FeatureCateItems.h"
 
-@interface VC_FeatureCateItems ()
-{
-    
-}
-@end
-
 @implementation VC_FeatureCateItems
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.loadingView = [[HYCircleLoadingView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
+    UIBarButtonItem *loadingItem = [[UIBarButtonItem alloc]initWithCustomView:self.loadingView];
+    self.navigationItem.rightBarButtonItem = loadingItem;
+
     //if auto signin
     if ([[UserModel sharedInstance] getAutoSignin]) {
         [self userDefaultsLogin];
@@ -75,36 +73,15 @@
 
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
-    NSLog(@"User inputed username:%@,password:%@",userName,passWord);
-    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
-    //    User *user = [userService authenticateUser:userName password:password];
-    @try{
-        //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
-        App42Response *response = [userService authenticateUser:userName password:passWord];
-        BOOL success = [response isResponseSuccess];
-        NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
-        NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
-        //Dismiss loginView modal.
+    [self.loadingView startAnimation];
+    //
+    BOOL loginSuccess = [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
+    //Dismiss loginView modal.
+    if (loginSuccess) {
         [self dismissViewControllerAnimated:YES completion:nil];
-        //Save the login info to userDefaults
-        User *user = [[User alloc] init];
-        user.userName = userName;
-        user.password = passWord;
-        [[UserModel sharedInstance] setUser:user];
-        //
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //Alert messages.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-        //Display the login popup window again.
-        //[self displayLoginPopup];
     }
+    //
+    [self.loadingView stopAnimation];
 }
 
 #pragma mark - LoginViewControllerDelegate
@@ -123,28 +100,8 @@
     NSString *userName = user.userName;
     NSString *passWord = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
-    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
-//    User *user = [userService authenticateUser:userName password:password];
-    @try{
-//        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
-        App42Response *response = [userService authenticateUser:userName password:passWord];
-        BOOL success = [response isResponseSuccess];
-        NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
-        NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
-        //Dismiss loginView modal.
-        [self dismissViewControllerAnimated:YES completion:nil];
-
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //Alert messages.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }
+    //
+    [self tryLogin:userName pwdValue:passWord];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
