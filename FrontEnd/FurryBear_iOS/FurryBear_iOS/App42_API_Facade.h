@@ -30,7 +30,7 @@
   fileDescription:(NSString *)description;
 #pragma mark -CatalogueService
 -(void)insertCateItemId;
-
+-(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL) agreeNextTime;
 #pragma mark -ReviewService
 #pragma mark -StorageService
 #pragma mark -RecommenderService

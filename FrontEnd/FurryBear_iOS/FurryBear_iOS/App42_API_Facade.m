@@ -189,7 +189,70 @@ static LogService *logService= nil;
     //Update the item data model.
     [[ItemDataModel sharedInstance] setItemData:itemData];
 }
-
+-(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL)agreeNextTime
+{
+    //ItemData transporting.
+    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
+    //Get default catalogue and category name.
+    NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+    NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    //NoSQL storage with extra information.
+    NSString *dbName = defaultCatalogueName;
+    NSString *collectionName = defaultCategoryName;
+    NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
+    //UserName
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    [storageDict setValue:userName forKey:KEY_NAME_OWNERNAME];
+    [storageDict setValue:address forKey:KEY_NAME_ADDRESS];
+    [storageDict setValue:resturant forKey:KEY_NAME_TELPHONE];
+    [storageDict setValue:telephone forKey:KEY_NAME_RESTAURANT];
+    [storageDict setValue:[NSNumber numberWithBool:agreeNextTime] forKey:KEY_NAME_AGREE_NEXT_TIME];
+    NSString *jsonStr = [storageDict JSONString];
+    NSLog(@"JSON storageDict:%@",jsonStr);
+    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
+    Storage *storage = [storageService updateDocumentByDocId:dbName collectionName:collectionName docId:itemData.itemId newJsonDoc:jsonStr];
+    //Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
+    NSLog(@"dbName is = %@",storage.dbName);
+    NSLog(@"collectionName is = %@",storage.collectionName);
+    NSMutableArray *jsonDocArray = storage.jsonDocArray;
+    //
+    for(JSONDocument *jsonDoc in jsonDocArray)
+    {
+        NSLog(@"docId is = %@ " , jsonDoc.docId);
+        //Save the docId as a ItemID
+        itemData.itemId = jsonDoc.docId;
+        NSLog(@"Updated JsonDoc is = %@" , jsonDoc.jsonDoc);
+    }
+    /* returns the response in JSON format. */
+    NSString *jsonResponse_noSQL = [storage toString];
+    NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
+    //TODO:JSON Response string parse to save $oid
+    //NSDictionary *jsonResponseDict_noSQL = [[jsonResponse_noSQL JSONData] objectFromJSONData];
+    //NSLog(@"JSON responseDict_noSQL:%@",jsonResponseDict_noSQL);
+    //hard-code the ItemID for testing.
+    //itemData.itemId = @"11";
+    //
+    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
+    Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
+    //    NSString *catalogueName =  catalogue.name;
+    NSMutableArray *categoryList = catalogue.categoryListArray;
+    for(CategoryData *category in categoryList)
+    {
+        NSLog(@"name is = %@",category.name);
+        NSLog(@"description is = %@",category.description);
+        NSMutableArray *itemList = category.itemListArray;
+        for (categoryItem *item in itemList)
+        {
+            NSLog(@"price is = %f",item.price);
+            NSLog(@"itemId is = %@",item.itemId);
+            NSLog(@"name is = %@",item.name);
+        }
+    }
+    NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. */
+    NSLog(@"Add catalogue service response:%@",jsonResponse);
+    //Notify to notification center.
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NAME_CATE_ITEM_ADDED object:self];
+}
 #pragma mark -ReviewService
 #pragma mark -StorageService
 #pragma mark -RecommenderService

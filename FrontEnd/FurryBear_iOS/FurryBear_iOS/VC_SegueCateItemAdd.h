@@ -7,14 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
-#import "App42_API_Utils.h"
-#import "UserModel.h"
-#import "UploadModel.h"
-#import "ItemDataModel.h"
-#import "JSONKit.h"
-#import "StorageModel.h"
-#import "Prefs.h"
+#import "App42_API_Facade.h"
+#import "MBProgressHUD.h"
 
 @interface VC_SegueCateItemAdd : UITableViewController
 {}
