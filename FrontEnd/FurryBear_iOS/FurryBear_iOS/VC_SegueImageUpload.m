@@ -48,6 +48,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_photoButton release];
+    [_filenameTxt release];
+    [_fileDescTxtView release];
+    [_slider_price release];
+    [super dealloc];
+}
+
 #pragma mark - IBActions
 - (IBAction)uploadPhoto:(id)sender
 {
@@ -139,11 +147,4 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)dealloc {
-    [_photoButton release];
-    [_filenameTxt release];
-    [_fileDescTxtView release];
-    [_slider_price release];
-    [super dealloc];
-}
 @end
