@@ -254,6 +254,28 @@ static LogService *logService= nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NAME_CATE_ITEM_ADDED object:self];
 }
 #pragma mark -ReviewService
+-(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating
+{
+    //Get default username
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    @try{
+        //
+        Review *review = [reviewService createReview:userName itemID:itemID reviewComment:reviewComment reviewRating:reviewRating]; /* returns the Review object. */
+        NSLog(@"userId =%@", review.userId);
+        NSLog(@"itemId =%@", review.itemId);
+        NSLog(@"comment =%@", review.comment);
+        NSLog(@"rating =%f", review.rating);
+        NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+        NSLog(@"reviewService jsonResponse:%@",jsonResponse);
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+}
 #pragma mark -StorageService
 #pragma mark -RecommenderService
 #pragma mark -QueueService

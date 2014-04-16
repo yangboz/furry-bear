@@ -14,6 +14,7 @@
 #import "ItemDataModel.h"
 #import "Prefs.h"
 #import "UploadModel.h"
+#import "MBProgressHUD.h"
 
 @interface App42_API_Facade : NSObject
 {
@@ -32,6 +33,7 @@
 -(void)insertCateItemId;
 -(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL) agreeNextTime;
 #pragma mark -ReviewService
+-(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating;
 #pragma mark -StorageService
 #pragma mark -RecommenderService
 #pragma mark -QueueService
