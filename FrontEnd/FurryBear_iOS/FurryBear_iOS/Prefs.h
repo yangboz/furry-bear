@@ -10,9 +10,8 @@
 #define FurryBear_iOS_Prefs_h
 //Segue names
 #define SEGUE_NAME_LOGIN @"UserLogin"
-#define SEGUE_NAME_IMAGE @"segue_image"
+#define SEGUE_NAME_IMAGE_CATE_ITEM @"segue_image_cate_item"
 #define SEGUE_NAME_REVIEW @"segue_review"
-#define SEGUE_NAME_COMMENT @"segue_comment"
 #define SEGUE_NAME_CATACATE @"segue_catacate"
 #define SEGUE_NAME_SIGNUP @"segue_signup"
 #define SEGUE_NAME_EMAIL_SETTING @"segue_email_setting"

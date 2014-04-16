@@ -41,7 +41,7 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 7;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -71,31 +71,28 @@
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
     //
-    NSString *segueName = SEGUE_NAME_IMAGE;
+    NSString *segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
     switch (indexPath.section) {
         case 0:
-            segueName = SEGUE_NAME_IMAGE;
+            segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
             break;
         case 1:
             segueName = SEGUE_NAME_REVIEW;
             break;
         case 2:
-            segueName = SEGUE_NAME_COMMENT;
-            break;
-        case 3:
             segueName = SEGUE_NAME_CATACATE;
             break;
-        case 4:
+        case 3:
             segueName = SEGUE_NAME_SIGNUP;
             break;
-        case 5:
+        case 4:
             segueName = SEGUE_NAME_EMAIL_SETTING;
             break;
-        case 6:
+        case 5:
             segueName = SEGUE_NAME_EMAIL_SEND;
             break;
         default:
-            segueName = SEGUE_NAME_IMAGE;
+            segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
             break;
     }
     [self performSegueWithIdentifier:segueName sender:self];
