@@ -253,6 +253,44 @@ static LogService *logService= nil;
     //Notify to notification center.
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NAME_CATE_ITEM_ADDED object:self];
 }
+//Catalogue
+-(void)createCatalogue:(NSString *)catalogueName catalogueDescription:(NSString *)catalogueDescription
+{
+    @try{
+        //
+        Catalogue *catalogue = [catalogueService createCatalogue:catalogueName catalogueDescription:catalogueDescription]; /* returns the Catalogue object. */
+        NSLog(@"catalogueName is = %@",catalogue.name);
+        NSLog(@"catalogueDescription is = %@",catalogue.description);
+        NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"CatalogueService_catalogue jsonResponse:%@",jsonResponse);        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+}
+//Category
+-(void)createCategory:(NSString *)catalogueName categoryName:(NSString *)categoryName categoryDescription:(NSString *)categoryDescription
+{
+    //
+    @try{
+        //
+        Catalogue *catalogue = [catalogueService createCategory:catalogueName categoryName:categoryName categoryDescription:categoryDescription]; /* returns the Catalogue object. */
+        NSLog(@"categoryName is = %@",catalogue.name);
+        NSLog(@"categoryDescription is = %@",catalogue.description);
+        NSString *jsonResponse = [catalogue toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"CatalogueService_category jsonResponse:%@",jsonResponse);
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+}
 #pragma mark -ReviewService
 -(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating
 {

@@ -32,6 +32,9 @@
 #pragma mark -CatalogueService
 -(void)insertCateItemId;
 -(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL) agreeNextTime;
+//Catalogue,Category
+-(void)createCatalogue:(NSString *)catalogueName catalogueDescription:(NSString *)catalogueDescription;
+-(void)createCategory:(NSString *)catalogueName categoryName:(NSString *)categoryName categoryDescription:(NSString *)categoryDescription;
 #pragma mark -ReviewService
 -(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating;
 #pragma mark -StorageService

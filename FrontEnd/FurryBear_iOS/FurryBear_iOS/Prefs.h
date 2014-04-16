@@ -12,7 +12,6 @@
 #define SEGUE_NAME_LOGIN @"UserLogin"
 #define SEGUE_NAME_IMAGE_CATE_ITEM @"segue_image_cate_item"
 #define SEGUE_NAME_REVIEW @"segue_review"
-#define SEGUE_NAME_CATACATE @"segue_catacate"
 #define SEGUE_NAME_SIGNUP @"segue_signup"
 #define SEGUE_NAME_EMAIL_SETTING @"segue_email_setting"
 #define SEGUE_NAME_EMAIL_SEND @"segue_email_send"//for NewsLetter
