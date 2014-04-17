@@ -26,5 +26,5 @@
 //IBActions
 - (IBAction)uploadPhoto:(id)sender;
 - (IBAction)choosePhoto:(id)sender;
-- (IBAction)on_add_item:(id)sender;
+- (IBAction)onAddCateItem:(id)sender;
 @end

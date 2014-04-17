@@ -74,10 +74,15 @@
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     //Delegate to App42_API_Facade
     [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
-    //
+    //onAddCateItem
     [[App42_API_Facade sharedInstance] insertCateItemId];
     //
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
+
+-(void)onAddCateItem:(id)sender
+{
+    
 }
 
 - (IBAction)choosePhoto:(id)sender
