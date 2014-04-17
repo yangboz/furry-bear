@@ -36,11 +36,18 @@
     self.photoButton.layer.borderWidth = 1.0f;
     self.photoButton.layer.borderColor = [[UIColor grayColor] CGColor];
     self.photoButton.layer.cornerRadius = 4.0f;
+    //Slider initialize text
+    [self updateSliderPopoverText];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)updateSliderPopoverText
+{
+    self.slider_price.popover.textLabel.text = [NSString stringWithFormat:@"%.0f", self.slider_price.value];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +90,11 @@
 -(void)onAddCateItem:(id)sender
 {
     
+}
+
+-(void)sliderValueChanged:(id)sender
+{
+    [self updateSliderPopoverText];
 }
 
 - (IBAction)choosePhoto:(id)sender

@@ -189,6 +189,8 @@
 		65A46B2F18F77B4400041DC5 /* App42_API_Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B2E18F77B4400041DC5 /* App42_API_Facade.m */; };
 		65A46B9718FCCD9D00041DC5 /* image_background-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A46B9618FCCD9D00041DC5 /* image_background-128.png */; };
 		65A46B9D18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B9C18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m */; };
+		65A46BA319001C5500041DC5 /* NYPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA019001C5500041DC5 /* NYPopover.m */; };
+		65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA219001C5500041DC5 /* NYSliderPopover.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C4F18CF3D2C007DD653 /* DTAlertView.m */; };
 		65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C5118CF3D2C007DD653 /* DTProgressStatus.m */; };
@@ -438,6 +440,10 @@
 		65A46B9618FCCD9D00041DC5 /* image_background-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_background-128.png"; sourceTree = "<group>"; };
 		65A46B9B18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_ImageUpload_CateItemAdd.h; sourceTree = "<group>"; };
 		65A46B9C18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_ImageUpload_CateItemAdd.m; sourceTree = "<group>"; };
+		65A46B9F19001C5500041DC5 /* NYPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYPopover.h; sourceTree = "<group>"; };
+		65A46BA019001C5500041DC5 /* NYPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYPopover.m; sourceTree = "<group>"; };
+		65A46BA119001C5500041DC5 /* NYSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSliderPopover.h; sourceTree = "<group>"; };
+		65A46BA219001C5500041DC5 /* NYSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSliderPopover.m; sourceTree = "<group>"; };
 		65A4716D181754A200C18DAC /* VC_SegueCateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemAdd.h; sourceTree = "<group>"; };
 		65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueCateItemAdd.m; sourceTree = "<group>"; };
 		65A98C4E18CF3D2C007DD653 /* DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAlertView.h; sourceTree = "<group>"; };
@@ -923,6 +929,17 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		65A46B9E19001C5500041DC5 /* NYSliderPopover */ = {
+			isa = PBXGroup;
+			children = (
+				65A46B9F19001C5500041DC5 /* NYPopover.h */,
+				65A46BA019001C5500041DC5 /* NYPopover.m */,
+				65A46BA119001C5500041DC5 /* NYSliderPopover.h */,
+				65A46BA219001C5500041DC5 /* NYSliderPopover.m */,
+			);
+			path = NYSliderPopover;
+			sourceTree = "<group>";
+		};
 		65A471691817527900C18DAC /* ctrls */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1041,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65A46B9E19001C5500041DC5 /* NYSliderPopover */,
 				65A46B0D18F4D96100041DC5 /* Post */,
 				65A46AC518F4D72F00041DC5 /* SCCaptureCamera */,
 				65A46AC018F4D71F00041DC5 /* SCCommon */,
@@ -1272,6 +1290,7 @@
 				65A46B2F18F77B4400041DC5 /* App42_API_Facade.m in Sources */,
 				65E11AAD17B33D0600940B1A /* main.m in Sources */,
 				65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */,
+				65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */,
 				658361F118E114DA00C732FF /* App42_API_Utils_Buddy.m in Sources */,
 				65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */,
 				65E11AC017B33D0600940B1A /* VC_FeatureCateItems.m in Sources */,
@@ -1293,6 +1312,7 @@
 				6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */,
 				65A46B0B18F4D72F00041DC5 /* SCSlider.m in Sources */,
 				658361EA18DFC25E00C732FF /* BuddyCell.m in Sources */,
+				65A46BA319001C5500041DC5 /* NYPopover.m in Sources */,
 				6566A62318EFB94500BF2088 /* VC_FeedCateItems.m in Sources */,
 				65A46B0C18F4D72F00041DC5 /* UIImage+Resize.m in Sources */,
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,

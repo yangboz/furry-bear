@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "App42_API_Facade.h"
-#import "MBProgressHUD.h"
+#import "NYSliderPopover.h"
 
 @interface VC_ImageUpload_CateItemAdd : UITableViewController<UIImagePickerControllerDelegate>
 {}
@@ -17,7 +17,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *photoButton;
 @property (retain, nonatomic) IBOutlet UITextField *filenameTxt;
 @property (retain, nonatomic) IBOutlet UITextView *fileDescTxtView;
-@property (retain, nonatomic) IBOutlet UISlider *slider_price;
+@property (retain, nonatomic) IBOutlet NYSliderPopover *slider_price;
 //
 @property (retain, nonatomic) IBOutlet UITextField *addressTxt;
 @property (retain, nonatomic) IBOutlet UITextField *resturantTxt;
@@ -27,4 +27,5 @@
 - (IBAction)uploadPhoto:(id)sender;
 - (IBAction)choosePhoto:(id)sender;
 - (IBAction)onAddCateItem:(id)sender;
+- (IBAction)sliderValueChanged:(id)sender;
 @end
