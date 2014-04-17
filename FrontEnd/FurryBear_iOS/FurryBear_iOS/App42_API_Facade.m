@@ -15,7 +15,7 @@ static App42_API_Facade *sharedInstance = nil;
 static ServiceAPI *serviceAPIobj = nil;
 //
 static UserService *userService = nil;
-static UploadService *uploadService;
+static UploadService *uploadService = nil;
 static CatalogueService *catalogueService = nil;
 static ReviewService *reviewService = nil;
 static StorageService *storageService = nil;
