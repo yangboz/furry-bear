@@ -9,20 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "App42_API_Facade.h"
-#import "Prefs.h"
-#import "VC_CategoryItemMain.h"
-#import "PopupManager_AlertTable.h"
-#import "AppDelegate.h"
-#import "HYCircleLoadingView.h"
-
 
 @interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate>
 {
-    NSMutableArray *featuredCategoryItems;
 }
 -(void)userDefaultsLogin;
 -(void)displayLoginPopup;
 //App42_API calls
 //IBOutlets
-@property (nonatomic, strong) HYCircleLoadingView *loadingView;
+
 @end

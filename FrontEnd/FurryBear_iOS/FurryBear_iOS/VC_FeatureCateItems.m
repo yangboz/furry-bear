@@ -14,9 +14,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.loadingView = [[HYCircleLoadingView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-    UIBarButtonItem *loadingItem = [[UIBarButtonItem alloc]initWithCustomView:self.loadingView];
-    self.navigationItem.rightBarButtonItem = loadingItem;
 
     //if auto signin
     if ([[UserModel sharedInstance] getAutoSignin]) {
@@ -35,7 +32,6 @@
 }
 
 - (void)dealloc {
-    [featuredCategoryItems release];
     [super dealloc];
 }
 
@@ -73,7 +69,7 @@
 
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
-    [self.loadingView startAnimation];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //
     BOOL loginSuccess = [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
     //Dismiss loginView modal.
@@ -81,7 +77,7 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     //
-    [self.loadingView stopAnimation];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - LoginViewControllerDelegate
