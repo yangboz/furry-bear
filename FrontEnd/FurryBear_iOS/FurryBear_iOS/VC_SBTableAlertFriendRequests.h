@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SBTableAlert.h"
-#import "App42_API_Utils.h"
+#import "App42_API_Facade.h"
 
 @interface VC_SBTableAlertFriendRequests: UIViewController
 <SBTableAlertDataSource,SBTableAlertDelegate>

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "App42_API_Utils.h"
+#import "App42_API_Facade.h"
 
 @interface VC_NewsLetterSend : UITableViewController
 {}

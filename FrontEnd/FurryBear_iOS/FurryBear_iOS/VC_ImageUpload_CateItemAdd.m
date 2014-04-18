@@ -78,7 +78,8 @@
     //
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
-    NSData *imageData = UIImagePNGRepresentation(self.photo);
+    //NSData *imageData = UIImagePNGRepresentation(self.photo);
+    NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
     //Delegate to App42_API_Facade
     [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
     //onAddCateItem
@@ -159,7 +160,7 @@
 	self.photo = [info objectForKey:UIImagePickerControllerEditedImage];
 	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
     //Using AssetsLibrary framework to get the
-    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
+    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png/jpg"];
     self.filenameTxt.text = fileName;
     NSLog(@"Picked image file name:%@",fileName);
 }

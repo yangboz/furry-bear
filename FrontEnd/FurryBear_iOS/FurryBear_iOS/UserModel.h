@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "App42_API_Utils.h"
-#import "Prefs.h"
+#import "App42_API_Facade.h"
 
 @interface UserModel : NSObject
 {

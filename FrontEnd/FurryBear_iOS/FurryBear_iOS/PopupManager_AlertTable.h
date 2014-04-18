@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "App42_API_Utils.h"
 #import "SBTableAlert.h"
-#import "UserModel.h"
+#import "App42_API_Facade.h"
 
 @interface PopupManager_AlertTable : UITableViewController<SBTableAlertDataSource,SBTableAlertDelegate>
 {
