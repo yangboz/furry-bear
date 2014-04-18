@@ -167,12 +167,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "419439231.173272"
+                  timestampString = "419476755.643441"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "486"
                   endingLineNumber = "486"
-                  offsetFromSymbolStart = "496">
+                  offsetFromSymbolStart = "452">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -181,12 +181,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "419439231.173564"
+                  timestampString = "419476755.646183"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "486"
                   endingLineNumber = "486"
-                  offsetFromSymbolStart = "530">
+                  offsetFromSymbolStart = "520">
                </Location>
             </Locations>
          </BreakpointContent>

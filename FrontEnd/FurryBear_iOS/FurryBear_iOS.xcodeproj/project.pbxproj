@@ -113,7 +113,6 @@
 		658361EA18DFC25E00C732FF /* BuddyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361E918DFC25E00C732FF /* BuddyCell.m */; };
 		658361EC18DFCA3900C732FF /* remove_user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361EB18DFCA3900C732FF /* remove_user-32.png */; };
 		658361EE18DFCA5400C732FF /* add_user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361ED18DFCA5400C732FF /* add_user-32.png */; };
-		658361F118E114DA00C732FF /* App42_API_Utils_Buddy.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361F018E114DA00C732FF /* App42_API_Utils_Buddy.m */; };
 		658361FD18E11C6400C732FF /* TSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361FC18E11C6400C732FF /* TSAlertView.m */; };
 		6583620018E11C7100C732FF /* SBTableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361FF18E11C7100C732FF /* SBTableAlert.m */; };
 		6583620618E1B99000C732FF /* PopupManager_AlertTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6583620518E1B99000C732FF /* PopupManager_AlertTable.m */; };
@@ -191,6 +190,8 @@
 		65A46B9D18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B9C18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m */; };
 		65A46BA319001C5500041DC5 /* NYPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA019001C5500041DC5 /* NYPopover.m */; };
 		65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA219001C5500041DC5 /* NYSliderPopover.m */; };
+		65A46BAA1900B48C00041DC5 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA71900B48C00041DC5 /* EAIntroPage.m */; };
+		65A46BAB1900B48C00041DC5 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46BA91900B48C00041DC5 /* EAIntroView.m */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C4F18CF3D2C007DD653 /* DTAlertView.m */; };
 		65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C5118CF3D2C007DD653 /* DTProgressStatus.m */; };
@@ -338,8 +339,6 @@
 		658361E918DFC25E00C732FF /* BuddyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddyCell.m; sourceTree = "<group>"; };
 		658361EB18DFCA3900C732FF /* remove_user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remove_user-32.png"; sourceTree = "<group>"; };
 		658361ED18DFCA5400C732FF /* add_user-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_user-32.png"; sourceTree = "<group>"; };
-		658361EF18E114DA00C732FF /* App42_API_Utils_Buddy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Utils_Buddy.h; sourceTree = "<group>"; };
-		658361F018E114DA00C732FF /* App42_API_Utils_Buddy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Utils_Buddy.m; sourceTree = "<group>"; };
 		658361FB18E11C6400C732FF /* TSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlertView.h; sourceTree = "<group>"; };
 		658361FC18E11C6400C732FF /* TSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlertView.m; sourceTree = "<group>"; };
 		658361FE18E11C7100C732FF /* SBTableAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTableAlert.h; sourceTree = "<group>"; };
@@ -444,6 +443,10 @@
 		65A46BA019001C5500041DC5 /* NYPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYPopover.m; sourceTree = "<group>"; };
 		65A46BA119001C5500041DC5 /* NYSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYSliderPopover.h; sourceTree = "<group>"; };
 		65A46BA219001C5500041DC5 /* NYSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYSliderPopover.m; sourceTree = "<group>"; };
+		65A46BA61900B48C00041DC5 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		65A46BA71900B48C00041DC5 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		65A46BA81900B48C00041DC5 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		65A46BA91900B48C00041DC5 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
 		65A4716D181754A200C18DAC /* VC_SegueCateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemAdd.h; sourceTree = "<group>"; };
 		65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueCateItemAdd.m; sourceTree = "<group>"; };
 		65A98C4E18CF3D2C007DD653 /* DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAlertView.h; sourceTree = "<group>"; };
@@ -822,8 +825,6 @@
 				658A6953186D6AB300EC090F /* Prefs.h */,
 				6583619018DB375600C732FF /* PopupManager_DTAlertView.h */,
 				6583619118DB375600C732FF /* PopupManager_DTAlertView.m */,
-				658361EF18E114DA00C732FF /* App42_API_Utils_Buddy.h */,
-				658361F018E114DA00C732FF /* App42_API_Utils_Buddy.m */,
 				6583620418E1B99000C732FF /* PopupManager_AlertTable.h */,
 				6583620518E1B99000C732FF /* PopupManager_AlertTable.m */,
 				65A46B2D18F77B4400041DC5 /* App42_API_Facade.h */,
@@ -940,6 +941,17 @@
 			path = NYSliderPopover;
 			sourceTree = "<group>";
 		};
+		65A46BA51900B48C00041DC5 /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				65A46BA61900B48C00041DC5 /* EAIntroPage.h */,
+				65A46BA71900B48C00041DC5 /* EAIntroPage.m */,
+				65A46BA81900B48C00041DC5 /* EAIntroView.h */,
+				65A46BA91900B48C00041DC5 /* EAIntroView.m */,
+			);
+			path = EAIntroView;
+			sourceTree = "<group>";
+		};
 		65A471691817527900C18DAC /* ctrls */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,6 +1053,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65A46BA51900B48C00041DC5 /* EAIntroView */,
 				65A46B9E19001C5500041DC5 /* NYSliderPopover */,
 				65A46B0D18F4D96100041DC5 /* Post */,
 				65A46AC518F4D72F00041DC5 /* SCCaptureCamera */,
@@ -1291,7 +1304,6 @@
 				65E11AAD17B33D0600940B1A /* main.m in Sources */,
 				65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */,
 				65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */,
-				658361F118E114DA00C732FF /* App42_API_Utils_Buddy.m in Sources */,
 				65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */,
 				65E11AC017B33D0600940B1A /* VC_FeatureCateItems.m in Sources */,
 				65A46B0A18F4D72F00041DC5 /* SCNavigationController.m in Sources */,
@@ -1304,6 +1316,7 @@
 				659108C4183708CD00096A59 /* MBProgressHUD.m in Sources */,
 				658A68E3186674D100EC090F /* VC_SegueFeatureCateItemDetail.m in Sources */,
 				65A46B9D18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m in Sources */,
+				65A46BAA1900B48C00041DC5 /* EAIntroPage.m in Sources */,
 				65A46B0918F4D72F00041DC5 /* SCCaptureSessionManager.m in Sources */,
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
 				658361D118DECB9000C732FF /* VC_CategoryItemContent.m in Sources */,
@@ -1324,6 +1337,7 @@
 				6583621118E3B1B000C732FF /* TDBadgedCell.m in Sources */,
 				658361FD18E11C6400C732FF /* TSAlertView.m in Sources */,
 				6583621618E5015E00C732FF /* VC_SBTableAlertFriendRequests.m in Sources */,
+				65A46BAB1900B48C00041DC5 /* EAIntroView.m in Sources */,
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
 				65B8EF9318A911660021DF19 /* VC_NewsLetterSend.m in Sources */,
 				6519FC63182492B70010942A /* JSONKit.m in Sources */,
