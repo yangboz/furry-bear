@@ -7,30 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
-
-#import "JSONKit.h"
-#import "UserModel.h"
-#import "ItemDataModel.h"
-#import "Prefs.h"
 
 @interface App42_API_Utils : UIView
 {
     
 }
 +(App42_API_Utils *)sharedInstance;
-//
--(UserService *)getUserService;
--(UploadService *)getUploadService;
--(CatalogueService *)getCatalogueService;
--(ReviewService *)getReviewService;
--(StorageService *)getStorageService;
--(RecommenderService *)getRecommenderService;
--(QueueService *)getQueueService;
--(ScoreBoardService *)getScoreBoardService;
--(EmailService *)getEmailService;
--(BuddyService *)getBuddyService;
--(LogService *)getLogService;
 //
 -(NSString *)getDefaultCatalogueName;
 -(NSString *)getDefaultCategoryName;

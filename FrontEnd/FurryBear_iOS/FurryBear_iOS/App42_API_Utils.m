@@ -11,7 +11,6 @@
 @implementation App42_API_Utils
 //It declares a static instance of your singleton object and initializes it to nil.
 static App42_API_Utils *sharedInstance = nil;
-static ServiceAPI *serviceAPIobj = nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(App42_API_Utils *)sharedInstance
@@ -19,10 +18,6 @@ static ServiceAPI *serviceAPIobj = nil;
 	if (sharedInstance==nil) {
 		sharedInstance = [[super allocWithZone:NULL] init];
         //
-        serviceAPIobj = [[ServiceAPI alloc] init];
-        serviceAPIobj.apiKey = @"bed6761e541cd0a135104c31b2f736a02b7294eef20daee891c1a5b864fb93fd";
-        serviceAPIobj.secretKey = @"b3d47468ec8dd5a232c5b6dbd4efd5c2f4fc954575c809fc16f4e6252dd1cdd6";
-        
 	}
     //
 	return sharedInstance;
@@ -54,59 +49,7 @@ static ServiceAPI *serviceAPIobj = nil;
 //}
 
 //implementations
-#pragma mark -BuildXXXXService
--(UserService *)getUserService
-{
-    return [serviceAPIobj buildUserService];
-}
 
--(UploadService *)getUploadService
-{
-    return [serviceAPIobj buildUploadService];
-}
-
--(CatalogueService *)getCatalogueService
-{
-    return [serviceAPIobj buildCatalogueService];
-}
-
--(ReviewService *)getReviewService
-{
-    return [serviceAPIobj buildReviewService];
-}
-
--(StorageService *)getStorageService
-{
-    return [serviceAPIobj buildStorageService];
-}
--(RecommenderService *)getRecommenderService
-{
-    return [serviceAPIobj buildRecommenderService];
-}
--(QueueService *)getQueueService
-{
-    return [serviceAPIobj buildQueueService];
-}
-
--(ScoreBoardService *)getScoreBoardService;
-{
-    return [serviceAPIobj buildScoreBoardService];
-}
-
--(EmailService *)getEmailService;
-{
-    return [serviceAPIobj buildEmailService];
-}
-
--(BuddyService *)getBuddyService;
-{
-    return [serviceAPIobj buildBuddyService];
-}
-
--(LogService *)getLogService;
-{
-    return [serviceAPIobj buildLogService];
-}
 //
 #pragma mark -Default variables
 -(NSString *)getDefaultCatalogueName
