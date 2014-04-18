@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 #import "App42_API_Facade.h"
+#import "EAIntroView.h"
 
-@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate>
+@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,EAIntroDelegate>
 {
 }
 -(void)userDefaultsLogin;
 -(void)displayLoginPopup;
+//EAIntroView
+- (void)showIntroWithFixedTitleView;
 //App42_API calls
 //IBOutlets
 

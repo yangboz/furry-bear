@@ -16,6 +16,7 @@ static User *user=nil;
 static NSMutableArray *data=nil;
 static NSString *buddyName=nil;
 static BOOL autoSignin=YES;
+static BOOL introViewed=NO;
 static NSMutableArray *friendRequests=nil;
 static NSMutableArray *allFriends=nil;
 static NSMutableArray *messagesFromBuddy=nil;
@@ -118,6 +119,30 @@ static NSMutableArray *messagesFromBuddy=nil;
     }
     //
     return autoSignin;
+}
+-(BOOL)getIntroViewed;
+{
+    //@see http://www.ecanarys.com/blog-entry/implementing-ios-setting-bundle
+    //read ios setting bundle
+    ///for reading default value
+    NSString *kIntroViewdinKey=@"introViewed_preference";
+    //Set the application defaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *testValue=[defaults stringForKey:kIntroViewdinKey];
+    NSLog(@"introViewed_preference value(before register):%@",testValue);
+    //@see http://useyourloaf.com/blog/2010/05/18/adding-a-settings-bundle-to-an-iphone-app.html
+    if([testValue isEqual:nil])
+    {
+        //Set the application defaults
+        NSDictionary *introViewedDefaults = [NSDictionary dictionaryWithObject:@"YES" forKey:kIntroViewdinKey];
+        [defaults registerDefaults:introViewedDefaults];
+        [defaults synchronize];
+    }else{//Get preferences
+        introViewed = [defaults boolForKey:kIntroViewdinKey];
+        NSLog(@"autoSignin_preference value(after register):%@",testValue);
+    }
+    //
+    return introViewed;
 }
 #pragma mark - Friends related
 -(NSMutableArray *)getFriendRequests

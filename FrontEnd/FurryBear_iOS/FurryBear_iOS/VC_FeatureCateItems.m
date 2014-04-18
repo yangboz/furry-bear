@@ -14,7 +14,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    if (![[UserModel sharedInstance] getIntroViewed]) {
+        [self showIntroWithFixedTitleView];
+    }
     //if auto signin
     if ([[UserModel sharedInstance] getAutoSignin]) {
         [self userDefaultsLogin];
@@ -108,6 +110,42 @@
         LoginViewController *loginViewController = [[navigationController viewControllers] objectAtIndex:0];
         loginViewController.delegate = self;
     }
+}
+
+#pragma mark - EAIntroDelegate
+- (void)introDidFinish:(EAIntroView *)introView {
+    NSLog(@"EAIntroView DidFinish callback!");
+//    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    
+}
+
+- (void)showIntroWithFixedTitleView
+{
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.title = @"Hello world";
+    page1.desc = INTRO_DESCRIPTION_00;
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.title = @"This is page 2";
+    page2.desc = INTRO_DESCRIPTION_01;
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.title = @"This is page 3";
+    page3.desc = INTRO_DESCRIPTION_02;
+    
+    EAIntroPage *page4 = [EAIntroPage page];
+    page4.title = @"This is page 4";
+    page4.desc = INTRO_DESCRIPTION_03;
+    
+    EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
+    [intro setDelegate:self];
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork-256"]];
+    intro.titleView = titleView;
+    intro.titleViewY = 60;
+    //intro.backgroundColor = [UIColor colorWithRed:0.0f green:0.49f blue:0.96f alpha:1.0f]; //iOS7 dark blue
+    
+    [intro showInView:self.view animateDuration:0.3];
+
 }
 
 @end
