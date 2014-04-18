@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "App42_API_Utils.h"
+#import "Prefs.h"
 
 @interface UserModel : NSObject
 {
@@ -15,7 +16,9 @@
 
 +(UserModel *)sharedInstance;
 -(User *)getUser;
+//Sets
 -(void)setUser:(User *)value;
+-(void)setIntroViewed:(BOOL)value;
 //BuddyServie
 -(NSString *)getBuddyName;
 -(void)setBuddyName:(NSString *)value;

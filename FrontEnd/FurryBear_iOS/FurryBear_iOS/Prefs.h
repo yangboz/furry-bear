@@ -37,6 +37,11 @@
 #define DICT_KEY_TIME_STAMP @"timestamp"
 #define DICT_KEY_RATING @"rating"
 #define DICT_KEY_CATE_ITEM @"cateItem"
+//User PreferenceKey
+#define PREFERENCE_KEY_USER_NAME @"userName"
+#define PREFERENCE_KEY_PASS_WORD @"passWord"
+#define PREFERENCE_KEY_AUTO_SIGN_IN @"autoSignin_preference"
+#define PREFERENCE_KEY_INTRO_VIEWED @"introViewed_preference"
 //EAIntro descriptions
 #define INTRO_DESCRIPTION_00 @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 #define INTRO_DESCRIPTION_01 @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.";

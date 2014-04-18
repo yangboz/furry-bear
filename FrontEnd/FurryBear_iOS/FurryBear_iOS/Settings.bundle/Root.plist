@@ -10,9 +10,9 @@
 			<key>Title</key>
 			<string>介绍页面</string>
 			<key>Key</key>
-			<string>introView_preference</string>
+			<string>introViewed_preference</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Title</key>

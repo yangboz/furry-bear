@@ -107,8 +107,6 @@
 		658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658361AA18DC8D7000C732FF /* Accelerate.framework */; };
 		658361C218DEB63000C732FF /* read_more-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361C018DEB63000C732FF /* read_more-20.png */; };
 		658361C318DEB63000C732FF /* read_more-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361C118DEB63000C732FF /* read_more-24.png */; };
-		658361D118DECB9000C732FF /* VC_CategoryItemContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361D018DECB9000C732FF /* VC_CategoryItemContent.m */; };
-		658361D718DED19400C732FF /* VC_CategoryItemMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361D618DED19400C732FF /* VC_CategoryItemMain.m */; };
 		658361DC18DF39BD00C732FF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658361DB18DF39BD00C732FF /* AssetsLibrary.framework */; };
 		658361EA18DFC25E00C732FF /* BuddyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 658361E918DFC25E00C732FF /* BuddyCell.m */; };
 		658361EC18DFCA3900C732FF /* remove_user-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361EB18DFCA3900C732FF /* remove_user-32.png */; };
@@ -329,10 +327,6 @@
 		658361AA18DC8D7000C732FF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		658361C018DEB63000C732FF /* read_more-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "read_more-20.png"; sourceTree = "<group>"; };
 		658361C118DEB63000C732FF /* read_more-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "read_more-24.png"; sourceTree = "<group>"; };
-		658361CF18DECB9000C732FF /* VC_CategoryItemContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_CategoryItemContent.h; sourceTree = "<group>"; };
-		658361D018DECB9000C732FF /* VC_CategoryItemContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_CategoryItemContent.m; sourceTree = "<group>"; };
-		658361D518DED19400C732FF /* VC_CategoryItemMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_CategoryItemMain.h; sourceTree = "<group>"; };
-		658361D618DED19400C732FF /* VC_CategoryItemMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_CategoryItemMain.m; sourceTree = "<group>"; };
 		658361D818DF31C600C732FF /* VC_BuddyRelated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_BuddyRelated.h; sourceTree = "<group>"; };
 		658361DB18DF39BD00C732FF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		658361E818DFC25E00C732FF /* BuddyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyCell.h; sourceTree = "<group>"; };
@@ -976,10 +970,6 @@
 				6583620718E1C38400C732FF /* VC_BuddyRelated.m */,
 				658A68E1186674D100EC090F /* VC_SegueFeatureCateItemDetail.h */,
 				658A68E2186674D100EC090F /* VC_SegueFeatureCateItemDetail.m */,
-				658361CF18DECB9000C732FF /* VC_CategoryItemContent.h */,
-				658361D018DECB9000C732FF /* VC_CategoryItemContent.m */,
-				658361D518DED19400C732FF /* VC_CategoryItemMain.h */,
-				658361D618DED19400C732FF /* VC_CategoryItemMain.m */,
 				6583621418E5015E00C732FF /* VC_SBTableAlertFriendRequests.h */,
 				6583621518E5015E00C732FF /* VC_SBTableAlertFriendRequests.m */,
 				6566A62418F23CAF00BF2088 /* VC_CateItemDetail.h */,
@@ -1319,7 +1309,6 @@
 				65A46BAA1900B48C00041DC5 /* EAIntroPage.m in Sources */,
 				65A46B0918F4D72F00041DC5 /* SCCaptureSessionManager.m in Sources */,
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
-				658361D118DECB9000C732FF /* VC_CategoryItemContent.m in Sources */,
 				658A69091867428600EC090F /* LoginViewController.m in Sources */,
 				6519FC5A182378570010942A /* StorageModel.m in Sources */,
 				6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */,
@@ -1330,7 +1319,6 @@
 				65A46B0C18F4D72F00041DC5 /* UIImage+Resize.m in Sources */,
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
 				6566A62618F23CAF00BF2088 /* VC_CateItemDetail.m in Sources */,
-				658361D718DED19400C732FF /* VC_CategoryItemMain.m in Sources */,
 				65A46B0818F4D72F00041DC5 /* SCCaptureCameraController.m in Sources */,
 				65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */,
 				6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */,

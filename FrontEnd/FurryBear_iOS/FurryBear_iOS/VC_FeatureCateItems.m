@@ -115,8 +115,8 @@
 #pragma mark - EAIntroDelegate
 - (void)introDidFinish:(EAIntroView *)introView {
     NSLog(@"EAIntroView DidFinish callback!");
-//    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    
+    //Save user perference.
+    [[UserModel sharedInstance] setIntroViewed:YES];
 }
 
 - (void)showIntroWithFixedTitleView
@@ -139,13 +139,14 @@
     
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
     [intro setDelegate:self];
-    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork-256"]];
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork-128"]];
     intro.titleView = titleView;
     intro.titleViewY = 60;
-    //intro.backgroundColor = [UIColor colorWithRed:0.0f green:0.49f blue:0.96f alpha:1.0f]; //iOS7 dark blue
+    intro.backgroundColor = [UIColor colorWithRed:1.0f green:0.49f blue:0.96f alpha:1.0f]; //iOS7 dark blue
     
     [intro showInView:self.view animateDuration:0.3];
-
+    //FIXME:SkipButton disappear..
+    [intro showSkipButtonOnlyOnLastPage];
 }
 
 @end

@@ -60,19 +60,27 @@ static NSMutableArray *messagesFromBuddy=nil;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (defaults != nil) {
-        user.userName = [defaults objectForKey:@"userName"];
-        user.password = [defaults objectForKey:@"passWord"];
+        user.userName = [defaults objectForKey:PREFERENCE_KEY_USER_NAME];
+        user.password = [defaults objectForKey:PREFERENCE_KEY_PASS_WORD];
     }
 	return user;
 }
-
+#pragma mark - User perference saves
 -(void)setUser:(User *)value
 {
 	user = value;
     //Saving the login data
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:value.userName forKey:@"userName"];
-    [userDefaults setObject:value.password forKey:@"passWord"];
+    [userDefaults setObject:value.userName forKey:PREFERENCE_KEY_USER_NAME];
+    [userDefaults setObject:value.password forKey:PREFERENCE_KEY_PASS_WORD];
+    [userDefaults synchronize];
+}
+
+-(void)setIntroViewed:(BOOL)value
+{
+    //Saving the login data
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:value forKey:PREFERENCE_KEY_INTRO_VIEWED];
     [userDefaults synchronize];
 }
 
@@ -101,20 +109,19 @@ static NSMutableArray *messagesFromBuddy=nil;
     //@see http://www.ecanarys.com/blog-entry/implementing-ios-setting-bundle
     //read ios setting bundle
     ///for reading default value
-    NSString *kAutoSigninKey=@"autoSignin_preference";
     //Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *testValue=[defaults stringForKey:kAutoSigninKey];
+    NSString *testValue=[defaults stringForKey:PREFERENCE_KEY_AUTO_SIGN_IN];
     NSLog(@"autoSignin_preference value(before register):%@",testValue);
     //@see http://useyourloaf.com/blog/2010/05/18/adding-a-settings-bundle-to-an-iphone-app.html
     if([testValue isEqual:nil])
     {
         //Set the application defaults
-        NSDictionary *autoSigninDefaults = [NSDictionary dictionaryWithObject:@"YES" forKey:kAutoSigninKey];
+        NSDictionary *autoSigninDefaults = [NSDictionary dictionaryWithObject:@"YES" forKey:PREFERENCE_KEY_AUTO_SIGN_IN];
         [defaults registerDefaults:autoSigninDefaults];
         [defaults synchronize];
     }else{//Get preferences
-        autoSignin = [defaults boolForKey:kAutoSigninKey];
+        autoSignin = [defaults boolForKey:PREFERENCE_KEY_AUTO_SIGN_IN];
         NSLog(@"autoSignin_preference value(after register):%@",testValue);
     }
     //
@@ -125,21 +132,20 @@ static NSMutableArray *messagesFromBuddy=nil;
     //@see http://www.ecanarys.com/blog-entry/implementing-ios-setting-bundle
     //read ios setting bundle
     ///for reading default value
-    NSString *kIntroViewdinKey=@"introViewed_preference";
     //Set the application defaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *testValue=[defaults stringForKey:kIntroViewdinKey];
-    NSLog(@"introViewed_preference value(before register):%@",testValue);
+    NSString *testValue=[defaults stringForKey:PREFERENCE_KEY_INTRO_VIEWED];
+    NSLog(@"introView_preference value(before register):%@",testValue);
     //@see http://useyourloaf.com/blog/2010/05/18/adding-a-settings-bundle-to-an-iphone-app.html
     if([testValue isEqual:nil])
     {
         //Set the application defaults
-        NSDictionary *introViewedDefaults = [NSDictionary dictionaryWithObject:@"YES" forKey:kIntroViewdinKey];
+        NSDictionary *introViewedDefaults = [NSDictionary dictionaryWithObject:@"NO" forKey:PREFERENCE_KEY_INTRO_VIEWED];
         [defaults registerDefaults:introViewedDefaults];
         [defaults synchronize];
     }else{//Get preferences
-        introViewed = [defaults boolForKey:kIntroViewdinKey];
-        NSLog(@"autoSignin_preference value(after register):%@",testValue);
+        introViewed = [defaults boolForKey:PREFERENCE_KEY_INTRO_VIEWED];
+        NSLog(@"introView_preference value(after register):%@",testValue);
     }
     //
     return introViewed;
