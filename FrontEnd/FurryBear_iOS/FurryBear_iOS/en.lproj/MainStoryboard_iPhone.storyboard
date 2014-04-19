@@ -1486,7 +1486,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="File Name:" id="pt7-WX-NsF">
+                            <tableViewSection headerTitle="Rating:" id="pt7-WX-NsF">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wRl-bx-TLT">
                                         <rect key="frame" x="0.0" y="728" width="320" height="44"/>
@@ -1495,7 +1495,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4l-K3-W9D">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqf-xc-K3e" customClass="EDStarRating">
+                                                    <rect key="frame" x="45" y="3" width="230" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="File Name:" id="X7K-jp-FIT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rdl-9o-o9I">
+                                        <rect key="frame" x="0.0" y="794" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rdl-9o-o9I" id="GXt-43-g52">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-ae-MKc">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1525,10 +1544,10 @@
                         <outlet property="addressTxt" destination="22y-sK-h8e" id="hN9-2U-ziB"/>
                         <outlet property="agreeNextTimeSwitch" destination="yTA-wX-c82" id="VgV-k2-cJZ"/>
                         <outlet property="fileDescTxtView" destination="j3D-Mn-bJB" id="ACH-f6-IfL"/>
-                        <outlet property="filenameTxt" destination="f4l-K3-W9D" id="EU9-er-ujj"/>
                         <outlet property="photoButton" destination="5P9-Rv-1OK" id="Czb-JR-HgL"/>
                         <outlet property="resturantTxt" destination="dYQ-Hq-ZJj" id="BDg-jp-Dpa"/>
                         <outlet property="slider_price" destination="4ds-KC-0P4" id="OB8-Wg-9lR"/>
+                        <outlet property="starRating" destination="lqf-xc-K3e" id="pM9-qR-nNm"/>
                         <outlet property="telphoneTxt" destination="EWy-hg-J3Q" id="zvl-pu-5ho"/>
                     </connections>
                 </tableViewController>

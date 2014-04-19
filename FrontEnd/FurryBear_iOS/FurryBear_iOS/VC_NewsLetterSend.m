@@ -119,22 +119,8 @@
 #pragma mark - IBOutlet
 -(void)on_send_newsletter:(id)sender;
 {
-    EmailService *emailService = [[App42_API_Utils sharedInstance] getEmailService];
-    @try{
-        //App42 service API call here.
-        Email *email = [emailService sendMail:self.txt_sendTo.text subject:self.txt_sendSubject.text Message:self.txt_sendMsg.text fromEmail:self.txt_sendFrom.text emailMIME:[self getTextMimeType]];/* returns the Email object. */
-        NSString *jsonResponse = [email toString]; /* returns the response in JSON format. (as shown below)*/
-        NSLog(@"EmailService json response:%@",jsonResponse);
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //NSAlert here.
-    }
-    
-    
+    Email *email = [[App42_API_Facade sharedInstance] sendMail:self.txt_sendTo.text subject:self.txt_sendSubject.text Message:self.txt_sendMsg.text fromEmail:self.txt_sendFrom.text emailMIME:[self getTextMimeType]];/* returns the Email object. */
+    NSLog(@"on_send_newsletter result:%@",email.body);
 }
 
 //Private

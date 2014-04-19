@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "App42_API_Facade.h"
 #import "NYSliderPopover.h"
+#import "EDStarRating.h"
 
-@interface VC_ImageUpload_CateItemAdd : UITableViewController<UIImagePickerControllerDelegate>
+@interface VC_ImageUpload_CateItemAdd : UITableViewController<UIImagePickerControllerDelegate,
+    EDStarRatingProtocol>
 {}
 //IBOutlets
 @property(nonatomic, retain) UIImage *photo;
@@ -23,6 +25,10 @@
 @property (retain, nonatomic) IBOutlet UITextField *resturantTxt;
 @property (retain, nonatomic) IBOutlet UITextField *telphoneTxt;
 @property (retain, getter=isOn) IBOutlet UISwitch *agreeNextTimeSwitch;
+//StarRating
+@property (strong,nonatomic) NSArray *colors;
+@property (retain, nonatomic) IBOutlet
+    EDStarRating *starRating;
 //IBActions
 - (IBAction)uploadPhoto:(id)sender;
 - (IBAction)choosePhoto:(id)sender;

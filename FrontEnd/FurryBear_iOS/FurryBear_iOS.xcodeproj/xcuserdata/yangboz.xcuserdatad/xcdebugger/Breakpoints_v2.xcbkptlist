@@ -39,22 +39,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_NewsLetterSend.m"
-            timestampString = "413741508.16475"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "-on_send_newsletter:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_SegueCateItemAdd.m"
             timestampString = "419218231.847994"
             startingColumnNumber = "9223372036854775807"
@@ -88,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_BuddyRelated.m"
-            timestampString = "417663821.453709"
+            timestampString = "419577726.233607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -152,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeedCateItems.m"
-            timestampString = "418750107.860943"
+            timestampString = "419577123.224735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
             landmarkName = "-itemFavoriteAction:"
             landmarkType = "5">
             <Locations>
@@ -167,12 +151,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "419530460.811465"
+                  timestampString = "419578491.202061"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "486"
-                  endingLineNumber = "486"
-                  offsetFromSymbolStart = "496">
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "379">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -181,12 +165,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "419530460.811708"
+                  timestampString = "419578491.202278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "486"
-                  endingLineNumber = "486"
-                  offsetFromSymbolStart = "530">
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "447">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -230,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_ImageUpload_CateItemAdd.m"
-            timestampString = "419438748.395093"
+            timestampString = "419578417.375094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-uploadPhoto:"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_ImageUpload_CateItemAdd.m"
-            timestampString = "419530460.714264"
+            timestampString = "419578417.375094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-uploadPhoto:"
             landmarkType = "5">
          </BreakpointContent>

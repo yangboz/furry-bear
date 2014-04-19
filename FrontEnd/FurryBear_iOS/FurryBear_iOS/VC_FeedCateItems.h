@@ -14,7 +14,6 @@
 #import "VC_SegueCateItemReview.h"
 #import "PopupManager_DTAlertView.h"
 #import "PopupManager_AlertTable.h"
-#import "VC_SegueFeatureCateItemDetail.h"
 #import "AppDelegate.h"
 #import "VC_CateItemDetail.h"
 

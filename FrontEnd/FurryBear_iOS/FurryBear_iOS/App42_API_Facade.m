@@ -109,6 +109,32 @@ static LogService *logService= nil;
     //
     return isSuccess;
 }
+-(User *)createUser:(NSString *)userName password:(NSString *)password emailAddress:(NSString *)emailAddress;
+{
+    User *user = nil;
+    @try{
+        user = [userService createUser:userName password:password emailAddress:emailAddress]; /* returns the User object. */
+        NSLog(@"userName is %@" , user.userName);
+        NSLog(@"emailId is %@" ,  user.email);
+        NSString *jsonResponse = [user toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"UserService->createUser results:%@",jsonResponse);
+        //Save user object to model.
+        User *userObj = [[User alloc] init];
+        userObj.userName = userName;
+        userObj.password = password;
+        [[UserModel sharedInstance] setUser:userObj];
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    //
+    return user;
+}
+
 #pragma mark -UploadService
 -(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
          fileType:(NSString *)fileType
@@ -170,7 +196,6 @@ static LogService *logService= nil;
     [storageDict setObject:userName forKey:KEY_NAME_OWNERNAME];
     NSString *jsonStr = [storageDict JSONString];
     NSLog(@"JSON storageDict:%@",jsonStr);
-    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
     Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
     NSLog(@"collectionName is = %@",storage.collectionName);
@@ -209,7 +234,6 @@ static LogService *logService= nil;
     [storageDict setValue:[NSNumber numberWithBool:agreeNextTime] forKey:KEY_NAME_AGREE_NEXT_TIME];
     NSString *jsonStr = [storageDict JSONString];
     NSLog(@"JSON storageDict:%@",jsonStr);
-    StorageService *storageService = [[App42_API_Utils sharedInstance] getStorageService];
     Storage *storage = [storageService updateDocumentByDocId:dbName collectionName:collectionName docId:itemData.itemId newJsonDoc:jsonStr];
     //Storage *storage = [storageService insertJSONDocument:dbName collectionName:collectionName json:jsonStr]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
@@ -231,9 +255,7 @@ static LogService *logService= nil;
     //NSLog(@"JSON responseDict_noSQL:%@",jsonResponseDict_noSQL);
     //hard-code the ItemID for testing.
     //itemData.itemId = @"11";
-    //
-    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
-    Catalogue *catalogue = [cataService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
+    Catalogue *catalogue = [catalogueService addItem:defaultCatalogueName categoryName:defaultCategoryName itemData:itemData];
     //    NSString *catalogueName =  catalogue.name;
     NSMutableArray *categoryList = catalogue.categoryListArray;
     for(CategoryData *category in categoryList)
@@ -291,6 +313,25 @@ static LogService *logService= nil;
         NSLog(@"App42 Exception found:%@",ex.description);
     }
 }
+-(NSMutableArray *)getItemsByCategory:(NSString *)defaultCatalogueName categoryName:(NSString *)defaultCategoryName;
+{
+    NSMutableArray *categoryList = [[NSMutableArray alloc] init];
+    //
+    @try{
+        //
+        Catalogue *catalogue = [catalogueService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+        //
+        categoryList = catalogue.categoryListArray;
+        //
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return categoryList;
+}
 #pragma mark -ReviewService
 -(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating
 {
@@ -314,12 +355,253 @@ static LogService *logService= nil;
         NSLog(@"App42 Exception found:%@",ex.description);
     }
 }
+-(int)getReviewsCountByItem:(NSString *)itemId;
+{
+    int totalRecords = 0;
+    @try{
+        //
+        App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
+        BOOL success = response.isResponseSuccess;
+        NSLog(@"App42_getReviewsCountByItem success?%d",success);
+        totalRecords = response.totalRecords;
+        NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
+        NSString *jsonResponse = [response toString];
+        NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
+        /* returns the response in JSON format. (as shown below)
+         {
+         "app42": {
+         "response": {
+         "success": true,
+         "totalRecords": 3
+         }
+         }
+         }*/
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return totalRecords;
+}
+-(NSMutableArray *)getReviewsByItem:(NSString *)itemId;
+{
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    @try{
+        //    NSString *itemId = @"itemID";
+        NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
+        for(Review *review in reviewList){
+            NSLog(@"userId =%@", review.userId);
+            NSLog(@"itemId =%@", review.itemId);
+            NSLog(@"comment=%@",review.comment);
+            NSLog(@"rating=%f", review.rating);
+            NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+            NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
+        }
+        //
+        results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return results;
+}
+-(Review *)getAverageReviewByItem:(NSString *)itemId;
+{
+    Review *review = nil;
+    @try{
+        // NSString *itemId = @"itemID";
+        Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
+        NSLog(@"userId =%@", review.userId);
+        NSLog(@"itemId =%@", review.itemId);
+        NSLog(@"comment=%@",review.comment);
+        NSLog(@"rating=%f", review.rating);
+        NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
+        NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return review;
+}
 #pragma mark -StorageService
+-(Storage *)findDocumentById:(NSString *)dbName collectionName:(NSString *)collectionName docId:(NSString *)docId;
+{
+    Storage *storage = nil;
+    @try{
+        //
+        storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId];
+        //
+        NSString *jsonResponse = [storage toString]; /* returns the response in JSON format. */
+        NSLog(@"App42_API_Facade->findDocumentById jsonResponse:%@",jsonResponse);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return storage;
+}
 #pragma mark -RecommenderService
 #pragma mark -QueueService
 #pragma mark -RewardService
 #pragma mark -EmailService
+-(Email *)sendMail:(NSString *)sendTo subject:(NSString *)subject Message:(NSString *)message fromEmail:(NSString *)fromEmail emailMIME:(NSString *)emailMIME;
+{
+    Email *email = nil;
+    @try{
+        //App42 service API call here.
+        email = [emailService sendMail:sendTo subject:subject Message:message fromEmail:fromEmail emailMIME:emailMIME];/* returns the Email object. */
+        NSString *jsonResponse = [email toString]; /* returns the response in JSON format. (as shown below)*/
+        NSLog(@"EmailService json response:%@",jsonResponse);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+    }
+    return email;
+}
 #pragma mark -ScoreBoardService
 #pragma mark -LogService
-
+#pragma mark -BuddyService
+#pragma mark - Friends related
+-(NSMutableArray *)getFriendRequests
+{
+    NSMutableArray *friendRequests = [[NSMutableArray alloc] init];
+    //
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getFriendRequest:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        friendRequests = [NSMutableArray arrayWithArray:buddys];
+        //SetModel
+        [[UserModel sharedInstance] setFriendRequests:friendRequests];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+        
+    }
+    return friendRequests;
+}
+//
+-(NSMutableArray *)getAllFriends
+{
+    NSMutableArray *allFriends = [[NSMutableArray alloc] init];
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getAllFriends:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        allFriends = [NSMutableArray arrayWithArray:buddys];
+        [[UserModel sharedInstance] setAllFriends:allFriends];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+    }
+    return allFriends;
+}
+#pragma mark - Messages related
+-(NSMutableArray *)getAllMessagesFromBuddy:(NSString *)buddyName
+{
+    NSMutableArray *messagesFromBuddy = [[NSMutableArray alloc] init];
+    //
+    NSString *userName = [[[UserModel sharedInstance] getUser] userName];
+    //1.Get friend request
+    @try{
+        //App42 service API call here.
+        NSArray *buddys = [buddyService getAllMessagesFromBuddy:buddyName toUser:userName];
+        NSLog(@"userName is : %@",[[buddys objectAtIndex:0] userName]);
+        NSLog(@"buddyName is : %@"  , [[buddys objectAtIndex:0] buddyName]);
+        NSLog(@"message is : %@",[[buddys objectAtIndex:0] message]);
+        NSLog(@"sendedOn is : %@"  , [[buddys objectAtIndex:0] sendedOn]);
+        //fill up the UITableView at first.
+        messagesFromBuddy = [NSMutableArray arrayWithArray:buddys];
+        //SetModel
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+        //None friend request
+    }
+    return messagesFromBuddy;
+};
+-(void)sendFriendRequestFromUser:(NSString *)userName toBuddy:(NSString *)buddyName withMessage:(NSString *)message;
+{
+    @try{
+        //App42 service API call here.
+        Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
+        //
+        NSLog(@"userName is : %@", buddy.userName);
+        NSLog(@"buddyName is : %@", buddy.buddyName);
+        NSLog(@"message is : %@", buddy.message);
+        NSLog(@"sendedOn is : %@", buddy.sendedOn);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+        if(4613==ex.appErrorCode)
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Your are already friends!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            [alertView release];
+        }
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+    }
+}
+-(void)sendMessage:(NSString *)message toFriend:(NSString *)buddyName fromUser:(NSString *)userName;
+{
+    @try{
+        //App42 service API call here.
+        Buddy *buddy = [buddyService sendMessage:message toFriend:buddyName fromUser:userName];
+        //
+        NSLog(@"userName is : %@", buddy.userName);
+        NSLog(@"buddyName is : %@", buddy.buddyName);
+        NSLog(@"message is : %@", buddy.message);
+        NSLog(@"sendedOn is : %@", buddy.sendedOn);
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+        //NSAlert here.
+    }
+}
 @end

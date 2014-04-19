@@ -77,49 +77,19 @@
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
-    UserService *userService = [ [App42_API_Utils sharedInstance] getUserService ];
-    //    User *user = [userService authenticateUser:userName password:password];
-    @try{
-        //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
-        App42Response *response = [userService authenticateUser:userName password:passWord];
-        BOOL success = [response isResponseSuccess];
-        NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
-        NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
-        //Dismiss loginView modal.
-        [self dismissViewControllerAnimated:YES completion:nil];
-        //Save the login info to userDefaults
-        User *user = [[User alloc] init];
-        user.userName = userName;
-        user.password = passWord;
-        [[UserModel sharedInstance] setUser:user];
-        //Get default catalogue and category name.
-        [self loadFeaturedCategoryItems];
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-        //Alert messages.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-        //Display the login popup window again.
-        //[self displayLoginPopup];
-    }
+    [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
 }
 #pragma mark -UITableView reload
 -(void)loadFeaturedCategoryItems
 {
     //ProgressBar show
-    //[[PopupManager_DTAlertView sharedInstance] popupProgressBar];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
     //GET ITEMS BY CATEGORY
-    CatalogueService *cataService = [[App42_API_Utils sharedInstance] getCatalogueService];
-    Catalogue *catalogue = [cataService getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
-    NSMutableArray *categoryList = catalogue.categoryListArray;
+    NSMutableArray *categoryList = [[App42_API_Facade sharedInstance] getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+    //
     for(CategoryData *category in categoryList)
     {
         NSLog(@"name is = %@",category.name);
@@ -172,7 +142,7 @@
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
-        //[[PopupManager_DTAlertView sharedInstance] dismissProgressBar];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
 }
 
@@ -192,23 +162,12 @@
     NSString *userName = user.userName;
     NSString *passWord = user.password;
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
-    userService = [ [App42_API_Utils sharedInstance] getUserService ];
-    //    User *user = [userService authenticateUser:userName password:password];
-    @try{
-        //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
-        App42Response *response = [userService authenticateUser:userName password:passWord];
-        BOOL success = [response isResponseSuccess];
-        NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
-        NSLog(@"App42 user authenticate result:%d,%@",success,jsonResponse);
+    BOOL isLoggedIn = [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
+    if (isLoggedIn) {
         //Dismiss loginView modal.
         [self dismissViewControllerAnimated:YES completion:nil];
-        
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
+    }else
+    {
         //Alert messages.
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App42Fault" message:@"Username/Password did not match.Authentication Failed." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
@@ -305,12 +264,8 @@
 {
     dbName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     collectionName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
-    //    NSString *docId = @"4faa3f1ac68df147a51f8bd7";
-    storageService = [[App42_API_Utils sharedInstance] getStorageService];
     //
-    
-    //
-    Storage *storage = [storageService findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
+    Storage *storage = [[App42_API_Facade sharedInstance] findDocumentById:dbName collectionName:collectionName docId:docId]; /* returns the Storage object. */
     NSLog(@"dbName is = %@",storage.dbName);
     NSLog(@"collectionName is = %@",storage.collectionName);
     NSMutableArray *jsonDocList = storage.jsonDocArray;
@@ -319,92 +274,23 @@
         NSLog(@"docId is = %@ " , jsonDoc.docId);
         NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
     }
-    
-    NSString *jsonResponse = [storage toString]; /* returns the response in JSON format. */
-    NSLog(@"App42_findDocumentById jsonResponse:%@",jsonResponse);
+    //
     return [jsonDocList objectAtIndex:0];
 }
 
 -(int)App42_getReviewsCountByItem:(NSString*)itemId
 {
-    int totalRecords = 0;
-    @try{
-        //NSString *itemId = @"ItemID";
-        ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-        App42Response *response = [reviewService getReviewsCountByItem:itemId]; /* returns the App42Response objects. */
-        BOOL success = response.isResponseSuccess;
-        NSLog(@"App42_getReviewsCountByItem success?%d",success);
-        totalRecords = response.totalRecords;
-        NSLog(@"App42_getReviewsCountByItem totalRecords:%d",totalRecords);
-        NSString *jsonResponse = [response toString];
-        NSLog(@"App42_getReviewsCountByItem jsonResponse:%@",jsonResponse);
-        /* returns the response in JSON format. (as shown below)
-         {
-         "app42": {
-         "response": {
-         "success": true,
-         "totalRecords": 3
-         }
-         }
-         }*/
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return totalRecords;
+    return [[App42_API_Facade sharedInstance]getReviewsCountByItem:itemId];
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
 -(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId
 {
-    NSMutableArray *results = [[NSMutableArray alloc] init];
-    @try{
-        //    NSString *itemId = @"itemID";
-        ReviewService *reviewService = [[App42_API_Utils sharedInstance] getReviewService];
-        NSArray *reviewList = [reviewService getReviewsByItem:itemId]; /* returns the list of Review object. */
-        for(Review *review in reviewList){
-            NSLog(@"userId =%@", review.userId);
-            NSLog(@"itemId =%@", review.itemId);
-            NSLog(@"comment=%@",review.comment);
-            NSLog(@"rating=%f", review.rating);
-            NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-            NSLog(@"App42_getReviewsByItem jsonResponse:%@",jsonResponse);
-        }
-        //
-        results = [[[NSMutableArray alloc] initWithArray:reviewList] retain];
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return results;
+    return [[App42_API_Facade sharedInstance]getReviewsByItem:itemId];
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#getaverage_reviewbyitem
 -(int)App42_getAverageReviewByItem:(NSString *)itemId
 {
-    int avgRating = 0;
-    @try{
-        // NSString *itemId = @"itemID";
-        ReviewService *reviewService = [[App42_API_Utils sharedInstance]getReviewService];
-        Review *review = [reviewService getAverageReviewByItem:itemId]; /* returns the Review object. */
-        NSLog(@"userId =%@", review.userId);
-        NSLog(@"itemId =%@", review.itemId);
-        NSLog(@"comment=%@",review.comment);
-        NSLog(@"rating=%f", review.rating);
-        NSString *jsonResponse = [review toString]; /* returns the response in JSON format. */
-        NSLog(@"App42_getAverageReviewByItem jsonResponse:%@",jsonResponse);
-    }@catch (App42BadParameterException *ex) {
-        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-    }@catch (App42SecurityException *ex) {
-        NSLog(@"SecurityException found!");
-    }@catch (App42Exception *ex) {
-        NSLog(@"App42 Exception found:%@",ex.description);
-    }
-    return avgRating;
+    return [[App42_API_Facade sharedInstance] getAverageReviewByItem:itemId].rating;
 }
 //@private
 -(NSString *)App42_getItemOwnerName:(JSONDocument *)jsonDoc
@@ -469,7 +355,6 @@
     //@see http://api.shephertz.com/app42-docs/user-management-service/#add_json_object
     //
     @try{
-        UserService *_userService = [[App42_API_Utils sharedInstance] getUserService];
         //Favorite item json object assemble
         NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
         //Get cate item's id

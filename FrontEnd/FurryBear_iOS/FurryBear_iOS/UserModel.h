@@ -14,26 +14,29 @@
 }
 
 +(UserModel *)sharedInstance;
--(User *)getUser;
 //Sets
 -(void)setUser:(User *)value;
 -(void)setIntroViewed:(BOOL)value;
-//BuddyServie
--(NSString *)getBuddyName;
+//
 -(void)setBuddyName:(NSString *)value;
-//Settings.bundle
--(BOOL)getAutoSignin;
--(BOOL)getIntroViewed;
+-(void)setAllFriends:(NSMutableArray *)value;
+-(void)setFriendRequests:(NSMutableArray *)value;
+//Gets
+-(User *)getUser;
 //friendsRelated
 -(NSMutableArray *)getFriendRequests;
 -(NSMutableArray *)getAllFriends;
+//BuddyServie
+-(NSString *)getBuddyName;
+//Settings.bundle
+-(BOOL)getAutoSignin;
+-(BOOL)getIntroViewed;
 //messageRelated
--(NSMutableArray *)getAllMessagesFromBuddy:(NSString *)buddyName;
+//-(NSMutableArray *)getAllMessagesFromBuddy:(NSString *)buddyName;
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
-//
--(int)numberOfFriendRequests;
+
 @end
 
 

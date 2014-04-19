@@ -43,6 +43,20 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Setup control using iOS7 tint Color
+    _starRating.backgroundColor  = [UIColor whiteColor];
+    _starRating.starImage = [[UIImage imageNamed:@"star-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.starHighlightedImage = [[UIImage imageNamed:@"star-highlighted-template"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _starRating.maxRating = 5.0;
+    _starRating.delegate = self;
+    _starRating.horizontalMargin = 15.0;
+    _starRating.editable=YES;
+    _starRating.rating= 2.5;
+    _starRating.displayMode=EDStarRatingDisplayHalf;
+    [_starRating  setNeedsDisplay];
+    self.colors = @[ [UIColor colorWithRed:0.11f green:0.38f blue:0.94f alpha:1.0f], [UIColor colorWithRed:1.0f green:0.22f blue:0.22f alpha:1.0f], [UIColor colorWithRed:0.27f green:0.85f blue:0.46f alpha:1.0f], [UIColor colorWithRed:0.35f green:0.35f blue:0.81f alpha:1.0f]];
+    _starRating.tintColor = self.colors[0];
+    [self starsSelectionChanged:_starRating rating:2.5];
 }
 
 - (void)updateSliderPopoverText
@@ -66,6 +80,8 @@
     [_resturantTxt release];
     [_telphoneTxt release];
     [_agreeNextTimeSwitch release];
+    //
+    [_starRating release];
     //
     [super dealloc];
 }
@@ -170,5 +186,13 @@
 {
 	[self dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark - EDStarRating protocol
+-(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
+{
+    NSString *ratingString = [NSString stringWithFormat:@"Rating: %.1f", rating];
+    NSLog(@"EDStarRating value:%@",ratingString);
+}
+
 
 @end

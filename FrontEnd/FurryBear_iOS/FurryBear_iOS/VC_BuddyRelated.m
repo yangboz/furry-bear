@@ -69,7 +69,8 @@
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     //allMessagesFromBuddy
-    allMessagesFromBuddy = [[UserModel sharedInstance] getAllMessagesFromBuddy:selectedFriend.buddyName];
+    allMessagesFromBuddy = 
+    [[App42_API_Facade sharedInstance]getAllMessagesFromBuddy:selectedFriend.buddyName];
     
 	cell.badgeString = [NSString stringWithFormat:@"%d",[allMessagesFromBuddy count]];
     return cell;

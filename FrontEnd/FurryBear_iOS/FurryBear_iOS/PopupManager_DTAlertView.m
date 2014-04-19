@@ -134,31 +134,9 @@ static DTAlertView *progressAlertView = nil;
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     NSString *buddyName = [[UserModel sharedInstance] getBuddyName];
     NSString *message = alertView.textField.text;
-    BuddyService *buddyService  = [[App42_API_Utils sharedInstance] getBuddyService];
     if (alertView.tag==0) {
         //sendFriendRequestFromUser
-        @try{
-            //App42 service API call here.
-            Buddy *buddy = [buddyService sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
-            //
-            NSLog(@"userName is : %@", buddy.userName);
-            NSLog(@"buddyName is : %@", buddy.buddyName);
-            NSLog(@"message is : %@", buddy.message);
-            NSLog(@"sendedOn is : %@", buddy.sendedOn);
-        }@catch (App42BadParameterException *ex) {
-            NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-            if(4613==ex.appErrorCode)
-            {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Your are already friends!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-                [alertView release];
-            }
-        }@catch (App42SecurityException *ex) {
-            NSLog(@"SecurityException found!");
-        }@catch (App42Exception *ex) {
-            NSLog(@"App42 Exception found:%@",ex.description);
-            //NSAlert here.
-        }
+        [[App42_API_Facade sharedInstance] sendFriendRequestFromUser:userName toBuddy:buddyName withMessage:message];
         //
         [alertView dismiss];
         
@@ -166,22 +144,7 @@ static DTAlertView *progressAlertView = nil;
     }else if (alertView.tag==1)
     {
         //sendMessageToFriend
-        @try{
-            //App42 service API call here.
-            Buddy *buddy = [buddyService sendMessage:message toFriend:buddyName fromUser:userName];
-            //
-            NSLog(@"userName is : %@", buddy.userName);
-            NSLog(@"buddyName is : %@", buddy.buddyName);
-            NSLog(@"message is : %@", buddy.message);
-            NSLog(@"sendedOn is : %@", buddy.sendedOn);
-        }@catch (App42BadParameterException *ex) {
-            NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
-        }@catch (App42SecurityException *ex) {
-            NSLog(@"SecurityException found!");
-        }@catch (App42Exception *ex) {
-            NSLog(@"App42 Exception found:%@",ex.description);
-            //NSAlert here.
-        }
+        [[App42_API_Facade sharedInstance] sendMessage:message toFriend:buddyName fromUser:userName];
         //
         [alertView dismiss];
         

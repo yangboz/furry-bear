@@ -50,17 +50,7 @@
 - (IBAction)doneAction:(id)sender
 {
     //User sign up here.
-    UserService *userService = [[App42_API_Utils sharedInstance] getUserService];
-    User *user = [userService createUser:self.usernameTextField.text password:self.passwordTextField.text emailAddress:self.emailTextField.text]; /* returns the User object. */
-    NSLog(@"userName is %@" , user.userName);
-    NSLog(@"emailId is %@" ,  user.email);
-    NSString *jsonResponse = [user toString]; /* returns the response in JSON format. (as shown below)*/
-    NSLog(@"UserService->createUser results:%@",jsonResponse);
-    //Save user object to model.
-    User *userObj = [[User alloc] init];
-    userObj.userName = self.usernameTextField.text;
-    userObj.password = self.passwordTextField.text;
-    [[UserModel sharedInstance] setUser:userObj];
+    [[App42_API_Facade sharedInstance] createUser:self.usernameTextField.text password:self.passwordTextField.text emailAddress:self.emailTextField.text]; /* returns the User object. */
     //
 	[self.delegate loginViewControllerDidSave:self];
     //Auto back navigation
