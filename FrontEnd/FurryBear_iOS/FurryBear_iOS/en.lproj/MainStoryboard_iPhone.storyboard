@@ -1341,7 +1341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Image:" id="CYo-Ot-9bs">
+                            <tableViewSection headerTitle="传图:" id="CYo-Ot-9bs">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="mfB-To-Pzr">
                                         <rect key="frame" x="0.0" y="86" width="320" height="150"/>
@@ -1365,7 +1365,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Description:" id="Fq2-6Y-6HF">
+                            <tableViewSection headerTitle="写菜名:" id="Fq2-6Y-6HF">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="82" id="vjo-y7-425">
                                         <rect key="frame" x="0.0" y="258" width="320" height="82"/>
@@ -1387,10 +1387,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Price:" id="9dF-yY-441">
+                            <tableViewSection headerTitle="评分:" id="pt7-WX-NsF">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wRl-bx-TLT">
+                                        <rect key="frame" x="0.0" y="362" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wRl-bx-TLT" id="x73-vf-Gkk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqf-xc-K3e" customClass="EDStarRating">
+                                                    <rect key="frame" x="45" y="3" width="230" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="价格:" id="9dF-yY-441">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="pzp-xV-ulV">
-                                        <rect key="frame" x="0.0" y="362" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="428" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pzp-xV-ulV" id="jh9-Na-78v">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
@@ -1408,10 +1427,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Address:" id="5Bo-Re-cOf">
+                            <tableViewSection headerTitle="地址:" id="5Bo-Re-cOf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xhk-7J-Ued">
-                                        <rect key="frame" x="0.0" y="464" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="530" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xhk-7J-Ued" id="qqA-CD-FXB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1428,10 +1447,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Resturant:" id="s1O-hi-kl6">
+                            <tableViewSection headerTitle="餐厅:" id="s1O-hi-kl6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LDk-EX-VPk">
-                                        <rect key="frame" x="0.0" y="530" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="596" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LDk-EX-VPk" id="eyX-AP-7NL">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1448,10 +1467,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Telephone:" id="HQM-kE-CA1">
+                            <tableViewSection headerTitle="电话:" id="HQM-kE-CA1">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KpK-o2-HFk">
-                                        <rect key="frame" x="0.0" y="596" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="662" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KpK-o2-HFk" id="EN6-Hm-dKl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1468,10 +1487,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="AgreeNextTime:" id="Lps-SX-p5N">
+                            <tableViewSection headerTitle="下次还来:" id="Lps-SX-p5N">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fPi-a4-lIg">
-                                        <rect key="frame" x="0.0" y="662" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="728" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fPi-a4-lIg" id="XVf-ke-pfZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1481,25 +1500,6 @@
                                                     <rect key="frame" x="20" y="12" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </switch>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Rating:" id="pt7-WX-NsF">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wRl-bx-TLT">
-                                        <rect key="frame" x="0.0" y="728" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wRl-bx-TLT" id="x73-vf-Gkk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqf-xc-K3e" customClass="EDStarRating">
-                                                    <rect key="frame" x="45" y="3" width="230" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>

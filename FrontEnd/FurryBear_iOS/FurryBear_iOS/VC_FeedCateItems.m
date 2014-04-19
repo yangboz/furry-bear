@@ -78,6 +78,9 @@
 {
     NSLog(@"User inputed username:%@,password:%@",userName,passWord);
     [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
+    //
+    //Get default catalogue and category name.
+    [self loadFeaturedCategoryItems];
 }
 #pragma mark -UITableView reload
 -(void)loadFeaturedCategoryItems
@@ -218,7 +221,7 @@
     categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
 	cell.nameLabel.text = catItem.description;
 	//cell.detailTextLabel.text = itemData.imageName;
-    NSURL* aURL = [NSURL URLWithString:catItem.tinyUrl];
+    NSURL* aURL = [NSURL URLWithString:catItem.url];
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
