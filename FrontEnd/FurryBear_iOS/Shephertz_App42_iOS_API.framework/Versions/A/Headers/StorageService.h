@@ -87,7 +87,6 @@
  */
 -(Storage*)insertJSONDocument:(NSString*)dbName collectionName:(NSString*)collectionName json:(NSString*)json attachment:(App42File*)file;
 
-
 /**
  * Find all documents stored in given database and collection.
  *

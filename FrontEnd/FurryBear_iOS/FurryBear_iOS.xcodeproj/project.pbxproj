@@ -181,7 +181,6 @@
 		65A46B0B18F4D72F00041DC5 /* SCSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46AEA18F4D72F00041DC5 /* SCSlider.m */; };
 		65A46B0C18F4D72F00041DC5 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46AEC18F4D72F00041DC5 /* UIImage+Resize.m */; };
 		65A46B1018F4D96100041DC5 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B0F18F4D96100041DC5 /* PostViewController.m */; };
-		65A46B2C18F5987800041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */; };
 		65A46B2F18F77B4400041DC5 /* App42_API_Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B2E18F77B4400041DC5 /* App42_API_Facade.m */; };
 		65A46B9718FCCD9D00041DC5 /* image_background-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A46B9618FCCD9D00041DC5 /* image_background-128.png */; };
 		65A46B9D18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A46B9C18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m */; };
@@ -194,6 +193,7 @@
 		65A46CB01902427600041DC5 /* star-highlighted-template@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A46CAC1902427600041DC5 /* star-highlighted-template@2x.png */; };
 		65A46CB11902427600041DC5 /* star-template.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A46CAD1902427600041DC5 /* star-template.png */; };
 		65A46CB21902427600041DC5 /* star-template@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A46CAE1902427600041DC5 /* star-template@2x.png */; };
+		65A46CC11903733100041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A46CC01903733100041DC5 /* Shephertz_App42_iOS_API.framework */; };
 		65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */; };
 		65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C4F18CF3D2C007DD653 /* DTAlertView.m */; };
 		65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A98C5118CF3D2C007DD653 /* DTProgressStatus.m */; };
@@ -429,7 +429,6 @@
 		65A46AEC18F4D72F00041DC5 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		65A46B0E18F4D96100041DC5 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		65A46B0F18F4D96100041DC5 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
-		65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65A46B2D18F77B4400041DC5 /* App42_API_Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App42_API_Facade.h; sourceTree = "<group>"; };
 		65A46B2E18F77B4400041DC5 /* App42_API_Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App42_API_Facade.m; sourceTree = "<group>"; };
 		65A46B9618FCCD9D00041DC5 /* image_background-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_background-128.png"; sourceTree = "<group>"; };
@@ -449,6 +448,7 @@
 		65A46CAC1902427600041DC5 /* star-highlighted-template@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-highlighted-template@2x.png"; sourceTree = "<group>"; };
 		65A46CAD1902427600041DC5 /* star-template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-template.png"; sourceTree = "<group>"; };
 		65A46CAE1902427600041DC5 /* star-template@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-template@2x.png"; sourceTree = "<group>"; };
+		65A46CC01903733100041DC5 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
 		65A4716D181754A200C18DAC /* VC_SegueCateItemAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_SegueCateItemAdd.h; sourceTree = "<group>"; };
 		65A4716E181754A200C18DAC /* VC_SegueCateItemAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_SegueCateItemAdd.m; sourceTree = "<group>"; };
 		65A98C4E18CF3D2C007DD653 /* DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAlertView.h; sourceTree = "<group>"; };
@@ -492,7 +492,7 @@
 				65A46ABF18F4D67800041DC5 /* ImageIO.framework in Frameworks */,
 				65A46ABD18F4D66C00041DC5 /* AVFoundation.framework in Frameworks */,
 				65A46ABB18F4D65D00041DC5 /* CoreMedia.framework in Frameworks */,
-				65A46B2C18F5987800041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */,
+				65A46CC11903733100041DC5 /* Shephertz_App42_iOS_API.framework in Frameworks */,
 				658361DC18DF39BD00C732FF /* AssetsLibrary.framework in Frameworks */,
 				658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */,
 				65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */,
@@ -1053,7 +1053,7 @@
 		65E11A9F17B33D0600940B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65A46B2B18F5987800041DC5 /* Shephertz_App42_iOS_API.framework */,
+				65A46CC01903733100041DC5 /* Shephertz_App42_iOS_API.framework */,
 				65A46ABE18F4D67800041DC5 /* ImageIO.framework */,
 				65A46ABC18F4D66C00041DC5 /* AVFoundation.framework */,
 				65A46ABA18F4D65D00041DC5 /* CoreMedia.framework */,

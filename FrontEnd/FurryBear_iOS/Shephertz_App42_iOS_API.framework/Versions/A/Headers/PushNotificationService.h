@@ -255,4 +255,13 @@ extern NSString *const DEVELOPMENT;
  * @throws App42Exception
  */
 -(PushNotification*)resubscribeDeviceForUser:(NSString *)userName deviceToken:(NSString*)deviceToken;
+
+/**
+ * Send push to device with matching deviceToken and userName.
+ * @param userName
+ * @param deviceToken
+ * @return
+ * @throws App42Exception
+ */
+- (PushNotification *)sendPushMessageToDevice:(NSString *)deviceToken userName:(NSString*)userName message:(NSString *)message;
 @end

@@ -180,7 +180,8 @@
 {
 	[picker dismissModalViewControllerAnimated:YES];
 	self.photo = [info objectForKey:UIImagePickerControllerEditedImage];
-	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
+//	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
+    [self.photoButton setBackgroundImage:self.photo forState:UIControlStateNormal];
     //Using AssetsLibrary framework to get the
     NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png/jpg"];
     self.filenameTxt.text = fileName;

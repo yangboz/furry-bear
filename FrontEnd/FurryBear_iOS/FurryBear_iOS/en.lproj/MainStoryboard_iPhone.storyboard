@@ -1505,7 +1505,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="File Name:" id="X7K-jp-FIT">
+                            <tableViewSection headerTitle="图片名:" id="X7K-jp-FIT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rdl-9o-o9I">
                                         <rect key="frame" x="0.0" y="794" width="320" height="44"/>
