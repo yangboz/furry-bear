@@ -103,9 +103,11 @@
     //NSData *imageData = UIImagePNGRepresentation(self.photo);
     NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
     //Delegate to App42_API_Facade
-    [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
+  [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
     //onAddCateItem
     [[App42_API_Facade sharedInstance] insertCateItemId];
+    //defaultReviewItem
+    
     //
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }

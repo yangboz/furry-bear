@@ -1544,6 +1544,7 @@
                         <outlet property="addressTxt" destination="22y-sK-h8e" id="hN9-2U-ziB"/>
                         <outlet property="agreeNextTimeSwitch" destination="yTA-wX-c82" id="VgV-k2-cJZ"/>
                         <outlet property="fileDescTxtView" destination="j3D-Mn-bJB" id="ACH-f6-IfL"/>
+                        <outlet property="filenameTxt" destination="bdR-ae-MKc" id="Tha-ta-O40"/>
                         <outlet property="photoButton" destination="5P9-Rv-1OK" id="Czb-JR-HgL"/>
                         <outlet property="resturantTxt" destination="dYQ-Hq-ZJj" id="BDg-jp-Dpa"/>
                         <outlet property="slider_price" destination="4ds-KC-0P4" id="OB8-Wg-9lR"/>
