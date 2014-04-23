@@ -181,7 +181,7 @@ static LogService *logService= nil;
     }
 }
 #pragma mark -CatalogueService
--(void)insertCateItemId
+-(NSString *)insertCateItemId
 {
     //Get default username
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
@@ -213,8 +213,10 @@ static LogService *logService= nil;
     NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
     //Update the item data model.
     [[ItemDataModel sharedInstance] setItemData:itemData];
+    //
+    return itemData.itemId;
 }
--(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL)agreeNextTime
+-(void)addCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL)agreeNextTime
 {
     //ItemData transporting.
     ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
@@ -333,7 +335,7 @@ static LogService *logService= nil;
     return categoryList;
 }
 #pragma mark -ReviewService
--(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating
+-(void)addReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating
 {
     //Get default username
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];

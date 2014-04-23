@@ -100,16 +100,21 @@
     //
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
-    //NSData *imageData = UIImagePNGRepresentation(self.photo);
-    NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
+    NSData *imageData = UIImagePNGRepresentation(self.photo);
+    //NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
     //Delegate to App42_API_Facade
   [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
-    //onAddCateItem
-    [[App42_API_Facade sharedInstance] insertCateItemId];
-    //defaultReviewItem
+    //onInsertCateItemId
+    NSString *cateItemId = [[App42_API_Facade sharedInstance] insertCateItemId];
+    //onInsertCateItem
+    [[App42_API_Facade sharedInstance] addCateItem:cateItemId resturantValue:self.resturantTxt.text telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
+    //TODO:onCateItemReview
     
-    //
+    //Hide HUD view
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //TODO:GotoAndPlay('Segue_FeedCateItem')
+    
 }
 
 -(void)onAddCateItem:(id)sender

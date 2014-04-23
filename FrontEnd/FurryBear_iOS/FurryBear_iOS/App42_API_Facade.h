@@ -31,14 +31,14 @@
          fileType:(NSString *)fileType
   fileDescription:(NSString *)description;
 #pragma mark -CatalogueService
--(void)insertCateItemId;
--(void)insertCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone agreeNextTimeValue:(BOOL) agreeNextTime;
+-(NSString *)insertCateItemId;
+-(void)addCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL) agreeNextTime;
 -(NSMutableArray *)getItemsByCategory:(NSString *)defaultCatalogueName categoryName:(NSString *)defaultCategoryName;
 //Catalogue,Category
 -(void)createCatalogue:(NSString *)catalogueName catalogueDescription:(NSString *)catalogueDescription;
 -(void)createCategory:(NSString *)catalogueName categoryName:(NSString *)categoryName categoryDescription:(NSString *)categoryDescription;
 #pragma mark -ReviewService
--(void)createReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating;
+-(void)addReview:(NSString *)itemID reviewComment:(NSString *)reviewComment reviewRating:(double)reviewRating;
 -(int)getReviewsCountByItem:(NSString *)itemId;
 -(NSMutableArray *)getReviewsByItem:(NSString *)itemId;
 -(Review *)getAverageReviewByItem:(NSString *)itemId;
