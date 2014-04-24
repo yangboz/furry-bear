@@ -14,6 +14,8 @@
 
 @implementation VC_ImageUpload_CateItemAdd
 
+double ratingDouble = 0;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -103,18 +105,19 @@
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     //NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
     //Delegate to App42_API_Facade
-  [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:fileDescription];
+  [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:self.fileDescTxtView.text];
     //onInsertCateItemId
     NSString *cateItemId = [[App42_API_Facade sharedInstance] insertCateItemId];
     //onInsertCateItem
     [[App42_API_Facade sharedInstance] addCateItem:cateItemId resturantValue:self.resturantTxt.text telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
-    //TODO:onCateItemReview
-    
+    //onCateItemReview,default review.
+    [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:fileDescription reviewRating:ratingDouble];
     //Hide HUD view
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    //TODO:GotoAndPlay('Segue_FeedCateItem')
-    
+    //GotoAndPlay('Segue_FeedCateItem')
+//    [self dismissViewControllerAnimated:YES completion:^{}];
+    self.tabBarController.selectedIndex = 1;
 }
 
 -(void)onAddCateItem:(id)sender
@@ -204,8 +207,8 @@
 #pragma mark - EDStarRating protocol
 -(void)starsSelectionChanged:(EDStarRating *)control rating:(float)rating
 {
-    NSString *ratingString = [NSString stringWithFormat:@"Rating: %.1f", rating];
-    NSLog(@"EDStarRating value:%@",ratingString);
+    ratingDouble = (double)rating;
+    NSLog(@"EDStarRating value:%f",ratingDouble);
 }
 
 
