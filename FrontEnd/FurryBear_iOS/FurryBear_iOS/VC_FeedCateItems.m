@@ -90,6 +90,9 @@
     //
     NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
     NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+    //If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     //GET ITEMS BY CATEGORY
     NSMutableArray *categoryList = [[App42_API_Facade sharedInstance] getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
     //
@@ -108,6 +111,7 @@
             NSLog(@"itemId is = %@",item.itemId);
             NSLog(@"name is = %@",item.name);
             NSLog(@"tinyUrl is = %@",item.tinyUrl);
+            NSLog(@"url is = %@",item.url);
             //Load itemId related NoSQL documents.
             //featuredCategoryItem dictionary:
             NSMutableDictionary *fCateItemDict = [[NSMutableDictionary alloc] init];
@@ -134,19 +138,21 @@
             [fCateItemDict setObject:timestamp forKey:DICT_KEY_TIME_STAMP];
             //
             [featuredCategoryItems addObject:fCateItemDict];
-            for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
-                for (id key in fCateItemDict) {
-                    NSLog(@"key: %@, value: %@ \n", key, [fCateItemDict objectForKey:key]);
+                for (NSMutableDictionary *fCateItemDict in featuredCategoryItems) {
+                    for (id key in fCateItemDict) {
+                        NSLog(@"key: %@, value: %@ \n", key, [fCateItemDict objectForKey:key]);
+                    }
                 }
             }
-        }
+    
         //Table view reload
         [self.tableView reloadData];
         //
         //self.cateTabBarItem.badgeValue = @"1";
         //ProgressBar hide
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    }
+        }
+    });
 }
 
 #pragma mark - LoginViewControllerDelegate
@@ -319,10 +325,15 @@
     switch (rating) {
         case 0: return @"☆";
         case 1: return @"★";
-        case 2: return @"★★";
-        case 3: return @"★★★";
-        case 4: return @"★★★★";
-        case 5: return @"★★★★★";
+        case 2: return @"★☆";
+        case 3: return @"★★";
+        case 4: return @"★★☆";
+        case 5: return @"★★★";
+        case 6: return @"★★★☆";
+        case 7: return @"★★★★";
+        case 8: return @"★★★★☆";
+        case 9: return @"★★★★★";
+        default: return @"☆";
     }
     return nil;
 }

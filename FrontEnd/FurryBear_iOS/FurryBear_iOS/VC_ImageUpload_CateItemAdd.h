@@ -32,6 +32,5 @@
 //IBActions
 - (IBAction)uploadPhoto:(id)sender;
 - (IBAction)choosePhoto:(id)sender;
-- (IBAction)onAddCateItem:(id)sender;
 - (IBAction)sliderValueChanged:(id)sender;
 @end

@@ -129,11 +129,6 @@ double ratingDouble = 0;
     
 }
 
--(void)onAddCateItem:(id)sender
-{
-    
-}
-
 -(void)sliderValueChanged:(id)sender
 {
     [self updateSliderPopoverText];
@@ -202,7 +197,7 @@ double ratingDouble = 0;
 //	[self.photoButton setImage:self.photo forState:UIControlStateNormal];
     [self.photoButton setBackgroundImage:self.photo forState:UIControlStateNormal];
     //Using AssetsLibrary framework to get the
-    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png/jpg"];
+    NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
     self.filenameTxt.text = fileName;
     NSLog(@"Picked image file name:%@",fileName);
 }
