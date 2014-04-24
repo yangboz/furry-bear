@@ -9,7 +9,8 @@
 #import "VC_FeatureCateItems.h"
 
 @implementation VC_FeatureCateItems
-
+//
+//
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,7 +25,8 @@
     {
         [self displayLoginPopup];
     }
-
+    //
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

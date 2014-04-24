@@ -13,9 +13,9 @@
 @end
 
 @implementation VC_ImageUpload_CateItemAdd
-
+//
 double ratingDouble = 0;
-
+//
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -65,6 +65,7 @@ double ratingDouble = 0;
     {
         NSLog(@"Star Rating changed to %.1f" ,rating);
     };
+    //HUD
 }
 
 - (void)updateSliderPopoverText
@@ -98,26 +99,34 @@ double ratingDouble = 0;
 {
     //ProgressHUD show
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
     NSString *fileType = IMAGE;//IMAGE
     NSString *fileDescription = self.fileDescTxtView.text;
     NSData *imageData = UIImagePNGRepresentation(self.photo);
     //NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
-    //Delegate to App42_API_Facade
-  [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:self.fileDescTxtView.text];
-    //onInsertCateItemId
-    NSString *cateItemId = [[App42_API_Facade sharedInstance] insertCateItemId];
-    //onInsertCateItem
-    [[App42_API_Facade sharedInstance] addCateItem:cateItemId resturantValue:self.resturantTxt.text telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
-    //onCateItemReview,default review.
-    [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:fileDescription reviewRating:ratingDouble];
-    //Hide HUD view
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    //GotoAndPlay('Segue_FeedCateItem')
-//    [self dismissViewControllerAnimated:YES completion:^{}];
-    self.tabBarController.selectedIndex = 1;
+    //If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //Delegate to App42_API_Facade
+        [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:self.fileDescTxtView.text];
+        //onInsertCateItemId
+        NSString *cateItemId = [[App42_API_Facade sharedInstance] insertCateItemId];
+        //onInsertCateItem
+        [[App42_API_Facade sharedInstance] addCateItem:cateItemId resturantValue:self.resturantTxt.text telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
+        //onCateItemReview,default review.
+        [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:fileDescription reviewRating:ratingDouble];
+        //Hide HUD view
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        //
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //GotoAndPlay('Segue_FeedCateItem')
+        //    [self dismissViewControllerAnimated:YES completion:^{}];
+        self.tabBarController.selectedIndex = 1;
+        //
+    });
+    
 }
 
 -(void)onAddCateItem:(id)sender
