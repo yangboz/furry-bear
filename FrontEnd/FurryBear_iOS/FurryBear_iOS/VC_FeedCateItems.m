@@ -19,16 +19,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //if auto signin
-    if ([[UserModel sharedInstance] getAutoSignin]) {
-        [self userDefaultsLogin];
-    }else
-    {
-        [self displayLoginPopup];
-    }
+//    if ([[UserModel sharedInstance] getAutoSignin]) {
+//        [self userDefaultsLogin];
+//    }else
+//    {
+//        [self displayLoginPopup];
+//    }
+    //Get default catalogue and category name.
+    [self loadFeaturedCategoryItems:nil];
     // table view data is being set here
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems:) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,10 +82,10 @@
     [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
     //
     //Get default catalogue and category name.
-    [self loadFeaturedCategoryItems];
+    [self loadFeaturedCategoryItems:nil];
 }
 #pragma mark -UITableView reload
--(void)loadFeaturedCategoryItems
+- (IBAction)loadFeaturedCategoryItems:(id)sender
 {
     //ProgressBar show
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

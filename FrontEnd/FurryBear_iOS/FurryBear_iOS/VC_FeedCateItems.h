@@ -28,4 +28,7 @@
     UserService *userService;
     User *user;
 }
+//IBActions
+- (IBAction)loadFeaturedCategoryItems:(id)sender;
+
 @end

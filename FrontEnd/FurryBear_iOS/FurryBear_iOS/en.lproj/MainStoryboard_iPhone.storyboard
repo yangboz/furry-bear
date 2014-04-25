@@ -626,7 +626,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="一道菜" id="YF6-2X-XvQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="FaJ-LS-fcD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="FaJ-LS-fcD">
+                            <connections>
+                                <action selector="loadFeaturedCategoryItems:" destination="1wu-AI-pNV" id="Q6G-Oy-Udi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUM-Ug-M10" userLabel="First Responder" sceneMemberID="firstResponder"/>
