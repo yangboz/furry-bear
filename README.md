@@ -76,7 +76,7 @@ Backlog
 
 2.Should find NoSQL function to realize the "Favorite item" requirements;
 
-3.Geo location inputment requirements;
+3.Geo location inputment requirements; (http://www.geonames.org/login)
 
 4.One category item match along with one NoSQL document and many Reviews; 
 
