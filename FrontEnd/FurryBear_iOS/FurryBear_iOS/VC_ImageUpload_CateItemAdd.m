@@ -109,36 +109,44 @@ NSData *imageData = nil;
     //If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        /*
         //NSOperationQueue
         operationQueue = [NSOperationQueue new];
+        //[operationQueue setMaxConcurrentOperationCount:1];
         //Create a new NSOpeartion object using NSInvocationOperation subclass
-        //Tell it to run the uploadCateItemPhoto method.
-        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_uploadCateItemPhoto) object:nil];
+        //Tell it to run the task_createCateItemId method.
+        NSInvocationOperation *operation_createCateItemId = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_createCateItemId) object:nil];
         //Add the operation to the queue and let it to be executed.
-        [operationQueue addOperation:operation];
-        [operation release];
-        //The same story as above,just tell here to execute task_createCateItemId;
-        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_createCateItemId) object:nil];
-        [operationQueue addOperation:operation];
-        [operation release];
+        [operationQueue addOperation:operation_createCateItemId];
+        [operation_createCateItemId release];
+        //The same story as above,just tell here to execute task_uploadCateItemPhoto;
+        NSInvocationOperation *operation_uploadCateItemPhoto = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_uploadCateItemPhoto) object:nil];
+        [operationQueue addOperation:operation_uploadCateItemPhoto];
+        [operation_uploadCateItemPhoto addDependency:operation_createCateItemId];
+        [operation_uploadCateItemPhoto release];
         //
-        [operationQueue waitUntilAllOperationsAreFinished];
         //The same story as above,just tell here to execute task_addCateItem;
-        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_addCateItem) object:nil];
-        [operationQueue addOperation:operation];
-        [operation release];
+        NSInvocationOperation *operation_addCateItem = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_addCateItem) object:nil];
+        [operationQueue addOperation:operation_addCateItem];
+        [operation_addCateItem addDependency:operation_uploadCateItemPhoto];
+        [operation_addCateItem release];
+        //
         //The same story as above,just tell here to execute task_reviewCateItem;
-        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_reviewCateItem) object:nil];
-        [operationQueue addOperation:operation];
-        [operation release];
+        NSInvocationOperation *operation_reviewCateItem = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_reviewCateItem) object:nil];
+        [operationQueue addOperation:operation_reviewCateItem];
+        [operation_reviewCateItem addDependency:operation_addCateItem];
+        [operation_reviewCateItem release];
+         */
         //Delegate to App42_API_Facade
-//        [self task_uploadCateItemPhoto];
+        
         //onInsertCateItemId
-//        [self task_createCateItemId ];
+        [self task_createCateItemId];
+        //onUploadCateItemPhoto
+        [self task_uploadCateItemPhoto];
         //onAddCateItem
-//        [self task_addCateItem];
+        [self task_addCateItem];
         //onCateItemReview,default review.
-//        [self task_reviewCateItem];
+        [self task_reviewCateItem];
         //Hide HUD view
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         //
@@ -239,7 +247,7 @@ NSData *imageData = nil;
 #pragma mark - Tasks
 -(void)task_uploadCateItemPhoto;
 {
-    [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:IMAGE fileDescription:self.fileDescTxtView.text];
+    [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:IMAGE fileDescription:self.fileDescTxtView.text priceValue:self.slider_price.value];
 }
 -(void)task_createCateItemId;
 {

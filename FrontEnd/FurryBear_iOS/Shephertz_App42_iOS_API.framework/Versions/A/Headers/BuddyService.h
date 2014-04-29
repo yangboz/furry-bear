@@ -311,7 +311,7 @@
 /**
  *
  * @param userName
- * @param messageId
+ * @param messageIds
  * @return
  * @throws App42Exception
  */

@@ -29,7 +29,8 @@
 #pragma mark -UploadService
 -(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
          fileType:(NSString *)fileType
-  fileDescription:(NSString *)description;
+  fileDescription:(NSString *)description
+       priceValue:(float)price;
 #pragma mark -CatalogueService
 -(void)createCateItemId;
 -(NSString *)getCurrentCateItemId;

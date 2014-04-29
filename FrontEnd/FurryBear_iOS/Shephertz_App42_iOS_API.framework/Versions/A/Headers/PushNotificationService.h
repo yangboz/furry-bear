@@ -264,4 +264,25 @@ extern NSString *const DEVELOPMENT;
  * @throws App42Exception
  */
 - (PushNotification *)sendPushMessageToDevice:(NSString *)deviceToken userName:(NSString*)userName message:(NSString *)message;
+
+/**
+ *
+ * @param userName
+ * @param deviceToken
+ * @param increment
+ * @return
+ * @throws App42Exception
+ */
+- (PushNotification *)updatePushBadgeforDevice:(NSString *)deviceToken userName:(NSString*)userName badges:(int)badges;
+
+/**
+ *
+ * @param userName
+ * @param increment
+ * @return
+ * @throws App42Exception
+ */
+- (PushNotification *)updatePushBadgeforUser:(NSString*)userName badges:(int)badges;
+
+
 @end

@@ -7,7 +7,7 @@
 //
 
 
-#define SDK_VERSION     @"2.6"
+#define SDK_VERSION     @"2.7"
 
 
 #define version     @"1.0"

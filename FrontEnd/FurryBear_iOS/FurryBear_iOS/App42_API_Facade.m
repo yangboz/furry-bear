@@ -47,6 +47,10 @@ static LogService *logService= nil;
         emailService = [serviceAPIobj buildEmailService];
         buddyService =[serviceAPIobj buildBuddyService];
         logService =[serviceAPIobj buildLogService];
+        //-Enabling trace will enable the logs inside the framework, that you can see in Xcode console.
+        [serviceAPIobj enableApp42Trace:YES];
+        //-Enabling crashEventHandler, enable your app to send crash reports to the AppHQDash board.
+        [App42API enableCrashEventHandler:YES];
 	}
     //
 	return sharedInstance;
@@ -138,7 +142,7 @@ static LogService *logService= nil;
 #pragma mark -UploadService
 -(void)uploadFile:(NSString *)fileName  fileData:(NSData *)imageData
          fileType:(NSString *)fileType
-  fileDescription:(NSString *)description;
+  fileDescription:(NSString *)description priceValue:(float)price;
 {
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
 //    NSString *fileType = IMAGE;//IMAGE
@@ -157,18 +161,15 @@ static LogService *logService= nil;
         NSLog(@"uploaded file=%@",upload.fileListArray);
         //Save to ItemDataModel
         //        [[UploadModel sharedInstance] setUpload:upload];
-        ItemData *itemData = [[ItemData alloc] init];
-        
+        ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
         itemData.name = [[App42_API_Utils sharedInstance] getTimeStampName]; //Make it unique,time-based sort-able.
         itemData.imageName = fileName;
         itemData.imageInputStream = imageData;
         //itemData.itemId = [[NSUUID UUID] UUIDString];//Make it unique,equal to the NoSQL docID
         itemData.description = description;
+        itemData.price = price;
+        //Update itemDataModel
         [[ItemDataModel sharedInstance]setItemData:itemData];
-        //Auto back navigation
-        //        [self.navigationController popViewControllerAnimated:YES];
-        //ProgressHUD dismiss
-        //        [MBProgressHUD hideHUDForView:self.view animated:YES];
         //Save the fileName to Model.
         [[UploadModel sharedInstance] setUploadImageFile:fileName];
         //
@@ -200,13 +201,13 @@ static LogService *logService= nil;
     NSLog(@"dbName is = %@",storage.dbName);
     NSLog(@"collectionName is = %@",storage.collectionName);
     NSMutableArray *jsonDocArray = storage.jsonDocArray;
-    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
+    ItemData *itemData = [[ItemData alloc] init];
     for(JSONDocument *jsonDoc in jsonDocArray)
     {
         NSLog(@"docId is = %@ " , jsonDoc.docId);
         //Save the docId as a ItemID
         itemData.itemId = jsonDoc.docId;
-        NSLog(@"JsonDoc is = %@" , jsonDoc.jsonDoc);
+        NSLog(@"JsonDoc is = %@" , jsonDoc.docId);
     }
     /* returns the response in JSON format. */
     NSString *jsonResponse_noSQL = [storage toString];
