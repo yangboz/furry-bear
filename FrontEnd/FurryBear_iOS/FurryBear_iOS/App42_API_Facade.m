@@ -181,7 +181,7 @@ static LogService *logService= nil;
     }
 }
 #pragma mark -CatalogueService
--(NSString *)insertCateItemId
+-(void)createCateItemId
 {
     //Get default username
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
@@ -213,10 +213,16 @@ static LogService *logService= nil;
     NSLog(@"JSON response_noSQL:%@",jsonResponse_noSQL);
     //Update the item data model.
     [[ItemDataModel sharedInstance] setItemData:itemData];
+}
+-(NSString *)getCurrentCateItemId;
+{
+    ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
     //
     return itemData.itemId;
 }
--(void)addCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL)agreeNextTime
+-(void)addCateItem:(NSString *)cateItemId
+    addressValue:(NSString *)address
+    resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL)agreeNextTime
 {
     //ItemData transporting.
     ItemData *itemData = [[ItemDataModel sharedInstance] getItemData];
@@ -231,8 +237,8 @@ static LogService *logService= nil;
     NSString *userName = [[[UserModel sharedInstance] getUser] userName];
     [storageDict setValue:userName forKey:KEY_NAME_OWNERNAME];
     [storageDict setValue:address forKey:KEY_NAME_ADDRESS];
-    [storageDict setValue:resturant forKey:KEY_NAME_TELPHONE];
-    [storageDict setValue:telephone forKey:KEY_NAME_RESTAURANT];
+    [storageDict setValue:telephone forKey:KEY_NAME_TELPHONE];
+    [storageDict setValue:resturant forKey:KEY_NAME_RESTAURANT];
     [storageDict setValue:[NSNumber numberWithBool:agreeNextTime] forKey:KEY_NAME_AGREE_NEXT_TIME];
     NSString *jsonStr = [storageDict JSONString];
     NSLog(@"JSON storageDict:%@",jsonStr);

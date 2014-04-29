@@ -13,8 +13,10 @@
 @end
 
 @implementation VC_ImageUpload_CateItemAdd
-//
+//Variables
 double ratingDouble = 0;
+NSString *fileDescription = nil;
+NSData *imageData = nil;
 //
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -65,7 +67,7 @@ double ratingDouble = 0;
     {
         NSLog(@"Star Rating changed to %.1f" ,rating);
     };
-    //HUD
+
 }
 
 - (void)updateSliderPopoverText
@@ -102,28 +104,47 @@ double ratingDouble = 0;
     //
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     //
-    NSString *fileType = IMAGE;//IMAGE
-    NSString *fileDescription = self.fileDescTxtView.text;
-    NSData *imageData = UIImagePNGRepresentation(self.photo);
+    imageData = UIImagePNGRepresentation(self.photo);
     //NSData *imageData = UIImageJPEGRepresentation(self.photo,0.8);
     //If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //NSOperationQueue
+        operationQueue = [NSOperationQueue new];
+        //Create a new NSOpeartion object using NSInvocationOperation subclass
+        //Tell it to run the uploadCateItemPhoto method.
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_uploadCateItemPhoto) object:nil];
+        //Add the operation to the queue and let it to be executed.
+        [operationQueue addOperation:operation];
+        [operation release];
+        //The same story as above,just tell here to execute task_createCateItemId;
+        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_createCateItemId) object:nil];
+        [operationQueue addOperation:operation];
+        [operation release];
+        //
+        [operationQueue waitUntilAllOperationsAreFinished];
+        //The same story as above,just tell here to execute task_addCateItem;
+        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_addCateItem) object:nil];
+        [operationQueue addOperation:operation];
+        [operation release];
+        //The same story as above,just tell here to execute task_reviewCateItem;
+        operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(task_reviewCateItem) object:nil];
+        [operationQueue addOperation:operation];
+        [operation release];
         //Delegate to App42_API_Facade
-        [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:fileType fileDescription:self.fileDescTxtView.text];
+//        [self task_uploadCateItemPhoto];
         //onInsertCateItemId
-        NSString *cateItemId = [[App42_API_Facade sharedInstance] insertCateItemId];
-        //onInsertCateItem
-        [[App42_API_Facade sharedInstance] addCateItem:cateItemId resturantValue:self.resturantTxt.text telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
+//        [self task_createCateItemId ];
+        //onAddCateItem
+//        [self task_addCateItem];
         //onCateItemReview,default review.
-        [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:fileDescription reviewRating:ratingDouble];
+//        [self task_reviewCateItem];
         //Hide HUD view
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         //
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //GotoAndPlay('Segue_FeedCateItem')
-        //    [self dismissViewControllerAnimated:YES completion:^{}];
-        self.tabBarController.selectedIndex = 1;
+//        self.tabBarController.selectedIndex = 1;
         //
     });
     
@@ -215,5 +236,29 @@ double ratingDouble = 0;
     NSLog(@"EDStarRating value:%f",ratingDouble);
 }
 
+#pragma mark - Tasks
+-(void)task_uploadCateItemPhoto;
+{
+    [[App42_API_Facade sharedInstance] uploadFile:self.filenameTxt.text fileData:imageData fileType:IMAGE fileDescription:self.fileDescTxtView.text];
+}
+-(void)task_createCateItemId;
+{
+    //onInsertCateItemId
+    [[App42_API_Facade sharedInstance] createCateItemId];
+}
+-(void)task_addCateItem;
+{
+    //
+    NSString *cateItemId = [[App42_API_Facade sharedInstance] getCurrentCateItemId];
+    [[App42_API_Facade sharedInstance] addCateItem:cateItemId
+        addressValue:self.addressTxt.text
+        resturantValue:self.resturantTxt.text
+        telephoneValue:self.telphoneTxt.text priceValue:self.slider_price.value agreeNextTimeValue:self.agreeNextTimeSwitch.isOn];
+}
+-(void)task_reviewCateItem;
+{
+    NSString *cateItemId = [[App42_API_Facade sharedInstance] getCurrentCateItemId];
+    [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:self.fileDescTxtView.text reviewRating:ratingDouble];
+}
 
 @end

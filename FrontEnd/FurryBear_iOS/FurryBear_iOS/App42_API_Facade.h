@@ -31,8 +31,11 @@
          fileType:(NSString *)fileType
   fileDescription:(NSString *)description;
 #pragma mark -CatalogueService
--(NSString *)insertCateItemId;
--(void)addCateItem:(NSString *)address resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL) agreeNextTime;
+-(void)createCateItemId;
+-(NSString *)getCurrentCateItemId;
+-(void)addCateItem:(NSString *)cateItemId
+    addressValue:(NSString *)address
+    resturantValue:(NSString *)resturant telephoneValue:(NSString *)telephone priceValue:(float)price agreeNextTimeValue:(BOOL) agreeNextTime;
 -(NSMutableArray *)getItemsByCategory:(NSString *)defaultCatalogueName categoryName:(NSString *)defaultCategoryName;
 //Catalogue,Category
 -(void)createCatalogue:(NSString *)catalogueName catalogueDescription:(NSString *)catalogueDescription;

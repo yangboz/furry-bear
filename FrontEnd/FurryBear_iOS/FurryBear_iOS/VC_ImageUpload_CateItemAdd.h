@@ -13,7 +13,9 @@
 
 @interface VC_ImageUpload_CateItemAdd : UITableViewController<UIImagePickerControllerDelegate,
     EDStarRatingProtocol>
-{}
+{
+    NSOperationQueue *operationQueue;
+}
 //IBOutlets
 @property(nonatomic, retain) UIImage *photo;
 @property (retain, nonatomic) IBOutlet UIButton *photoButton;
@@ -33,4 +35,10 @@
 - (IBAction)uploadPhoto:(id)sender;
 - (IBAction)choosePhoto:(id)sender;
 - (IBAction)sliderValueChanged:(id)sender;
+//Tasks
+-(void)task_createCateItemId;
+-(void)task_addCateItem;
+-(void)task_reviewCateItem;
+-(void)task_uploadCateItemPhoto;
+
 @end
