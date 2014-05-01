@@ -152,7 +152,7 @@ NSData *imageData = nil;
         //
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //GotoAndPlay('Segue_FeedCateItem')
-//        self.tabBarController.selectedIndex = 1;
+        self.tabBarController.selectedIndex = 1;
         //
     });
     

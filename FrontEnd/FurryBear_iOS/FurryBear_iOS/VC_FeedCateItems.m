@@ -26,7 +26,7 @@
 //        [self displayLoginPopup];
 //    }
     //Get default catalogue and category name.
-    [self loadFeaturedCategoryItems:nil];
+//    [self loadFeaturedCategoryItems:nil];
     // table view data is being set here
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening

@@ -151,12 +151,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "420476451.284183"
+                  timestampString = "420603130.775722"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "387"
                   endingLineNumber = "387"
-                  offsetFromSymbolStart = "379">
+                  offsetFromSymbolStart = "430">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -165,30 +165,14 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "420476451.284521"
+                  timestampString = "420603130.775963"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "387"
                   endingLineNumber = "387"
-                  offsetFromSymbolStart = "447">
+                  offsetFromSymbolStart = "464">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_CategoryItemAddReview.m"
-            timestampString = "418835938.090524"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -220,54 +204,6 @@
             startingLineNumber = "378"
             endingLineNumber = "378"
             landmarkName = "-itemFavoriteAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_ImageUpload_CateItemAdd.m"
-            timestampString = "420476345.322081"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "-task_reviewCateItem"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_ImageUpload_CateItemAdd.m"
-            timestampString = "420476345.322081"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "-task_addCateItem"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_ImageUpload_CateItemAdd.m"
-            timestampString = "420476345.322081"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "-task_createCateItemId"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
