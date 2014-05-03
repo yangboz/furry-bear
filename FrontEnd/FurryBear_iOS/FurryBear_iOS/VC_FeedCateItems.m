@@ -394,4 +394,9 @@
 
 }
 
+-(void)addCategoryItems:(id)sender
+{
+    self.tabBarController.selectedIndex = 2;
+}
+
 @end

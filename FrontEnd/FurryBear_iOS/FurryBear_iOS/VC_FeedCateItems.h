@@ -30,5 +30,5 @@
 }
 //IBActions
 - (IBAction)loadFeaturedCategoryItems:(id)sender;
-
+- (IBAction)addCategoryItems:(id)sender;
 @end

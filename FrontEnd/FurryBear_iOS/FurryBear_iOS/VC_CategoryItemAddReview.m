@@ -27,21 +27,13 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if(scNav==nil)
-    {
-        scNav = [[SCNavigationController alloc] init];
-        scNav.scNaigationDelegate = self;
-        
-    }
-    if (!scNav.isShowing) {
-        [scNav showCameraWithParentController:self];
-    }
+    //
 }
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -71,35 +63,21 @@
     NSLog(@"Section:%d Row:%d selected and its data is %@",
           indexPath.section,indexPath.row,cell.textLabel.text);
     //
-    NSString *segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
+    NSString *segueName = SEGUE_NAME_SIGNUP;
     switch (indexPath.section) {
         case 0:
-            segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
-            break;
-        case 1:
-            segueName = SEGUE_NAME_REVIEW;
-            break;
-        case 2:
             segueName = SEGUE_NAME_SIGNUP;
             break;
-        case 3:
+        case 1:
             segueName = SEGUE_NAME_EMAIL_SETTING;
             break;
-        case 4:
+        case 2:
             segueName = SEGUE_NAME_EMAIL_SEND;
             break;
         default:
-            segueName = SEGUE_NAME_IMAGE_CATE_ITEM;
             break;
     }
     [self performSegueWithIdentifier:segueName sender:self];
-}
-
-#pragma mark - SCNavigationController delegate
-- (void)didTakePicture:(SCNavigationController *)navigationController image:(UIImage *)image {
-    PostViewController *con = [[PostViewController alloc] init];
-    con.postImage = image;
-    [navigationController pushViewController:con animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

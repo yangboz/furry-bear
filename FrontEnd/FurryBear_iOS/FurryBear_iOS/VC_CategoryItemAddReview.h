@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Shephertz_App42_iOS_API/Shephertz_App42_iOS_API.h>
 #import "Prefs.h"
-#import "SCNavigationController.h"
-#import "PostViewController.h"
 
-@interface VC_CategoryItemAddReview : UITableViewController <UITableViewDelegate,UITableViewDataSource,SCNavigationControllerDelegate>
+@interface VC_CategoryItemAddReview : UITableViewController <UITableViewDelegate,UITableViewDataSource>
 {
-    SCNavigationController *scNav;
 }
 @end
