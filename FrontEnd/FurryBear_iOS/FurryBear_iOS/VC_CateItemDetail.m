@@ -35,10 +35,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //Configure view
+    NSURL* aURL = [NSURL URLWithString:cateItemData.url];
+    self.itemImageView.imageURL = aURL;
     self.tf_description.text = cateItemData.description;
-    self.lbl_price.text =
-    [NSString stringWithFormat:@"%f",
-    cateItemData.price];
+    self.tf_price.text = [NSString stringWithFormat:@"%f",cateItemData.price];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,9 +50,11 @@
 - (void)dealloc
 {
     [cateItemData release];
-    [_tf_description release];
     //
-    [_lbl_price release];
+    [_itemImageView release];
+    [_tf_description release];
+    [_tf_price release];
+    //
     [super dealloc];
 }
 

@@ -236,7 +236,7 @@
     NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
     //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
-    cell.ratingCountLabel.text = [self symbolForRating:[[fCateItemDict objectForKey:DICT_KEY_RATING] integerValue]];
+    cell.ratingCountLabel.text = [self symbolForRating:(int)[[fCateItemDict objectForKey:DICT_KEY_RATING] integerValue]];
     cell.userIdLabel.text = [fCateItemDict objectForKey:DICT_KEY_USER_NAME];
     cell.timeStampLabel.text = [fCateItemDict objectForKey:DICT_KEY_TIME_STAMP];
     //Contray to MVC,temporary transfor the navigationController reference to cell
@@ -317,27 +317,49 @@
     NSString *timestamp = @"";
     NSDictionary *dict = [[jsonDoc jsonDoc] objectFromJSONString];
     //FIXME:JSON string parse changed here!!!
-    timestamp = [dict objectForKey:@"telphone"];
+    timestamp = [dict objectForKey:KEY_NAME_RESTAURANT];
     NSLog(@"json._$updatedAt:%@", timestamp);
     return timestamp;
 }
 #pragma mark Utility functions
 - (NSString *)symbolForRating:(int)rating
 {
+    NSString *ratingResult = @"☆";
     switch (rating) {
-        case 0: return @"☆";
-        case 1: return @"★";
-        case 2: return @"★☆";
-        case 3: return @"★★";
-        case 4: return @"★★☆";
-        case 5: return @"★★★";
-        case 6: return @"★★★☆";
-        case 7: return @"★★★★";
-        case 8: return @"★★★★☆";
-        case 9: return @"★★★★★";
-        default: return @"☆";
+        case 0:
+            ratingResult = @"☆";
+            break;
+        case 1:
+            ratingResult = @"★";
+            break;
+        case 2:
+            ratingResult = @"★☆";
+            break;
+        case 3:
+            ratingResult = @"★★";
+            break;
+        case 4:
+            ratingResult = @"★★☆";
+            break;
+        case 5:
+            ratingResult = @"★★★";
+            break;
+        case 6:
+            ratingResult = @"★★★☆";
+            break;
+        case 7:
+            ratingResult = @"★★★★";
+            break;
+        case 8:
+            ratingResult = @"★★★★☆";
+            break;
+        case 9:
+            ratingResult = @"★★★★★";
+            break;
+        default:
+            break;
     }
-    return nil;
+    return ratingResult;
 }
 
 - (categoryItem *)getCategoryItemData:(NSIndexPath *)indexPath
