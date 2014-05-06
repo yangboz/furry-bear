@@ -15,6 +15,7 @@
 @implementation VC_CateItemDetail
 
 @synthesize cateItemData;
+@synthesize retractableControllers;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,6 +40,9 @@
     self.itemImageView.imageURL = aURL;
     self.tf_description.text = cateItemData.description;
     self.tf_price.text = [NSString stringWithFormat:@"%f",cateItemData.price];
+    //
+    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
+    [simpleController release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +59,8 @@
     [_tf_description release];
     [_tf_price release];
     //
+    self.retractableControllers = nil;
+    //
     [super dealloc];
 }
 
@@ -68,23 +74,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSInteger rows = 1;
     // Return the number of rows in the section.
-    return 1;
+    if (section==4) {
+        GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:section];
+        rows = sectionController.numberOfRow;
+    }
+    return rows;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    if (indexPath.row==1) {
-        cell.detailTextLabel.text = cateItemData.description;
-    }
-    
-    return cell;
+    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
+    return [sectionController cellForRow:indexPath.row];
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

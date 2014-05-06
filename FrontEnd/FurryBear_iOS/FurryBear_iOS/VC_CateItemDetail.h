@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "App42_API_Facade.h"
 #import "AsyncImageView.h"
+//RetractableSectionControllers
+#import "GCSimpleSectionController.h"
 
 @interface VC_CateItemDetail : UITableViewController
 {
@@ -20,5 +22,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *tf_price;
 @property (retain, nonatomic) IBOutlet UITextField *tf_rating;
 @property (retain, nonatomic) IBOutlet UITextField *tf_address;
+//@see https://github.com/gcamp/GCRetractableSectionController#readme
+@property (nonatomic,retain) NSArray *retractableControllers;
 
 @end
