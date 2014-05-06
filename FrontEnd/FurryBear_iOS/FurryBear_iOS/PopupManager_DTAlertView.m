@@ -13,6 +13,7 @@
 //It declares a static instance of your singleton object and initializes it to nil.
 static PopupManager_DTAlertView *sharedInstance = nil;
 static DTAlertView *progressAlertView = nil;
+static NSString *curCateItemId = nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(PopupManager_DTAlertView *)sharedInstance
@@ -111,9 +112,11 @@ static DTAlertView *progressAlertView = nil;
 }
 
 #pragma mark - Popup_CateItemReview
-- (void)popupCateItemReview
+- (void)popupCateItemReview:(NSString *)cateItemId
 {
-
+    //Store it.
+    curCateItemId = cateItemId;
+    //Popup View.
     DTAlertView *alertView = nil;
     alertView = [DTAlertView alertViewWithTitle:@"CateItemReview" message:@"Review something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
         [alertView setAlertViewMode:DTAlertViewModeTextInput];
@@ -164,8 +167,8 @@ static DTAlertView *progressAlertView = nil;
         return;
     }else if (alertView.tag==2)
     {
-        //TODO:reviewCateItem
-//        [[App42_API_Facade sharedInstance] addReview:@"" reviewComment:@:"" reviewRating:0.0];
+        //App42_API_Facade:reviewCateItem
+        [[App42_API_Facade sharedInstance] addReview:curCateItemId reviewComment:message reviewRating:1.0];
         //
         [alertView dismiss];
         

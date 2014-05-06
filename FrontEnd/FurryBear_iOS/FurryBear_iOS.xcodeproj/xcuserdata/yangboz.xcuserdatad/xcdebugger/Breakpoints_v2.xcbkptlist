@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/PopupManager_DTAlertView.m"
-            timestampString = "421056308.6324"
+            timestampString = "421063296.246361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FurryBear_iOS/VC_FeedCateItems.m"
-            timestampString = "421056308.6324"
+            timestampString = "421063599.086246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "-itemFavoriteAction:"
             landmarkType = "5">
             <Locations>
@@ -151,12 +151,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "421056731.467584"
+                  timestampString = "421063599.525683"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "379">
+                  startingLineNumber = "409"
+                  endingLineNumber = "409"
+                  offsetFromSymbolStart = "268">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -165,12 +165,12 @@
                   symbolName = "-[VC_FeedCateItems itemFavoriteAction:]"
                   moduleName = "FurryBear_iOS"
                   urlString = "file:///Users/yangboz/Documents/Git/furry-bear/FrontEnd/FurryBear_iOS/FurryBear_iOS/VC_FeedCateItems.m"
-                  timestampString = "421056731.467781"
+                  timestampString = "421063599.526072"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "447">
+                  startingLineNumber = "409"
+                  endingLineNumber = "409"
+                  offsetFromSymbolStart = "336">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -197,13 +197,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FurryBear_iOS/VC_FeedCateItems.m"
-            timestampString = "421056308.6324"
+            filePath = "FurryBear_iOS/PopupManager_DTAlertView.m"
+            timestampString = "421063280.404872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
-            landmarkName = "-itemFavoriteAction:"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

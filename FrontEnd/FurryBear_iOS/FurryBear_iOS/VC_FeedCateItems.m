@@ -368,11 +368,19 @@
     categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
     return catItem;
 }
+
+-(NSString *)getSelectedCateItemId
+{
+    //Get cate item's id
+    categoryItem *cateItem = [self getCategoryItemData:selectedNSIndexPath];
+    NSLog(@"Current selected categoryItem id:%@",cateItem.itemId);
+    return cateItem.itemId;
+}
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
     //Send feed item review with PopupManager.
-    [[PopupManager_DTAlertView sharedInstance] popupCateItemReview];
+    [[PopupManager_DTAlertView sharedInstance] popupCateItemReview:[self getSelectedCateItemId]];
 }
 
 - (void)userIconAction:(id)sender
@@ -389,10 +397,9 @@
         //Favorite item json object assemble
         NSMutableDictionary *storageDict = [[NSMutableDictionary alloc] init];
         //Get cate item's id
-        categoryItem *cateItem = [self getCategoryItemData:selectedNSIndexPath];
-        NSLog(@"categoryItem id:%@",cateItem.itemId);
+        NSString *cateItemId = [self getSelectedCateItemId];
         //Insert username key-value.
-        [storageDict setObject:cateItem.itemId forKey:KEY_NAME_FAV_ITEM];
+        [storageDict setObject:cateItemId forKey:KEY_NAME_FAV_ITEM];
         NSString *jsonStr = [storageDict JSONString];
         NSLog(@"JSON storageDict:%@",jsonStr);
         //TODO:Add JSON object for favorite function.
