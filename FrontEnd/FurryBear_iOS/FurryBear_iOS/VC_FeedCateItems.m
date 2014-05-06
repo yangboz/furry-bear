@@ -371,19 +371,12 @@
 #pragma mark IBActions inside of cell.
 - (void)reviewIconAction:(id)sender
 {
-    //    self.tabBarController.selectedIndex = 2;
-    //    [self.navigationController performSegueWithIdentifier:SEGUE_NAME_REVIEW sender:self];
-    [[PopupManager_AlertTable sharedInstance]popupCateItemDetail];
+    //Send feed item review with PopupManager.
+    [[PopupManager_DTAlertView sharedInstance] popupCateItemReview];
 }
 
 - (void)userIconAction:(id)sender
 {
-    //    self.tabBarController.selectedIndex = 2;
-    //    [self.navigationController performSegueWithIdentifier:@"segue_review" sender:self];
-    //    VC_SegueCateItemReview *itemReview = [[VC_SegueCateItemReview alloc] init];
-    //    [self.navigationController pushViewController:itemReview animated:YES];
-    //    [self presentViewController:itemReview animated:YES completion:NULL];
-    //    [itemReview release];
     //Send user friends request with PopupManager.
     [[PopupManager_DTAlertView sharedInstance] popupFriendRequest];
 }

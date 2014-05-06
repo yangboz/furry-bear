@@ -18,9 +18,9 @@
 //ProgressView
 -(void)popupProgressBar;
 -(void)dismissProgressBar;
+//CateItemReview
+-(void)popupCateItemReview;
 //FriendRequest/Talk
 -(void)popupFriendRequest;
 -(void)popupFriendTalk;
-//CateItemDetailView
--(void)popupCateItemDetail;
 @end

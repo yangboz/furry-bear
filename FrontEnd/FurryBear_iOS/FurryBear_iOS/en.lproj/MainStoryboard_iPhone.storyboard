@@ -501,7 +501,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="pic_plank_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-jf-ieB">
-                                            <rect key="frame" x="0.0" y="3" width="320" height="5"/>
+                                            <rect key="frame" x="0.0" y="4" width="320" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text=",12345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuu-i5-4jO">

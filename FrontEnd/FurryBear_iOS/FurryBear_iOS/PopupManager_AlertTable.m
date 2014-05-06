@@ -58,15 +58,7 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 
 //implementations
 #pragma mark - Interface implementations
-//CateItemDetailView
--(void)popupCateItemDetail;
-{
-    tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Item Review" cancelButtonTitle:@"OK" messageFormat:nil];
-    //    [tableAlertView.view setTag:1];
-    //    [tableAlertView setDelegate:self];
-    //	[tableAlertView setDataSource:self];
-	[tableAlertView show];
-}
+
 //AllFriendRequestView
 -(void)popupAllFriendRequests;
 {

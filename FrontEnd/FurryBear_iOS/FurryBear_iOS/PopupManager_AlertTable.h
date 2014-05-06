@@ -17,8 +17,7 @@
     NSMutableArray *dataMutableArray;//categoryItemReviews,allFriendRequests..
 }
 +(PopupManager_AlertTable *)sharedInstance;
-//CateItemDetailView
--(void)popupCateItemDetail;
+
 //AllFriendRequestView
 -(void)popupAllFriendRequests;
 @end

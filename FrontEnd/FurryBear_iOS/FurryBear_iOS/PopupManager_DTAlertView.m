@@ -110,6 +110,19 @@ static DTAlertView *progressAlertView = nil;
     [alertView show];
 }
 
+#pragma mark - Popup_CateItemReview
+- (void)popupCateItemReview
+{
+
+    DTAlertView *alertView = nil;
+    alertView = [DTAlertView alertViewWithTitle:@"CateItemReview" message:@"Review something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
+        [alertView setAlertViewMode:DTAlertViewModeTextInput];
+    //set tag to differ
+    [alertView setTag:2];
+    //
+    [alertView show];
+}
+
 #pragma mark - DTAlertView Delegate Methods
 
 - (void)alertView:(DTAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -149,14 +162,17 @@ static DTAlertView *progressAlertView = nil;
         [alertView dismiss];
         
         return;
+    }else if (alertView.tag==2)
+    {
+        //TODO:reviewCateItem
+//        [[App42_API_Facade sharedInstance] addReview:@"" reviewComment:@:"" reviewRating:0.0];
+        //
+        [alertView dismiss];
+        
+        return;
     }
     //cancelPreviousPerformRequestsWithTarget
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-}
-#pragma mark -CateItemDetailView
--(void)popupCateItemDetail
-{
-    
 }
 
 @end
