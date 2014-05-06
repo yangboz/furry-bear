@@ -1,5 +1,5 @@
 //
-//  VC_FeatureCateItems.h
+//  VC_HomeIntro.h
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
@@ -11,7 +11,7 @@
 #import "App42_API_Facade.h"
 #import "EAIntroView.h"
 
-@interface VC_FeatureCateItems : UIViewController <LoginViewControllerDelegate,EAIntroDelegate>
+@interface VC_HomeIntro : UIViewController <LoginViewControllerDelegate,EAIntroDelegate>
 {
 }
 -(void)userDefaultsLogin;

@@ -196,7 +196,7 @@
 		65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E11AB017B33D0600940B1A /* AppDelegate.m */; };
 		65E11ABA17B33D0600940B1A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E11AB817B33D0600940B1A /* MainStoryboard_iPhone.storyboard */; };
 		65E11ABD17B33D0600940B1A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E11ABB17B33D0600940B1A /* MainStoryboard_iPad.storyboard */; };
-		65E11AC017B33D0600940B1A /* VC_FeatureCateItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E11ABF17B33D0600940B1A /* VC_FeatureCateItems.m */; };
+		65E11AC017B33D0600940B1A /* VC_HomeIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E11ABF17B33D0600940B1A /* VC_HomeIntro.m */; };
 		65E11AC717B33D0600940B1A /* VC_FavoriteCateItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E11AC617B33D0600940B1A /* VC_FavoriteCateItems.m */; };
 /* End PBXBuildFile section */
 
@@ -438,8 +438,8 @@
 		65E11AB017B33D0600940B1A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		65E11AB917B33D0600940B1A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		65E11ABC17B33D0600940B1A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		65E11ABE17B33D0600940B1A /* VC_FeatureCateItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC_FeatureCateItems.h; sourceTree = "<group>"; };
-		65E11ABF17B33D0600940B1A /* VC_FeatureCateItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC_FeatureCateItems.m; sourceTree = "<group>"; };
+		65E11ABE17B33D0600940B1A /* VC_HomeIntro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC_HomeIntro.h; sourceTree = "<group>"; };
+		65E11ABF17B33D0600940B1A /* VC_HomeIntro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC_HomeIntro.m; sourceTree = "<group>"; };
 		65E11AC517B33D0600940B1A /* VC_FavoriteCateItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC_FavoriteCateItems.h; sourceTree = "<group>"; };
 		65E11AC617B33D0600940B1A /* VC_FavoriteCateItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC_FavoriteCateItems.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -863,8 +863,8 @@
 				658A69071867428600EC090F /* LoginViewController.h */,
 				658A69081867428600EC090F /* LoginViewController.m */,
 				6519FC48181CCAA40010942A /* cells */,
-				65E11ABE17B33D0600940B1A /* VC_FeatureCateItems.h */,
-				65E11ABF17B33D0600940B1A /* VC_FeatureCateItems.m */,
+				65E11ABE17B33D0600940B1A /* VC_HomeIntro.h */,
+				65E11ABF17B33D0600940B1A /* VC_HomeIntro.m */,
 				6566A62118EFB94500BF2088 /* VC_FeedCateItems.h */,
 				6566A62218EFB94500BF2088 /* VC_FeedCateItems.m */,
 				65E11AC517B33D0600940B1A /* VC_FavoriteCateItems.h */,
@@ -1233,7 +1233,7 @@
 				65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */,
 				65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */,
 				65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */,
-				65E11AC017B33D0600940B1A /* VC_FeatureCateItems.m in Sources */,
+				65E11AC017B33D0600940B1A /* VC_HomeIntro.m in Sources */,
 				65E11AC717B33D0600940B1A /* VC_FavoriteCateItems.m in Sources */,
 				6519FC4B181CCE5E0010942A /* FeatureCell.m in Sources */,
 				6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */,

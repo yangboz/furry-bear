@@ -1,14 +1,14 @@
 //
-//  VC_FeatureCateItems.m
+//  VC_HomeIntro.m
 //  FurryBear_iOS
 //
 //  Created by yangboz on 13-8-8.
 //  Copyright (c) 2013年 GODPAPER. All rights reserved.
 //
 
-#import "VC_FeatureCateItems.h"
+#import "VC_HomeIntro.h"
 
-@implementation VC_FeatureCateItems
+@implementation VC_HomeIntro
 //
 //
 - (void)viewDidLoad

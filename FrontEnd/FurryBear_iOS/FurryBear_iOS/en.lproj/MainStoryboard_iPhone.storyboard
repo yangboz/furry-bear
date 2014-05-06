@@ -277,10 +277,10 @@
             </objects>
             <point key="canvasLocation" x="-1068" y="725"/>
         </scene>
-        <!--Feature Cate Items - First-->
+        <!--Home Intro - First-->
         <scene sceneID="11">
             <objects>
-                <viewController title="First" id="2" customClass="VC_FeatureCateItems" sceneMemberID="viewController">
+                <viewController title="First" id="2" customClass="VC_HomeIntro" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rzm-CX-YoW"/>
                         <viewControllerLayoutGuide type="bottom" id="XSl-w9-eMg"/>
