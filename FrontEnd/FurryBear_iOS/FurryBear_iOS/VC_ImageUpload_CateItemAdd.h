@@ -22,6 +22,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *filenameTxt;
 @property (retain, nonatomic) IBOutlet UITextView *fileDescTxtView;
 @property (retain, nonatomic) IBOutlet NYSliderPopover *slider_price;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *submitButton;
 //
 @property (retain, nonatomic) IBOutlet UITextField *addressTxt;
 @property (retain, nonatomic) IBOutlet UITextField *resturantTxt;

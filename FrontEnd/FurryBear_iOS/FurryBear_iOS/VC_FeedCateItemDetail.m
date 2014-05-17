@@ -43,7 +43,7 @@
     arrayController.title = NSLocalizedString(@"Content of an array",);
     GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
-    self.retractableControllers = [NSArray arrayWithObjects:simpleController, arrayController, customController, emptyController, nil];
+    self.retractableControllers = [NSArray arrayWithObjects:emptyController,simpleController, arrayController, customController, nil];
     [simpleController release];
     [arrayController release];
     [customController release];

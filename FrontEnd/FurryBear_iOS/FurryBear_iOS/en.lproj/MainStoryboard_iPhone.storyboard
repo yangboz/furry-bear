@@ -1310,6 +1310,7 @@
                         <outlet property="resturantTxt" destination="dYQ-Hq-ZJj" id="BDg-jp-Dpa"/>
                         <outlet property="slider_price" destination="4ds-KC-0P4" id="OB8-Wg-9lR"/>
                         <outlet property="starRating" destination="lqf-xc-K3e" id="pM9-qR-nNm"/>
+                        <outlet property="submitButton" destination="w29-yF-QkG" id="exj-sj-Qqv"/>
                         <outlet property="telphoneTxt" destination="EWy-hg-J3Q" id="zvl-pu-5ho"/>
                     </connections>
                 </tableViewController>

@@ -67,7 +67,8 @@ NSData *imageData = nil;
     {
         NSLog(@"Star Rating changed to %.1f" ,rating);
     };
-
+    //Default disable submit button first off.
+    [self.submitButton setEnabled:NO];
 }
 
 - (void)updateSliderPopoverText
@@ -229,6 +230,8 @@ NSData *imageData = nil;
     NSString *fileName = [[[App42_API_Utils sharedInstance] getTimeStampName] stringByAppendingString:@".png"];
     self.filenameTxt.text = fileName;
     NSLog(@"Picked image file name:%@",fileName);
+    //Enable submit button now.
+    [self.submitButton setEnabled:YES];
 }
 
 

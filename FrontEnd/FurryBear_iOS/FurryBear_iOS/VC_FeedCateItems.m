@@ -14,32 +14,53 @@
 
 @implementation VC_FeedCateItems
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    //if auto signin
-//    if ([[UserModel sharedInstance] getAutoSignin]) {
-//        [self userDefaultsLogin];
-//    }else
-//    {
-//        [self displayLoginPopup];
-//    }
-    //Get default catalogue and category name.
-//    [self loadFeaturedCategoryItems:nil];
-    // table view data is being set here
-    //featuredCategoryItems = [[NSMutableArray alloc] init];
-    //Notify listening
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems:) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLoad {
+    // Any UI-related configuration goes here. It may be called multiple times,
+    // but each time it is called, `self.view` will be freshly loaded from the nib
+    // file.
+    //Get default catalogue and category name.
+    //    [self loadFeaturedCategoryItems:nil];
+    // table view data is being set here
+    //featuredCategoryItems = [[NSMutableArray alloc] init];
+    //Notify listening
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems:) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    // Set all IBOutlets to `nil` here.
+    // Drop any lazy-load data that you didn't drop in viewWillDisappear:
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // Most data loading should go here to make sure the view matches the model
+    // every time it's put on the screen. This is also a good place to observe
+    // notifications and KVO, and to setup timers.
+    if (featuredCategoryItems==nil) {
+        [self loadFeaturedCategoryItems:nil];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    // Unregister from notifications and KVO here (balancing viewWillAppear:).
+    // Stop timers.
+    // This is a good place to tidy things up, free memory, save things to
+    // the model, etc.
+}
+
 - (void)dealloc {
+    // standard release stuff if non-ARC
+    //[[NSNotificationCenter defaultCenter] removeObvserver:self]; // If you observed anything
+    // Stop timers.
+    // Don't unregister KVO here. Observe and remove KVO in viewWill(Dis)appear.
     [featuredCategoryItems release];
     [super dealloc];
 }
