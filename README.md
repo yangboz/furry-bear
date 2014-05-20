@@ -135,6 +135,8 @@ Low-level design
 
 11.支持用户添加好友，给好友发送卡片式消息;
 
+12.支持图片TAG [https://github.com/EddyBorja/EBPhotoPages]
+
 Gist
 ====================
 App42_API_Call: https://gist.github.com/yangboz/8917276
