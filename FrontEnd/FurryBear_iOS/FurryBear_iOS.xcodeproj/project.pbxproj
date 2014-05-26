@@ -104,6 +104,22 @@
 		6566A62018EDBB3D00BF2088 /* hood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566A61C18EDBB3D00BF2088 /* hood@2x.png */; };
 		6566A62318EFB94500BF2088 /* VC_FeedCateItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566A62218EFB94500BF2088 /* VC_FeedCateItems.m */; };
 		6566A62618F23CAF00BF2088 /* VC_CateItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6566A62518F23CAF00BF2088 /* VC_CateItemDetail.m */; };
+		65792F22192CD9DE00E20C60 /* EBCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F00192CD9DE00E20C60 /* EBCaptionView.m */; };
+		65792F23192CD9DE00E20C60 /* EBCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F02192CD9DE00E20C60 /* EBCommentCell.m */; };
+		65792F24192CD9DE00E20C60 /* EBCommentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F04192CD9DE00E20C60 /* EBCommentsTableView.m */; };
+		65792F25192CD9DE00E20C60 /* EBCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F06192CD9DE00E20C60 /* EBCommentsView.m */; };
+		65792F26192CD9DE00E20C60 /* EBPhotoPagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F0A192CD9DE00E20C60 /* EBPhotoPagesController.m */; };
+		65792F27192CD9DE00E20C60 /* EBPhotoPagesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F0E192CD9DE00E20C60 /* EBPhotoPagesFactory.m */; };
+		65792F28192CD9DE00E20C60 /* EBPhotoPagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F11192CD9DE00E20C60 /* EBPhotoPagesOperation.m */; };
+		65792F29192CD9DE00E20C60 /* EBPhotoPagesState.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F13192CD9DE00E20C60 /* EBPhotoPagesState.m */; };
+		65792F2A192CD9DE00E20C60 /* EBPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F17192CD9DE00E20C60 /* EBPhotoToolbar.m */; };
+		65792F2B192CD9DE00E20C60 /* EBPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F19192CD9DE00E20C60 /* EBPhotoView.m */; };
+		65792F2C192CD9DE00E20C60 /* EBPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F1B192CD9DE00E20C60 /* EBPhotoViewController.m */; };
+		65792F2D192CD9DE00E20C60 /* EBShadedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F1E192CD9DE00E20C60 /* EBShadedView.m */; };
+		65792F2E192CD9DE00E20C60 /* EBTagPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F20192CD9DE00E20C60 /* EBTagPopover.m */; };
+		65792F36192CE4FE00E20C60 /* DEMOComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F31192CE4FE00E20C60 /* DEMOComment.m */; };
+		65792F37192CE4FE00E20C60 /* DEMOPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F33192CE4FE00E20C60 /* DEMOPhoto.m */; };
+		65792F38192CE4FE00E20C60 /* DEMOTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 65792F35192CE4FE00E20C60 /* DEMOTag.m */; };
 		6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6583619118DB375600C732FF /* PopupManager_DTAlertView.m */; };
 		658361AB18DC8D7000C732FF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658361AA18DC8D7000C732FF /* Accelerate.framework */; };
 		658361C218DEB63000C732FF /* read_more-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 658361C018DEB63000C732FF /* read_more-20.png */; };
@@ -308,6 +324,47 @@
 		6566A62218EFB94500BF2088 /* VC_FeedCateItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_FeedCateItems.m; sourceTree = "<group>"; };
 		6566A62418F23CAF00BF2088 /* VC_CateItemDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_CateItemDetail.h; sourceTree = "<group>"; };
 		6566A62518F23CAF00BF2088 /* VC_CateItemDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_CateItemDetail.m; sourceTree = "<group>"; };
+		65792EFF192CD9DE00E20C60 /* EBCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCaptionView.h; sourceTree = "<group>"; };
+		65792F00192CD9DE00E20C60 /* EBCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCaptionView.m; sourceTree = "<group>"; };
+		65792F01192CD9DE00E20C60 /* EBCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCommentCell.h; sourceTree = "<group>"; };
+		65792F02192CD9DE00E20C60 /* EBCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCommentCell.m; sourceTree = "<group>"; };
+		65792F03192CD9DE00E20C60 /* EBCommentsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCommentsTableView.h; sourceTree = "<group>"; };
+		65792F04192CD9DE00E20C60 /* EBCommentsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCommentsTableView.m; sourceTree = "<group>"; };
+		65792F05192CD9DE00E20C60 /* EBCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCommentsView.h; sourceTree = "<group>"; };
+		65792F06192CD9DE00E20C60 /* EBCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCommentsView.m; sourceTree = "<group>"; };
+		65792F07192CD9DE00E20C60 /* EBCommentsViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCommentsViewDelegate.h; sourceTree = "<group>"; };
+		65792F08192CD9DE00E20C60 /* EBPhotoCommentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoCommentProtocol.h; sourceTree = "<group>"; };
+		65792F09192CD9DE00E20C60 /* EBPhotoPagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesController.h; sourceTree = "<group>"; };
+		65792F0A192CD9DE00E20C60 /* EBPhotoPagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoPagesController.m; sourceTree = "<group>"; };
+		65792F0B192CD9DE00E20C60 /* EBPhotoPagesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesDataSource.h; sourceTree = "<group>"; };
+		65792F0C192CD9DE00E20C60 /* EBPhotoPagesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesDelegate.h; sourceTree = "<group>"; };
+		65792F0D192CD9DE00E20C60 /* EBPhotoPagesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesFactory.h; sourceTree = "<group>"; };
+		65792F0E192CD9DE00E20C60 /* EBPhotoPagesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoPagesFactory.m; sourceTree = "<group>"; };
+		65792F0F192CD9DE00E20C60 /* EBPhotoPagesNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesNotifications.h; sourceTree = "<group>"; };
+		65792F10192CD9DE00E20C60 /* EBPhotoPagesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesOperation.h; sourceTree = "<group>"; };
+		65792F11192CD9DE00E20C60 /* EBPhotoPagesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoPagesOperation.m; sourceTree = "<group>"; };
+		65792F12192CD9DE00E20C60 /* EBPhotoPagesState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesState.h; sourceTree = "<group>"; };
+		65792F13192CD9DE00E20C60 /* EBPhotoPagesState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoPagesState.m; sourceTree = "<group>"; };
+		65792F14192CD9DE00E20C60 /* EBPhotoPagesStateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoPagesStateDelegate.h; sourceTree = "<group>"; };
+		65792F15192CD9DE00E20C60 /* EBPhotoTagProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoTagProtocol.h; sourceTree = "<group>"; };
+		65792F16192CD9DE00E20C60 /* EBPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoToolbar.h; sourceTree = "<group>"; };
+		65792F17192CD9DE00E20C60 /* EBPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoToolbar.m; sourceTree = "<group>"; };
+		65792F18192CD9DE00E20C60 /* EBPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoView.h; sourceTree = "<group>"; };
+		65792F19192CD9DE00E20C60 /* EBPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoView.m; sourceTree = "<group>"; };
+		65792F1A192CD9DE00E20C60 /* EBPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoViewController.h; sourceTree = "<group>"; };
+		65792F1B192CD9DE00E20C60 /* EBPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoViewController.m; sourceTree = "<group>"; };
+		65792F1C192CD9DE00E20C60 /* EBPhotoViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoViewControllerDelegate.h; sourceTree = "<group>"; };
+		65792F1D192CD9DE00E20C60 /* EBShadedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBShadedView.h; sourceTree = "<group>"; };
+		65792F1E192CD9DE00E20C60 /* EBShadedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBShadedView.m; sourceTree = "<group>"; };
+		65792F1F192CD9DE00E20C60 /* EBTagPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBTagPopover.h; sourceTree = "<group>"; };
+		65792F20192CD9DE00E20C60 /* EBTagPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTagPopover.m; sourceTree = "<group>"; };
+		65792F21192CD9DE00E20C60 /* EBTagPopoverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBTagPopoverDelegate.h; sourceTree = "<group>"; };
+		65792F30192CE4FE00E20C60 /* DEMOComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOComment.h; sourceTree = "<group>"; };
+		65792F31192CE4FE00E20C60 /* DEMOComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOComment.m; sourceTree = "<group>"; };
+		65792F32192CE4FE00E20C60 /* DEMOPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOPhoto.h; sourceTree = "<group>"; };
+		65792F33192CE4FE00E20C60 /* DEMOPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOPhoto.m; sourceTree = "<group>"; };
+		65792F34192CE4FE00E20C60 /* DEMOTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOTag.h; sourceTree = "<group>"; };
+		65792F35192CE4FE00E20C60 /* DEMOTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOTag.m; sourceTree = "<group>"; };
 		6583619018DB375600C732FF /* PopupManager_DTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupManager_DTAlertView.h; sourceTree = "<group>"; };
 		6583619118DB375600C732FF /* PopupManager_DTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupManager_DTAlertView.m; sourceTree = "<group>"; };
 		658361AA18DC8D7000C732FF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -703,6 +760,61 @@
 			name = WBTarBar;
 			sourceTree = "<group>";
 		};
+		65792EFE192CD9DE00E20C60 /* EBPhotoPagesController */ = {
+			isa = PBXGroup;
+			children = (
+				65792EFF192CD9DE00E20C60 /* EBCaptionView.h */,
+				65792F00192CD9DE00E20C60 /* EBCaptionView.m */,
+				65792F01192CD9DE00E20C60 /* EBCommentCell.h */,
+				65792F02192CD9DE00E20C60 /* EBCommentCell.m */,
+				65792F03192CD9DE00E20C60 /* EBCommentsTableView.h */,
+				65792F04192CD9DE00E20C60 /* EBCommentsTableView.m */,
+				65792F05192CD9DE00E20C60 /* EBCommentsView.h */,
+				65792F06192CD9DE00E20C60 /* EBCommentsView.m */,
+				65792F07192CD9DE00E20C60 /* EBCommentsViewDelegate.h */,
+				65792F08192CD9DE00E20C60 /* EBPhotoCommentProtocol.h */,
+				65792F09192CD9DE00E20C60 /* EBPhotoPagesController.h */,
+				65792F0A192CD9DE00E20C60 /* EBPhotoPagesController.m */,
+				65792F0B192CD9DE00E20C60 /* EBPhotoPagesDataSource.h */,
+				65792F0C192CD9DE00E20C60 /* EBPhotoPagesDelegate.h */,
+				65792F0D192CD9DE00E20C60 /* EBPhotoPagesFactory.h */,
+				65792F0E192CD9DE00E20C60 /* EBPhotoPagesFactory.m */,
+				65792F0F192CD9DE00E20C60 /* EBPhotoPagesNotifications.h */,
+				65792F10192CD9DE00E20C60 /* EBPhotoPagesOperation.h */,
+				65792F11192CD9DE00E20C60 /* EBPhotoPagesOperation.m */,
+				65792F12192CD9DE00E20C60 /* EBPhotoPagesState.h */,
+				65792F13192CD9DE00E20C60 /* EBPhotoPagesState.m */,
+				65792F14192CD9DE00E20C60 /* EBPhotoPagesStateDelegate.h */,
+				65792F15192CD9DE00E20C60 /* EBPhotoTagProtocol.h */,
+				65792F16192CD9DE00E20C60 /* EBPhotoToolbar.h */,
+				65792F17192CD9DE00E20C60 /* EBPhotoToolbar.m */,
+				65792F18192CD9DE00E20C60 /* EBPhotoView.h */,
+				65792F19192CD9DE00E20C60 /* EBPhotoView.m */,
+				65792F1A192CD9DE00E20C60 /* EBPhotoViewController.h */,
+				65792F1B192CD9DE00E20C60 /* EBPhotoViewController.m */,
+				65792F1C192CD9DE00E20C60 /* EBPhotoViewControllerDelegate.h */,
+				65792F1D192CD9DE00E20C60 /* EBShadedView.h */,
+				65792F1E192CD9DE00E20C60 /* EBShadedView.m */,
+				65792F1F192CD9DE00E20C60 /* EBTagPopover.h */,
+				65792F20192CD9DE00E20C60 /* EBTagPopover.m */,
+				65792F21192CD9DE00E20C60 /* EBTagPopoverDelegate.h */,
+			);
+			path = EBPhotoPagesController;
+			sourceTree = "<group>";
+		};
+		65792F2F192CE4D000E20C60 /* EBPhotoPagesCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				65792F30192CE4FE00E20C60 /* DEMOComment.h */,
+				65792F31192CE4FE00E20C60 /* DEMOComment.m */,
+				65792F32192CE4FE00E20C60 /* DEMOPhoto.h */,
+				65792F33192CE4FE00E20C60 /* DEMOPhoto.m */,
+				65792F34192CE4FE00E20C60 /* DEMOTag.h */,
+				65792F35192CE4FE00E20C60 /* DEMOTag.m */,
+			);
+			name = EBPhotoPagesCtrl;
+			sourceTree = "<group>";
+		};
 		658361BD18DEB58400C732FF /* icon_finder */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,9 +972,10 @@
 		65A471691817527900C18DAC /* ctrls */ = {
 			isa = PBXGroup;
 			children = (
-				658A69071867428600EC090F /* LoginViewController.h */,
-				658A69081867428600EC090F /* LoginViewController.m */,
+				65792F2F192CE4D000E20C60 /* EBPhotoPagesCtrl */,
 				6519FC48181CCAA40010942A /* cells */,
+				658A69081867428600EC090F /* LoginViewController.m */,
+				658A69071867428600EC090F /* LoginViewController.h */,
 				65E11ABE17B33D0600940B1A /* VC_HomeIntro.h */,
 				65E11ABF17B33D0600940B1A /* VC_HomeIntro.m */,
 				6566A62118EFB94500BF2088 /* VC_FeedCateItems.h */,
@@ -994,6 +1107,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65792EFE192CD9DE00E20C60 /* EBPhotoPagesController */,
 				65B207E31918B294004B15D6 /* CommentsSectionControllers */,
 				65B207C11918B0B0004B15D6 /* GCRetractableSectionController */,
 				65A46CA6190229F600041DC5 /* EDStarRating */,
@@ -1227,11 +1341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65792F28192CD9DE00E20C60 /* EBPhotoPagesOperation.m in Sources */,
 				65A46B2F18F77B4400041DC5 /* App42_API_Facade.m in Sources */,
 				65E11AAD17B33D0600940B1A /* main.m in Sources */,
 				65B207E11918B291004B15D6 /* GCEmptySectionController.m in Sources */,
+				65792F36192CE4FE00E20C60 /* DEMOComment.m in Sources */,
 				65A98C5218CF3D2C007DD653 /* DTAlertView.m in Sources */,
 				65A46BA419001C5500041DC5 /* NYSliderPopover.m in Sources */,
+				65792F37192CE4FE00E20C60 /* DEMOPhoto.m in Sources */,
 				65E11AB117B33D0600940B1A /* AppDelegate.m in Sources */,
 				65E11AC017B33D0600940B1A /* VC_HomeIntro.m in Sources */,
 				65E11AC717B33D0600940B1A /* VC_FavoriteCateItems.m in Sources */,
@@ -1239,13 +1356,19 @@
 				6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */,
 				6598CADA17B48B5A0054E127 /* VC_CategoryItemAddReview.m in Sources */,
 				6583620618E1B99000C732FF /* PopupManager_AlertTable.m in Sources */,
+				65792F2D192CD9DE00E20C60 /* EBShadedView.m in Sources */,
+				65792F24192CD9DE00E20C60 /* EBCommentsTableView.m in Sources */,
 				659108C4183708CD00096A59 /* MBProgressHUD.m in Sources */,
+				65792F23192CD9DE00E20C60 /* EBCommentCell.m in Sources */,
 				65B207CD1918B0B0004B15D6 /* GCRetractableSectionController.m in Sources */,
+				65792F29192CD9DE00E20C60 /* EBPhotoPagesState.m in Sources */,
 				65A46B9D18FD734C00041DC5 /* VC_ImageUpload_CateItemAdd.m in Sources */,
 				65B207E61918B80E004B15D6 /* VC_FeedCateItemDetail.m in Sources */,
 				65A46BAA1900B48C00041DC5 /* EAIntroPage.m in Sources */,
 				6591054E17B681410085BEE6 /* UserModel.m in Sources */,
+				65792F26192CD9DE00E20C60 /* EBPhotoPagesController.m in Sources */,
 				658A69091867428600EC090F /* LoginViewController.m in Sources */,
+				65792F2C192CD9DE00E20C60 /* EBPhotoViewController.m in Sources */,
 				6519FC5A182378570010942A /* StorageModel.m in Sources */,
 				6583619218DB375600C732FF /* PopupManager_DTAlertView.m in Sources */,
 				658361EA18DFC25E00C732FF /* BuddyCell.m in Sources */,
@@ -1253,23 +1376,30 @@
 				6566A62318EFB94500BF2088 /* VC_FeedCateItems.m in Sources */,
 				6590951717B8D1CD0068F69B /* App42_API_Utils.m in Sources */,
 				6566A62618F23CAF00BF2088 /* VC_CateItemDetail.m in Sources */,
+				65792F22192CD9DE00E20C60 /* EBCaptionView.m in Sources */,
 				65B207E01918B291004B15D6 /* GCCustomSectionController.m in Sources */,
 				65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */,
 				6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */,
 				6583621118E3B1B000C732FF /* TDBadgedCell.m in Sources */,
 				65B207E21918B291004B15D6 /* GCSimpleSectionController.m in Sources */,
+				65792F27192CD9DE00E20C60 /* EBPhotoPagesFactory.m in Sources */,
 				658361FD18E11C6400C732FF /* TSAlertView.m in Sources */,
 				65A46CA9190229F600041DC5 /* EDStarRating.m in Sources */,
 				6583621618E5015E00C732FF /* VC_SBTableAlertFriendRequests.m in Sources */,
 				65A46BAB1900B48C00041DC5 /* EAIntroView.m in Sources */,
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
 				65B8EF9318A911660021DF19 /* VC_NewsLetterSend.m in Sources */,
+				65792F38192CE4FE00E20C60 /* DEMOTag.m in Sources */,
+				65792F2B192CD9DE00E20C60 /* EBPhotoView.m in Sources */,
+				65792F25192CD9DE00E20C60 /* EBCommentsView.m in Sources */,
 				65B207DF1918B291004B15D6 /* GCArraySectionController.m in Sources */,
 				6519FC63182492B70010942A /* JSONKit.m in Sources */,
+				65792F2A192CD9DE00E20C60 /* EBPhotoToolbar.m in Sources */,
 				6590951A17BB3A820068F69B /* ReviewModel.m in Sources */,
 				6590951D17BB3D070068F69B /* UploadModel.m in Sources */,
 				6583620818E1C38400C732FF /* VC_BuddyRelated.m in Sources */,
 				6566A60B18ECF30900BF2088 /* RaisedCenterTabBarController.m in Sources */,
+				65792F2E192CD9DE00E20C60 /* EBTagPopover.m in Sources */,
 				65A98C5318CF3D2C007DD653 /* DTProgressStatus.m in Sources */,
 				6583620B18E1CD9800C732FF /* FriendCell.m in Sources */,
 				6583620018E11C7100C732FF /* SBTableAlert.m in Sources */,

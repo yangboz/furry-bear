@@ -17,7 +17,14 @@
 #import "AppDelegate.h"
 #import "VC_CateItemDetail.h"
 
-@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+#import "EBPhotoPagesController.h"
+#import "EBPhotoPagesDataSource.h"
+#import "EBPhotoPagesDelegate.h"
+#import "DEMOComment.h"
+#import "DEMOPhoto.h"
+#import "DEMOTag.h"
+
+@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate,EBPhotoPagesDelegate,EBPhotoPagesDataSource>
 {
     NSMutableArray *featuredCategoryItems;
     NSIndexPath *selectedNSIndexPath;
@@ -31,4 +38,7 @@
 //IBActions
 - (IBAction)loadFeaturedCategoryItems:(id)sender;
 - (IBAction)addCategoryItems:(id)sender;
+//EBPhotoPagesCtrl related
+@property (assign) BOOL simulateLatency;
+@property (strong) NSArray *photos;
 @end
