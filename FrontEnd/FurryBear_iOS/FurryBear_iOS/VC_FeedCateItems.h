@@ -17,14 +17,7 @@
 #import "AppDelegate.h"
 #import "VC_CateItemDetail.h"
 
-#import "EBPhotoPagesController.h"
-#import "EBPhotoPagesDataSource.h"
-#import "EBPhotoPagesDelegate.h"
-#import "DEMOComment.h"
-#import "DEMOPhoto.h"
-#import "DEMOTag.h"
-
-@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate,EBPhotoPagesDelegate,EBPhotoPagesDataSource>
+@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *featuredCategoryItems;
     NSIndexPath *selectedNSIndexPath;
