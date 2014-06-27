@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65E11A9C17B33D0600940B1A"
                BuildableName = "FurryBear_iOS.app"
-               BlueprintName = "FurryBear_iOS"
-               ReferencedContainer = "container:FurryBear_iOS.xcodeproj">
+               BlueprintName = "OneDish"
+               ReferencedContainer = "container:OneDish.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65E11A9C17B33D0600940B1A"
             BuildableName = "FurryBear_iOS.app"
-            BlueprintName = "FurryBear_iOS"
-            ReferencedContainer = "container:FurryBear_iOS.xcodeproj">
+            BlueprintName = "OneDish"
+            ReferencedContainer = "container:OneDish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65E11A9C17B33D0600940B1A"
             BuildableName = "FurryBear_iOS.app"
-            BlueprintName = "FurryBear_iOS"
-            ReferencedContainer = "container:FurryBear_iOS.xcodeproj">
+            BlueprintName = "OneDish"
+            ReferencedContainer = "container:OneDish.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65E11A9C17B33D0600940B1A"
             BuildableName = "FurryBear_iOS.app"
-            BlueprintName = "FurryBear_iOS"
-            ReferencedContainer = "container:FurryBear_iOS.xcodeproj">
+            BlueprintName = "OneDish"
+            ReferencedContainer = "container:OneDish.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

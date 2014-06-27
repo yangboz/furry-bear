@@ -55,7 +55,6 @@
 - (NSUInteger) contentNumberOfRow {
 	return 0;
 }
-
 - (NSString*) title {
 	return NSLocalizedString(@"No title",);
 }

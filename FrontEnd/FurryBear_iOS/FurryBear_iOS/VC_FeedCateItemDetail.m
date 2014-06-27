@@ -38,6 +38,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
+    //
+//    simpleController.title = [cateItemData description];
+    //
     GCArraySectionController* arrayController = [[GCArraySectionController alloc]
                                                  initWithArray:[NSArray arrayWithObjects:@"This", @"content", @"is", @"in", @"an", @"array", nil]
                                                  viewController:self];
