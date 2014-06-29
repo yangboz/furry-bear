@@ -25,6 +25,7 @@
     return NSLocalizedString(@"Simple exemple",);
 }
 
+
 - (NSString *)titleContentForRow:(NSUInteger)row {
     return [self.colors objectAtIndex:row];
 }

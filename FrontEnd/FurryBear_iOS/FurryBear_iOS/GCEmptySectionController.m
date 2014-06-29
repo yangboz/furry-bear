@@ -10,8 +10,10 @@
 
 @implementation GCEmptySectionController
 
+@synthesize title;
+/*
 - (NSString *)title {
     return NSLocalizedString(@"Empty section",);
 }
-
+*/
 @end

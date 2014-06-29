@@ -37,20 +37,19 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
-    //
-//    simpleController.title = [cateItemData description];
+//    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
     //
     GCArraySectionController* arrayController = [[GCArraySectionController alloc]
                                                  initWithArray:[NSArray arrayWithObjects:@"This", @"content", @"is", @"in", @"an", @"array", nil]
                                                  viewController:self];
-    arrayController.title = NSLocalizedString(@"Content of an array",);
-    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
+    arrayController.title = @"点评:";
+//    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
-    self.retractableControllers = [NSArray arrayWithObjects:emptyController,simpleController, arrayController, customController, nil];
-    [simpleController release];
+    emptyController.title = cateItemData.description;
+    self.retractableControllers = [NSArray arrayWithObjects:emptyController, arrayController, nil];
+//    [simpleController release];
     [arrayController release];
-    [customController release];
+//    [customController release];
     [emptyController release];
 }
 
@@ -71,7 +70,7 @@
 #pragma mark - Table view data source,delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -26,7 +26,7 @@
 @property (nonatomic, assign) UITableViewRowAnimation rowAnimation; //Animation to insert/remove cells, UITableViewRowAnimationTop by default
 
 //Must be subclassed to work properly
-@property (nonatomic, copy, readonly) NSString* title;
+@property (nonatomic, copy, readwrite) NSString* title;
 @property (nonatomic, readonly) NSUInteger contentNumberOfRow;
 - (NSString*) titleContentForRow:(NSUInteger) row;
 
