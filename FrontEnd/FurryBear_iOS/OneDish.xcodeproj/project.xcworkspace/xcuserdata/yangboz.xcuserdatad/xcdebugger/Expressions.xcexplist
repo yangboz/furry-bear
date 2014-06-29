@@ -68,6 +68,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[VC_FeedCateItemDetail viewDidLoad]:VC_FeedCateItemDetail.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "simpleComments">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[VC_FeatureCateItems tableView:cellForRowAtIndexPath:]:VC_FeatureCateItems.m">
          <PersistentStrings>
             <PersistentString

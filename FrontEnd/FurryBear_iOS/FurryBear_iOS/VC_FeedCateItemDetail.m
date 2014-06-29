@@ -32,6 +32,14 @@
     [super viewDidLoad];
     //
     NSLog(@"cateItemData:%@",cateItemData.description);
+    NSString *itemId = cateItemData.itemId;
+    NSMutableArray *comments =
+    [[App42_API_Facade sharedInstance]getReviewsByItem:itemId];
+    NSLog(@"cateItemComments:%@",comments.description);
+    NSMutableArray *simpleComments = [[NSMutableArray alloc] init];
+    for (int i=0; i<[comments count]; i++) {
+        [simpleComments addObject:[(Review *)[comments objectAtIndex:i] comment]];
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,8 +48,7 @@
 //    GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
     //
     GCArraySectionController* arrayController = [[GCArraySectionController alloc]
-                                                 initWithArray:[NSArray arrayWithObjects:@"This", @"content", @"is", @"in", @"an", @"array", nil]
-                                                 viewController:self];
+        initWithArray:simpleComments viewController:self];
     arrayController.title = @"点评:";
 //    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
@@ -70,7 +77,7 @@
 #pragma mark - Table view data source,delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return [self.retractableControllers count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

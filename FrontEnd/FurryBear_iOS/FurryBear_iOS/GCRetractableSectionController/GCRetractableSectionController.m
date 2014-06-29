@@ -90,7 +90,8 @@
         [self setAccessoryViewOnCell:cell];
 	}
 	else {
-		cell.detailTextLabel.text = NSLocalizedString(@"No item",);
+//		cell.detailTextLabel.text = NSLocalizedString(@"No item",);
+        cell.detailTextLabel.text = NSLocalizedString(@"",);
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryView = nil;
         cell.textLabel.textColor = [UIColor blackColor];
