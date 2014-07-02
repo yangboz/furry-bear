@@ -16,8 +16,10 @@
 #import "PopupManager_AlertTable.h"
 #import "AppDelegate.h"
 #import "VC_CateItemDetail.h"
+//
+#import "YIPopupTextView.h"
 
-@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+@interface VC_FeedCateItems : UITableViewController <UITableViewDataSource,UITableViewDelegate,YIPopupTextViewDelegate>
 {
     NSMutableArray *featuredCategoryItems;
     NSIndexPath *selectedNSIndexPath;
@@ -31,7 +33,5 @@
 //IBActions
 - (IBAction)loadFeaturedCategoryItems:(id)sender;
 - (IBAction)addCategoryItems:(id)sender;
-//EBPhotoPagesCtrl related
-@property (assign) BOOL simulateLatency;
-@property (strong) NSArray *photos;
+//
 @end

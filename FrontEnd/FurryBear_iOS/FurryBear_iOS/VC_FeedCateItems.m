@@ -406,7 +406,15 @@
 - (void)reviewIconAction:(id)sender
 {
     //Send feed item review with PopupManager.
-    //[[PopupManager_DTAlertView sharedInstance] popupCateItemReview:[self getSelectedCateItemId]];
+    //@see https://github.com/inamiy/YIPopupTextView
+    YIPopupTextView* popupReview = [[YIPopupTextView alloc] initWithPlaceHolder:@"Review here" maxCount:140 buttonStyle:YIPopupTextViewButtonStyleRightCancelAndDone];
+    popupReview.delegate = self;
+    popupReview.caretShiftGestureEnabled = YES;   // default = NO
+   // popupReview.text = self.textView.text;
+    //popupReview = NO;                  // set editable=NO to show without keyboard
+    
+    //[popupReview showInView:self.view];
+    [popupReview showInViewController:self]; // recommended, especially for iOS7
 }
 
 - (void)userIconAction:(id)sender
@@ -446,4 +454,16 @@
     self.tabBarController.selectedIndex = 2;
 }
 
+#pragma -mark YIPopupTextView Delegate
+- (void)popupTextView:(YIPopupTextView*)textView willDismissWithText:(NSString*)text cancelled:(BOOL)cancelled;
+{
+    //Empty handle
+}
+- (void)popupTextView:(YIPopupTextView*)textView didDismissWithText:(NSString*)text cancelled:(BOOL)cancelled;
+{
+    if (!cancelled) {
+        NSString *cateItemId = [self getSelectedCateItemId];
+        [[App42_API_Facade sharedInstance] addReview:cateItemId reviewComment:text reviewRating:4.0];
+    }
+}
 @end

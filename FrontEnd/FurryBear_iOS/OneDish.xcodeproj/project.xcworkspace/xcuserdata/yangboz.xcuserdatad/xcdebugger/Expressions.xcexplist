@@ -6,7 +6,7 @@
          contextName = "GLOBAL">
          <PersistentStrings>
             <PersistentString
-               value = "indexPath.row">
+               value = "reviewCount">
             </PersistentString>
             <PersistentString
                value = "catItem.description">

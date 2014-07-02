@@ -193,6 +193,8 @@
 		65B207E21918B291004B15D6 /* GCSimpleSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B207DE1918B291004B15D6 /* GCSimpleSectionController.m */; };
 		65B207E61918B80E004B15D6 /* VC_FeedCateItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B207E51918B80E004B15D6 /* VC_FeedCateItemDetail.m */; };
 		65B8EF9318A911660021DF19 /* VC_NewsLetterSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B8EF9218A911660021DF19 /* VC_NewsLetterSend.m */; };
+		65C9E265196441BD001BD3EC /* YIPopupTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C9E262196441BD001BD3EC /* YIPopupTextView.m */; };
+		65C9E266196441BD001BD3EC /* YISSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C9E264196441BD001BD3EC /* YISSTextView.m */; };
 		65DFC2731827F95D005A7F91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DFC2721827F95D005A7F91 /* QuartzCore.framework */; };
 		65E11AA117B33D0600940B1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA017B33D0600940B1A /* UIKit.framework */; };
 		65E11AA317B33D0600940B1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E11AA217B33D0600940B1A /* Foundation.framework */; };
@@ -437,6 +439,10 @@
 		65B207E51918B80E004B15D6 /* VC_FeedCateItemDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_FeedCateItemDetail.m; sourceTree = "<group>"; };
 		65B8EF9118A911660021DF19 /* VC_NewsLetterSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_NewsLetterSend.h; sourceTree = "<group>"; };
 		65B8EF9218A911660021DF19 /* VC_NewsLetterSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_NewsLetterSend.m; sourceTree = "<group>"; };
+		65C9E261196441BD001BD3EC /* YIPopupTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YIPopupTextView.h; sourceTree = "<group>"; };
+		65C9E262196441BD001BD3EC /* YIPopupTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YIPopupTextView.m; sourceTree = "<group>"; };
+		65C9E263196441BD001BD3EC /* YISSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISSTextView.h; sourceTree = "<group>"; };
+		65C9E264196441BD001BD3EC /* YISSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISSTextView.m; sourceTree = "<group>"; };
 		65DFC2721827F95D005A7F91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		65E11A9D17B33D0600940B1A /* OneDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E11AA017B33D0600940B1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -975,6 +981,17 @@
 			name = CommentsSectionControllers;
 			sourceTree = "<group>";
 		};
+		65C9E260196441BD001BD3EC /* YIPopup */ = {
+			isa = PBXGroup;
+			children = (
+				65C9E261196441BD001BD3EC /* YIPopupTextView.h */,
+				65C9E262196441BD001BD3EC /* YIPopupTextView.m */,
+				65C9E263196441BD001BD3EC /* YISSTextView.h */,
+				65C9E264196441BD001BD3EC /* YISSTextView.m */,
+			);
+			path = YIPopup;
+			sourceTree = "<group>";
+		};
 		65E11A9417B33D0600940B1A = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1029,7 @@
 		65E11AA617B33D0600940B1A /* FurryBear_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				65C9E260196441BD001BD3EC /* YIPopup */,
 				65B207E31918B294004B15D6 /* CommentsSectionControllers */,
 				65B207C11918B0B0004B15D6 /* GCRetractableSectionController */,
 				65A46CA6190229F600041DC5 /* EDStarRating */,
@@ -1280,11 +1298,13 @@
 				65B207E01918B291004B15D6 /* GCCustomSectionController.m in Sources */,
 				65A4716F181754A200C18DAC /* VC_SegueCateItemAdd.m in Sources */,
 				6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */,
+				65C9E266196441BD001BD3EC /* YISSTextView.m in Sources */,
 				6583621118E3B1B000C732FF /* TDBadgedCell.m in Sources */,
 				65B207E21918B291004B15D6 /* GCSimpleSectionController.m in Sources */,
 				658361FD18E11C6400C732FF /* TSAlertView.m in Sources */,
 				65A46CA9190229F600041DC5 /* EDStarRating.m in Sources */,
 				6583621618E5015E00C732FF /* VC_SBTableAlertFriendRequests.m in Sources */,
+				65C9E265196441BD001BD3EC /* YIPopupTextView.m in Sources */,
 				65A46BAB1900B48C00041DC5 /* EAIntroView.m in Sources */,
 				6519FC5718236CFB0010942A /* VC_SegueCateItemReview.m in Sources */,
 				65B8EF9318A911660021DF19 /* VC_NewsLetterSend.m in Sources */,
@@ -1408,7 +1428,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/OneDish-Prefix.pch";
 				INFOPLIST_FILE = "FurryBear_iOS/OneDish-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = OneDish;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1430,7 +1450,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FurryBear_iOS/OneDish-Prefix.pch";
 				INFOPLIST_FILE = "FurryBear_iOS/OneDish-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = OneDish;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
