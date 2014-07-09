@@ -46,6 +46,7 @@
 -(int)getReviewsCountByItem:(NSString *)itemId;
 -(NSMutableArray *)getReviewsByItem:(NSString *)itemId;
 -(Review *)getAverageReviewByItem:(NSString *)itemId;
+-(NSMutableArray *)getCommentsByItem:(NSString *)itemId;
 #pragma mark -StorageService
 -(Storage *)findDocumentById:(NSString *)dbName collectionName:(NSString *)collectionName docId:(NSString *)docId;
 #pragma mark -RecommenderService

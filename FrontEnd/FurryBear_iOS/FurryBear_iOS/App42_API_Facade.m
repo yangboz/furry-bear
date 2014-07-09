@@ -127,7 +127,8 @@ static LogService *logService= nil;
         userObj.userName = userName;
         userObj.password = password;
         [[UserModel sharedInstance] setUser:userObj];
-        //
+        //Auto relogin.
+        
     }@catch (App42BadParameterException *ex) {
         NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
     }@catch (App42SecurityException *ex) {
@@ -439,6 +440,27 @@ static LogService *logService= nil;
         NSLog(@"App42 Exception found:%@",ex.description);
     }
     return review;
+}
+-(NSMutableArray *)getCommentsByItem:(NSString *)itemId
+{
+    NSMutableArray *comments = [[NSMutableArray alloc] init];
+    @try{
+        // NSString *itemId = @"itemID";
+        NSArray *commentList = [reviewService getCommentsByItem:itemId];
+        for(Review *review in commentList)
+        {
+            NSLog(@"userId  is %@", review.userId);
+            NSLog(@"itemId  is %@", review.itemId);
+        }
+        comments = [NSMutableArray arrayWithArray:commentList];
+    }@catch (App42BadParameterException *ex) {
+        NSLog(@"BadParameterException found,status code:%d",ex.appErrorCode);
+    }@catch (App42SecurityException *ex) {
+        NSLog(@"SecurityException found!");
+    }@catch (App42Exception *ex) {
+        NSLog(@"App42 Exception found:%@",ex.description);
+    }
+    return comments;
 }
 #pragma mark -StorageService
 -(Storage *)findDocumentById:(NSString *)dbName collectionName:(NSString *)collectionName docId:(NSString *)docId;

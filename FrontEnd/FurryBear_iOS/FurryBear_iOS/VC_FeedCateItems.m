@@ -153,6 +153,8 @@
             //#4.GET REVIEWS COUNT BY ITEM
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
+            int commentsCount = [self App42_getCommentsCountByItem:item.itemId];
+            NSLog(@"App42_getCommentsCountByItem result:%d",commentsCount);
             //#5.GET REVIEWs BY ITEM
             //[self App42_getReviewsByItem:item.itemId];
             //#6.GET AVERAGE REVIEW BY ITEM
@@ -161,6 +163,7 @@
             //
             [fCateItemDict setObject:item forKey:DICT_KEY_CATE_ITEM];
             [fCateItemDict setObject:[NSNumber numberWithInt:reviewCount] forKey:DICT_KEY_REVIEW_COUNT];
+            [fCateItemDict setObject:[NSNumber numberWithInt:commentsCount] forKey:DICT_KEY_COMMENT_COUNT];
             [fCateItemDict setObject:[NSNumber numberWithInt:rating] forKey:DICT_KEY_RATING];
             [fCateItemDict setObject:username forKey:DICT_KEY_USER_NAME];
             [fCateItemDict setObject:timestamp forKey:DICT_KEY_TIME_STAMP];
@@ -252,13 +255,14 @@
     //[cell.contentView.layer setBorderColor:[UIColor grayColor].CGColor];
     //[cell.contentView.layer setBorderWidth:1.0f];
     //
-    categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:@"cateItem"];
+    categoryItem *catItem = (categoryItem *)[fCateItemDict objectForKey:DICT_KEY_CATE_ITEM];
 	cell.nameLabel.text = catItem.description;
 	//cell.detailTextLabel.text = itemData.imageName;
     NSURL* aURL = [NSURL URLWithString:catItem.url];
     //NSData* data = [[NSData alloc] initWithContentsOfURL:aURL];
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
+//    NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
     NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
     //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
@@ -318,6 +322,11 @@
 -(int)App42_getReviewsCountByItem:(NSString*)itemId
 {
     return [[App42_API_Facade sharedInstance]getReviewsCountByItem:itemId];
+}
+
+-(int)App42_getCommentsCountByItem:(NSString*)itemId
+{
+    return [[[App42_API_Facade sharedInstance] getCommentsByItem:itemId] count];
 }
 //@see:http://api.shephertz.com/cloudapidocs/guide/0.8.1.1/ios/review_api.html#get_reviewbyitem
 -(NSMutableArray *)App42_getReviewsByItem:(NSString*)itemId
