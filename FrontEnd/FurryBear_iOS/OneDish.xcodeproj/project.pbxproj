@@ -12,6 +12,7 @@
 		6519FC5A182378570010942A /* StorageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC59182378570010942A /* StorageModel.m */; };
 		6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5C18237A2E0010942A /* ItemDataModel.m */; };
 		6519FC63182492B70010942A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC62182492B70010942A /* JSONKit.m */; };
+		652BD64419759BCA00977443 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BD64319759BCA00977443 /* Default-568h.png */; };
 		6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6536E4311825ED810024CAF2 /* AsyncImageView.m */; };
 		653D208A190FE504007A19E1 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653D2089190FE504007A19E1 /* Shephertz_App42_iOS_API.framework */; };
 		655105BD185C0599000333D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655105BC185C0599000333D4 /* Images.xcassets */; };
@@ -219,6 +220,7 @@
 		6519FC5C18237A2E0010942A /* ItemDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDataModel.m; sourceTree = "<group>"; };
 		6519FC61182492B70010942A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		6519FC62182492B70010942A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		652BD64319759BCA00977443 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
 		6536E4301825ED810024CAF2 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		6536E4311825ED810024CAF2 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		653D2089190FE504007A19E1 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 		655105D3185EF208000333D4 /* LaunchImage */ = {
 			isa = PBXGroup;
 			children = (
+				652BD64319759BCA00977443 /* Default-568h.png */,
 				655105D4185EF33A000333D4 /* Default-568h@2x.png */,
 				655105D5185EF33A000333D4 /* Default-Landscape.png */,
 				655105D6185EF33A000333D4 /* Default-Landscape@2x.png */,
@@ -1240,6 +1243,7 @@
 				65B207D31918B0B0004B15D6 /* UpAccessory@2x.png in Resources */,
 				6551060C185EFA0A000333D4 /* fork-50.png in Resources */,
 				65A98C5F18CF5416007DD653 /* carrot-25.png in Resources */,
+				652BD64419759BCA00977443 /* Default-568h.png in Resources */,
 				655105CF185EF01D000333D4 /* AppIcon76x76@2x.png in Resources */,
 				6551060F185EFA0A000333D4 /* knife-100.png in Resources */,
 				655106631860AAEA000333D4 /* tomato-100.png in Resources */,
