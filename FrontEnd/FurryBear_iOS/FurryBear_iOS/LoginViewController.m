@@ -49,12 +49,17 @@
 }
 - (IBAction)doneAction:(id)sender
 {
+    if(self.usernameTextField.text!=NULL
+       &&self.passwordTextField.text!=NULL
+        &&self.emailTextField.text!=NULL)
+    {
     //User sign up here.
     [[App42_API_Facade sharedInstance] createUser:self.usernameTextField.text password:self.passwordTextField.text emailAddress:self.emailTextField.text]; /* returns the User object. */
     //
 	[self.delegate loginViewControllerDidSave:self];
     //Auto back navigation
     [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (void)dealloc {
 

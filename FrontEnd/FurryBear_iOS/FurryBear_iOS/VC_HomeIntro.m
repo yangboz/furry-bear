@@ -61,9 +61,11 @@
 
 -(void)displayLoginPopup
 {
-    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"Enter Credentials" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"请登录" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     prompt.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     [[prompt textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
+    [[prompt textFieldAtIndex:0] setPlaceholder:@"username"];
+    [[prompt textFieldAtIndex:1] setPlaceholder:@"password"];
     [prompt show];
     [prompt release];
 }
@@ -78,15 +80,16 @@
 
 -(void)tryLogin:(NSString *)userName pwdValue:(NSString *)passWord
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     //
     BOOL loginSuccess = [[App42_API_Facade sharedInstance] userLogin:userName pwdValue:passWord];
     //Dismiss loginView modal.
     if (loginSuccess) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    //
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 #pragma mark - LoginViewControllerDelegate
@@ -129,19 +132,19 @@
 - (void)showIntroWithFixedTitleView
 {
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"Hello world";
+    page1.title = @"欢迎";
     page1.desc = INTRO_DESCRIPTION_00;
     
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"This is page 2";
+    page2.title = @"Welcome";
     page2.desc = INTRO_DESCRIPTION_01;
     
     EAIntroPage *page3 = [EAIntroPage page];
-    page3.title = @"This is page 3";
+    page3.title = @"一道菜";
     page3.desc = INTRO_DESCRIPTION_02;
     
     EAIntroPage *page4 = [EAIntroPage page];
-    page4.title = @"This is page 4";
+    page4.title = @"One Dish";
     page4.desc = INTRO_DESCRIPTION_03;
     
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
