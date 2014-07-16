@@ -64,8 +64,8 @@
     UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"请登录" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     prompt.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     [[prompt textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
-    [[prompt textFieldAtIndex:0] setPlaceholder:@"username"];
-    [[prompt textFieldAtIndex:1] setPlaceholder:@"password"];
+    [[prompt textFieldAtIndex:0] setPlaceholder:NSLocalizedString(@"USERNAME", nil)];
+    [[prompt textFieldAtIndex:1] setPlaceholder:NSLocalizedString(@"PASSWORD", nil)];
     [prompt show];
     [prompt release];
 }

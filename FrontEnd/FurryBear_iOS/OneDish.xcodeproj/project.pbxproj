@@ -13,6 +13,7 @@
 		6519FC5D18237A2E0010942A /* ItemDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC5C18237A2E0010942A /* ItemDataModel.m */; };
 		6519FC63182492B70010942A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6519FC62182492B70010942A /* JSONKit.m */; };
 		652BD64419759BCA00977443 /* Default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 652BD64319759BCA00977443 /* Default-568h.png */; };
+		652BD64A1976D82000977443 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 652BD64C1976D82000977443 /* Localizable.strings */; };
 		6536E4321825ED810024CAF2 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6536E4311825ED810024CAF2 /* AsyncImageView.m */; };
 		653D208A190FE504007A19E1 /* Shephertz_App42_iOS_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 653D2089190FE504007A19E1 /* Shephertz_App42_iOS_API.framework */; };
 		655105BD185C0599000333D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655105BC185C0599000333D4 /* Images.xcassets */; };
@@ -221,6 +222,11 @@
 		6519FC61182492B70010942A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		6519FC62182492B70010942A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		652BD64319759BCA00977443 /* Default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h.png"; sourceTree = "<group>"; };
+		652BD6471976D57100977443 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		652BD6481976D57100977443 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
+		652BD6491976D57100977443 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		652BD64B1976D82000977443 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		652BD64D1976D82900977443 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6536E4301825ED810024CAF2 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		6536E4311825ED810024CAF2 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		653D2089190FE504007A19E1 /* Shephertz_App42_iOS_API.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Shephertz_App42_iOS_API.framework; sourceTree = "<group>"; };
@@ -998,6 +1004,7 @@
 		65E11A9417B33D0600940B1A = {
 			isa = PBXGroup;
 			children = (
+				652BD64C1976D82000977443 /* Localizable.strings */,
 				65E11AA617B33D0600940B1A /* FurryBear_iOS */,
 				65E11A9F17B33D0600940B1A /* Frameworks */,
 				65E11A9E17B33D0600940B1A /* Products */,
@@ -1111,6 +1118,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 65E11A9417B33D0600940B1A;
 			productRefGroup = 65E11A9E17B33D0600940B1A /* Products */;
@@ -1168,6 +1176,7 @@
 				655105BD185C0599000333D4 /* Images.xcassets in Resources */,
 				65A98C6218CF5416007DD653 /* carrot-50.png in Resources */,
 				658361C218DEB63000C732FF /* read_more-20.png in Resources */,
+				652BD64A1976D82000977443 /* Localizable.strings in Resources */,
 				655105C8185EF01D000333D4 /* AppIcon29x29.png in Resources */,
 				655105CD185EF01D000333D4 /* AppIcon60x60@2x.png in Resources */,
 				655105E0185EF33A000333D4 /* Default.png in Resources */,
@@ -1333,10 +1342,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		652BD64C1976D82000977443 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				652BD64B1976D82000977443 /* en */,
+				652BD64D1976D82900977443 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		65E11AA917B33D0600940B1A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65E11AAA17B33D0600940B1A /* en */,
+				652BD6491976D57100977443 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1345,6 +1364,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				65E11AB917B33D0600940B1A /* en */,
+				652BD6471976D57100977443 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1353,6 +1373,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				65E11ABC17B33D0600940B1A /* en */,
+				652BD6481976D57100977443 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

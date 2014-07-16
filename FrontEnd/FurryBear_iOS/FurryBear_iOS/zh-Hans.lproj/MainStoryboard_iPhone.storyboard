@@ -449,7 +449,7 @@
             </objects>
             <point key="canvasLocation" x="808" y="2606"/>
         </scene>
-        <!--Feed Cate Items - OneDish-->
+        <!--Feed Cate Items - 一道菜-->
         <scene sceneID="2RB-CX-rx5">
             <objects>
                 <tableViewController id="1wu-AI-pNV" customClass="VC_FeedCateItems" sceneMemberID="viewController">
@@ -557,7 +557,7 @@
                             <outlet property="delegate" destination="1wu-AI-pNV" id="htk-ER-oXl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="OneDish" id="YF6-2X-XvQ">
+                    <navigationItem key="navigationItem" title="一道菜" id="YF6-2X-XvQ">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="c9H-nY-u2i">
                             <connections>
                                 <action selector="loadFeaturedCategoryItems:" destination="1wu-AI-pNV" id="45d-e1-0Wh"/>
@@ -601,7 +601,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Name:" id="0Pb-es-FI8">
+                            <tableViewSection headerTitle="菜名:" id="0Pb-es-FI8">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bC0-Nd-bDR">
                                         <rect key="frame" x="0.0" y="244" width="320" height="44"/>
@@ -621,7 +621,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Price:" id="Uys-KC-lr0">
+                            <tableViewSection headerTitle="菜价:" id="Uys-KC-lr0">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2dZ-Kp-e3v">
                                         <rect key="frame" x="0.0" y="310" width="320" height="44"/>
@@ -641,7 +641,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Rating:" id="Axf-Lo-Ork">
+                            <tableViewSection headerTitle="打分:" id="Axf-Lo-Ork">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qFL-yV-FHa">
                                         <rect key="frame" x="0.0" y="376" width="320" height="44"/>
@@ -661,7 +661,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Comment:" id="CDI-IM-3gc">
+                            <tableViewSection headerTitle="评价:" id="CDI-IM-3gc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9AE-bq-CPg">
                                         <rect key="frame" x="0.0" y="442" width="320" height="44"/>
@@ -1093,7 +1093,7 @@
             </objects>
             <point key="canvasLocation" x="422" y="2606"/>
         </scene>
-        <!--Image Upload Cate Item Add - AddOneDish-->
+        <!--Image Upload Cate Item Add - 加道菜-->
         <scene sceneID="r2A-gV-oMW">
             <objects>
                 <tableViewController id="OYG-F8-krH" customClass="VC_ImageUpload_CateItemAdd" sceneMemberID="viewController">
@@ -1296,7 +1296,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="AddOneDish" id="NpU-MA-CwP">
+                    <navigationItem key="navigationItem" title="加道菜" id="NpU-MA-CwP">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="w29-yF-QkG">
                             <connections>
                                 <action selector="uploadPhoto:" destination="OYG-F8-krH" id="aaI-af-LDs"/>
