@@ -20,5 +20,7 @@
 - (void)showIntroWithFixedTitleView;
 //App42_API calls
 //IBOutlets
-
+@property(retain,nonatomic)IBOutlet UIButton *addButton;
+//IBActions
+- (IBAction)addOneDish:(id)sender;
 @end

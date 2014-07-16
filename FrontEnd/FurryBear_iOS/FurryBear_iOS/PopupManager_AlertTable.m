@@ -64,6 +64,8 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
 {
     //1.Get friend request
     dataMutableArray = [[UserModel sharedInstance] getFriendRequests];
+    if(dataMutableArray.count)
+    {
     //2.Popup view
     tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
     //    [alert.view setTag:1];
@@ -72,6 +74,7 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
     [tableAlertView setDelegate:self];
     [tableAlertView setDataSource:self];
     [tableAlertView show];
+    }
 }
 #pragma mark - SBTableAlertDataSource
 

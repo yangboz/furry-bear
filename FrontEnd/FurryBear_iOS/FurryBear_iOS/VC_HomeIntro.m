@@ -10,10 +10,15 @@
 
 @implementation VC_HomeIntro
 //
+@synthesize addButton;
 //
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Update the UIButton with border.
+    self.addButton.layer.borderWidth = 1.0f;
+    self.addButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.addButton.layer.cornerRadius = 4.0f;
 	// Do any additional setup after loading the view, typically from a nib.
     if (![[UserModel sharedInstance] getIntroViewed]) {
         [self showIntroWithFixedTitleView];
@@ -149,6 +154,12 @@
     [intro showInView:self.view animateDuration:0.3];
     //FIXME:SkipButton disappear..
     [intro showSkipButtonOnlyOnLastPage];
+}
+
+#pragma mark -IBActions
+- (IBAction)addOneDish:(id)sender
+{
+    self.tabBarController.selectedIndex = 2;
 }
 
 @end
