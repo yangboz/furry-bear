@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="26" y="2606"/>
         </scene>
-        <!--Buddy Related - 好友-->
+        <!--Buddy Related - Friends-->
         <scene sceneID="LmU-m7-KfN">
             <objects>
                 <tableViewController id="EUC-wh-Fju" customClass="VC_BuddyRelated" sceneMemberID="viewController">
@@ -215,7 +215,7 @@
                             <outlet property="delegate" destination="EUC-wh-Fju" id="E5X-WL-NBD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="好友" id="KTY-Vg-nsJ"/>
+                    <navigationItem key="navigationItem" title="Friends" id="KTY-Vg-nsJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2da-y7-4Ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,7 +286,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="一道菜" id="9JU-Vt-mHE"/>
+                                    <navigationItem title="OneDish" id="9JU-Vt-mHE"/>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sac-D4-cq9">
@@ -300,7 +300,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udR-EE-Sd2">
                                 <rect key="frame" x="115" y="328" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="加道菜">
+                                <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -804,7 +804,7 @@
             </objects>
             <point key="canvasLocation" x="661" y="1164"/>
         </scene>
-        <!--Category Item Add Review - 一道-->
+        <!--Category Item Add Review - AnewUser-->
         <scene sceneID="N6K-0E-Huq">
             <objects>
                 <tableViewController id="5Cr-FB-yY8" customClass="VC_CategoryItemAddReview" sceneMemberID="viewController">
@@ -878,7 +878,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="一道" id="QtH-oW-kE5"/>
+                    <navigationItem key="navigationItem" title="AnewUser" id="QtH-oW-kE5"/>
                     <connections>
                         <segue destination="5mb-op-ca2" kind="push" identifier="segue_signup" id="bY4-c4-2Hm"/>
                         <segue destination="7yG-b2-PeI" kind="push" identifier="segue_email_setting" id="sAH-5c-PZl"/>
@@ -1102,7 +1102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="传图:" id="CYo-Ot-9bs">
+                            <tableViewSection headerTitle="UPLOAD:" id="CYo-Ot-9bs">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="mfB-To-Pzr">
                                         <rect key="frame" x="0.0" y="86" width="320" height="150"/>
@@ -1126,7 +1126,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="菜名:" id="Fq2-6Y-6HF">
+                            <tableViewSection headerTitle="NAME:" id="Fq2-6Y-6HF">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="82" id="vjo-y7-425">
                                         <rect key="frame" x="0.0" y="258" width="320" height="82"/>
@@ -1148,7 +1148,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="评分:" id="pt7-WX-NsF">
+                            <tableViewSection headerTitle="RATING:" id="pt7-WX-NsF">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wRl-bx-TLT">
                                         <rect key="frame" x="0.0" y="362" width="320" height="44"/>
@@ -1167,7 +1167,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="价格:" id="9dF-yY-441">
+                            <tableViewSection headerTitle="PRICE:" id="9dF-yY-441">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="pzp-xV-ulV">
                                         <rect key="frame" x="0.0" y="428" width="320" height="80"/>
@@ -1188,7 +1188,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="地址:" id="5Bo-Re-cOf">
+                            <tableViewSection headerTitle="ADDRESS:" id="5Bo-Re-cOf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xhk-7J-Ued">
                                         <rect key="frame" x="0.0" y="530" width="320" height="44"/>
@@ -1208,7 +1208,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="餐厅:" id="s1O-hi-kl6">
+                            <tableViewSection headerTitle="ADDRESS:" id="s1O-hi-kl6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LDk-EX-VPk">
                                         <rect key="frame" x="0.0" y="596" width="320" height="44"/>
@@ -1228,7 +1228,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="电话:" id="HQM-kE-CA1">
+                            <tableViewSection headerTitle="TEL:" id="HQM-kE-CA1">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KpK-o2-HFk">
                                         <rect key="frame" x="0.0" y="662" width="320" height="44"/>
@@ -1248,7 +1248,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="下次还来:" id="Lps-SX-p5N">
+                            <tableViewSection headerTitle="AgreeNextTime:" id="Lps-SX-p5N">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fPi-a4-lIg">
                                         <rect key="frame" x="0.0" y="728" width="320" height="44"/>
@@ -1266,7 +1266,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="图片名:" id="X7K-jp-FIT">
+                            <tableViewSection headerTitle="FILE_NAME:" id="X7K-jp-FIT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rdl-9o-o9I">
                                         <rect key="frame" x="0.0" y="794" width="320" height="44"/>
@@ -1321,7 +1321,7 @@
             </objects>
             <point key="canvasLocation" x="521" y="-1017"/>
         </scene>
-        <!--Login View Controller - 注册-->
+        <!--Login View Controller - SignUp-->
         <scene sceneID="L9X-ig-MMn">
             <objects>
                 <tableViewController id="OwY-vS-4Ap" customClass="LoginViewController" sceneMemberID="viewController">
@@ -1330,7 +1330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="用户名:" id="2Tb-cW-WAr">
+                            <tableViewSection headerTitle="USERNAME:" id="2Tb-cW-WAr">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mzy-CH-G7t">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
@@ -1357,7 +1357,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="密码:" id="Cql-cz-J3R">
+                            <tableViewSection headerTitle="PASSWORD:" id="Cql-cz-J3R">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rx8-tz-Jro">
                                         <rect key="frame" x="0.0" y="211" width="320" height="44"/>
@@ -1384,7 +1384,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="邮箱:" id="sxJ-Sn-I1f">
+                            <tableViewSection headerTitle="EMAIL:" id="sxJ-Sn-I1f">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nwU-od-hcj">
                                         <rect key="frame" x="0.0" y="303" width="320" height="44"/>
@@ -1411,7 +1411,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="身份:" id="JYc-D2-Jpg">
+                            <tableViewSection headerTitle="ROLE:" id="JYc-D2-Jpg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pPd-Y6-QNB">
                                         <rect key="frame" x="0.0" y="395" width="320" height="44"/>
@@ -1426,7 +1426,7 @@
                         </sections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="tomato-32.png" id="43K-A3-g1H"/>
-                    <navigationItem key="navigationItem" title="注册" id="haZ-As-aMw">
+                    <navigationItem key="navigationItem" title="SignUp" id="haZ-As-aMw">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="TZ3-TH-3fX">
                             <connections>
                                 <action selector="doneAction:" destination="OwY-vS-4Ap" id="YLc-xX-b2S"/>
