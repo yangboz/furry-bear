@@ -1208,7 +1208,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="ADDRESS:" id="s1O-hi-kl6">
+                            <tableViewSection headerTitle="RESTURANT:" id="s1O-hi-kl6">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LDk-EX-VPk">
                                         <rect key="frame" x="0.0" y="596" width="320" height="44"/>

@@ -49,7 +49,7 @@
     //
     GCArraySectionController* arrayController = [[GCArraySectionController alloc]
         initWithArray:simpleComments viewController:self];
-    arrayController.title = @"点评:";
+    arrayController.title = NSLocalizedString(@"T_REVIEW", nil);
 //    GCCustomSectionController* customController = [[GCCustomSectionController alloc] initWithViewController:self];
     GCEmptySectionController* emptyController = [[GCEmptySectionController alloc] initWithViewController:self];
     emptyController.title = cateItemData.description;

@@ -61,7 +61,7 @@
 
 -(void)displayLoginPopup
 {
-    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:@"请登录" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *prompt = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"P_LOGIN", nil) message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     prompt.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     [[prompt textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeEmailAddress];
     [[prompt textFieldAtIndex:0] setPlaceholder:NSLocalizedString(@"USERNAME", nil)];
@@ -132,11 +132,11 @@
 - (void)showIntroWithFixedTitleView
 {
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"欢迎";
+    page1.title = @"欢迎!";
     page1.desc = INTRO_DESCRIPTION_00;
     
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"Welcome";
+    page2.title = @"Welcome!";
     page2.desc = INTRO_DESCRIPTION_01;
     
     EAIntroPage *page3 = [EAIntroPage page];
@@ -151,8 +151,8 @@
     [intro setDelegate:self];
     UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork-128"]];
     intro.titleView = titleView;
-    intro.titleViewY = 60;
-    intro.backgroundColor = [UIColor colorWithRed:1.0f green:0.49f blue:0.96f alpha:1.0f]; //iOS7 dark blue
+    intro.titleViewY = 120;
+    intro.backgroundColor = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]; //iOS7 dark blue
     
     [intro showInView:self.view animateDuration:0.3];
     //FIXME:SkipButton disappear..

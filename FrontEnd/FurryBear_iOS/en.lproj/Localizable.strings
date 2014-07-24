@@ -7,3 +7,5 @@
 */
 "USERNAME"="username";
 "PASSWORD"="password";
+"P_LOGIN"="Please Login";
+"T_REVIEW"="Review:";

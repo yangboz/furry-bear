@@ -7,3 +7,5 @@
 */
 "USERNAME"="用户名";
 "PASSWORD"="密码";
+"P_LOGIN"="请登录";
+"T_REVIEW"="点评:";

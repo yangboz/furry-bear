@@ -153,7 +153,9 @@
             //#4.GET REVIEWS COUNT BY ITEM
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
-            int commentsCount = [self App42_getCommentsCountByItem:item.itemId];
+//            int commentsCount = [self App42_getCommentsCountByItem:item.itemId];
+            int commentsCount =
+            [[[App42_API_Facade sharedInstance]getReviewsByItem:item.itemId] count];
             NSLog(@"App42_getCommentsCountByItem result:%d",commentsCount);
             //#5.GET REVIEWs BY ITEM
             //[self App42_getReviewsByItem:item.itemId];
@@ -263,7 +265,7 @@
     //cell.itemImageView.image = [UIImage imageWithData:data];
     cell.itemImageView.imageURL = aURL;
 //    NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
-    NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_REVIEW_COUNT] integerValue]];
+    NSString *reviewCount = [NSString stringWithFormat:@"%ld",(long)[[fCateItemDict objectForKey:DICT_KEY_COMMENT_COUNT] integerValue]];
     cell.reviewCountLabel.text = reviewCount;
     //    NSString *ratingCount = [NSString stringWithFormat:@"%d",[[fCateItemDict objectForKey:@"rating"] integerValue]];
     cell.ratingCountLabel.text = [self symbolForRating:(int)[[fCateItemDict objectForKey:DICT_KEY_RATING] integerValue]];
