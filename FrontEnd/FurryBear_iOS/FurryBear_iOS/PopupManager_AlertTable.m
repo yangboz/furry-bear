@@ -67,7 +67,7 @@ static ServiceAPI *serviceAPIobj = nil;//Your static instance
     if(dataMutableArray.count)
     {
     //2.Popup view
-    tableAlertView	= [[SBTableAlert alloc] initWithTitle:@"Friend Requests" cancelButtonTitle:@"OK" messageFormat:nil];
+    tableAlertView	= [[SBTableAlert alloc] initWithTitle:NSLocalizedString(@"T_FRIEND_REQ", nil) cancelButtonTitle:@"OK" messageFormat:nil];
     //    [alert.view setTag:1];
     [tableAlertView setStyle:SBTableAlertStylePlain];
     [tableAlertView setType:SBTableAlertTypeMultipleSelct];

@@ -103,25 +103,10 @@ static NSString *curCateItemId = nil;
 -(void)popupFriendTalk
 {
     DTAlertView *alertView = nil;
-    alertView = [DTAlertView alertViewWithTitle:@"Friend Talk" message:@"Say something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
+    alertView = [DTAlertView alertViewWithTitle:NSLocalizedString(@"T_FRIEND_INV", nil) message:NSLocalizedString(@"ST_FRIEND_REQ", nil) delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
     [alertView setAlertViewMode:DTAlertViewModeTextInput];
     //set tag to differ
     [alertView setTag:1];
-    //
-    [alertView show];
-}
-
-#pragma mark - Popup_CateItemReview
-- (void)popupCateItemReview:(NSString *)cateItemId
-{
-    //Store it.
-    curCateItemId = cateItemId;
-    //Popup View.
-    DTAlertView *alertView = nil;
-    alertView = [DTAlertView alertViewWithTitle:@"CateItemReview" message:@"Review something:" delegate:self cancelButtonTitle:@"Cancel" positiveButtonTitle:@"OK"];
-        [alertView setAlertViewMode:DTAlertViewModeTextInput];
-    //set tag to differ
-    [alertView setTag:2];
     //
     [alertView show];
 }

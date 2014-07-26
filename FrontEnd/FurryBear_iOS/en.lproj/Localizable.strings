@@ -9,3 +9,6 @@
 "PASSWORD"="password";
 "P_LOGIN"="Please Login";
 "T_REVIEW"="Review:";
+"T_FRIEND_INV"="Friend Talk";
+"T_FRIEND_REQ"="Friend Requests";
+"ST_FRIEND_REQ"="Say something.";

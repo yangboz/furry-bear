@@ -18,8 +18,6 @@
 //ProgressView
 -(void)popupProgressBar;
 -(void)dismissProgressBar;
-//CateItemReview
--(void)popupCateItemReview:(NSString *)cateItemId;
 //FriendRequest/Talk
 -(void)popupFriendRequest;
 -(void)popupFriendTalk;

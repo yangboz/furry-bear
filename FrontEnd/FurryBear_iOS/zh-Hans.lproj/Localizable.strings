@@ -9,3 +9,6 @@
 "PASSWORD"="密码";
 "P_LOGIN"="请登录";
 "T_REVIEW"="点评:";
+"T_FRIEND_INV"="好友邀请";
+"T_FRIEND_REQ"="好友请求";
+"ST_FRIEND_REQ"="说点什么吧.";
