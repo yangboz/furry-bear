@@ -91,7 +91,7 @@ static LogService *logService= nil;
     @try{
         //        App42Response *response = [userService createUser:userName password:password emailAddress:@"YoungWelle@gmail.com"];
         App42Response *response = [userService authenticateUser:userName password:passWord];
-        BOOL isSuccess = [response isResponseSuccess];
+        isSuccess = [response isResponseSuccess];
         NSString *jsonResponse = [response toString]; /* returns the response in JSON format. (as shown below)*/
         NSLog(@"App42 user authenticate result:%d,%@",isSuccess,jsonResponse);
         //Save the login info to userDefaults

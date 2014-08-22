@@ -88,6 +88,12 @@
     //Dismiss loginView modal.
     if (loginSuccess) {
         [self dismissViewControllerAnimated:YES completion:nil];
+        //Preload the categorylist
+        NSString *defaultCatalogueName = [[App42_API_Utils sharedInstance] getDefaultCatalogueName];
+        NSString *defaultCategoryName = [[App42_API_Utils sharedInstance] getDefaultCategoryName];
+        //
+        NSMutableArray *categoryList = [[App42_API_Facade sharedInstance] getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName]; 
+        [[UserModel sharedInstance] setCategoryList:categoryList];
     }
     });
 }

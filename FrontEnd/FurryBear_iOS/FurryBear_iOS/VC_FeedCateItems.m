@@ -122,7 +122,8 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     //GET ITEMS BY CATEGORY
-    NSMutableArray *categoryList = [[App42_API_Facade sharedInstance] getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+//    NSMutableArray *categoryList = [[App42_API_Facade sharedInstance] getItemsByCategory:defaultCatalogueName categoryName:defaultCategoryName];
+    NSMutableArray *categoryList = [[UserModel sharedInstance] getCategoryList];
     //
     for(CategoryData *category in categoryList)
     {
@@ -130,7 +131,7 @@
         NSLog(@"description is = %@",category.description);
         NSMutableArray *itemList = category.itemListArray;
         //
-        NSLog(@"category itemList len:%d",[itemList count]);
+        NSLog(@"category itemList len:%lu",(unsigned long)[itemList count]);
         //        featuredCategoryItems = [[[NSMutableArray alloc] initWithArray:itemList] retain];
         featuredCategoryItems = [[NSMutableArray alloc] init];
         for (categoryItem *item in itemList)

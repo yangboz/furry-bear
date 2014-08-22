@@ -36,7 +36,9 @@
 //
 -(NSMutableArray *)getData;
 -(void)setData:(NSMutableArray *)value;
-
+//CategoryList
+-(void)setCategoryList:(NSMutableArray *)value;
+-(NSMutableArray *)getCategoryList;
 @end
 
 

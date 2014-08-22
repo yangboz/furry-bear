@@ -19,6 +19,7 @@ static BOOL autoSignin=YES;
 static BOOL introViewed=NO;
 static NSMutableArray *friendRequests=nil;
 static NSMutableArray *allFriends=nil;
+static NSMutableArray *categoryList=nil;
 
 //In your class factory method for the class (named something like “sharedInstance” or “sharedManager”), it generates an instance of the class but only if the static instance is nil.
 +(UserModel *)sharedInstance
@@ -169,6 +170,18 @@ static NSMutableArray *allFriends=nil;
     }
     //
     return introViewed;
+}
+
+#pragma mark CategoryList
+
+-(NSMutableArray *)getCategoryList
+{
+    return categoryList;
+}
+
+-(void)setCategoryList:(NSMutableArray *)value
+{
+    categoryList = value;
 }
 
 @end
