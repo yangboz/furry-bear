@@ -35,6 +35,9 @@
     //featuredCategoryItems = [[NSMutableArray alloc] init];
     //Notify listening
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFeaturedCategoryItems:) name:NOTIFY_NAME_CATE_ITEM_ADDED object:nil];
+    if (featuredCategoryItems==nil) {
+        [self loadFeaturedCategoryItems:nil];
+    }
 }
 
 - (void)viewDidUnload {
@@ -48,9 +51,6 @@
     // Most data loading should go here to make sure the view matches the model
     // every time it's put on the screen. This is also a good place to observe
     // notifications and KVO, and to setup timers.
-    if (featuredCategoryItems==nil) {
-        [self loadFeaturedCategoryItems:nil];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -155,8 +155,9 @@
             int reviewCount = [self App42_getReviewsCountByItem:item.itemId];
             NSLog(@"App42_getReviewsCountByItem result:%d",reviewCount);
 //            int commentsCount = [self App42_getCommentsCountByItem:item.itemId];
-            int commentsCount =
-            [[[App42_API_Facade sharedInstance]getReviewsByItem:item.itemId] count];
+            NSMutableArray *comments =
+            [[App42_API_Facade sharedInstance]getReviewsByItem:item.itemId];
+            int commentsCount = (int)[comments count];
             NSLog(@"App42_getCommentsCountByItem result:%d",commentsCount);
             //#5.GET REVIEWs BY ITEM
             //[self App42_getReviewsByItem:item.itemId];
